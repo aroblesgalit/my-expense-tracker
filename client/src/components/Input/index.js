@@ -3,7 +3,7 @@ import './input.css';
 
 function Input() {
     return (
-        <div>
+        <div className='wrapper input'>
             <label for='fname'>Filter</label>
             <select name='fname'>
                 <option value='all'>All</option>
