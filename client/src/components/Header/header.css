@@ -30,3 +30,8 @@ nav a {
     text-decoration: none;
     color: inherit;
 }
+
+nav li.active {
+    color: #43DDE6;
+    font-weight: 700;
+}
