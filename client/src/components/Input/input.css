@@ -38,6 +38,11 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
 
+.wrapper.input input[type='date'] {
+    max-width: 140px;
+    max-height: 42px;
+}
+
 .dollar-input {
     position: relative;
     max-width: 100px;
@@ -51,9 +56,11 @@
     position: absolute;
     top: 10px;
     left: 10px;
+    color: #FC5185;
 }
 
 .dollar-input input {
     padding-left: 24px!important;
     max-width: 100%;
+    color: #FC5185!important;
 }

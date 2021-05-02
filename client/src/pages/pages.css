@@ -11,6 +11,10 @@ body {
     justify-content: space-between;
 }
 
+.ai-flex-end {
+    align-items: flex-end;
+}
+
 .mt-1 {
     margin-top: 20px;
 }

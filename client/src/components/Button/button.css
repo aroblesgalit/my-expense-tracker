@@ -1,0 +1,17 @@
+.primary-btn {
+    min-width: 140px;
+    background-color: #FC5185;
+    color: #FFFFFF;
+    font-weight: 700;
+    border: none;
+    height: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.primary-btn:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);;
+    background-color: #eb3f72;
+}

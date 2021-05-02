@@ -2,6 +2,7 @@ import React from 'react';
 import './pages.css';
 import Input from '../components/Input';
 import Table from '../components/Table';
+import Button from '../components/Button';
 
 function Expenses() {
     return (
@@ -18,7 +19,7 @@ function Expenses() {
             <div className='mt-1'>
                 <Table />
             </div>
-            <div className='expense-form mt-1 d-flex jc-space-between'>
+            <div className='expense-form mt-1 d-flex jc-space-between ai-flex-end'>
                 <Input
                     type='date'
                     label='Date'
@@ -40,6 +41,7 @@ function Expenses() {
                     label='Amount'
                     name='amount'
                 />
+                <Button />
             </div>
         </div>
     )
