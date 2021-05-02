@@ -1,6 +1,7 @@
 import React from 'react';
 import './pages.css';
 import Input from '../components/Input';
+import Table from '../components/Table';
 
 function Expenses() {
     return (
@@ -13,6 +14,9 @@ function Expenses() {
                     name='filter'
                     options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
                 />
+            </div>
+            <div className='mt-1'>
+                <Table />
             </div>
         </div>
     )

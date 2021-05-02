@@ -1,4 +1,12 @@
+body {
+    color: #364F6B;
+}
+
 /* Utilities */
+.mt-1 {
+    margin-top: 20px;
+}
+
 .mt-3 {
     margin-top: 50px;
 }

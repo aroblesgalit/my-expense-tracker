@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+    max-width: 780px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table th {
+    font-size: 12px;
+    font-weight: 400;
+    color: #8A9BAE;
+    text-align: left;
+    border-bottom: 1px solid #DEE4EB;
+    padding-bottom: 10px;
+}
+
+table td {
+    padding: 20px 0;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #F7F7F7;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+    padding-left: 10px;
+}
