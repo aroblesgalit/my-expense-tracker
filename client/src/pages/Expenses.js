@@ -41,7 +41,7 @@ function Expenses() {
                     label='Amount'
                     name='amount'
                 />
-                <Button />
+                <Button text='Add' />
             </div>
         </div>
     )

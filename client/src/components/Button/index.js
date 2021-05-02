@@ -1,9 +1,9 @@
 import React from 'react';
 import './button.css';
 
-function Button() {
+function Button({ text }) {
     return (
-        <button className='primary-btn' type='button'>Add</button>
+        <button className='primary-btn' type='button'>{text}</button>
     )
 }
 
