@@ -11,7 +11,7 @@
     padding: 12px;
     border-radius: 6px;
     border: none;
-    min-width: 140px;
+    min-width: 170px;
     cursor: pointer;
     appearance: none;
     -moz-appearance: none;
@@ -39,7 +39,7 @@
 }
 
 .wrapper.input input[type='date'] {
-    max-width: 140px;
+    max-width: 160px;
     max-height: 42px;
 }
 
@@ -50,7 +50,7 @@
 
 .dollar-input {
     position: relative;
-    max-width: 100px;
+    max-width: 140px;
 }
 
 .dollar-input::before {
