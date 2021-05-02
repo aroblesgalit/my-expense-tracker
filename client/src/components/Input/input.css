@@ -26,7 +26,6 @@
     padding: 12px;
     border-radius: 6px;
     border: none;
-    min-width: 140px;
     cursor: pointer;
     background-position: right 12px top 54%;
 }
@@ -37,4 +36,24 @@
 .wrapper.input input:hover {
     outline: none!important;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+.dollar-input {
+    position: relative;
+    max-width: 100px;
+}
+
+.dollar-input::before {
+    content: '$';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.dollar-input input {
+    padding-left: 24px!important;
+    max-width: 100%;
 }

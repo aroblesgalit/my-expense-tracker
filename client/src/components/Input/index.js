@@ -17,13 +17,27 @@ function Input({ type, label, name, options }) {
                 )
             }
             {
-                type === 'date' && (
+                (type === 'date' || type === 'text') && (
                     <>
                         <label htmlFor={name}>{label}</label>
-                        <input 
+                        <input
                             name={name}
                             type={type}
                         />
+                    </>
+                )
+            }
+            {
+                type === 'number' && (
+                    <>
+                        <label htmlFor={name}>{label}</label>
+                        <div className='dollar-input'>
+                            <input
+                                name={name}
+                                type={type}
+                                min='0.01'
+                            />
+                        </div>
                     </>
                 )
             }
