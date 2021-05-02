@@ -1,8 +1,9 @@
 import React from 'react';
+import './pages.css';
 
 function Expenses() {
     return (
-        <div>
+        <div className='container expenses-pg'>
             <h1>Expenses</h1>
         </div>
     )

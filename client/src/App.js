@@ -6,9 +6,9 @@ import Header from './components/Header';
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
-        <Header />
-        <Route exact path='/expenses'>
+        <Route path='/expenses'>
           <Expenses />
         </Route>
       </Switch>

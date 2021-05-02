@@ -1,10 +1,10 @@
 header.container {
-    display: absolute;
     width: 240px;
     height: 100vh;
     padding: 32px;
     background-color: #364F6B;
     font-family: 'Roboto', sans-serif;
+    float: left;
 }
 
 .logo {

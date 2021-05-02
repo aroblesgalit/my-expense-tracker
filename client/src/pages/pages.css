@@ -1,0 +1,13 @@
+/* Expenses */
+.container.expenses-pg {
+    width: calc(100% - 240px);
+    height: 100vh;
+    padding: 50px 80px;
+    background-color: #F7F7F7;
+    float: right;
+}
+
+.expenses-pg h1 {
+    color: #364F6B;
+    font-size: 48px;
+}
