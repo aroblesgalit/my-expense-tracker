@@ -20,8 +20,21 @@
     background-position: right 12px top 54%;
 }
 
+.wrapper.input input {
+    font-size: 16px;
+    color: #364F6B;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    min-width: 140px;
+    cursor: pointer;
+    background-position: right 12px top 54%;
+}
+
 .wrapper.input select:focus,
-.wrapper.input select:hover {
+.wrapper.input select:hover,
+.wrapper.input input:focus,
+.wrapper.input input:hover {
     outline: none!important;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }

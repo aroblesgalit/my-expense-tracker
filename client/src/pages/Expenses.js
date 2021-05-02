@@ -18,6 +18,13 @@ function Expenses() {
             <div className='mt-1'>
                 <Table />
             </div>
+            <div className='mt-1'>
+                <Input 
+                    type='date'
+                    label='Date'
+                    name='date'
+                />
+            </div>
         </div>
     )
 }
