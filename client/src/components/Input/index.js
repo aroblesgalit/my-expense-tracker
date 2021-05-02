@@ -1,17 +1,25 @@
 import React from 'react';
 import './input.css';
 
-function Input() {
+function Input({ type, label, name, options }) {
     return (
-        <div className='wrapper input'>
-            <label for='fname'>Filter</label>
-            <select name='fname'>
-                <option value='all'>All</option>
-                <option value='all'>Weekly</option>
-                <option value='all'>Monthly</option>
-                <option value='all'>Annualy</option>
-            </select>
-        </div>
+        <>
+            {
+                type === 'dropdown' ? (
+                    <div className='wrapper input'>
+                        <label htmlFor={name}>{label}</label>
+                        <select name={name}>
+                            {
+                                options.map(option => <option key={option.toLowerCase()} value={option.toLowerCase()}>{option}</option>)
+                            }
+                        </select>
+                    </div>
+                ) : (
+                    <h2>Hello World</h2>
+                )
+            }
+        </>
+
     )
 }
 

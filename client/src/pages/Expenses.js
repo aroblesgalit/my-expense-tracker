@@ -7,7 +7,12 @@ function Expenses() {
         <div className='container expenses-pg'>
             <h1>Expenses</h1>
             <div className='mt-3'>
-                <Input />
+                <Input 
+                    type='dropdown'
+                    label='Filter'
+                    name='filter'
+                    options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
+                />
             </div>
         </div>
     )

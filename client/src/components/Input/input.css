@@ -20,7 +20,8 @@
     background-position: right 12px top 54%;
 }
 
-.wrapper.input select:focus {
+.wrapper.input select:focus,
+.wrapper.input select:hover {
     outline: none!important;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
