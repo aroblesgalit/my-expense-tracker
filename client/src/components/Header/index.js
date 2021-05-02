@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <div className='container sidebar-menu'>
-            <div><span className='logo'>my expense tracker</span></div>
+        <div className='container header'>
+            <div className='logo'>my expense tracker</div>
             <div>
                 <ul>
                     <li>dashboard</li>
