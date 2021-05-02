@@ -18,11 +18,17 @@ function Expenses() {
             <div className='mt-1'>
                 <Table />
             </div>
-            <div className='mt-1'>
+            <div className='expense-form mt-1 d-flex jc-space-between'>
                 <Input 
                     type='date'
                     label='Date'
                     name='date'
+                />
+                <Input
+                    type='dropdown'
+                    label='Category'
+                    name='category'
+                    options={['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other']}
                 />
             </div>
         </div>

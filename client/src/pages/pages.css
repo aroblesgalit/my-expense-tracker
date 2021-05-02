@@ -3,6 +3,14 @@ body {
 }
 
 /* Utilities */
+.d-flex {
+    display: flex;
+}
+
+.jc-space-between {
+    justify-content: space-between;
+}
+
 .mt-1 {
     margin-top: 20px;
 }
@@ -23,4 +31,9 @@ body {
 .expenses-pg h1 {
     color: #364F6B;
     font-size: 48px;
+}
+
+.expense-form {
+    width: 100%;
+    max-width: 780px;
 }
