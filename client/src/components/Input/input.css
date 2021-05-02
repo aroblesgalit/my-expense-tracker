@@ -43,6 +43,11 @@
     max-height: 42px;
 }
 
+.wrapper.input input[type='date']::-webkit-calendar-picker-indicator {
+    margin-left: 0;
+    filter: invert(0.3);
+}
+
 .dollar-input {
     position: relative;
     max-width: 100px;
