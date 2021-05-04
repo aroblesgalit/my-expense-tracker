@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
@@ -11,6 +12,14 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, './client/build')));
 }
+
+// Connect to MongoDB
+mongoose.connect(process.env.DB_URI || 'mongodb://localhost/expense', {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+});
 
 // Start the API server
 app.listen(PORT, function () {
