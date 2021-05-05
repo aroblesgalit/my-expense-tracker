@@ -27,4 +27,15 @@ router.get('/logout', function (req, res) {
     });
 });
 
+router.get('/user_data', function (req, res) {
+    if (!req.user) {
+        res.status(401).json({});
+    } else {
+        db.User
+            .findOne({ username: req.user.username })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    }
+});
+
 module.exports = router;
