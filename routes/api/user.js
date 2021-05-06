@@ -7,7 +7,7 @@ router.post('/login', passport.authenticate('local'), function (req, res) {
     req.redirect('/dashboard');
 });
 
-router.post('signup', function (req, res) {
+router.post('/signup', function (req, res) {
     db.User.create({
         username: req.body.username,
         password: req.body.password
