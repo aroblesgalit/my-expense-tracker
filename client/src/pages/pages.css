@@ -19,6 +19,10 @@ body {
     margin-top: 20px;
 }
 
+.mt-2 {
+    margin-top: 30px;
+}
+
 .mt-3 {
     margin-top: 50px;
 }
@@ -107,6 +111,19 @@ body {
 .feat-slick-dots span.active,
 .feat-slick-dots span:hover {
     background-color: #43DDE6;
+}
+
+.signup-container {
+    background-color: #F0F0F0;
+    width: 40vw;
+    padding: 30px;
+}
+
+.signup-form {
+    background-color: #FFF;
+    max-width: 410px;
+    border-radius: 10px;
+    padding: 60px 38px;
 }
 
 

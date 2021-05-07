@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.css';
 
-function Input({ type, label, name, options }) {
+function Input({ type, label, name, options, border, onChange }) {
     return (
         <div className='wrapper input'>
             {
@@ -23,6 +23,8 @@ function Input({ type, label, name, options }) {
                         <input
                             name={name}
                             type={type}
+                            style={border && { border: `1px solid ${border}`, width: '100%' }}
+                            onChange={onChange}
                         />
                     </>
                 )

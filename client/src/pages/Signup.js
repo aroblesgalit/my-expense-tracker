@@ -3,20 +3,30 @@ import './pages.css';
 import API from '../utils/API';
 import leftArrow from '../images/left-arrow.svg';
 import rightArrow from '../images/right-arrow.svg';
+import Input from '../components/Input';
+import Button from '../components/Button';
 
 function Signup() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleOnClick = () => {
-        console.log(username, password)
-        API.signupUser({
-            username,
-            password
-        })
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        username && password && confirmPassword ? (
+            password === confirmPassword ? (
+                API.signupUser({
+                    username,
+                    password
+                })
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err))
+            ) : (
+                console.log('Password does not match.')
+            )
+        ) : (
+            console.log('Please fill in all fields.')
+        )
     }
 
     return (
@@ -43,12 +53,40 @@ function Signup() {
                 </div>
             </div>
             {/* right side */}
-            <div className='signup-wrapper'>
+            <div className='signup-container'>
                 <h1>Signup</h1>
                 {/* sign up form goes here */}
-                <input type="text" id="username" name="username" onChange={(e) => setUsername(e.target.value)} />
-                <input type="text" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-                <button onClick={handleOnClick}>Sign up</button>
+                <div className='signup-form'>
+                    <div>
+                        <Input
+                            type='text'
+                            label='Username'
+                            name='username'
+                            border='#CDCDCD'
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
+                    <div className='mt-2'>
+                        <Input
+                            type='text'
+                            label='Password'
+                            name='password'
+                            border='#CDCDCD'
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className='mt-2'>
+                        <Input
+                            type='text'
+                            label='Confirm Password'
+                            name='confirm-password'
+                            border='#CDCDCD'
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+                    </div>
+
+                    <button onClick={handleOnClick}>Sign up</button>
+                </div>
                 <p>Already have an account? Log in here</p>
             </div>
         </div>
