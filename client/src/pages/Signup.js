@@ -12,14 +12,19 @@ function Signup() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleOnClick = () => {
+    const handleOnClick = (e) => {
+        e.preventDefault();
+
         username && password && confirmPassword ? (
             password === confirmPassword ? (
                 API.signupUser({
                     username,
                     password
                 })
-                    .then(res => console.log(res))
+                    .then(res => {
+                        console.log(res);
+                        // Clear form
+                    })
                     .catch(err => console.log(err))
             ) : (
                 console.log('Password does not match.')
@@ -56,7 +61,7 @@ function Signup() {
             <div className='signup-container'>
                 <h1>Signup</h1>
                 {/* sign up form goes here */}
-                <div className='signup-form'>
+                <form className='signup-form'>
                     <div>
                         <Input
                             type='text'
@@ -84,9 +89,15 @@ function Signup() {
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
                     </div>
-
-                    <button onClick={handleOnClick}>Sign up</button>
-                </div>
+                    <div className='mt-2 d-flex jc-flex-end'>
+                        <Button
+                            type='submit'
+                            text='Sign up'
+                            onClick={handleOnClick}
+                            backgroundColor='#43DDE6'
+                        />
+                    </div>
+                </form>
                 <p>Already have an account? Log in here</p>
             </div>
         </div>

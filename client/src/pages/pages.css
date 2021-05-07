@@ -11,6 +11,10 @@ body {
     justify-content: space-between;
 }
 
+.jc-flex-end {
+    justify-content: flex-end;
+}
+
 .ai-flex-end {
     align-items: flex-end;
 }

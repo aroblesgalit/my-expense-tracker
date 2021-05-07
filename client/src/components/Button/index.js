@@ -1,9 +1,15 @@
 import React from 'react';
 import './button.css';
 
-function Button({ text }) {
+function Button({ type, text, onClick, backgroundColor }) {
     return (
-        <button className='primary-btn' type='button'>{text}</button>
+        <input
+            type={type}
+            value={text}
+            onClick={onClick}
+            className='primary-btn'
+            style={backgroundColor && { backgroundColor: `${backgroundColor}` }}
+        />
     )
 }
 
