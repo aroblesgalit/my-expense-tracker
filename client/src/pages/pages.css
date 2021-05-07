@@ -23,6 +23,29 @@ body {
     margin-top: 50px;
 }
 
+
+/* Sign up */
+.container.signup-pg {
+    display: flex;
+}
+
+.features-container {
+    min-height: 100vh;
+    width: 60vw;
+    background-color: #364F6B;
+    padding: 30px 52px;
+}
+
+.signup-pg .logo {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 0.9;
+    color: #43DDE6;
+    padding: 28px 0 60px;
+    width: 180px;
+}
+
+
 /* Expenses */
 .container.expenses-pg {
     width: calc(100% - 240px);

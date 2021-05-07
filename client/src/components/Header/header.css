@@ -7,7 +7,7 @@ header.container {
     float: left;
 }
 
-.logo {
+header.logo {
     font-size: 46px;
     font-weight: 900;
     line-height: 0.9;

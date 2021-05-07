@@ -20,7 +20,11 @@ function Signup() {
     return (
         <div className='container signup-pg'>
             {/* left side */}
-
+            <div className='features-container'>
+                <div>
+                    <div className='logo'>my expense tracker</div>
+                </div>
+            </div>
             {/* right side */}
             <div className='signup-wrapper'>
                 <h1>Signup</h1>

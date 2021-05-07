@@ -7,7 +7,7 @@ import Signup from './pages/Signup';
 function App() {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <Switch>
         <Route path='/signup'>
           <Signup />
