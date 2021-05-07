@@ -83,6 +83,32 @@ body {
     height: 420px;
 }
 
+.features-wrapper p {
+    color: #F0F0F0;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.feat-slick-dots {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    width: 100px;
+}
+
+.feat-slick-dots span {
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #8A9BAE;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.feat-slick-dots span.active,
+.feat-slick-dots span:hover {
+    background-color: #43DDE6;
+}
+
 
 /* Expenses */
 .container.expenses-pg {

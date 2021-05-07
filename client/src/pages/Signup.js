@@ -32,10 +32,14 @@ function Signup() {
                         <div className='feat-image-wrapper'>image</div>
                         <div className='feat-right-arrow'><img src={rightArrow} alt="Left arrow" /></div>
                     </div>
-                    <div>
-                        <p>Add a transaction</p>
+                    <p>Add a transaction</p>
+                    <div className='feat-slick-dots'>
+                        <span className='active'></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div>slick dots</div>
                 </div>
             </div>
             {/* right side */}
