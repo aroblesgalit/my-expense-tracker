@@ -45,6 +45,44 @@ body {
     width: 180px;
 }
 
+.features-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features {
+    width: 100%;
+    display: flex;
+    color: #fff;
+}
+
+.feat-left-arrow,
+.feat-right-arrow {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.feat-left-arrow:hover img,
+.feat-right-arrow:hover img {
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(138deg);
+}
+
+.feat-left-arrow img,
+.feat-right-arrow img {
+    width: 10px;
+}
+
+.feat-image-wrapper {
+    width: calc(100% - 140px);
+    background-color: #fff;
+    border-radius: 10px;
+    height: 420px;
+}
+
 
 /* Expenses */
 .container.expenses-pg {
