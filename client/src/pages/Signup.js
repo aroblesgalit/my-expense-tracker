@@ -98,7 +98,7 @@ function Signup() {
                         />
                     </div>
                 </form>
-                <p>Already have an account? Log in here</p>
+                <p className='login-copy'>Already have an account? Log in here</p>
             </div>
         </div>
     )

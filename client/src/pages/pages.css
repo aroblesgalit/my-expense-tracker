@@ -123,11 +123,25 @@ body {
     padding: 30px;
 }
 
+.signup-container h1 {
+    font-size: 48px;
+    text-align: center;
+    margin: 100px 0 50px;
+}
+
 .signup-form {
     background-color: #FFF;
     max-width: 410px;
     border-radius: 10px;
     padding: 60px 38px;
+    margin: 0 auto;
+}
+
+.signup-container p.login-copy {
+    font-size: 14px;
+    color: #8A9BAE;
+    text-align: center;
+    margin-top: 40px;
 }
 
 
