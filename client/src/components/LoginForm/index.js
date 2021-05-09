@@ -11,7 +11,7 @@ function LoginForm() {
                 value => {
 
                     return (
-                        <form>
+                        <form className='login-form'>
                             <div>
                                 <Input 
                                     type='text'
@@ -20,7 +20,7 @@ function LoginForm() {
                                     border='#CDCDCD'
                                 />
                             </div>
-                            <div>
+                            <div className='mt-2'>
                                 <Input 
                                     type='text'
                                     label='Password'
@@ -28,7 +28,7 @@ function LoginForm() {
                                     border='#CDCDCD'
                                 />
                             </div>
-                            <div>
+                            <div className='mt-2 d-flex jc-flex-end'>
                                 <Button 
                                     type='submit'
                                     text='Log in'
