@@ -8,7 +8,7 @@ function UserProvider(props) {
 
     const [user, setUser] = useState({
         isLoggedIn: false,
-        info: {}
+        userData: {}
     });
 
     function getUserData() {
@@ -17,14 +17,22 @@ function UserProvider(props) {
                 setUser({
                     ...user,
                     isLoggedIn: true,
-                    info: res.data
+                    userData: res.data
+                })
+            })
+            .catch(() => {
+                console.log('User is NOT logged in.');
+                setUser({
+                    ...user,
+                    isLoggedIn: false,
+                    userData: {}
                 })
             })
     }
 
-    // useEffect(() => {
-    //     getUserData();
-    // }, [])
+    useEffect(() => {
+        getUserData();
+    }, [])
 
     // Signup
     const usernameRef = createRef();
@@ -56,6 +64,10 @@ function UserProvider(props) {
                             copy: 'Signup successful!'
                         });
                         getUserData();
+                        // setUser({
+                        //     ...user,
+                        //     isLoggedIn: true
+                        // })
                         // Redirect to dashboard
                     })
                     .catch(err => {
@@ -88,7 +100,7 @@ function UserProvider(props) {
                 confirmPasswordRef,
                 handleSignup,
                 signupAlert,
-                user
+                ...user
             }}
         >
             {props.children}

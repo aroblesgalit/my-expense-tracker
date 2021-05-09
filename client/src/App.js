@@ -10,7 +10,7 @@ function App() {
   return (
     <UserProvider>
       <Router>
-        {/* <Header /> */}
+        <Header />
         <Switch>
           <Route path='/signup'>
             <PublicRoute component={Signup} />

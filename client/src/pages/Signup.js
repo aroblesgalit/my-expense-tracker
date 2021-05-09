@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './pages.css';
-import API from '../utils/API';
 import leftArrow from '../images/left-arrow.svg';
 import rightArrow from '../images/right-arrow.svg';
 import SignupForm from '../components/SignupForm';

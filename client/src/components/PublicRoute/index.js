@@ -9,9 +9,9 @@ function PublicRoute(props) {
         <UserConsumer>
             {
                 value => {
-                    const { user } = value;
+                    const { isLoggedIn } = value;
 
-                    return user.isLoggedIn ? 
+                    return isLoggedIn ? 
                         <Redirect to='/expenses' /> :
                         <Component />
                 }
