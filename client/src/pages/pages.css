@@ -60,6 +60,12 @@ body {
     margin-top: 40px;
 }
 
+.signup-container a,
+.login-container a {
+    color: #43DDE6;
+    font-weight: 900;
+}
+
 
 /* Expenses */
 .container.expenses-pg {
