@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Signup from './pages/Signup';
 import { UserProvider } from './utils/UserContext';
 import PublicRoute from './components/PublicRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <PublicRoute component={Signup} />
           </Route>
           <Route path='/expenses'>
-            <Expenses />
+            <ProtectedRoute component={Expenses} />
           </Route>
         </Switch>
       </Router>
