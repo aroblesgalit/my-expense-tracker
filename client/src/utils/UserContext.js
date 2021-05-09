@@ -11,7 +11,10 @@ function UserProvider(props) {
     const passwordRef = createRef();
     const confirmPasswordRef = createRef();
 
-    const [signupAlert, setSignupAlert] = useState('');
+    const [signupAlert, setSignupAlert] = useState({
+        type: '',
+        copy: ''
+    });
 
     const handleSignup = (e) => {
         e.preventDefault();
@@ -28,18 +31,30 @@ function UserProvider(props) {
                 })
                     .then(res => {
                         console.log('User is signed up...', res);
-                        setSignupAlert('Signup successful!');
+                        setSignupAlert({
+                            type: 'success',
+                            copy: 'Signup successful!'
+                        });
                         // Redirect to dashboard
                     })
                     .catch(err => {
                         console.log('Signup failed...', err);
-                        setSignupAlert('Username is already taken.');
+                        setSignupAlert({
+                            type: 'fail',
+                            copy: 'Username is already taken.'
+                        });
                     })
             ) : (
-                setSignupAlert('Password does not match.')
+                setSignupAlert({
+                    type: 'fail',
+                    copy: 'Password does not match.'
+                })
             )
         ) : (
-            setSignupAlert('Please fill in all the fields.')
+            setSignupAlert({
+                type: 'fail',
+                copy: 'Please fill in all the fields.'
+            })
         )
     }
     // End Signup

@@ -5,3 +5,16 @@
     padding: 60px 38px;
     margin: 0 auto;
 }
+
+.signup-alert {
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.signup-alert.success {
+    color: #42BA96;
+}
+
+.signup-alert.fail {
+    color: #FA113D;
+}

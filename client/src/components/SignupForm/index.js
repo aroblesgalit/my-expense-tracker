@@ -39,7 +39,7 @@ function SignupForm() {
                                     ref={confirmPasswordRef}
                                 />
                             </div>
-                            <p className='signup-alert'>{signupAlert}</p>
+                            <p className={`signup-alert ${signupAlert.type === 'success' ? 'success' : 'fail'}`}>{signupAlert.copy}</p>
                             <div className='mt-2 d-flex jc-flex-end'>
                                 <Button
                                     type='submit'
