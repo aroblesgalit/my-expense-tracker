@@ -5,6 +5,7 @@ import leftArrow from '../images/left-arrow.svg';
 import rightArrow from '../images/right-arrow.svg';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import SignupForm from '../components/SignupForm';
 
 function Signup() {
 
@@ -61,7 +62,8 @@ function Signup() {
             <div className='signup-container'>
                 <h1>Signup</h1>
                 {/* signup form goes here */}
-                <form className='signup-form'>
+                <SignupForm />
+                {/* <form className='signup-form'>
                     <div>
                         <Input
                             type='text'
@@ -97,7 +99,7 @@ function Signup() {
                             backgroundColor='#43DDE6'
                         />
                     </div>
-                </form>
+                </form> */}
                 <p className='login-copy'>Already have an account? Log in here</p>
             </div>
         </div>
