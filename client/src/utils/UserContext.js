@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, { createRef, useState } from 'react';
 import API from './API';
 
 const UserContext = React.createContext();
@@ -10,6 +10,8 @@ function UserProvider(props) {
     const usernameRef = createRef();
     const passwordRef = createRef();
     const confirmPasswordRef = createRef();
+
+    const [signupAlert, setSignupAlert] = useState('');
 
     const handleSignup = (e) => {
         e.preventDefault();
@@ -26,19 +28,18 @@ function UserProvider(props) {
                 })
                     .then(res => {
                         console.log('User is signed up...', res);
+                        setSignupAlert('Signup successful!');
                         // Redirect to dashboard
                     })
                     .catch(err => {
-                        console.log('Username is already taken. ', err);
-                        // Render sign up failed copy 'username already taken'
+                        console.log('Signup failed...', err);
+                        setSignupAlert('Username is already taken.');
                     })
             ) : (
-                // Render password don't match copy
-                console.log('Password doesn\'t match')
+                setSignupAlert('Password does not match.')
             )
         ) : (
-            // Render missing fields copy
-            console.log('Please fill in all fields.')
+            setSignupAlert('Please fill in all the fields.')
         )
     }
     // End Signup
@@ -49,7 +50,8 @@ function UserProvider(props) {
                 usernameRef,
                 passwordRef,
                 confirmPasswordRef,
-                handleSignup
+                handleSignup,
+                signupAlert
             }}
         >
             {props.children}

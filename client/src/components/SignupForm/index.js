@@ -9,7 +9,7 @@ function SignupForm() {
         <UserConsumer>
             {
                 value => {
-                    const { usernameRef, passwordRef, confirmPasswordRef, handleSignup } = value;
+                    const { usernameRef, passwordRef, confirmPasswordRef, handleSignup, signupAlert } = value;
                     return (
                         <form className='signup-form'>
                             <div>
@@ -39,7 +39,7 @@ function SignupForm() {
                                     ref={confirmPasswordRef}
                                 />
                             </div>
-                            <p></p>
+                            <p className='signup-alert'>{signupAlert}</p>
                             <div className='mt-2 d-flex jc-flex-end'>
                                 <Button
                                     type='submit'
