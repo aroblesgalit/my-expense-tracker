@@ -87,7 +87,8 @@ function UserProvider(props) {
                 passwordRef,
                 confirmPasswordRef,
                 handleSignup,
-                signupAlert
+                signupAlert,
+                user
             }}
         >
             {props.children}
