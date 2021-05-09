@@ -60,7 +60,7 @@ function Signup() {
             {/* right side */}
             <div className='signup-container'>
                 <h1>Signup</h1>
-                {/* sign up form goes here */}
+                {/* signup form goes here */}
                 <form className='signup-form'>
                     <div>
                         <Input
