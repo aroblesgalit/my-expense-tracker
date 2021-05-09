@@ -1,10 +1,30 @@
-import React, { createRef, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 import API from './API';
 
 const UserContext = React.createContext();
 
 // Provider
 function UserProvider(props) {
+
+    const [user, setUser] = useState({
+        isLoggedIn: false,
+        info: {}
+    });
+
+    function getUserData() {
+        API.getUserData()
+            .then(res => {
+                setUser({
+                    ...user,
+                    isLoggedIn: true,
+                    info: res.data
+                })
+            })
+    }
+
+    // useEffect(() => {
+    //     getUserData();
+    // }, [])
 
     // Signup
     const usernameRef = createRef();
@@ -35,6 +55,7 @@ function UserProvider(props) {
                             type: 'success',
                             copy: 'Signup successful!'
                         });
+                        getUserData();
                         // Redirect to dashboard
                     })
                     .catch(err => {
