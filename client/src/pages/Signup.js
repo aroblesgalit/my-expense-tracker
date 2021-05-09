@@ -61,45 +61,7 @@ function Signup() {
             {/* right side */}
             <div className='signup-container'>
                 <h1>Signup</h1>
-                {/* signup form goes here */}
                 <SignupForm />
-                {/* <form className='signup-form'>
-                    <div>
-                        <Input
-                            type='text'
-                            label='Username'
-                            name='username'
-                            border='#CDCDCD'
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                    </div>
-                    <div className='mt-2'>
-                        <Input
-                            type='text'
-                            label='Password'
-                            name='password'
-                            border='#CDCDCD'
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className='mt-2'>
-                        <Input
-                            type='text'
-                            label='Confirm Password'
-                            name='confirm-password'
-                            border='#CDCDCD'
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className='mt-2 d-flex jc-flex-end'>
-                        <Button
-                            type='submit'
-                            text='Sign up'
-                            onClick={handleOnClick}
-                            backgroundColor='#43DDE6'
-                        />
-                    </div>
-                </form> */}
                 <p className='login-copy'>Already have an account? Log in here</p>
             </div>
         </div>

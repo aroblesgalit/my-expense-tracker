@@ -2,12 +2,12 @@ const db = require('../../models');
 const passport = require('../../config/passport');
 const router = require('express').Router();
 
-router.post('/login', passport.authenticate('local'), function (req, res) {
+router.post('/login', passport.authenticate('local'), (req, res) => {
     res.json(req.user);
-    req.redirect('/dashboard');
+    res.redirect('/expenses');
 });
 
-router.post('/signup', function (req, res) {
+router.post('/signup', (req, res) => {
     db.User.create({
         username: req.body.username,
         password: req.body.password
@@ -20,14 +20,14 @@ router.post('/signup', function (req, res) {
         });
 });
 
-router.get('/logout', function (req, res) {
+router.get('/logout', (req, res) => {
     req.logout();
     req.session.destroy(function (err) {
         res.json({})
     });
 });
 
-router.get('/user_data', function (req, res) {
+router.get('/user_data', (req, res) => {
     if (!req.user) {
         res.status(401).json({});
     } else {
