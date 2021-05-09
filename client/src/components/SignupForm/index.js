@@ -39,6 +39,7 @@ function SignupForm() {
                                     ref={confirmPasswordRef}
                                 />
                             </div>
+                            <p></p>
                             <div className='mt-2 d-flex jc-flex-end'>
                                 <Button
                                     type='submit'

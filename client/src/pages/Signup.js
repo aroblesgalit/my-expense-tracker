@@ -3,38 +3,9 @@ import './pages.css';
 import API from '../utils/API';
 import leftArrow from '../images/left-arrow.svg';
 import rightArrow from '../images/right-arrow.svg';
-import Input from '../components/Input';
-import Button from '../components/Button';
 import SignupForm from '../components/SignupForm';
 
 function Signup() {
-
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-
-    const handleOnClick = (e) => {
-        e.preventDefault();
-
-        username && password && confirmPassword ? (
-            password === confirmPassword ? (
-                API.signupUser({
-                    username,
-                    password
-                })
-                    .then(res => {
-                        console.log(res);
-                        // Clear form
-                    })
-                    .catch(err => console.log(err))
-            ) : (
-                console.log('Password does not match.')
-            )
-        ) : (
-            console.log('Please fill in all fields.')
-        )
-    }
-
     return (
         <div className='container signup-pg'>
             {/* left side */}
