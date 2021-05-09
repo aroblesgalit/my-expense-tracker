@@ -4,6 +4,7 @@ import Expenses from './pages/Expenses';
 import Header from './components/Header';
 import Signup from './pages/Signup';
 import { UserProvider } from './utils/UserContext';
+import PublicRoute from './components/PublicRoute';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         {/* <Header /> */}
         <Switch>
           <Route path='/signup'>
-            <Signup />
+            <PublicRoute component={Signup} />
           </Route>
           <Route path='/expenses'>
             <Expenses />
