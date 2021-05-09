@@ -10,30 +10,27 @@ function Header() {
     const currentPathname = location.pathname;
 
     return (
-        <>
-            <UserConsumer>
-                {
-                    value => {
-                        const { isLoggedIn } = value;
+        <UserConsumer>
+            {
+                value => {
+                    const { isLoggedIn } = value;
 
-                        return isLoggedIn && (
-                            <header className='container'>
-                                <div className='logo'>my expense tracker</div>
-                                <nav>
-                                    <ul>
-                                        <li>dashboard</li>
-                                        <li className={`${currentPathname === '/expenses' && 'active'}`}><Link to='/expenses'>expenses</Link></li>
-                                        <li>income</li>
-                                        <li>analytics</li>
-                                    </ul>
-                                </nav>
-                            </header>
-                        )
-                    }
+                    return isLoggedIn && (
+                        <header className='container'>
+                            <div className='logo'>my expense tracker</div>
+                            <nav>
+                                <ul>
+                                    <li>dashboard</li>
+                                    <li className={`${currentPathname === '/expenses' && 'active'}`}><Link to='/expenses'>expenses</Link></li>
+                                    <li>income</li>
+                                    <li>analytics</li>
+                                </ul>
+                            </nav>
+                        </header>
+                    )
                 }
-
-            </UserConsumer>
-        </>
+            }
+        </UserConsumer>
     )
 }
 
