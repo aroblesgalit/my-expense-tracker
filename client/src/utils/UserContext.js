@@ -7,7 +7,7 @@ const UserContext = React.createContext();
 function UserProvider(props) {
 
     const [user, setUser] = useState({
-        isLoggedIn: false,
+        isLoggedIn: null,
         userData: {}
     });
 
