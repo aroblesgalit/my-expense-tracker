@@ -33,23 +33,27 @@ body {
 
 
 /* Sign up */
-.container.signup-pg {
+.container.signup-pg,
+.container.login-pg {
     display: flex;
 }
 
-.signup-container {
+.signup-container,
+.login-container {
     background-color: #F0F0F0;
     width: 40vw;
     padding: 30px;
 }
 
-.signup-container h1 {
+.signup-container h1,
+.login-container h1 {
     font-size: 48px;
     text-align: center;
     margin: 100px 0 50px;
 }
 
-.signup-container p.login-copy {
+.signup-container p.login-copy,
+.login-container p.signup-copy {
     font-size: 14px;
     color: #8A9BAE;
     text-align: center;
