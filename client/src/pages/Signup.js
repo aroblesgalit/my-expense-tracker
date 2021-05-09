@@ -3,6 +3,7 @@ import './pages.css';
 
 import SignupForm from '../components/SignupForm';
 import Features from '../components/Features';
+import { Link } from 'react-router-dom';
 
 function Signup() {
     return (
@@ -13,7 +14,7 @@ function Signup() {
             <div className='signup-container'>
                 <h1>Signup</h1>
                 <SignupForm />
-                <p className='login-copy'>Already have an account? Log in here</p>
+                <p className='login-copy'>Already have an account? <Link to='/login'>Log in here</Link></p>
             </div>
         </div>
     )

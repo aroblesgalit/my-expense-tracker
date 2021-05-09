@@ -2,6 +2,7 @@ import React from 'react';
 import './pages.css';
 import LoginForm from '../components/LoginForm';
 import Features from '../components/Features';
+import { Link } from 'react-router-dom';
 
 function Login() {
     return (
@@ -10,7 +11,7 @@ function Login() {
             <div className='login-container'>
                 <h1>Login</h1>
                 <LoginForm />
-                <p className='signup-copy'>Don't have an account? Sign up here</p>
+                <p className='signup-copy'>Don't have an account? <Link to='/signup'>Sign up here</Link></p>
             </div>
         </div>
     )
