@@ -34,7 +34,8 @@ function LoginForm() {
                                 <Button
                                     type='submit'
                                     text='Log in'
-                                    backgroundColor='#43DDE6'
+                                    action='primary'
+                                    color='blue'
                                     onClick={handleLogin}
                                 />
                             </div>

@@ -41,7 +41,12 @@ function Expenses() {
                     label='Amount'
                     name='amount'
                 />
-                <Button text='Add' backgroundColor='#FC5185' />
+                <Button 
+                    type='submit'
+                    text='Add' 
+                    action='primary'
+                    color='magenta'
+                />
             </div>
         </div>
     )

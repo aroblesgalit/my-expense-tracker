@@ -44,8 +44,9 @@ function SignupForm() {
                                 <Button
                                     type='submit'
                                     text='Sign up'
+                                    action='primary'
+                                    color='blue'
                                     onClick={handleSignup}
-                                    backgroundColor='#43DDE6'
                                 />
                             </div>
                         </form>

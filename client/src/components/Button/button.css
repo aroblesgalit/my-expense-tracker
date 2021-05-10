@@ -1,6 +1,5 @@
 .primary-btn {
     min-width: 140px;
-    /* background-color: #FC5185; */
     color: #FFFFFF;
     font-weight: 700;
     border: none;
@@ -11,7 +10,41 @@
     letter-spacing: 1px;
 }
 
-.primary-btn:hover {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);;
-    background-color: #eb3f72;
+.primary-btn.magenta {
+    background-color: #FC5185;
+}
+
+.primary-btn.magenta:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    background-color: #EB3F72;
+}
+
+.primary-btn.blue {
+    background-color: #43DDE6;
+}
+
+.primary-btn.blue:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    background-color: #0DC4CE;
+}
+
+.secondary-btn {
+    min-width: 140px;
+    font-weight: 700;
+    height: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.secondary-btn.gray {
+    color: #8A9BAE;
+    border: 1px solid #8A9BAE;
+}
+
+.secondary-btn.gray:hover {
+    color: #FFFFFF;
+    border: 1px solid #FC5185;
+    background-color: #FC5185;
 }

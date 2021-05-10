@@ -2,6 +2,7 @@ import React from 'react';
 import './header.css';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
+import Button from '../Button';
 
 function Header() {
 
@@ -13,7 +14,7 @@ function Header() {
         <UserConsumer>
             {
                 value => {
-                    const { isLoggedIn } = value;
+                    const { isLoggedIn, handleLogout } = value;
 
                     return isLoggedIn && (
                         <header className='container'>
@@ -26,6 +27,11 @@ function Header() {
                                     <li>analytics</li>
                                 </ul>
                             </nav>
+                            <Button 
+                                type='button'
+                                value='Log out'
+                                onClick={handleLogout}
+                            />
                         </header>
                     )
                 }

@@ -120,6 +120,12 @@ function UserProvider(props) {
     }
     /*********** END Login ***********/
 
+    /*********** Logout ***********/
+    const handleLogout = () => {
+        API.logoutUser();
+    }
+    /*********** END Logout ***********/
+
     return (
         <UserContext.Provider
             value={{
@@ -131,7 +137,8 @@ function UserProvider(props) {
                 ...user,
                 loginUserRef,
                 loginPassRef,
-                handleLogin
+                handleLogin,
+                handleLogout
             }}
         >
             {props.children}
