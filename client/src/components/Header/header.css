@@ -13,6 +13,25 @@ header .logo {
     line-height: 0.9;
     color: #43DDE6;
     padding: 28px 0 60px;
+    position: relative;
+}
+
+header .logo::before,
+header .logo::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #43DDE6;
+    position: absolute;
+    right: 36px
+}
+
+header .logo::before {
+    top: 75px;
+}
+
+header .logo::after {
+    bottom: 101px;
 }
 
 nav {
