@@ -34,7 +34,7 @@ function UserProvider(props) {
         getUserData();
     }, [])
 
-    // Signup
+    /*********** Signup ***********/
     const signupUserRef = createRef();
     const signupPassRef = createRef();
     const signupConfirmdRef = createRef();
@@ -44,7 +44,7 @@ function UserProvider(props) {
         copy: ''
     });
 
-    const handleSignup = (e) => {
+    const handleSignup = e => {
         e.preventDefault();
 
         const username = signupUserRef.current.value;
@@ -90,7 +90,35 @@ function UserProvider(props) {
             })
         )
     }
-    // End Signup
+    /*********** END Signup ***********/
+
+    /*********** Login ***********/
+    const loginUserRef = createRef();
+    const loginPassRef = createRef();
+
+    const handleLogin = e => {
+        e.preventDefault();
+
+        const username = loginUserRef.current.value;
+        const password = loginPassRef.current.value;
+
+        username && password ? (
+            API.loginUser({
+                username,
+                password
+            })
+                .then(res => {
+                    console.log('User is logged in...', res);
+                    getUserData();
+                })
+                .catch(err => {
+                    console.log('Login failed...', err)
+                })
+        ) : (
+            console.log('Please fill in all the fields.')
+        )
+    }
+    /*********** END Login ***********/
 
     return (
         <UserContext.Provider
@@ -100,7 +128,10 @@ function UserProvider(props) {
                 signupConfirmdRef,
                 handleSignup,
                 signupAlert,
-                ...user
+                ...user,
+                loginUserRef,
+                loginPassRef,
+                handleLogin
             }}
         >
             {props.children}
