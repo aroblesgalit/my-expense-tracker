@@ -35,9 +35,9 @@ function UserProvider(props) {
     }, [])
 
     // Signup
-    const usernameRef = createRef();
-    const passwordRef = createRef();
-    const confirmPasswordRef = createRef();
+    const signupUserRef = createRef();
+    const signupPassRef = createRef();
+    const signupConfirmdRef = createRef();
 
     const [signupAlert, setSignupAlert] = useState({
         type: '',
@@ -47,9 +47,9 @@ function UserProvider(props) {
     const handleSignup = (e) => {
         e.preventDefault();
 
-        const username = usernameRef.current.value;
-        const password = passwordRef.current.value;
-        const confirmPassword = confirmPasswordRef.current.value;
+        const username = signupUserRef.current.value;
+        const password = signupPassRef.current.value;
+        const confirmPassword = signupConfirmdRef.current.value;
 
         username && password && confirmPassword ? (
             password === confirmPassword ? (
@@ -95,9 +95,9 @@ function UserProvider(props) {
     return (
         <UserContext.Provider
             value={{
-                usernameRef,
-                passwordRef,
-                confirmPasswordRef,
+                signupUserRef,
+                signupPassRef,
+                signupConfirmdRef,
                 handleSignup,
                 signupAlert,
                 ...user

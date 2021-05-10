@@ -9,7 +9,7 @@ function SignupForm() {
         <UserConsumer>
             {
                 value => {
-                    const { usernameRef, passwordRef, confirmPasswordRef, handleSignup, signupAlert } = value;
+                    const { signupUserRef, signupPassRef, signupConfirmdRef, handleSignup, signupAlert } = value;
                     return (
                         <form className='signup-form'>
                             <div>
@@ -18,7 +18,7 @@ function SignupForm() {
                                     label='Username'
                                     name='username'
                                     border='#CDCDCD'
-                                    ref={usernameRef}
+                                    ref={signupUserRef}
                                 />
                             </div>
                             <div className='mt-2'>
@@ -27,7 +27,7 @@ function SignupForm() {
                                     label='Password'
                                     name='password'
                                     border='#CDCDCD'
-                                    ref={passwordRef}
+                                    ref={signupPassRef}
                                 />
                             </div>
                             <div className='mt-2'>
@@ -36,7 +36,7 @@ function SignupForm() {
                                     label='Confirm Password'
                                     name='confirm-password'
                                     border='#CDCDCD'
-                                    ref={confirmPasswordRef}
+                                    ref={signupConfirmdRef}
                                 />
                             </div>
                             <p className={`signup-alert ${signupAlert.type === 'success' ? 'success' : 'fail'}`}>{signupAlert.copy}</p>
