@@ -29,7 +29,9 @@ function Header() {
                             </nav>
                             <Button 
                                 type='button'
-                                value='Log out'
+                                text='Log out'
+                                action='secondary'
+                                color='gray'
                                 onClick={handleLogout}
                             />
                         </header>

@@ -122,7 +122,11 @@ function UserProvider(props) {
 
     /*********** Logout ***********/
     const handleLogout = () => {
-        API.logoutUser();
+        API.logoutUser()
+            .then(() => {
+                getUserData();
+            })
+            .catch(err => console.log(err))
     }
     /*********** END Logout ***********/
 
