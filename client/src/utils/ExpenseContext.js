@@ -1,14 +1,13 @@
-import React, { createRef } from 'react';
+import React, { createRef, useContext } from 'react';
 import API from './API';
+import UserContext from './UserContext';
 
 const ExpenseContext = React.createContext();
 
 // Provider
 function ExpenseProvider(props) {
 
-    // function addExpense(data) {
-    //     API.addExpense(data)
-    // }
+    const { userData } = useContext(UserContext);
 
     /*********** Expense Add Form ***********/
     const expDateRef = createRef();
@@ -19,6 +18,7 @@ function ExpenseProvider(props) {
     function addExpense(e) {
         e.preventDefault();
 
+        const user = userData._id;
         const date = expDateRef.current.value;
         const category = expCategoryRef.current.value;
         const description = expDescRef.current.value;
@@ -26,6 +26,7 @@ function ExpenseProvider(props) {
 
         date && category && description && amount ? (
             API.addExpense({
+                user,
                 date,
                 category,
                 description,

@@ -14,6 +14,7 @@ function UserProvider(props) {
     function getUserData() {
         API.getUserData()
             .then(res => {
+                console.log(res.data);
                 setUser({
                     ...user,
                     isLoggedIn: true,

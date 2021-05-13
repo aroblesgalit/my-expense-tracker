@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require('./user');
 
 const expenseSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: User
+        ref: User,
+        required: true
     },
     date: {
         type: Date,
