@@ -5,26 +5,29 @@ import Header from './components/Header';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { UserProvider } from './utils/UserContext';
+import { ExpenseProvider } from './utils/ExpenseContext';
 import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <UserProvider>
-      <Router>
-        <Header />
-        <Switch>
-          <Route path='/signup'>
-            <PublicRoute component={Signup} />
-          </Route>
-          <Route path='/login'>
-            <PublicRoute component={Login} />
-          </Route>
-          <Route path='/expenses'>
-            <ProtectedRoute component={Expenses} />
-          </Route>
-        </Switch>
-      </Router>
+      <ExpenseProvider>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path='/signup'>
+              <PublicRoute component={Signup} />
+            </Route>
+            <Route path='/login'>
+              <PublicRoute component={Login} />
+            </Route>
+            <Route path='/expenses'>
+              <ProtectedRoute component={Expenses} />
+            </Route>
+          </Switch>
+        </Router>
+      </ExpenseProvider>
     </UserProvider>
   );
 }
