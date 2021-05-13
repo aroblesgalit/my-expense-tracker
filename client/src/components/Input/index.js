@@ -8,7 +8,7 @@ const Input = React.forwardRef(({ type, label, name, options, border, onChange }
             type === 'dropdown' && (
                 <>
                     <label htmlFor={name}>{label}</label>
-                    <select name={name}>
+                    <select name={name} ref={ref}>
                         {
                             options.map(option => <option key={option.toLowerCase()} value={option.toLowerCase()}>{option}</option>)
                         }
@@ -39,6 +39,7 @@ const Input = React.forwardRef(({ type, label, name, options, border, onChange }
                             name={name}
                             type={type}
                             min='0.01'
+                            ref={ref}
                         />
                     </div>
                 </>
