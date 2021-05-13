@@ -24,7 +24,27 @@ function ExpenseProvider(props) {
         const description = expDescRef.current.value;
         const amount = expAmountRef.current.value;
 
-        console.log(date, category, description, amount);
+        date && category && description && amount ? (
+            API.addExpense({
+                date,
+                category,
+                description,
+                amount
+            })
+                .then(res => {
+                    // Show alert that expense has been added
+                    // Remove alert after 5 seconds
+                    console.log('Expense added...', res);
+                    // Clear form
+                })
+                .catch(err => {
+                    // Show error message
+                    console.log('Oh no! Something wen\'t wrong!', err);
+                })
+        ) : (
+            // Show alert that all fields must be filled in
+            console.log('Please fill in all the fields to continue.')
+        )
     }
     /*********** Expense Add Form ***********/
 
