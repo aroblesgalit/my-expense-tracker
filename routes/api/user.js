@@ -31,10 +31,14 @@ router.get('/user_data', (req, res) => {
     if (!req.user) {
         res.status(401).json({});
     } else {
-        db.User
-            .findOne({ username: req.user.username })
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+        res.json({
+            id: req.user._id,
+            username: req.user.username
+        })
+        // db.User
+        //     .findOne({ username: req.user.username })
+        //     .then(dbModel => res.json(dbModel))
+        //     .catch(err => res.status(422).json(err));
     }
 });
 
