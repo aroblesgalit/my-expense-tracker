@@ -1,4 +1,4 @@
-import React, { createRef, useContext } from 'react';
+import React, { createRef, useContext, useEffect, useState } from 'react';
 import API from './API';
 import UserContext from './UserContext';
 
@@ -7,7 +7,20 @@ const ExpenseContext = React.createContext();
 // Provider
 function ExpenseProvider(props) {
 
-    const { userData } = useContext(UserContext);
+    const { isLoggedIn, userData } = useContext(UserContext);
+
+    /*********** Expense Table ***********/
+    const [expenses, setExpenses] = useState([]);
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            API.getAllExpenses()
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err));
+        }
+    }, [isLoggedIn])
+    /*********** END Expense Table ***********/
+
 
     /*********** Expense Add Form ***********/
     const expDateRef = createRef();
@@ -47,7 +60,7 @@ function ExpenseProvider(props) {
             console.log('Please fill in all the fields to continue.')
         )
     }
-    /*********** Expense Add Form ***********/
+    /*********** END Expense Add Form ***********/
 
     return (
         <ExpenseContext.Provider
