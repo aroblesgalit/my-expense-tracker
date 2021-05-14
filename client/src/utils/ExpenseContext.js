@@ -14,23 +14,27 @@ function ExpenseProvider(props) {
 
     useEffect(() => {
         if (isLoggedIn) {
-            API.getAllExpenses(userData.id)
-                .then(res => {
-                    let tempExpenses = res.data;
-                    tempExpenses.forEach((expense, i) => {
-                        let currentDate = new Date(expense.date);
-                        // let week = currentDate.getDay();
-                        let month = currentDate.getMonth();
-                        let day = currentDate.getDate();
-                        let year = currentDate.getFullYear();
-                        tempExpenses[i].date = `${month + 1}/${day}/${year}`
-                    })
-                    return tempExpenses;
-                })
-                .then(res => setExpenses(res))
-                .catch(err => console.log(err));
+            getAllExpenses();
         }
     }, [isLoggedIn])
+
+    function getAllExpenses() {
+        API.getAllExpenses(userData.id)
+            .then(res => {
+                let tempExpenses = res.data;
+                tempExpenses.forEach((expense, i) => {
+                    let currentDate = new Date(expense.date);
+                    // let week = currentDate.getDay();
+                    let month = currentDate.getMonth();
+                    let day = currentDate.getDate();
+                    let year = currentDate.getFullYear();
+                    tempExpenses[i].date = `${month + 1}/${day + 1}/${year}`
+                })
+                return tempExpenses;
+            })
+            .then(res => setExpenses(res))
+            .catch(err => console.log(err));
+    }
     /*********** END Expense Table ***********/
 
 
@@ -61,6 +65,8 @@ function ExpenseProvider(props) {
                     // Show alert that expense has been added
                     // Remove alert after 5 seconds
                     console.log('Expense added...', res);
+                    // Get all expenses again to update table
+                    getAllExpenses();
                     // Clear form
                 })
                 .catch(err => {
