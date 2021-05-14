@@ -18,7 +18,9 @@ function Expenses() {
                 />
             </div>
             <div className='mt-1'>
-                <Table />
+                <Table 
+                    headings={['Date', 'Category', 'Description', 'Amount']}
+                />
             </div>
             <ExpenseConsumer>
                 {
