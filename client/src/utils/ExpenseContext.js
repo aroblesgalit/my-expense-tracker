@@ -16,8 +16,18 @@ function ExpenseProvider(props) {
         if (isLoggedIn) {
             API.getAllExpenses(userData.id)
                 .then(res => {
-                    setExpenses(res.data);
+                    let tempExpenses = res.data;
+                    tempExpenses.forEach((expense, i) => {
+                        let currentDate = new Date(expense.date);
+                        // let week = currentDate.getDay();
+                        let month = currentDate.getMonth();
+                        let day = currentDate.getDate();
+                        let year = currentDate.getFullYear();
+                        tempExpenses[i].date = `${month + 1}/${day}/${year}`
+                    })
+                    return tempExpenses;
                 })
+                .then(res => setExpenses(res))
                 .catch(err => console.log(err));
         }
     }, [isLoggedIn])
