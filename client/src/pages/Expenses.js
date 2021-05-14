@@ -18,9 +18,17 @@ function Expenses() {
                 />
             </div>
             <div className='mt-1'>
-                <Table 
-                    headings={['Date', 'Category', 'Description', 'Amount']}
-                />
+                <ExpenseConsumer>
+                    {
+                        value => {
+                            const { expenses } = value;
+                            return <Table
+                                headings={['Date', 'Category', 'Description', 'Amount']}
+                                rows={expenses}
+                            />
+                        }
+                    }
+                </ExpenseConsumer>
             </div>
             <ExpenseConsumer>
                 {

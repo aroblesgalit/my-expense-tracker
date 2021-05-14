@@ -7,14 +7,14 @@ function Table({ headings, rows }) {
             <thead>
                 <tr>
                     {
-                        headings.map((heading, i) => <th key={`i-${heading}`}>{heading}</th>)
+                        headings.map((heading, i) => <th key={`${i}-${heading}`}>{heading}</th>)
                     }
                 </tr>
             </thead>
             <tbody>
                 {
                     rows && rows.map((row, i) => (
-                        <tr key={`i-${row.date}-${row.category}-${row.description}`}>
+                        <tr key={`${i}-${row.date}-${row.category}-${row.description}`}>
                             <td>{row.date}</td>
                             <td>{row.category}</td>
                             <td>{row.description}</td>

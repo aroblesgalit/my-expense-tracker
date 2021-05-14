@@ -14,8 +14,10 @@ function ExpenseProvider(props) {
 
     useEffect(() => {
         if (isLoggedIn) {
-            API.getAllExpenses()
-                .then(res => console.log(res.data))
+            API.getAllExpenses(userData.id)
+                .then(res => {
+                    setExpenses(res.data);
+                })
                 .catch(err => console.log(err));
         }
     }, [isLoggedIn])
@@ -69,7 +71,8 @@ function ExpenseProvider(props) {
                 expCategoryRef,
                 expDescRef,
                 expAmountRef,
-                addExpense
+                addExpense,
+                expenses
             }}
         >
             {props.children}
