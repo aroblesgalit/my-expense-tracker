@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 router.post('/login', passport.authenticate('local'), (req, res) => {
     res.json(req.user);
-    res.redirect('/expenses');
+    // res.redirect('/expenses');
 });
 
 router.post('/signup', (req, res) => {

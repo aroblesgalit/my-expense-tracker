@@ -18,8 +18,8 @@ function ExpenseProvider(props) {
     function addExpense(e) {
         e.preventDefault();
 
-        const user = userData._id;
-        const date = expDateRef.current.value;
+        const user = userData.id;
+        const date = new Date(expDateRef.current.value);
         const category = expCategoryRef.current.value;
         const description = expDescRef.current.value;
         const amount = expAmountRef.current.value;

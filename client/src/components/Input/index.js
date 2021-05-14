@@ -10,7 +10,7 @@ const Input = React.forwardRef(({ type, label, name, options, border, onChange }
                     <label htmlFor={name}>{label}</label>
                     <select name={name} ref={ref}>
                         {
-                            options.map(option => <option key={option.toLowerCase()} value={option.toLowerCase()}>{option}</option>)
+                            options.map(option => <option key={option} value={option}>{option}</option>)
                         }
                     </select>
                 </>
