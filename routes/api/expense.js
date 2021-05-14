@@ -3,8 +3,11 @@ const expensesController = require('../../controllers/expensesController');
 
 // Matches with 'api/expenses'
 router.route('/')
-    .get(expensesController.getAll)
     .post(expensesController.add)
+
+// Matches with 'api/expenses/:user'
+router.route('/:user')
+    .get(expensesController.getAll)
 
 // Matches with '/api/expenses/:id'
 router.route('/:id')

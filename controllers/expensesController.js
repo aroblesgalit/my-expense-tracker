@@ -10,7 +10,7 @@ module.exports = {
     },
     getAll: function (req, res) {
         db.Expense
-            .find({})
+            .find({ user: req.params.user })
             .sort({ date: 1 })
             .then(dbModels => res.json(dbModels))
             .catch(err => res.status(422).json(err));

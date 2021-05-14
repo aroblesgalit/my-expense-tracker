@@ -18,8 +18,8 @@ export default {
     addExpense: function (data) {
         return axios.post('/api/expenses', data);
     },
-    getAllExpenses: function () {
-        return axios.get('/api/expenses');
+    getAllExpenses: function (user) {
+        return axios.get('/api/expenses/' + user);
     },
     updateExpense: function (id, data) {
         return axios.put('/api/expenses/' + id, data);
