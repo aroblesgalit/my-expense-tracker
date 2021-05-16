@@ -22,24 +22,6 @@ function Table({ headings, rows }) {
                         </tr>
                     ))
                 }
-                {/* <tr>
-                    <td>5/2/2021</td>
-                    <td>Grocery</td>
-                    <td>Weekly grocery</td>
-                    <td>$39.94</td>
-                </tr>
-                <tr>
-                    <td>5/2/2021</td>
-                    <td>Grocery</td>
-                    <td>Weekly grocery</td>
-                    <td>$39.94</td>
-                </tr>
-                <tr>
-                    <td>5/3/2021</td>
-                    <td>Auto &amp; Transport</td>
-                    <td>Auto insurance</td>
-                    <td>$130.42</td>
-                </tr> */}
             </tbody>
         </table>
     )
