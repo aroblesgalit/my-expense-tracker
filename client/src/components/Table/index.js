@@ -9,6 +9,7 @@ function Table({ headings, rows }) {
                     {
                         headings.map((heading, i) => <th key={`${i}-${heading}`}>{heading}</th>)
                     }
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -18,7 +19,11 @@ function Table({ headings, rows }) {
                             <td>{row.date}</td>
                             <td>{row.category}</td>
                             <td>{row.description}</td>
-                            <td>{row.amount}</td>
+                            <td>${row.amount}</td>
+                            <td>
+                                <button>Edit</button>&nbsp;
+                                <button>Delete</button>
+                            </td>
                         </tr>
                     ))
                 }
