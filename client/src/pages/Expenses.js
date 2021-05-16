@@ -21,10 +21,11 @@ function Expenses() {
                 <ExpenseConsumer>
                     {
                         value => {
-                            const { expenses } = value;
+                            const { expenses, deleteExpense } = value;
                             return <Table
                                 headings={['Date', 'Category', 'Description', 'Amount']}
                                 rows={expenses}
+                                handleDelete={deleteExpense}
                             />
                         }
                     }

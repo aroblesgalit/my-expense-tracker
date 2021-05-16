@@ -80,6 +80,13 @@ function ExpenseProvider(props) {
     }
     /*********** END Expense Add Form ***********/
 
+
+    /*********** Expense Delete ***********/
+    function deleteExpense(id) {
+        console.log(id);
+    }
+    /*********** END Expense Delete ***********/
+
     return (
         <ExpenseContext.Provider
             value={{
@@ -88,7 +95,8 @@ function ExpenseProvider(props) {
                 expDescRef,
                 expAmountRef,
                 addExpense,
-                expenses
+                expenses,
+                deleteExpense
             }}
         >
             {props.children}

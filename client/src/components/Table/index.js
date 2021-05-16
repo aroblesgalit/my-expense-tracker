@@ -1,7 +1,7 @@
 import React from 'react';
 import './table.css';
 
-function Table({ headings, rows }) {
+function Table({ headings, rows, handleDelete }) {
     return (
         <table>
             <thead>
@@ -22,7 +22,7 @@ function Table({ headings, rows }) {
                             <td>${row.amount}</td>
                             <td>
                                 <button>Edit</button>&nbsp;
-                                <button>Delete</button>
+                                <button onClick={() => handleDelete(row._id)}>Delete</button>
                             </td>
                         </tr>
                     ))
