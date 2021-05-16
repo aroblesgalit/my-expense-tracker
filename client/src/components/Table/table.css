@@ -18,11 +18,11 @@ table th {
     padding-bottom: 10px;
 }
 
-table td {
+table td:not(:last-child) {
     padding: 20px 0;
 }
 
-table tbody tr:nth-child(even) {
+table tbody tr:not(:last-child):nth-child(even) {
     background-color: #F7F7F7;
 }
 
@@ -46,15 +46,22 @@ table tbody tr td button {
     cursor: pointer;
 }
 
-table>tbody>tr>td:last-child {
+table>tbody>tr:not(:last-child)>td:last-child {
     opacity: 0;
 }
 
-table>tbody>tr:hover {
+table>tbody>tr:not(:last-child):hover {
     background-color: rgba(67, 221, 230, .2);
 }
 
-table>tbody>tr:hover td:last-child {
+table>tbody>tr:not(:last-child):hover td:last-child {
     opacity: 1;
     pointer-events: initial;
+}
+
+table>tbody>tr:last-child td {
+    font-size: 14px;
+    border-top: 1px solid #DEE4EB;
+    padding-top: 20px;
+    text-align: right;
 }

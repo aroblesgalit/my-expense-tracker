@@ -27,6 +27,11 @@ function Table({ headings, rows, handleDelete }) {
                         </tr>
                     ))
                 }
+                <tr>
+                    <td colSpan='5'>
+                        1-10 of 12
+                    </td>
+                </tr>
             </tbody>
         </table>
     )
