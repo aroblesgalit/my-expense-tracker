@@ -41,3 +41,20 @@ table tbody tr td:last-child {
     text-align: right;
     padding-right: 10px;
 }
+
+table tbody tr td button {
+    cursor: pointer;
+}
+
+table>tbody>tr>td:last-child {
+    opacity: 0;
+}
+
+table>tbody>tr:hover {
+    background-color: rgba(67, 221, 230, .2);
+}
+
+table>tbody>tr:hover td:last-child {
+    opacity: 1;
+    pointer-events: initial;
+}
