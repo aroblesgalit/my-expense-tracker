@@ -84,6 +84,13 @@ function ExpenseProvider(props) {
     /*********** Expense Delete ***********/
     function deleteExpense(id) {
         console.log(id);
+        API.deleteExpense(id)
+            .then(res => {
+                // Alert deleted expense
+                console.log('Deleted expense: ', res);
+                getAllExpenses();
+            })
+            .catch(err => console.log('Oh no! Something wen\'t wrong!', err));
     }
     /*********** END Expense Delete ***********/
 
