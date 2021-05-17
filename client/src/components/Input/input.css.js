@@ -1,4 +1,13 @@
 import MuiInput from '@material-ui/core/Input';
+import MuiInputLabel from '@material-ui/core/InputLabel';
+
+export const InputLabel = withStyles({
+    root: {
+        fontSize: '12px',
+        color: '#8A9BAE',
+        marginBottom: '8px'
+    }
+})(MuiInputLabel);
 
 export const Input = withStyles({
     root: {
