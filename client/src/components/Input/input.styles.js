@@ -16,7 +16,8 @@ export const Input = withStyles({
         color: '#364F6B',
         padding: '12px',
         borderRadius: '6px',
-        border: 'none',
-        cursor: 'pointer'
+        border: '1px solid #CDCDCD',
+        cursor: 'pointer',
+        height: '40px'
     }
 })(MuiInput);

@@ -67,6 +67,8 @@ export const TextInput = React.forwardRef(({ type, label, name, options, onChang
                 type={type}
                 onChange={onChange}
                 inputRef={ref}
+                fullWidth
+                disableUnderline
             />
         </>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 import './loginForm.css';
-import Input from '../Input';
+import { TextInput } from '../Input';
 import Button from '../Button';
 import { UserConsumer } from '../../utils/UserContext';
 
@@ -13,7 +13,7 @@ function LoginForm() {
                     return (
                         <form className='login-form'>
                             <div>
-                                <Input
+                                <TextInput
                                     type='text'
                                     label='Username'
                                     name='username'
@@ -22,8 +22,8 @@ function LoginForm() {
                                 />
                             </div>
                             <div className='mt-2'>
-                                <Input
-                                    type='text'
+                                <TextInput
+                                    type='password'
                                     label='Password'
                                     name='password'
                                     border='#CDCDCD'

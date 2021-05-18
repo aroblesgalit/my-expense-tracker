@@ -1,6 +1,6 @@
 import React from 'react';
 import './signupForm.css';
-import Input from '../Input';
+import { TextInput } from '../Input';
 import Button from '../Button';
 import { UserConsumer } from '../../utils/UserContext';
 
@@ -13,7 +13,7 @@ function SignupForm() {
                     return (
                         <form className='signup-form'>
                             <div>
-                                <Input
+                                <TextInput
                                     type='text'
                                     label='Username'
                                     name='username'
@@ -22,8 +22,8 @@ function SignupForm() {
                                 />
                             </div>
                             <div className='mt-2'>
-                                <Input
-                                    type='text'
+                                <TextInput
+                                    type='password'
                                     label='Password'
                                     name='password'
                                     border='#CDCDCD'
@@ -31,8 +31,8 @@ function SignupForm() {
                                 />
                             </div>
                             <div className='mt-2'>
-                                <Input
-                                    type='text'
+                                <TextInput
+                                    type='password'
                                     label='Confirm Password'
                                     name='confirm-password'
                                     border='#CDCDCD'
