@@ -1,5 +1,6 @@
 import React from 'react';
-import './input.css';
+import './input.styles';
+import { Input, InputLabel } from './input.styles.js';
 
 const Input = React.forwardRef(({ type, label, name, options, border, onChange }, ref) => (
 
@@ -19,13 +20,21 @@ const Input = React.forwardRef(({ type, label, name, options, border, onChange }
         {
             (type === 'date' || type === 'text') && (
                 <>
-                    <label htmlFor={name}>{label}</label>
+                    {/* <label htmlFor={name}>{label}</label>
                     <input
                         name={name}
                         type={type}
                         style={border && { border: `1px solid ${border}`, width: '100%' }}
                         onChange={onChange}
                         ref={ref}
+                    /> */}
+                    <InputLabel htmlFor={name}>{label}</InputLabel>
+                    <Input
+                        id={name}
+                        name={name}
+                        type={type}
+                        onChange={onChange}
+                        inputRef={ref}
                     />
                 </>
             )
@@ -47,6 +56,21 @@ const Input = React.forwardRef(({ type, label, name, options, border, onChange }
         }
     </div>
 ));
+
+export const TextInput = React.forwardRef({ type, label, name, options, onChange }, ref) => {
+    return (
+        <>
+            <InputLabel htmlFor={name}>{label}</InputLabel>
+            <Input
+                id={name}
+                name={name}
+                type={type}
+                onChange={onChange}
+                inputRef={ref}
+            />
+        </>
+    )
+}
 
 
 export default Input;
