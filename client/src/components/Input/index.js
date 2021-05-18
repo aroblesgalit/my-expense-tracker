@@ -2,7 +2,7 @@ import React from 'react';
 import './input.styles';
 import { Input, InputLabel } from './input.styles.js';
 
-const Input = React.forwardRef(({ type, label, name, options, border, onChange }, ref) => (
+const CustomInput = React.forwardRef(({ type, label, name, options, border, onChange }, ref) => (
 
     <div className='wrapper input'>
         {
@@ -57,7 +57,7 @@ const Input = React.forwardRef(({ type, label, name, options, border, onChange }
     </div>
 ));
 
-export const TextInput = React.forwardRef({ type, label, name, options, onChange }, ref) => {
+export const TextInput = React.forwardRef(({ type, label, name, options, onChange }, ref) => {
     return (
         <>
             <InputLabel htmlFor={name}>{label}</InputLabel>
@@ -70,7 +70,7 @@ export const TextInput = React.forwardRef({ type, label, name, options, onChange
             />
         </>
     )
-}
+});
 
 
-export default Input;
+export default CustomInput;
