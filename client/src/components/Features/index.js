@@ -2,14 +2,17 @@ import React from 'react';
 import './features.css';
 import leftArrow from '../../images/left-arrow.svg';
 import rightArrow from '../../images/right-arrow.svg';
-import { Grid } from './features.styles';
+import { useStyles, Grid } from './features.styles';
 // import { UserConsumer } from '../../utils/UserContext';
 
 function Features() {
+
+    const classes = useStyles();
+
     return (
         <Grid item sm={7} xs={12}>
             <div>
-                <div className='logo'>my expense tracker</div>
+                <div className={classes.logo}>my expense tracker</div>
             </div>
             <div className='features-wrapper'>
                 <div className='features'>

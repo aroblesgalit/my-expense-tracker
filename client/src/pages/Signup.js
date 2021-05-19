@@ -19,9 +19,7 @@ function Signup() {
         //     </div>
         // </div>
         <Grid container>
-            <Grid item sm={7} xs={12}>
-                <Features />
-            </Grid>
+            <Features />
             <Grid item sm={5} xs={12}>
                 <h1>Signup</h1>
                 <SignupForm />
