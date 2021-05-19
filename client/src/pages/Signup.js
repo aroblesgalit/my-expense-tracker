@@ -4,7 +4,7 @@ import './pages.css';
 import SignupForm from '../components/SignupForm';
 import Features from '../components/Features';
 import { Link } from 'react-router-dom';
-import { Container, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 function Signup() {
     return (
