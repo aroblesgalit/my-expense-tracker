@@ -1,7 +1,7 @@
 import React from 'react';
 // import './features.css';
-import { useStyles, FeaturesContainer, FeatureImagePaper, ArrowBackIos, ArrowForwardIos } from './features.styles';
-import { Grid, Paper } from '@material-ui/core';
+import { useStyles, FeaturesContainer, FeatureImagePaper, CaptionTypography, ArrowBackIos, ArrowForwardIos } from './features.styles';
+import { Grid } from '@material-ui/core';
 // import { UserConsumer } from '../../utils/UserContext';
 
 function Features() {
@@ -26,7 +26,7 @@ function Features() {
                     </Grid>
                 </Grid>
                 <Grid container item xs={12}>
-                    <p>Add a transaction</p>
+                    <CaptionTypography variant='body1' align='center'>Add a transaction</CaptionTypography>
                 </Grid>
                 <Grid container item xs={12} className='feat-slick-dots'>
                     <span className='active'></span>

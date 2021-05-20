@@ -1,6 +1,7 @@
 import { makeStyles, withStyles } from '@material-ui/core';
 import MuiGrid from '@material-ui/core/Grid';
 import MuiPaper from '@material-ui/core/Paper';
+import MuiTypography from '@material-ui/core/Typography';
 import MuiArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import MuiArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 
@@ -32,6 +33,14 @@ export const FeatureImagePaper = withStyles({
         width: '100%'
     }
 })(MuiPaper);
+
+export const CaptionTypography = withStyles({
+    root: {
+        color: "#F0F0F0",
+        fontSize: '18px',
+        width: '100%'
+    }
+})(MuiTypography);
 
 export const ArrowBackIos = withStyles({
     root: {
