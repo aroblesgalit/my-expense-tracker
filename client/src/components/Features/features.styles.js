@@ -19,14 +19,18 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'space-between',
         marginTop: '24px',
-        width: '100px',
+        maxWidth: '100px',
 
         '&>span': {
-            minWidth: '10px',
-            minHeight: '10px',
+            width: '10px',
+            height: '10px',
             backgroundColor: '#8A9BAE',
             borderRadius: '50%',
-            cursor: 'pointer'
+            cursor: 'pointer',
+        },
+
+        '&>span.active': {
+            backgroundColor: '#43DDE6'
         }
     }
 }));

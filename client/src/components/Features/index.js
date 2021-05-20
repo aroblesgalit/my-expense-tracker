@@ -13,7 +13,7 @@ function Features() {
             <Grid item xs={12}>
                 <div className={classes.logo}>my expense tracker</div>
             </Grid>
-            <Grid container item xs={12} container='column'>
+            <Grid container item xs={12} container='column' justify='center'>
                 <Grid container item xs={12}>
                     <Grid container item xs={1} alignContent='center' justify='flex-start'>
                         <ArrowBackIos />
@@ -28,8 +28,8 @@ function Features() {
                 <Grid container item xs={12}>
                     <CaptionTypography variant='body1' align='center'>Add a transaction</CaptionTypography>
                 </Grid>
-                <Grid container item xs={12} className='feat-slick-dots'>
-                    <span className='active'></span>
+                <Grid container item xs={12} className={classes.slickDots}>
+                    <span className={classes.active}></span>
                     <span></span>
                     <span></span>
                     <span></span>
