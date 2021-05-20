@@ -14,6 +14,20 @@ export const useStyles = makeStyles(() => ({
         padding: '28px 0 60px',
         width: '180px',
         position: 'relative'
+    },
+    slickDots: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginTop: '24px',
+        width: '100px',
+
+        '&>span': {
+            minWidth: '10px',
+            minHeight: '10px',
+            backgroundColor: '#8A9BAE',
+            borderRadius: '50%',
+            cursor: 'pointer'
+        }
     }
 }));
 
@@ -51,7 +65,7 @@ export const ArrowBackIos = withStyles({
             color: '#43DDE6'
         }
     }
-})(MuiArrowBackIos);   
+})(MuiArrowBackIos);
 
 export const ArrowForwardIos = withStyles({
     root: {
