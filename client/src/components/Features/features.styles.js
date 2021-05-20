@@ -1,5 +1,7 @@
 import { makeStyles, withStyles } from '@material-ui/core';
 import MuiGrid from '@material-ui/core/Grid';
+import MuiArrowBackIos from '@material-ui/icons/ArrowBackIos';
+import MuiArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 
 export const useStyles = makeStyles(() => ({
     logo: {
@@ -23,14 +25,14 @@ export const FeaturesContainer = withStyles({
 
 })(MuiGrid);
 
-export const LogoWrapper = withStyles({
+export const ArrowBackIos = withStyles({
     root: {
-
+        color: '#fff'
     }
-})(MuiGrid);
+})(MuiArrowBackIos);   
 
-export const FeaturesWrapper = withStyles({
+export const ArrowForwardIos = withStyles({
     root: {
-        
+        color: '#fff'
     }
-})(MuiGrid);
+})(MuiArrowForwardIos);

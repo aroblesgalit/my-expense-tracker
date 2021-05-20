@@ -1,8 +1,6 @@
 import React from 'react';
 import './features.css';
-import leftArrow from '../../images/left-arrow.svg';
-import rightArrow from '../../images/right-arrow.svg';
-import { useStyles, FeaturesContainer, LogoWrapper, FeaturesWrapper } from './features.styles';
+import { useStyles, FeaturesContainer, ArrowBackIos, ArrowForwardIos } from './features.styles';
 import { Grid, Paper } from '@material-ui/core';
 // import { UserConsumer } from '../../utils/UserContext';
 
@@ -11,20 +9,20 @@ function Features() {
     const classes = useStyles();
 
     return (
-        <FeaturesContainer container item sm={7} xs={12}>
+        <FeaturesContainer component='section' container item sm={7} xs={12}>
             <Grid item xs={12}>
                 <div className={classes.logo}>my expense tracker</div>
             </Grid>
             <Grid container item xs={12} container='column'>
                 <Grid container item xs={12}>
                     <Grid container item xs={1}>
-                        <img src={leftArrow} alt="Left arrow" />
+                        <ArrowBackIos />
                     </Grid>
                     <Grid container item xs={10}>
                         <Paper elevation={1}>image</Paper>
                     </Grid>
                     <Grid container item xs={1}>
-                        <img src={rightArrow} alt="Left arrow" />
+                        <ArrowForwardIos />
                     </Grid>
                 </Grid>
                 <Grid container item xs={12}>
