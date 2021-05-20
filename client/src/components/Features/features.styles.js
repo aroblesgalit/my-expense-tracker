@@ -1,5 +1,6 @@
 import { makeStyles, withStyles } from '@material-ui/core';
 import MuiGrid from '@material-ui/core/Grid';
+import MuiPaper from '@material-ui/core/Paper';
 import MuiArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import MuiArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 
@@ -25,14 +26,31 @@ export const FeaturesContainer = withStyles({
 
 })(MuiGrid);
 
+export const FeatureImagePaper = withStyles({
+    root: {
+        height: '420px',
+        width: '100%'
+    }
+})(MuiPaper);
+
 export const ArrowBackIos = withStyles({
     root: {
-        color: '#fff'
+        color: '#8A9BAE',
+        cursor: 'pointer',
+
+        '&:hover': {
+            color: '#43DDE6'
+        }
     }
 })(MuiArrowBackIos);   
 
 export const ArrowForwardIos = withStyles({
     root: {
-        color: '#fff'
+        color: '#8A9BAE',
+        cursor: 'pointer',
+
+        '&:hover': {
+            color: '#43DDE6'
+        }
     }
 })(MuiArrowForwardIos);

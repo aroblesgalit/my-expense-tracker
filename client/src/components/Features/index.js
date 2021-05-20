@@ -1,6 +1,6 @@
 import React from 'react';
-import './features.css';
-import { useStyles, FeaturesContainer, ArrowBackIos, ArrowForwardIos } from './features.styles';
+// import './features.css';
+import { useStyles, FeaturesContainer, FeatureImagePaper, ArrowBackIos, ArrowForwardIos } from './features.styles';
 import { Grid, Paper } from '@material-ui/core';
 // import { UserConsumer } from '../../utils/UserContext';
 
@@ -15,13 +15,13 @@ function Features() {
             </Grid>
             <Grid container item xs={12} container='column'>
                 <Grid container item xs={12}>
-                    <Grid container item xs={1}>
+                    <Grid container item xs={1} alignContent='center' justify='flex-start'>
                         <ArrowBackIos />
                     </Grid>
                     <Grid container item xs={10}>
-                        <Paper elevation={1}>image</Paper>
+                        <FeatureImagePaper elevation={1}>image</FeatureImagePaper>
                     </Grid>
-                    <Grid container item xs={1}>
+                    <Grid container item xs={1} alignContent='center' justify='flex-end'>
                         <ArrowForwardIos />
                     </Grid>
                 </Grid>
