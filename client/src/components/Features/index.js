@@ -2,7 +2,8 @@ import React from 'react';
 import './features.css';
 import leftArrow from '../../images/left-arrow.svg';
 import rightArrow from '../../images/right-arrow.svg';
-import { useStyles, Grid } from './features.styles';
+import { useStyles, FeaturesContainer, LogoWrapper, FeaturesWrapper } from './features.styles';
+import { Grid, Paper } from '@material-ui/core';
 // import { UserConsumer } from '../../utils/UserContext';
 
 function Features() {
@@ -10,26 +11,34 @@ function Features() {
     const classes = useStyles();
 
     return (
-        <Grid item sm={7} xs={12}>
-            <div>
+        <FeaturesContainer container item sm={7} xs={12}>
+            <Grid item xs={12}>
                 <div className={classes.logo}>my expense tracker</div>
-            </div>
-            <div className='features-wrapper'>
-                <div className='features'>
-                    <div className='feat-left-arrow'><img src={leftArrow} alt="Left arrow" /></div>
-                    <div className='feat-image-wrapper'>image</div>
-                    <div className='feat-right-arrow'><img src={rightArrow} alt="Left arrow" /></div>
-                </div>
-                <p>Add a transaction</p>
-                <div className='feat-slick-dots'>
+            </Grid>
+            <Grid container item xs={12} container='column'>
+                <Grid container item xs={12}>
+                    <Grid container item xs={1}>
+                        <img src={leftArrow} alt="Left arrow" />
+                    </Grid>
+                    <Grid container item xs={10}>
+                        <Paper elevation={1}>image</Paper>
+                    </Grid>
+                    <Grid container item xs={1}>
+                        <img src={rightArrow} alt="Left arrow" />
+                    </Grid>
+                </Grid>
+                <Grid container item xs={12}>
+                    <p>Add a transaction</p>
+                </Grid>
+                <Grid container item xs={12} className='feat-slick-dots'>
                     <span className='active'></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
-            </div>
-        </Grid>
+                </Grid>
+            </Grid>
+        </FeaturesContainer>
         // <UserConsumer>
         //     {
         //         value => {

@@ -13,11 +13,24 @@ export const useStyles = makeStyles(() => ({
     }
 }));
 
-export const Grid = withStyles({
+export const FeaturesContainer = withStyles({
     root: {
         backgroundColor: '#364F6B',
         minHeight: '100vh',
         width: '100%',
+        padding: '30px 52px'
     },
 
-})(MuiGrid)
+})(MuiGrid);
+
+export const LogoWrapper = withStyles({
+    root: {
+
+    }
+})(MuiGrid);
+
+export const FeaturesWrapper = withStyles({
+    root: {
+        
+    }
+})(MuiGrid);
