@@ -40,8 +40,8 @@ function UserProvider(props) {
     const signupConfirmdRef = createRef();
 
     const [signupAlert, setSignupAlert] = useState({
-        type: '',
-        copy: ''
+        type: null,
+        copy: null
     });
 
     const handleSignup = e => {

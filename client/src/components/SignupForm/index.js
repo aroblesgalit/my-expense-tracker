@@ -47,9 +47,13 @@ function SignupForm() {
                                             ref={signupConfirmdRef}
                                         />
                                     </Grid>
-                                    <Grid item xs={12} className={classes.mt1}>
-                                        <Alert severity={signupAlert.type === 'success' ? 'success' : 'error'}>{signupAlert.copy}</Alert>
-                                    </Grid>
+                                    {
+                                        signupAlert.type && (
+                                            <Grid item xs={12} className={classes.mt1}>
+                                                <Alert severity={signupAlert.type === 'success' ? 'success' : 'error'}>{signupAlert.copy}</Alert>
+                                            </Grid>
+                                        )
+                                    }
                                     <Grid container item xs={12} justify='flex-end' className={classes.mt3}>
                                         <Button
                                             type='submit'
