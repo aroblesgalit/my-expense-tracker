@@ -16,7 +16,8 @@ export const useStyles = makeStyles(() => ({
 export const SignupContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',
-        padding: '30px'
+        padding: '30px',
+        position: 'relative'
     }
 })(MuiGrid);
 
@@ -35,3 +36,14 @@ export const SmallTypography = withStyles({
         marginTop: '40px'
     }
 })(MuiTypography);
+
+export const ExtraDiv = withStyles({
+    root: {
+        height: '200px',
+        backgroundColor: '#364F6B',
+
+        '@media (min-width: 600px)': {
+            display: 'none'
+        }
+    }
+})(MuiGrid);
