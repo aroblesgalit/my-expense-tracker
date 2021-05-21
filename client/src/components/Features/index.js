@@ -1,6 +1,6 @@
 import React from 'react';
 // import './features.css';
-import { useStyles, FeaturesContainer, FeatureImagePaper, CaptionTypography, ArrowBackIos, ArrowForwardIos } from './features.styles';
+import { useStyles, FeaturesContainer, LogoWrapper, FeatureImagePaper, CaptionTypography, ArrowBackIos, ArrowForwardIos } from './features.styles';
 import { Grid } from '@material-ui/core';
 import logo from '../../images/logo.svg';
 // import { UserConsumer } from '../../utils/UserContext';
@@ -10,11 +10,11 @@ function Features() {
     const classes = useStyles();
 
     return (
-        <FeaturesContainer component='section' container item sm={7} xs={12}>
-            <Grid item xs={12}>
+        <FeaturesContainer component='section' container item sm={7} xs={12} alignContent='flex-start'>
+            <LogoWrapper item xs={12}>
                 <img src={logo} alt='logo' />
-            </Grid>
-            <Grid container item xs={12} container='column' justify='center'>
+            </LogoWrapper>
+            <Grid container item xs={12} container='column' justify='center' alignContent='flex-start'>
                 <Grid container item xs={12}>
                     <Grid container item xs={1} alignContent='center' justify='flex-start'>
                         <ArrowBackIos />

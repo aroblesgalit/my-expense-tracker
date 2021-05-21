@@ -18,7 +18,7 @@ export const useStyles = makeStyles(() => ({
     slickDots: {
         display: 'flex',
         justifyContent: 'space-between',
-        marginTop: '24px',
+        marginTop: '20px',
         maxWidth: '100px',
 
         '&>span': {
@@ -39,9 +39,16 @@ export const FeaturesContainer = withStyles({
         backgroundColor: '#364F6B',
         minHeight: '100vh',
         width: '100%',
-        padding: '30px 52px'
+        padding: '50px 40px'
     },
 
+})(MuiGrid);
+
+export const LogoWrapper = withStyles({
+    root: {
+        maxHeight: '111px',
+        marginBottom: '50px'
+    }
 })(MuiGrid);
 
 export const FeatureImagePaper = withStyles({
@@ -55,7 +62,8 @@ export const CaptionTypography = withStyles({
     root: {
         color: "#F0F0F0",
         fontSize: '18px',
-        width: '100%'
+        width: '100%',
+        marginTop: '20px'
     }
 })(MuiTypography);
 

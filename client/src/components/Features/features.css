@@ -1,4 +1,4 @@
-.features-container {
+/* .features-container {
     min-height: 100vh;
     width: 60vw;
     background-color: #364F6B;
@@ -75,9 +75,9 @@
     color: #F0F0F0;
     font-size: 18px;
     margin-top: 30px;
-}
+} */
 
-.feat-slick-dots {
+/* .feat-slick-dots {
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
@@ -95,4 +95,4 @@
 .feat-slick-dots span.active,
 .feat-slick-dots span:hover {
     background-color: #43DDE6;
-}
+} */
