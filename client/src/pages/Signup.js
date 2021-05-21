@@ -1,6 +1,6 @@
 import React from 'react';
 // import './pages.css';
-import { useStyles, SignupContainer } from './pages.styles';
+import { useStyles, SignupContainer, H1Typography } from './pages.styles';
 import SignupForm from '../components/SignupForm';
 import Features from '../components/Features';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ function Signup() {
         <Grid container xs={12}>
             <Features />
             <SignupContainer container item sm={5} xs={12} justify='center' alignContent='flex-start'>
-                <h1>Signup</h1>
+                <H1Typography variant='h1'>Signup</H1Typography>
                 <SignupForm />
                 <p className='login-copy'>Already have an account? <Link to='/login'>Log in here</Link></p>
             </SignupContainer>
