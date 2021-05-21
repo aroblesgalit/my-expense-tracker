@@ -4,6 +4,12 @@ import MuiPaper from '@material-ui/core/Paper';
 export const useStyles = makeStyles(() => ({
     signupForm: {
         width: '100%'
+    },
+    mt1: {
+        marginTop: '10px'
+    },
+    mt3: {
+        marginTop: '30px'
     }
 }));
 
