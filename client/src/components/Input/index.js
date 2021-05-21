@@ -1,3 +1,4 @@
+import { FormControl } from '@material-ui/core';
 import React from 'react';
 import './input.styles';
 import { Input, InputLabel } from './input.styles.js';
@@ -19,7 +20,7 @@ const CustomInput = React.forwardRef(({ type, label, name, options, border, onCh
         }
         {
             (type === 'date' || type === 'text') && (
-                <>
+                <FormControl>
                     {/* <label htmlFor={name}>{label}</label>
                     <input
                         name={name}
@@ -36,7 +37,7 @@ const CustomInput = React.forwardRef(({ type, label, name, options, border, onCh
                         onChange={onChange}
                         inputRef={ref}
                     />
-                </>
+                </FormControl>
             )
         }
         {

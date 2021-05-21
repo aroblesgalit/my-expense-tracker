@@ -4,6 +4,7 @@ import { useStyles, FormWrapper } from './signupForm.styles';
 import { TextInput } from '../Input';
 import Button from '../Button';
 import { UserConsumer } from '../../utils/UserContext';
+import { Alert } from '@material-ui/lab';
 
 function SignupForm() {
 
@@ -44,7 +45,7 @@ function SignupForm() {
                                         ref={signupConfirmdRef}
                                     />
                                 </div>
-                                <p className={`signup-alert ${signupAlert.type === 'success' ? 'success' : 'fail'}`}>{signupAlert.copy}</p>
+                                <Alert severity={signupAlert.type === 'success' ? 'success' : 'error'}>{signupAlert.copy}</Alert>
                                 <div className='mt-2 d-flex jc-flex-end'>
                                     <Button
                                         type='submit'

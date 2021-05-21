@@ -2,7 +2,9 @@ import { makeStyles, withStyles } from '@material-ui/core';
 import MuiPaper from '@material-ui/core/Paper';
 
 export const useStyles = makeStyles(() => ({
-
+    signupForm: {
+        width: '100%'
+    }
 }));
 
 export const FormWrapper = withStyles({
