@@ -27,11 +27,10 @@ export const useStyles = makeStyles(() => ({
             backgroundColor: '#8A9BAE',
             borderRadius: '50%',
             cursor: 'pointer',
-        },
-
-        '&>span.active': {
-            backgroundColor: '#43DDE6'
         }
+    },
+    activeSlickDot: {
+        backgroundColor: '#43DDE6!important'
     }
 }));
 

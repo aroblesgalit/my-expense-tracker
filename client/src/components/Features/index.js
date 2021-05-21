@@ -2,6 +2,7 @@ import React from 'react';
 // import './features.css';
 import { useStyles, FeaturesContainer, FeatureImagePaper, CaptionTypography, ArrowBackIos, ArrowForwardIos } from './features.styles';
 import { Grid } from '@material-ui/core';
+import logo from '../../images/logo.svg';
 // import { UserConsumer } from '../../utils/UserContext';
 
 function Features() {
@@ -11,7 +12,7 @@ function Features() {
     return (
         <FeaturesContainer component='section' container item sm={7} xs={12}>
             <Grid item xs={12}>
-                <div className={classes.logo}>my expense tracker</div>
+                <img src={logo} alt='logo' />
             </Grid>
             <Grid container item xs={12} container='column' justify='center'>
                 <Grid container item xs={12}>
@@ -29,7 +30,7 @@ function Features() {
                     <CaptionTypography variant='body1' align='center'>Add a transaction</CaptionTypography>
                 </Grid>
                 <Grid container item xs={12} className={classes.slickDots}>
-                    <span className={classes.active}></span>
+                    <span className={classes.activeSlickDot}></span>
                     <span></span>
                     <span></span>
                     <span></span>
