@@ -20,6 +20,8 @@ AND I am able to add a new expense
 ```
 
 ## Mockups
-![Signup Page](./client/src/images/mockup_signupPage.png)  
-![Expenses Page](./client/src/images/mockup_expensesPage.png)
+![Signup Page - Desktop](./client/src/images/mockup_signupPage_desktop.png)  
+![Signup Page - Tablet](./client/src/images/mockup_signupPage_tablet.png)  
+![Expenses Page - Desktop](./client/src/images/mockup_expensesPage_desktop.png)  
+![Expenses Page - Tablet](./client/src/images/mockup_expensesPage_tablet.png)  
 
