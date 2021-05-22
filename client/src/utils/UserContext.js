@@ -64,11 +64,6 @@ function UserProvider(props) {
                             copy: 'Signup successful!'
                         });
                         getUserData();
-                        // setUser({
-                        //     ...user,
-                        //     isLoggedIn: true
-                        // })
-                        // Redirect to dashboard
                     })
                     .catch(err => {
                         console.log('Signup failed...', err);
@@ -96,6 +91,11 @@ function UserProvider(props) {
     const loginUserRef = createRef();
     const loginPassRef = createRef();
 
+    const [loginAlert, setLoginAlert] = useState({
+        type: null,
+        copy: null
+    });
+
     const handleLogin = e => {
         e.preventDefault();
 
@@ -109,13 +109,24 @@ function UserProvider(props) {
             })
                 .then(res => {
                     console.log('User is logged in...', res);
+                    setLoginAlert({
+                        type: 'success',
+                        copy: 'Login successful!'
+                    });
                     getUserData();
                 })
                 .catch(err => {
-                    console.log('Login failed...', err)
+                    console.log('Login failed...', err);
+                    setLoginAlert({
+                        type: 'fail',
+                        copy: 'Wrong username or password.'
+                    });
                 })
         ) : (
-            console.log('Please fill in all the fields.')
+            setLoginAlert({
+                type: 'fail',
+                copy: 'Please fill in all the fields.'
+            })
         )
     }
     /*********** END Login ***********/
@@ -142,7 +153,8 @@ function UserProvider(props) {
                 loginUserRef,
                 loginPassRef,
                 handleLogin,
-                handleLogout
+                handleLogout,
+                loginAlert
             }}
         >
             {props.children}
