@@ -25,6 +25,9 @@ function App() {
             <Route path='/expenses'>
               <ProtectedRoute component={Expenses} />
             </Route>
+            <Route exact path='/'>
+              <PublicRoute component={Login} />
+            </Route>
           </Switch>
         </Router>
       </ExpenseProvider>
