@@ -10,7 +10,7 @@ function Signup() {
     const classes = useStyles();
 
     return (
-        <Grid container xs={12}>
+        <Grid container>
             <Features />
             <ExtraDiv item xs={12}></ExtraDiv>
             <RightContainer container item md={5} xs={12} justify='center' alignContent='flex-start'>

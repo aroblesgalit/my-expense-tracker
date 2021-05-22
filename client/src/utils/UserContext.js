@@ -21,7 +21,6 @@ function UserProvider(props) {
                 })
             })
             .catch(() => {
-                console.log('User is NOT logged in.');
                 setUser({
                     ...user,
                     isLoggedIn: false,
@@ -58,7 +57,6 @@ function UserProvider(props) {
                     password
                 })
                     .then(res => {
-                        console.log('User is signed up...', res);
                         setSignupAlert({
                             type: 'success',
                             copy: 'Signup successful!'
@@ -66,7 +64,6 @@ function UserProvider(props) {
                         getUserData();
                     })
                     .catch(err => {
-                        console.log('Signup failed...', err);
                         setSignupAlert({
                             type: 'fail',
                             copy: 'Username is already taken.'
@@ -108,7 +105,6 @@ function UserProvider(props) {
                 password
             })
                 .then(res => {
-                    console.log('User is logged in...', res);
                     setLoginAlert({
                         type: 'success',
                         copy: 'Login successful!'
@@ -116,7 +112,6 @@ function UserProvider(props) {
                     getUserData();
                 })
                 .catch(err => {
-                    console.log('Login failed...', err);
                     setLoginAlert({
                         type: 'fail',
                         copy: 'Wrong username or password.'

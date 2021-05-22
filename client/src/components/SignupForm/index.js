@@ -18,7 +18,7 @@ function SignupForm() {
                     return (
                         <FormWrapper elevation={1}>
                             <form className={classes.signupForm}>
-                                <Grid container xs={12}>
+                                <Grid container>
                                     <Grid item xs={12}>
                                         <TextInput
                                             type='text'

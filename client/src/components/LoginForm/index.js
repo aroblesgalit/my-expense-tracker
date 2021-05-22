@@ -1,5 +1,4 @@
 import React from 'react';
-import './loginForm.css';
 import { useStyles, FormWrapper } from './loginForm.styles';
 import { TextInput } from '../Input';
 import Button from '../Button';
@@ -19,7 +18,7 @@ function LoginForm() {
                     return (
                         <FormWrapper elevation={1}>
                             <form className={classes.loginForm}>
-                                <Grid container xs={12}>
+                                <Grid container>
                                     <Grid item xs={12}>
                                         <TextInput
                                             type='text'
