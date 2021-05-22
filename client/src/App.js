@@ -8,27 +8,30 @@ import { UserProvider } from './utils/UserContext';
 import { ExpenseProvider } from './utils/ExpenseContext';
 import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
+import { Grid } from '@material-ui/core';
 
 function App() {
   return (
     <UserProvider>
       <ExpenseProvider>
         <Router>
-          <Header />
-          <Switch>
-            <Route path='/signup'>
-              <PublicRoute component={Signup} />
-            </Route>
-            <Route path='/login'>
-              <PublicRoute component={Login} />
-            </Route>
-            <Route path='/expenses'>
-              <ProtectedRoute component={Expenses} />
-            </Route>
-            <Route exact path='/'>
-              <PublicRoute component={Login} />
-            </Route>
-          </Switch>
+          <Grid container>
+            <Header />
+            <Switch>
+              <Route path='/signup'>
+                <PublicRoute component={Signup} />
+              </Route>
+              <Route path='/login'>
+                <PublicRoute component={Login} />
+              </Route>
+              <Route path='/expenses'>
+                <ProtectedRoute component={Expenses} />
+              </Route>
+              <Route exact path='/'>
+                <PublicRoute component={Login} />
+              </Route>
+            </Switch>
+          </Grid>
         </Router>
       </ExpenseProvider>
     </UserProvider>

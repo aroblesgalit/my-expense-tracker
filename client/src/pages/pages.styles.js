@@ -13,6 +13,27 @@ export const useStyles = makeStyles(() => ({
     }
 }));
 
+export const ExpensesContainer = withStyles({
+    root: {
+        backgroundColor: '#F7F7F7',
+        padding: '50px 80px',
+        minHeight: '100vh'
+    }
+})(MuiGrid);
+
+export const PageTitle = withStyles({
+    root: {
+        fontSize: '48px',
+        fontWeight: '700',
+        marginBottom: '30px',
+        color: '#364F6B',
+
+        '@media (min-width: 960px)': {
+            marginBottom: '60px',
+        }
+    }
+})(MuiTypography);
+
 export const RightContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',

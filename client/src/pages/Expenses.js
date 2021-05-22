@@ -1,14 +1,15 @@
 import React from 'react';
-import './pages.css';
+// import './pages.css';
 import Input from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
+import { ExpensesContainer, PageTitle } from './pages.styles';
 
 function Expenses() {
     return (
-        <div className='container expenses-pg'>
-            <h1>Expenses</h1>
+        <ExpensesContainer component='section' container item sm={10} xs={12}>
+            <PageTitle>Expenses</PageTitle>
             <div className='mt-3'>
                 <Input
                     type='dropdown'
@@ -74,7 +75,7 @@ function Expenses() {
                     }
                 }
             </ExpenseConsumer>
-        </div>
+        </ExpensesContainer>
     )
 }
 

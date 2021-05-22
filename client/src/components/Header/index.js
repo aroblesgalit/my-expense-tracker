@@ -1,8 +1,9 @@
 import React from 'react';
-import './header.css';
+// import './header.css';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
+import { HeaderContainer } from './header.styles';
 
 function Header() {
 
@@ -17,7 +18,7 @@ function Header() {
                     const { isLoggedIn, handleLogout } = value;
 
                     return isLoggedIn && (
-                        <header className='container'>
+                        <HeaderContainer component='header' container item sm={2} xs={12}>
                             <div className='logo'>my expense tracker</div>
                             <nav>
                                 <ul>
@@ -34,7 +35,7 @@ function Header() {
                                 color='gray'
                                 onClick={handleLogout}
                             />
-                        </header>
+                        </HeaderContainer>
                     )
                 }
             }
