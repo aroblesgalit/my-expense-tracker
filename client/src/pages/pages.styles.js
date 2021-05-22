@@ -17,7 +17,16 @@ export const SignupContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',
         padding: '30px',
-        position: 'relative'
+    }
+})(MuiGrid);
+
+export const SignupWrapper = withStyles({
+    root: {
+        transform: 'translateY(-260px)',
+
+        '@media (min-width: 960px)': {
+            transform: 'translateY(0)',
+        }
     }
 })(MuiGrid);
 
@@ -25,8 +34,14 @@ export const H1Typography = withStyles({
     root: {
         fontSize: '48px',
         fontWeight: '700',
-        marginBottom: '60px',
-        textAlign: 'center'
+        marginBottom: '30px',
+        textAlign: 'center',
+        color: '#fff',
+
+        '@media (min-width: 960px)': {
+            marginBottom: '60px',
+            color: '#364F6B'
+        }
     }
 })(MuiTypography);
 
@@ -41,7 +56,7 @@ export const SmallTypography = withStyles({
 
 export const ExtraDiv = withStyles({
     root: {
-        height: '200px',
+        height: '260px',
         backgroundColor: '#364F6B',
 
         '@media (min-width: 960px)': {
