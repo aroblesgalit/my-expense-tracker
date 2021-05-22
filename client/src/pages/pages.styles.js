@@ -13,7 +13,7 @@ export const useStyles = makeStyles(() => ({
     }
 }));
 
-export const SignupContainer = withStyles({
+export const RightContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',
         padding: '30px',
@@ -25,7 +25,7 @@ export const SignupContainer = withStyles({
     }
 })(MuiGrid);
 
-export const SignupWrapper = withStyles({
+export const RightWrapper = withStyles({
     root: {
         transform: 'translateY(-260px)',
 

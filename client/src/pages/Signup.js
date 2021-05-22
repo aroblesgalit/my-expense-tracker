@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles, SignupContainer, SignupWrapper, H1Typography, SmallTypography, ExtraDiv } from './pages.styles';
+import { useStyles, RightContainer, RightWrapper, H1Typography, SmallTypography, ExtraDiv } from './pages.styles';
 import SignupForm from '../components/SignupForm';
 import Features from '../components/Features';
 import { Link } from 'react-router-dom';
@@ -13,13 +13,13 @@ function Signup() {
         <Grid container xs={12}>
             <Features />
             <ExtraDiv item xs={12}></ExtraDiv>
-            <SignupContainer container item md={5} xs={12} justify='center' alignContent='flex-start'>
-                <SignupWrapper container item xs={12} direction='column' justify='flex-start' alignContent='center'>
+            <RightContainer container item md={5} xs={12} justify='center' alignContent='flex-start'>
+                <RightWrapper container item xs={12} direction='column' justify='flex-start' alignContent='center'>
                     <H1Typography variant='h1'>Signup</H1Typography>
                     <SignupForm />
                     <SmallTypography variant='body1'>Already have an account? <Link to='/login' className={classes.link}>Log in here</Link></SmallTypography>
-                </SignupWrapper>
-            </SignupContainer>
+                </RightWrapper>
+            </RightContainer>
         </Grid>
     )
 }
