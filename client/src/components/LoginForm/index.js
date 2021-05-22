@@ -1,45 +1,54 @@
 import React from 'react';
 import './loginForm.css';
+import { useStyles, FormWrapper } from './loginForm.styles';
 import { TextInput } from '../Input';
 import Button from '../Button';
 import { UserConsumer } from '../../utils/UserContext';
+import { Grid } from '@material-ui/core';
 
 function LoginForm() {
+
+    const classes = useStyles();
+
     return (
         <UserConsumer>
             {
                 value => {
                     const { loginUserRef, loginPassRef, handleLogin } = value;
                     return (
-                        <form className='login-form'>
-                            <div>
-                                <TextInput
-                                    type='text'
-                                    label='Username'
-                                    name='username'
-                                    border='#CDCDCD'
-                                    ref={loginUserRef}
-                                />
-                            </div>
-                            <div className='mt-2'>
-                                <TextInput
-                                    type='password'
-                                    label='Password'
-                                    name='password'
-                                    border='#CDCDCD'
-                                    ref={loginPassRef}
-                                />
-                            </div>
-                            <div className='mt-2 d-flex jc-flex-end'>
-                                <Button
-                                    type='submit'
-                                    text='Log in'
-                                    action='primary'
-                                    color='blue'
-                                    onClick={handleLogin}
-                                />
-                            </div>
-                        </form>
+                        <FormWrapper elevation={1}>
+                            <form className={classes.loginForm}>
+                                <Grid container xs={12}>
+                                    <Grid item xs={12}>
+                                        <TextInput
+                                            type='text'
+                                            label='Username'
+                                            name='username'
+                                            border='#CDCDCD'
+                                            ref={loginUserRef}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} className={classes.mt3}>
+                                        <TextInput
+                                            type='password'
+                                            label='Password'
+                                            name='password'
+                                            border='#CDCDCD'
+                                            ref={loginPassRef}
+                                        />
+                                    </Grid>
+                                    <Grid container item xs={12} justify='flex-end' className={classes.mt3}>
+                                        <Button
+                                            type='submit'
+                                            text='Log in'
+                                            action='primary'
+                                            color='blue'
+                                            onClick={handleLogin}
+                                        />
+                                    </Grid>
+                                </Grid>
+                            </form>
+                        </FormWrapper>
                     )
                 }
             }
