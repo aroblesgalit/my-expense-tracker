@@ -17,6 +17,11 @@ export const SignupContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',
         padding: '30px',
+        maxHeight: '440px',
+
+        '@media (min-width: 960px)': {
+            minHeight: '100vh',
+        }
     }
 })(MuiGrid);
 

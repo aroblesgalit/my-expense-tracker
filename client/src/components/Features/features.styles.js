@@ -37,9 +37,13 @@ export const useStyles = makeStyles(() => ({
 export const FeaturesContainer = withStyles({
     root: {
         backgroundColor: '#364F6B',
-        minHeight: '100vh',
+        minHeight: 'auto',
         width: '100%',
-        padding: '50px 40px'
+        padding: '50px 40px',
+
+        '@media (min-width: 960px)': {
+            minHeight: '100vh',
+        }
     },
 
 })(MuiGrid);
