@@ -25,7 +25,8 @@ export const H1Typography = withStyles({
     root: {
         fontSize: '48px',
         fontWeight: '700',
-        marginBottom: '60px'
+        marginBottom: '60px',
+        textAlign: 'center'
     }
 })(MuiTypography);
 
@@ -33,7 +34,8 @@ export const SmallTypography = withStyles({
     root: {
         color: '#8A9BAE',
         fontSize: '14px',
-        marginTop: '40px'
+        marginTop: '40px',
+        textAlign: 'center'
     }
 })(MuiTypography);
 
@@ -42,7 +44,7 @@ export const ExtraDiv = withStyles({
         height: '200px',
         backgroundColor: '#364F6B',
 
-        '@media (min-width: 600px)': {
+        '@media (min-width: 960px)': {
             display: 'none'
         }
     }
