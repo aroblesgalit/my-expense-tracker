@@ -1,17 +1,20 @@
 import React from 'react';
 import { useStyles, FeaturesContainer, LogoWrapper, FeatureImagePaper, CaptionTypography, ArrowBackIos, ArrowForwardIos } from './features.styles';
-import { Grid } from '@material-ui/core';
+import { Grid, useMediaQuery, useTheme } from '@material-ui/core';
 import logo from '../../images/logo.svg';
-// import { UserConsumer } from '../../utils/UserContext';
+import mobileLogo from '../../images/logo-responsive.svg';
 
 function Features() {
 
     const classes = useStyles();
 
+    const theme = useTheme();
+    const desktop = useMediaQuery(theme.breakpoints.up('md'));
+
     return (
         <FeaturesContainer component='section' container item md={7} xs={12} alignContent='flex-start'>
-            <LogoWrapper item xs={12}>
-                <img src={logo} alt='logo' />
+            <LogoWrapper container item xs={12} justify={desktop ? 'flex-start' : 'center'}>
+                <img src={desktop ? logo : mobileLogo} alt='logo' />
             </LogoWrapper>
             <Grid container item xs={12} container='column' justify='center' alignContent='flex-start'>
                 <Grid container item xs={12}>
