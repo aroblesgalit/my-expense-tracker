@@ -40,12 +40,16 @@ export const H1Typography = withStyles({
         fontSize: '48px',
         fontWeight: '700',
         marginBottom: '30px',
-        textAlign: 'center',
         color: '#fff',
+        height: 'auto',
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
 
         '@media (min-width: 960px)': {
             marginBottom: '60px',
-            color: '#364F6B'
+            color: '#364F6B',
+            height: '111px'
         }
     }
 })(MuiTypography);
