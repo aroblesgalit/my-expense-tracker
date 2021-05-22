@@ -14,7 +14,7 @@ function Signup() {
         <Grid container xs={12}>
             <Features />
             <ExtraDiv item xs={12}></ExtraDiv>
-            <SignupContainer container item sm={5} xs={12} justify='center' alignContent='flex-start'>
+            <SignupContainer container item md={5} xs={12} justify='center' alignContent='flex-start'>
                 <H1Typography variant='h1'>Signup</H1Typography>
                 <SignupForm />
                 <SmallTypography variant='body1'>Already have an account? <Link to='/login' className={classes.link}>Log in here</Link></SmallTypography>

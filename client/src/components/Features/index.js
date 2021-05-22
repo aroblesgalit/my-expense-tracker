@@ -10,7 +10,7 @@ function Features() {
     const classes = useStyles();
 
     return (
-        <FeaturesContainer component='section' container item sm={7} xs={12} alignContent='flex-start'>
+        <FeaturesContainer component='section' container item md={7} xs={12} alignContent='flex-start'>
             <LogoWrapper item xs={12}>
                 <img src={logo} alt='logo' />
             </LogoWrapper>
