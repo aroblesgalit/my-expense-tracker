@@ -1,12 +1,13 @@
 import React from 'react';
 // import './header.css';
-import { HeaderContainer, useStyles } from './header.styles';
+import { HeaderContainer, NavWrapper, useStyles, MenuItem, ListItemIcon } from './header.styles';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
 import logo from '../../images/logo.svg';
 import mobileLogo from '../../images/logo-responsive.svg';
-import { Grid } from '@material-ui/core';
+import { Grid, MenuList, Typography } from '@material-ui/core';
+import { DashboardOutlined } from '@material-ui/icons';
 
 function Header() {
 
@@ -27,15 +28,21 @@ function Header() {
                             <Grid container item xs={12}>
                                 <img className={classes.headerLogo} src={logo} alt='logo' />
                             </Grid>
-                            <nav>
-                                <ul>
-                                    <li>dashboard</li>
+                            <NavWrapper component='nav' container item xs={12}>
+                                <MenuList>
+                                    <MenuItem>
+                                        <ListItemIcon>
+                                            <DashboardOutlined fontSize='16' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>dashboard</Typography>
+                                    </MenuItem>
+                                    {/* <li>dashboard</li>
                                     <li className={`${currentPathname === '/expenses' && 'active'}`}><Link to='/expenses'>expenses</Link></li>
                                     <li>income</li>
-                                    <li>analytics</li>
-                                </ul>
-                            </nav>
-                            <Button 
+                                    <li>analytics</li> */}
+                                </MenuList>
+                            </NavWrapper>
+                            <Button
                                 type='button'
                                 text='Log out'
                                 action='secondary'
