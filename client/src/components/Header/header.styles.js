@@ -2,7 +2,9 @@ import { makeStyles, withStyles } from '@material-ui/core';
 import MuiGrid from '@material-ui/core/Grid';
 
 export const useStyles = makeStyles(() => ({
-    
+    headerLogo: {
+        maxWidth: '100%'
+    }
 }));
 
 export const HeaderContainer = withStyles({

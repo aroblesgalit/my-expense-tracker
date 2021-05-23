@@ -1,15 +1,20 @@
 import React from 'react';
 // import './header.css';
+import { HeaderContainer, useStyles } from './header.styles';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
-import { HeaderContainer } from './header.styles';
+import logo from '../../images/logo.svg';
+import mobileLogo from '../../images/logo-responsive.svg';
+import { Grid } from '@material-ui/core';
 
 function Header() {
 
     // Use path endpoint to determine active page
     const location = useLocation();
     const currentPathname = location.pathname;
+
+    const classes = useStyles();
 
     return (
         <UserConsumer>
@@ -19,7 +24,9 @@ function Header() {
 
                     return isLoggedIn && (
                         <HeaderContainer component='header' container item sm={2} xs={12}>
-                            <div className='logo'>my expense tracker</div>
+                            <Grid container item xs={12}>
+                                <img className={classes.headerLogo} src={logo} alt='logo' />
+                            </Grid>
                             <nav>
                                 <ul>
                                     <li>dashboard</li>
