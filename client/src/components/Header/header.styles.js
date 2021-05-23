@@ -6,6 +6,19 @@ import MuiListItemIcon from '@material-ui/core/ListItemIcon';
 export const useStyles = makeStyles(() => ({
     headerLogo: {
         maxWidth: '100%'
+    },
+    active: {
+        '&>div': {
+            color: '#43DDE6'
+        },
+
+        '& a': {
+            color: '#43DDE6!important'
+        },
+        
+        '&>span:first-child': {
+            color: '#43DDE6'
+        }
     }
 }));
 
@@ -29,12 +42,21 @@ export const MenuItem = withStyles({
         padding: '0',
         color: '#8A9BAE',
 
+        '& a': {
+            textDecoration: 'none',
+            color: '#8A9BAE',
+        },
+
         '&:hover': {
             backgroundColor: 'transparent',
             color: '#43DDE6'
         },
 
         '&:hover > div': {
+            color: '#43DDE6'
+        },
+
+        '&:hover a': {
             color: '#43DDE6'
         }
     }

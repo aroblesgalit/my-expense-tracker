@@ -7,7 +7,7 @@ import Button from '../Button';
 import logo from '../../images/logo.svg';
 import mobileLogo from '../../images/logo-responsive.svg';
 import { Grid, MenuList, Typography } from '@material-ui/core';
-import { DashboardOutlined } from '@material-ui/icons';
+import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined } from '@material-ui/icons';
 
 function Header() {
 
@@ -35,6 +35,26 @@ function Header() {
                                             <DashboardOutlined fontSize='16' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>dashboard</Typography>
+                                    </MenuItem>
+                                    <MenuItem className={currentPathname === '/expenses' && classes.active}>
+                                        <ListItemIcon>
+                                            <MonetizationOnOutlined fontSize='16'/>
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>
+                                            <Link to='/expenses'>expenses</Link>
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <ListItemIcon>
+                                            <AccountBalanceOutlined fontSize='16' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>income</Typography>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <ListItemIcon>
+                                            <BarChartOutlined fontSize='16' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>analytics</Typography>
                                     </MenuItem>
                                     {/* <li>dashboard</li>
                                     <li className={`${currentPathname === '/expenses' && 'active'}`}><Link to='/expenses'>expenses</Link></li>
