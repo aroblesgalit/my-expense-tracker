@@ -8,7 +8,7 @@ import { ExpensesContainer, PageTitle } from './pages.styles';
 
 function Expenses() {
     return (
-        <ExpensesContainer component='section' container item sm={10} xs={12}>
+        <ExpensesContainer component='section' container item md={10} xs={12}>
             <PageTitle>Expenses</PageTitle>
             <div className='mt-3'>
                 <Input

@@ -23,7 +23,7 @@ function Header() {
                     const { isLoggedIn, handleLogout } = value;
 
                     return isLoggedIn && (
-                        <HeaderContainer component='header' container item sm={2} xs={12}>
+                        <HeaderContainer component='header' container item md={2} xs={12} alignContent='flex-start'>
                             <Grid container item xs={12}>
                                 <img className={classes.headerLogo} src={logo} alt='logo' />
                             </Grid>
