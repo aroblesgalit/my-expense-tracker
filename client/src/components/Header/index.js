@@ -1,12 +1,12 @@
 import React from 'react';
 // import './header.css';
-import { HeaderContainer, NavWrapper, useStyles, MenuItem, ListItemIcon, Divider } from './header.styles';
+import { HeaderContainer, NavWrapper, useStyles, MenuList, MenuItem, ListItemIcon, Divider } from './header.styles';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
 import logo from '../../images/logo.svg';
 import mobileLogo from '../../images/logo-responsive.svg';
-import { Grid, MenuList, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined } from '@material-ui/icons';
 
 function Header() {
@@ -38,7 +38,7 @@ function Header() {
                                     </MenuItem>
                                     <MenuItem className={currentPathname === '/expenses' && classes.active}>
                                         <ListItemIcon>
-                                            <MonetizationOnOutlined fontSize='16'/>
+                                            <MonetizationOnOutlined fontSize='16' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>
                                             <Link to='/expenses'>expenses</Link>

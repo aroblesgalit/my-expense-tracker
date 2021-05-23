@@ -1,5 +1,6 @@
 import { makeStyles, withStyles } from '@material-ui/core';
 import MuiGrid from '@material-ui/core/Grid';
+import MuiMenuList from '@material-ui/core/MenuList';
 import MuiMenuItem from '@material-ui/core/MenuItem';
 import MuiListItemIcon from '@material-ui/core/ListItemIcon';
 import MuiDivider from '@material-ui/core/Divider';
@@ -38,10 +39,20 @@ export const NavWrapper = withStyles({
     }
 })(MuiGrid);
 
+export const MenuList = withStyles({
+    root: {
+        padding: '40px 0 0'
+    }
+})(MuiMenuList);
+
 export const MenuItem = withStyles({
     root: {
         padding: '0',
         color: '#8A9BAE',
+
+        '&:not(:last-child)': {
+            padding: '0 0 16px'
+        },
 
         '& a': {
             textDecoration: 'none',
