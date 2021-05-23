@@ -1,6 +1,6 @@
 import React from 'react';
 // import './header.css';
-import { HeaderContainer, NavWrapper, useStyles, MenuItem, ListItemIcon } from './header.styles';
+import { HeaderContainer, NavWrapper, useStyles, MenuItem, ListItemIcon, Divider } from './header.styles';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
@@ -56,12 +56,9 @@ function Header() {
                                         </ListItemIcon>
                                         <Typography variant='inherit'>analytics</Typography>
                                     </MenuItem>
-                                    {/* <li>dashboard</li>
-                                    <li className={`${currentPathname === '/expenses' && 'active'}`}><Link to='/expenses'>expenses</Link></li>
-                                    <li>income</li>
-                                    <li>analytics</li> */}
                                 </MenuList>
                             </NavWrapper>
+                            <Divider />
                             <Button
                                 type='button'
                                 text='Log out'
