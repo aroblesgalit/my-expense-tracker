@@ -34,6 +34,18 @@ export const PageTitle = withStyles({
     }
 })(MuiTypography);
 
+export const WelcomeMessage = withStyles({
+    root: {
+        fontSize: '14px',
+        fontWeight: '700',
+        color: '#8A9BAE',
+
+        '@media (min-width: 960px)': {
+            // marginBottom: '60px',
+        }
+    }
+})(MuiTypography);
+
 export const RightContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',

@@ -4,7 +4,7 @@ import Input from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { ExpensesContainer, PageTitle } from './pages.styles';
+import { ExpensesContainer, PageTitle, WelcomeMessage } from './pages.styles';
 import { Grid, Typography } from '@material-ui/core';
 
 function Expenses() {
@@ -14,9 +14,9 @@ function Expenses() {
                 value => {
                     const { expDateRef, expCategoryRef, expDescRef, expAmountRef, addExpense, expenses, deleteExpense } = value;
                     return (
-                        <ExpensesContainer component='section' container item md={10} xs={12}>
+                        <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <Grid item xs={12}>
-                                <Typography variant='body1'>Hi, Alvin!</Typography>
+                                <WelcomeMessage variant='body1'>Hi, Alvin!</WelcomeMessage>
                             </Grid>
                             <Grid item xs={12}>
                                 <PageTitle variant='h1'>Expenses</PageTitle>
