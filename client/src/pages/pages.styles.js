@@ -25,11 +25,11 @@ export const PageTitle = withStyles({
     root: {
         fontSize: '48px',
         fontWeight: '700',
-        marginBottom: '30px',
+        // marginBottom: '30px',
         color: '#364F6B',
 
         '@media (min-width: 960px)': {
-            marginBottom: '60px',
+            // marginBottom: '60px',
         }
     }
 })(MuiTypography);

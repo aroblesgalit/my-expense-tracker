@@ -5,39 +5,45 @@ import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
 import { ExpensesContainer, PageTitle } from './pages.styles';
+import { Grid, Typography } from '@material-ui/core';
 
 function Expenses() {
     return (
-        <ExpensesContainer component='section' container item md={10} xs={12}>
-            <PageTitle>Expenses</PageTitle>
-            <div className='mt-3'>
-                <Input
-                    type='dropdown'
-                    label='Filter'
-                    name='filter'
-                    options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
-                />
-            </div>
-            <div className='mt-1'>
-                <ExpenseConsumer>
-                    {
-                        value => {
-                            const { expenses, deleteExpense } = value;
-                            return <Table
-                                headings={['Date', 'Category', 'Description', 'Amount']}
-                                rows={expenses}
-                                handleDelete={deleteExpense}
-                            />
-                        }
-                    }
-                </ExpenseConsumer>
-            </div>
-            <ExpenseConsumer>
-                {
-                    value => {
-                        const { expDateRef, expCategoryRef, expDescRef, expAmountRef, addExpense } = value;
-                        return (
-                            <div className='expense-form mt-1 d-flex jc-space-between ai-flex-end'>
+        <ExpenseConsumer>
+            {
+                value => {
+                    const { expDateRef, expCategoryRef, expDescRef, expAmountRef, addExpense, expenses, deleteExpense } = value;
+                    return (
+                        <ExpensesContainer component='section' container item md={10} xs={12}>
+                            <Grid item xs={12}>
+                                <Typography variant='body1'>Hi, Alvin!</Typography>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <PageTitle variant='h1'>Expenses</PageTitle>
+                            </Grid>
+                            <Grid container item xs={12} justify='space-between' alignItems='flex-end'>
+                                <Input
+                                    type='dropdown'
+                                    label='Filter'
+                                    name='filter'
+                                    options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
+                                />
+                                <Button
+                                    type='button'
+                                    text='New'
+                                    action='primary'
+                                    color='magenta'
+                                // onClick={(e) => addExpense(e)}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Table
+                                    headings={['Date', 'Category', 'Description', 'Amount']}
+                                    rows={expenses}
+                                    handleDelete={deleteExpense}
+                                />
+                            </Grid>
+                            {/* <div className='expense-form mt-1 d-flex jc-space-between ai-flex-end'>
                                 <Input
                                     type='date'
                                     label='Date'
@@ -63,19 +69,13 @@ function Expenses() {
                                     name='amount'
                                     ref={expAmountRef}
                                 />
-                                <Button
-                                    type='submit'
-                                    text='Add'
-                                    action='primary'
-                                    color='magenta'
-                                    onClick={(e) => addExpense(e)}
-                                />
-                            </div>
-                        )
-                    }
+                                
+                            </div> */}
+                        </ExpensesContainer>
+                    )
                 }
-            </ExpenseConsumer>
-        </ExpensesContainer>
+            }
+        </ExpenseConsumer>
     )
 }
 
