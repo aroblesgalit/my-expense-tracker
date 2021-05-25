@@ -1,11 +1,11 @@
 import React from 'react';
 // import './pages.css';
-import Input from '../components/Input';
+import Input, { SelectInput } from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
 import { ExpensesContainer, PageTitle, WelcomeMessage } from './pages.styles';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, InputLabel, MenuItem, TextField, Typography } from '@material-ui/core';
 
 function Expenses() {
     return (
@@ -22,6 +22,24 @@ function Expenses() {
                                 <PageTitle variant='h1'>Expenses</PageTitle>
                             </Grid>
                             <Grid container item xs={12} justify='space-between' alignItems='flex-end'>
+                                {/* <SelectInput 
+                                    label='Filter'
+                                    name='filter'
+                                    options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
+                                    ref={expDescRef}
+                                /> */}
+                                <>
+                                    <InputLabel htmlFor='filter'>Filter</InputLabel>
+                                    <TextField
+                                        id='filter'
+                                        inputRef={expAmountRef}
+                                        select
+                                    >
+                                        {
+                                            ['All', 'Daily', 'Weekly', 'Monthly', 'Yearly'].map((option, i) => <MenuItem key={`${i}-${option}`} value={option}>{option}</MenuItem>)
+                                        }
+                                    </TextField>
+                                </>
                                 <Input
                                     type='dropdown'
                                     label='Filter'
