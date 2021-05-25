@@ -1,4 +1,4 @@
-import { FormControl } from '@material-ui/core';
+import { FormControl, MenuItem, Select } from '@material-ui/core';
 import React from 'react';
 import './input.styles';
 import { Input, InputLabel } from './input.styles.js';
@@ -73,6 +73,20 @@ export const TextInput = React.forwardRef(({ type, label, name, options, onChang
             />
         </>
     )
+});
+
+export const SelectInput = React.forwardRef(({ name, label, options }, ref) => {
+    <>
+        <InputLabel id={name}>{label}</InputLabel>
+        <Select
+            labelId={name}
+            inputRef={ref}
+        >
+            {
+                options.map((option, i) => <MenuItem key={`${i}-${option}`} value={option}>{option}</MenuItem>)
+            }
+        </Select>
+    </>
 });
 
 
