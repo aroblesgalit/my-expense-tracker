@@ -5,14 +5,14 @@ import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
 import { ExpensesContainer, PageTitle, WelcomeMessage } from './pages.styles';
-import { Grid, InputLabel, MenuItem, TextField, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 function Expenses() {
     return (
         <ExpenseConsumer>
             {
                 value => {
-                    const { expDateRef, expCategoryRef, expDescRef, expAmountRef, addExpense, expenses, deleteExpense } = value;
+                    const { expDescRef, expenses, deleteExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <Grid item xs={12}>
@@ -22,13 +22,13 @@ function Expenses() {
                                 <PageTitle variant='h1'>Expenses</PageTitle>
                             </Grid>
                             <Grid container item xs={12} justify='space-between' alignItems='flex-end'>
-                                {/* <SelectInput 
+                                <SelectInput 
                                     label='Filter'
                                     name='filter'
                                     options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
                                     ref={expDescRef}
-                                /> */}
-                                <>
+                                />
+                                {/* <>
                                     <InputLabel htmlFor='filter'>Filter</InputLabel>
                                     <TextField
                                         id='filter'
@@ -39,7 +39,7 @@ function Expenses() {
                                             ['All', 'Daily', 'Weekly', 'Monthly', 'Yearly'].map((option, i) => <MenuItem key={`${i}-${option}`} value={option}>{option}</MenuItem>)
                                         }
                                     </TextField>
-                                </>
+                                </> */}
                                 <Input
                                     type='dropdown'
                                     label='Filter'

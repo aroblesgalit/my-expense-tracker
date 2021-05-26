@@ -16,7 +16,7 @@ function Features() {
             <LogoWrapper container item xs={12} justify={desktop ? 'flex-start' : 'center'}>
                 <img src={desktop ? logo : mobileLogo} alt='logo' />
             </LogoWrapper>
-            <Grid container item xs={12} container='column' justify='center' alignContent='flex-start'>
+            <Grid container item xs={12} justify='center' alignContent='flex-start'>
                 <Grid container item xs={12}>
                     <Grid container item xs={1} alignContent='center' justify='flex-start'>
                         <ArrowBackIos />

@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
 import logo from '../../images/logo.svg';
-import mobileLogo from '../../images/logo-responsive.svg';
+// import mobileLogo from '../../images/logo-responsive.svg';
 import { Grid, Typography } from '@material-ui/core';
 import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined } from '@material-ui/icons';
 
