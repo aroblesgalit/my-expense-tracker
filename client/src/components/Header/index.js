@@ -36,7 +36,7 @@ function Header() {
                                         </ListItemIcon>
                                         <Typography variant='inherit'>dashboard</Typography>
                                     </MenuItem>
-                                    <MenuItem className={currentPathname === '/expenses' && classes.active}>
+                                    <MenuItem className={currentPathname === '/expenses' ? classes.active : ''}>
                                         <ListItemIcon>
                                             <MonetizationOnOutlined fontSize='small' />
                                         </ListItemIcon>
