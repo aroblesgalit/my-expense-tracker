@@ -66,7 +66,7 @@ function ExpenseProvider(props) {
                     // Remove alert after 5 seconds
                     console.log('Expense added...', res);
                     // Get all expenses again to update table
-                    getAllExpenses();
+                    return getAllExpenses();
                     // Clear form
                 })
                 .catch(err => {
@@ -94,6 +94,11 @@ function ExpenseProvider(props) {
     }
     /*********** END Expense Delete ***********/
 
+
+    /*********** Filter ***********/
+    const filterRef = createRef();
+    /*********** END Filter ***********/
+
     return (
         <ExpenseContext.Provider
             value={{
@@ -103,7 +108,8 @@ function ExpenseProvider(props) {
                 expAmountRef,
                 addExpense,
                 expenses,
-                deleteExpense
+                deleteExpense,
+                filterRef
             }}
         >
             {props.children}

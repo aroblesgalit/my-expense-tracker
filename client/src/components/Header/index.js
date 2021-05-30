@@ -32,13 +32,13 @@ function Header() {
                                 <MenuList>
                                     <MenuItem>
                                         <ListItemIcon>
-                                            <DashboardOutlined fontSize='16' />
+                                            <DashboardOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>dashboard</Typography>
                                     </MenuItem>
                                     <MenuItem className={currentPathname === '/expenses' && classes.active}>
                                         <ListItemIcon>
-                                            <MonetizationOnOutlined fontSize='16' />
+                                            <MonetizationOnOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>
                                             <Link to='/expenses'>expenses</Link>
@@ -46,13 +46,13 @@ function Header() {
                                     </MenuItem>
                                     <MenuItem>
                                         <ListItemIcon>
-                                            <AccountBalanceOutlined fontSize='16' />
+                                            <AccountBalanceOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>income</Typography>
                                     </MenuItem>
                                     <MenuItem>
                                         <ListItemIcon>
-                                            <BarChartOutlined fontSize='16' />
+                                            <BarChartOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>analytics</Typography>
                                     </MenuItem>

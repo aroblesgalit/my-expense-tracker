@@ -12,7 +12,7 @@ function Expenses() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { expDescRef, expenses, deleteExpense } = value;
+                    const { filterRef, expenses, deleteExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <Grid item xs={12}>
@@ -26,7 +26,7 @@ function Expenses() {
                                     label='Filter'
                                     name='filter'
                                     options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
-                                    ref={expDescRef}
+                                    ref={filterRef}
                                 />
                                 {/* <>
                                     <InputLabel htmlFor='filter'>Filter</InputLabel>

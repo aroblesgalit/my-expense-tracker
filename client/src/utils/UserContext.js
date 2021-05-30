@@ -61,7 +61,7 @@ function UserProvider(props) {
                             type: 'success',
                             copy: 'Signup successful!'
                         });
-                        getUserData();
+                        return getUserData();
                     })
                     .catch(err => {
                         setSignupAlert({
