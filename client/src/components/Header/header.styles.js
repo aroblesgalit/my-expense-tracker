@@ -9,7 +9,7 @@ export const useStyles = makeStyles(() => ({
     headerLogo: {
         maxWidth: '300px',
 
-        '@media (min-width: 960px': {
+        '@media (min-width: 960px)': {
             maxWidth: '100%'
         }
     },
@@ -45,7 +45,12 @@ export const NavWrapper = withStyles({
 
 export const MenuList = withStyles({
     root: {
-        padding: '40px 0 0'
+        padding: '40px 0 0',
+        display: 'none',
+
+        '@media (min-width: 960px)': {
+            display: 'block'
+        }
     }
 })(MuiMenuList);
 
@@ -81,6 +86,7 @@ export const MenuItem = withStyles({
 export const ListItemIcon = withStyles({
     root: {
         color: '#8A9BAE',
+        minWidth: '38px'
     }
 })(MuiListItemIcon);
 
@@ -90,7 +96,7 @@ export const Divider = withStyles({
         margin: '40px 0',
         backgroundColor: '#8A9BAE',
 
-        '@media (min-width: 960px': {
+        '@media (min-width: 960px)': {
             // display: 'block'
         }
     }
