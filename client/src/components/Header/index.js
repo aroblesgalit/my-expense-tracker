@@ -1,6 +1,6 @@
 import React from 'react';
 // import './header.css';
-import { HeaderContainer, NavWrapper, useStyles, MenuList, MenuItem, ListItemIcon, Divider } from './header.styles';
+import { HeaderContainer, NavWrapper, useStyles, MenuList, MenuItem, ListItemIcon, Divider, Menu } from './header.styles';
 import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
@@ -27,8 +27,36 @@ function Header() {
 
                     return isLoggedIn && (
                         <HeaderContainer component='header' container item md={2} xs={12} alignContent='flex-start'>
-                            <Grid container item xs={12}>
+                            <Grid container item xs={12} className={classes.mobileHeader}>
                                 <img className={classes.headerLogo} src={desktopWidth ? logo : mobileLogo} alt='logo' />
+                                <Menu open={desktopWidth ? false : true}>
+                                    <MenuItem>
+                                        <ListItemIcon>
+                                            <DashboardOutlined fontSize='small' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>dashboard</Typography>
+                                    </MenuItem>
+                                    <MenuItem className={currentPathname === '/expenses' ? classes.active : ''}>
+                                        <ListItemIcon>
+                                            <MonetizationOnOutlined fontSize='small' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>
+                                            <Link to='/expenses'>expenses</Link>
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <ListItemIcon>
+                                            <AccountBalanceOutlined fontSize='small' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>income</Typography>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <ListItemIcon>
+                                            <BarChartOutlined fontSize='small' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>analytics</Typography>
+                                    </MenuItem>
+                                </Menu>
                             </Grid>
                             <NavWrapper component='nav' container item xs={12}>
                                 <MenuList>

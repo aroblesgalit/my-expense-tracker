@@ -4,6 +4,7 @@ import MuiMenuList from '@material-ui/core/MenuList';
 import MuiMenuItem from '@material-ui/core/MenuItem';
 import MuiListItemIcon from '@material-ui/core/ListItemIcon';
 import MuiDivider from '@material-ui/core/Divider';
+import MuiMenu from '@material-ui/core/Menu';
 
 export const useStyles = makeStyles(() => ({
     headerLogo: {
@@ -25,6 +26,13 @@ export const useStyles = makeStyles(() => ({
         '&>span:first-child': {
             color: '#43DDE6'
         }
+    },
+    mobileHeader: {
+        display: 'flex'
+
+        // '@media (min-width: 960px)': {
+        //     maxWidth: '100%'
+        // }
     }
 }));
 
@@ -42,6 +50,12 @@ export const NavWrapper = withStyles({
 
     }
 })(MuiGrid);
+
+export const Menu = withStyles({
+    root: {
+
+    }
+})(MuiMenu);
 
 export const MenuList = withStyles({
     root: {
