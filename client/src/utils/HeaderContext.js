@@ -11,13 +11,18 @@ function HeaderProvider(props) {
     const handleMenuClick = e => {
         setAnchorEl(e.currentTarget)
     };
+
+    const handleMenuItemClick = () => {
+        setAnchorEl(null);
+    }
     /*********** END Menu - Mobile ***********/
 
     return (
         <HeaderContext.Provider
             value={{
                 anchorEl,
-                handleMenuClick
+                handleMenuClick,
+                handleMenuItemClick
             }}
         >
             {props.children}
