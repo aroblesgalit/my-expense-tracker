@@ -7,7 +7,11 @@ import MuiDivider from '@material-ui/core/Divider';
 
 export const useStyles = makeStyles(() => ({
     headerLogo: {
-        maxWidth: '100%'
+        maxWidth: '300px',
+
+        '@media (min-width: 960px': {
+            maxWidth: '100%'
+        }
     },
     active: {
         '&>div': {
