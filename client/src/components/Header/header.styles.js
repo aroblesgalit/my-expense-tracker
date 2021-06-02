@@ -28,11 +28,16 @@ export const useStyles = makeStyles(() => ({
         }
     },
     mobileHeader: {
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'space-between'
 
         // '@media (min-width: 960px)': {
         //     maxWidth: '100%'
         // }
+    },
+    mobileMenuIcon: {
+        color: '#43DDE6',
+        cursor: 'pointer'
     }
 }));
 
@@ -52,8 +57,8 @@ export const NavWrapper = withStyles({
 })(MuiGrid);
 
 export const Menu = withStyles({
-    root: {
-
+    paper: {
+        padding: '20px'
     }
 })(MuiMenu);
 

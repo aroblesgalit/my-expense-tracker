@@ -7,7 +7,7 @@ import Button from '../Button';
 import logo from '../../images/logo.svg';
 import mobileLogo from '../../images/logo-responsive.svg';
 import { Grid, Typography, useMediaQuery } from '@material-ui/core';
-import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined } from '@material-ui/icons';
+import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined, Menu as MenuIcon } from '@material-ui/icons';
 import HeaderContext from '../../utils/HeaderContext';
 
 function Header() {
@@ -20,7 +20,7 @@ function Header() {
 
     const desktopWidth = useMediaQuery('(min-width:960px)');
 
-    const { anchorEl, handleMenuClick } = useContext(HeaderContext);
+    const { anchorEl, handleMenuClick, handleMenuItemClick } = useContext(HeaderContext);
 
     return (
         <UserConsumer>
@@ -32,15 +32,15 @@ function Header() {
                         <HeaderContainer component='header' container item md={2} xs={12} alignContent='flex-start'>
                             <Grid container item xs={12} className={classes.mobileHeader}>
                                 <img className={classes.headerLogo} src={desktopWidth ? logo : mobileLogo} alt='logo' />
-                                <div onClick={e => handleMenuClick(e)}>Menu</div>
-                                <Menu open={Boolean(anchorEl)} anchorEl={anchorEl}>
-                                    <MenuItem>
+                                <MenuIcon className={classes.mobileMenuIcon} fontSize='large' onClick={e => handleMenuClick(e)} />
+                                <Menu open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={handleMenuItemClick}>
+                                    <MenuItem onClick={handleMenuItemClick}>
                                         <ListItemIcon>
                                             <DashboardOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>dashboard</Typography>
                                     </MenuItem>
-                                    <MenuItem className={currentPathname === '/expenses' ? classes.active : ''}>
+                                    <MenuItem onClick={handleMenuItemClick} className={currentPathname === '/expenses' ? classes.active : ''}>
                                         <ListItemIcon>
                                             <MonetizationOnOutlined fontSize='small' />
                                         </ListItemIcon>
@@ -48,13 +48,13 @@ function Header() {
                                             <Link to='/expenses'>expenses</Link>
                                         </Typography>
                                     </MenuItem>
-                                    <MenuItem>
+                                    <MenuItem onClick={handleMenuItemClick}>
                                         <ListItemIcon>
                                             <AccountBalanceOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>income</Typography>
                                     </MenuItem>
-                                    <MenuItem>
+                                    <MenuItem onClick={handleMenuItemClick}>
                                         <ListItemIcon>
                                             <BarChartOutlined fontSize='small' />
                                         </ListItemIcon>
