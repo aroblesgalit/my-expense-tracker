@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const HeaderContext = React.createContext();
 
 // Provider 
 function HeaderProvider(props) {
+
+    /*********** Menu - Mobile ***********/
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleMenuClick = e => {
+        setAnchorEl(e.currentTarget)
+    };
+    /*********** END Menu - Mobile ***********/
+
     return (
-        <HeaderContext.Provider>
+        <HeaderContext.Provider
+            value={{
+                anchorEl,
+                handleMenuClick
+            }}
+        >
             {props.children}
         </HeaderContext.Provider>
     )
