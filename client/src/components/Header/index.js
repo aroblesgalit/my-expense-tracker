@@ -5,8 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { UserConsumer } from '../../utils/UserContext';
 import Button from '../Button';
 import logo from '../../images/logo.svg';
-// import mobileLogo from '../../images/logo-responsive.svg';
-import { Grid, Typography } from '@material-ui/core';
+import mobileLogo from '../../images/logo-responsive.svg';
+import { Grid, Typography, useMediaQuery } from '@material-ui/core';
 import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined } from '@material-ui/icons';
 
 function Header() {
@@ -17,6 +17,8 @@ function Header() {
 
     const classes = useStyles();
 
+    const desktopWidth = useMediaQuery('(min-width:960px)');
+
     return (
         <UserConsumer>
             {
@@ -26,7 +28,7 @@ function Header() {
                     return isLoggedIn && (
                         <HeaderContainer component='header' container item md={2} xs={12} alignContent='flex-start'>
                             <Grid container item xs={12}>
-                                <img className={classes.headerLogo} src={logo} alt='logo' />
+                                <img className={classes.headerLogo} src={desktopWidth ? logo : mobileLogo} alt='logo' />
                             </Grid>
                             <NavWrapper component='nav' container item xs={12}>
                                 <MenuList>

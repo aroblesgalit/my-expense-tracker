@@ -22,12 +22,12 @@ function Expenses() {
                                 <PageTitle variant='h1'>Expenses</PageTitle>
                             </Grid>
                             <Grid container item xs={12} justify='space-between' alignItems='flex-end'>
-                                <SelectInput 
+                                {/* <SelectInput 
                                     label='Filter'
                                     name='filter'
                                     options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
                                     ref={filterRef}
-                                />
+                                /> */}
                                 {/* <>
                                     <InputLabel htmlFor='filter'>Filter</InputLabel>
                                     <TextField
