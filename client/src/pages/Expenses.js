@@ -4,10 +4,12 @@ import Input, { SelectInput } from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { ExpensesContainer, PageTitle, WelcomeMessage } from './pages.styles';
+import { useStyles, ExpensesContainer, PageTitle, WelcomeMessage } from './pages.styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
 function Expenses() {
+
+    const classes = useStyles();
 
     const desktopWidth = useMediaQuery('(min-width:960px)');
 
@@ -18,7 +20,7 @@ function Expenses() {
                     const { filterRef, expenses, deleteExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
-                            <Grid container item xs={12} direction={desktopWidth ? 'column' : 'row-reverse'} alignItems='baseline'>
+                            <Grid container item xs={12} direction={desktopWidth ? 'column' : 'row-reverse'} alignItems='baseline' className={classes.pageHeader}>
                                 <Grid item md={12} xs={5}>
                                     <WelcomeMessage variant='body1'>Hi, Alvin!</WelcomeMessage>
                                 </Grid>
@@ -26,7 +28,7 @@ function Expenses() {
                                     <PageTitle variant='h1'>Expenses</PageTitle>
                                 </Grid>
                             </Grid>
-                            <Grid container item xs={12} justify='space-between' alignItems='flex-end'>
+                            <Grid container item xs={12} justify='space-between' alignItems='flex-end' className={classes.mobilePadding}>
                                 {/* <SelectInput 
                                     label='Filter'
                                     name='filter'
@@ -59,7 +61,7 @@ function Expenses() {
                                 // onClick={(e) => addExpense(e)}
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} className={classes.mobilePadding}>
                                 <Table
                                     headings={['Date', 'Category', 'Description', 'Amount']}
                                     rows={expenses}

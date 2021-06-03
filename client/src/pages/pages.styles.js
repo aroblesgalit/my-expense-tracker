@@ -10,13 +10,29 @@ export const useStyles = makeStyles(() => ({
         '&:hover': {
             color: '#0DC4CE'
         }
+    },
+    pageHeader: {
+        backgroundColor: '#364F6B',
+        padding: '0 32px',
+
+        '@media (min-width: 960px)': {
+            backgroundColor: 'transparent',
+            padding: '0'
+        }
+    },
+    mobilePadding: {
+        padding: '0 32px',
+
+        '@media (min-width: 960px)': {
+            padding: '0'
+        }
     }
 }));
 
 export const ExpensesContainer = withStyles({
     root: {
         backgroundColor: '#F7F7F7',
-        padding: '30px 32px',
+        padding: '0 0 30px',
         minHeight: '100vh',
 
         '@media (min-width: 960px)': {
@@ -27,13 +43,13 @@ export const ExpensesContainer = withStyles({
 
 export const PageTitle = withStyles({
     root: {
-        fontSize: '48px',
+        fontSize: '42px',
         fontWeight: '700',
-        // marginBottom: '30px',
-        color: '#364F6B',
+        color: '#F0F0F0',
 
         '@media (min-width: 960px)': {
-            // marginBottom: '60px',
+            fontSize: '48px',
+            color: '#364F6B',
         }
     }
 })(MuiTypography);
@@ -42,11 +58,12 @@ export const WelcomeMessage = withStyles({
     root: {
         fontSize: '14px',
         fontWeight: '700',
-        color: '#8A9BAE',
         textAlign: 'right',
+        color: '#F0F0F0',
 
         '@media (min-width: 960px)': {
-            textAlign: 'left'
+            textAlign: 'left',
+            color: '#8A9BAE',
         }
     }
 })(MuiTypography);
