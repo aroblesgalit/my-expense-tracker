@@ -13,7 +13,7 @@ export const useStyles = makeStyles(() => ({
     },
     pageHeader: {
         backgroundColor: '#364F6B',
-        padding: '0 32px',
+        padding: '16px 32px',
 
         '@media (min-width: 960px)': {
             backgroundColor: 'transparent',
@@ -26,7 +26,7 @@ export const useStyles = makeStyles(() => ({
         '@media (min-width: 960px)': {
             padding: '0'
         }
-    }
+    },
 }));
 
 export const ExpensesContainer = withStyles({
