@@ -16,8 +16,12 @@ export const useStyles = makeStyles(() => ({
 export const ExpensesContainer = withStyles({
     root: {
         backgroundColor: '#F7F7F7',
-        padding: '50px 80px',
-        minHeight: '100vh'
+        padding: '30px 32px',
+        minHeight: '100vh',
+
+        '@media (min-width: 960px)': {
+            padding: '50px 80px',
+        }
     }
 })(MuiGrid);
 
@@ -39,9 +43,10 @@ export const WelcomeMessage = withStyles({
         fontSize: '14px',
         fontWeight: '700',
         color: '#8A9BAE',
+        textAlign: 'right',
 
         '@media (min-width: 960px)': {
-            // marginBottom: '60px',
+            textAlign: 'left'
         }
     }
 })(MuiTypography);
