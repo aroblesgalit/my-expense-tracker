@@ -49,8 +49,13 @@ export const HeaderContainer = withStyles({
     root: {
         backgroundColor: '#364F6B',
         fontFamily: 'Roboto, sans-serif',
-        padding: '32px',
-        height: '100vh'
+        padding: '16px 32px',
+        height: 'auto',
+
+        '@media (min-width: 960px)': {
+            padding: '32px',
+            height: '100vh',
+        }
     }
 })(MuiGrid);
 
