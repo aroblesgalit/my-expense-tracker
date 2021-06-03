@@ -37,7 +37,11 @@ export const useStyles = makeStyles(() => ({
     },
     mobileMenuIcon: {
         color: '#43DDE6',
-        cursor: 'pointer'
+        cursor: 'pointer',
+
+        '@media (min-width: 960px)': {
+            display: 'none'
+        }
     }
 }));
 
@@ -112,11 +116,12 @@ export const ListItemIcon = withStyles({
 export const Divider = withStyles({
     root: {
         width: '100%',
-        margin: '40px 0',
-        backgroundColor: '#8A9BAE',
+        margin: '4px 0 20px',
+        backgroundColor: '#DEE4EB',
 
         '@media (min-width: 960px)': {
-            // display: 'block'
+            margin: '40px 0',
+            backgroundColor: '#8A9BAE',
         }
     }
 })(MuiDivider);

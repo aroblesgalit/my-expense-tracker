@@ -102,14 +102,21 @@ function Header() {
                                     </MenuItem>
                                 </MenuList>
                             </NavWrapper>
-                            <Divider />
-                            <Button
-                                type='button'
-                                text='Log out'
-                                action='secondary'
-                                color='gray'
-                                onClick={handleLogout}
-                            />
+                            {
+                                desktopWidth && (
+                                    <>
+                                        <Divider />
+                                        <Button
+                                            type='button'
+                                            text='Log out'
+                                            action='secondary'
+                                            color='gray'
+                                            onClick={handleLogout}
+                                        />
+                                    </>
+                                )
+                            }
+
                         </HeaderContainer>
                     )
                 }
