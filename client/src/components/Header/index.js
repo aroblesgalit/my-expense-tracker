@@ -7,7 +7,7 @@ import Button from '../Button';
 import logo from '../../images/logo.svg';
 import mobileLogo from '../../images/logo-responsive.svg';
 import { Grid, Typography, useMediaQuery } from '@material-ui/core';
-import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined, Menu as MenuIcon } from '@material-ui/icons';
+import { AccountBalanceOutlined, BarChartOutlined, DashboardOutlined, MonetizationOnOutlined, Menu as MenuIcon, ExitToAppOutlined } from '@material-ui/icons';
 import HeaderContext from '../../utils/HeaderContext';
 
 function Header() {
@@ -59,6 +59,16 @@ function Header() {
                                             <BarChartOutlined fontSize='small' />
                                         </ListItemIcon>
                                         <Typography variant='inherit'>analytics</Typography>
+                                    </MenuItem>
+                                    <Divider />
+                                    <MenuItem onClick={() => {
+                                        handleMenuItemClick();
+                                        handleLogout();
+                                    }}>
+                                        <ListItemIcon>
+                                            <ExitToAppOutlined fontSize='small' />
+                                        </ListItemIcon>
+                                        <Typography variant='inherit'>Log out</Typography>
                                     </MenuItem>
                                 </Menu>
                             </Grid>
