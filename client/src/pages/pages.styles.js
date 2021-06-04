@@ -11,15 +11,6 @@ export const useStyles = makeStyles(() => ({
             color: '#0DC4CE'
         }
     },
-    pageHeader: {
-        backgroundColor: '#364F6B',
-        padding: '16px 32px',
-
-        '@media (min-width: 960px)': {
-            backgroundColor: 'transparent',
-            padding: '0'
-        }
-    },
     mobilePadding: {
         padding: '0 32px',
 
@@ -80,6 +71,15 @@ export const WelcomeMessage = withStyles({
     }
 })(MuiTypography);
 
+export const TableTopContent = withStyles({
+    root: {
+        padding: '32px 32px 16px',
+
+        '@media (min-width: 960px)': {
+            padding: '0'
+        }
+    }
+})(MuiGrid);
 
 export const RightContainer = withStyles({
     root: {

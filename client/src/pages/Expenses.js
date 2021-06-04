@@ -4,7 +4,7 @@ import Input, { SelectInput } from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage } from './pages.styles';
+import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent } from './pages.styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
 function Expenses() {
@@ -28,7 +28,7 @@ function Expenses() {
                                     <PageTitle variant='h1'>Expenses</PageTitle>
                                 </Grid>
                             </PageHeader>
-                            <Grid container item xs={12} justify='space-between' alignItems='flex-end' className={classes.mobilePadding}>
+                            <TableTopContent container item xs={12} justify='space-between' alignItems='flex-end'>
                                 {/* <SelectInput 
                                     label='Filter'
                                     name='filter'
@@ -60,7 +60,7 @@ function Expenses() {
                                     color='magenta'
                                 // onClick={(e) => addExpense(e)}
                                 />
-                            </Grid>
+                            </TableTopContent>
                             <Grid item xs={12} className={classes.mobilePadding}>
                                 <Table
                                     headings={['Date', 'Category', 'Description', 'Amount']}
