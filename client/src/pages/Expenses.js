@@ -5,7 +5,7 @@ import Table from '../components/Table';
 import Button from '../components/Button';
 import CardSingleVal from '../components/CardSingleVal';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading } from './pages.styles';
+import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './pages.styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
 function Expenses() {
@@ -101,9 +101,12 @@ function Expenses() {
                                 <Grid item xs={12}>
                                     <SectionHeading variant={'h3'}>Totals</SectionHeading>
                                 </Grid>
-                                <Grid container item xs={12}>
+                                <CardsWrapper container item xs={12}>
                                     <CardSingleVal name='Today' value='$48.92' />
-                                </Grid>
+                                    <CardSingleVal name='This week' value='$90.12' />
+                                    <CardSingleVal name='This month' value='$2975.40' />
+                                    <CardSingleVal name='This year' value='$13506.20' />
+                                </CardsWrapper>
                             </TotalsContainer>
                         </ExpensesContainer>
                     )

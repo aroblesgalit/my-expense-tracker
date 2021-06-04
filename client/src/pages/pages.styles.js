@@ -90,10 +90,18 @@ export const TotalsContainer = withStyles({
         padding: '32px',
         position: 'absolute',
         bottom: '0',
+        overflowX: 'scroll',
 
         '@media (min-width: 960px)': {
-            // margin: '0 0 16px'
+            padding: '32px 80px'
         }
+    }
+})(MuiGrid);
+
+export const CardsWrapper = withStyles({
+    root: {
+        gap: '20px',
+        flexWrap: 'nowrap'
     }
 })(MuiGrid);
 
