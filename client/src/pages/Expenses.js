@@ -4,7 +4,7 @@ import Input, { SelectInput } from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent } from './pages.styles';
+import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading } from './pages.styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
 function Expenses() {
@@ -96,6 +96,11 @@ function Expenses() {
                                 />
                                 
                             </div> */}
+                            <TotalsContainer container item xs={12}>
+                                <Grid item xs={12}>
+                                    <SectionHeading variant={'h3'}>Totals</SectionHeading>
+                                </Grid>
+                            </TotalsContainer>
                         </ExpensesContainer>
                     )
                 }

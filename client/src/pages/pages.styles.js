@@ -83,6 +83,12 @@ export const TableTopContent = withStyles({
     }
 })(MuiGrid);
 
+export const TotalsContainer = withStyles({
+    root: {
+        width: '100%',
+    }
+})(MuiGrid);
+
 export const RightContainer = withStyles({
     root: {
         backgroundColor: '#F0F0F0',
@@ -130,6 +136,14 @@ export const SmallTypography = withStyles({
         fontSize: '14px',
         marginTop: '40px',
         textAlign: 'center'
+    }
+})(MuiTypography);
+
+export const SectionHeading = withStyles({
+    root: {
+        fontSize: '24px',
+        fontWeight: '700',
+        color: 'rgba(54, 79, 107, 0.72)'
     }
 })(MuiTypography);
 
