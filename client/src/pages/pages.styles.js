@@ -73,10 +73,12 @@ export const WelcomeMessage = withStyles({
 
 export const TableTopContent = withStyles({
     root: {
-        padding: '32px 32px 16px',
+        margin: '32px 32px 16px',
+        width: '100%',
+        maxWidth: '900px',
 
         '@media (min-width: 960px)': {
-            padding: '0'
+            margin: '0 0 16px'
         }
     }
 })(MuiGrid);
