@@ -100,6 +100,9 @@ function Expenses() {
                                 <Grid item xs={12}>
                                     <SectionHeading variant={'h3'}>Totals</SectionHeading>
                                 </Grid>
+                                <Grid container item xs={12}>
+                                    
+                                </Grid>
                             </TotalsContainer>
                         </ExpensesContainer>
                     )
