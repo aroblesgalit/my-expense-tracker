@@ -23,11 +23,11 @@ export const useStyles = makeStyles(() => ({
 export const ExpensesContainer = withStyles({
     root: {
         backgroundColor: '#F7F7F7',
-        // padding: '0 0 30px',
-        minHeight: '100vh',
+        minHeight: 'calc(100vh - 68px)',
+        position: 'relative',
 
         '@media (min-width: 960px)': {
-            // padding: '50px 80px',
+            minHeight: '100vh',
         }
     }
 })(MuiGrid);
@@ -88,9 +88,11 @@ export const TotalsContainer = withStyles({
         width: '100%',
         backgroundColor: 'rgba(54, 79, 107, 0.15)',
         padding: '32px',
+        position: 'absolute',
+        bottom: '0',
 
         '@media (min-width: 960px)': {
-            margin: '0 0 16px'
+            // margin: '0 0 16px'
         }
     }
 })(MuiGrid);
