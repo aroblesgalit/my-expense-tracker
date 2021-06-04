@@ -15,7 +15,7 @@ export const useStyles = makeStyles(() => ({
         padding: '0 32px',
 
         '@media (min-width: 960px)': {
-            padding: '0'
+            padding: '0 80px'
         }
     },
 }));
@@ -23,11 +23,11 @@ export const useStyles = makeStyles(() => ({
 export const ExpensesContainer = withStyles({
     root: {
         backgroundColor: '#F7F7F7',
-        padding: '0 0 30px',
+        // padding: '0 0 30px',
         minHeight: '100vh',
 
         '@media (min-width: 960px)': {
-            padding: '50px 80px',
+            // padding: '50px 80px',
         }
     }
 })(MuiGrid);
@@ -39,7 +39,7 @@ export const PageHeader = withStyles({
 
         '@media (min-width: 960px)': {
             backgroundColor: 'transparent',
-            padding: '0'
+            padding: '50px 80px 0'
         }
     }
 })(MuiGrid);
@@ -78,7 +78,7 @@ export const TableTopContent = withStyles({
         maxWidth: '900px',
 
         '@media (min-width: 960px)': {
-            margin: '0 0 16px'
+            margin: '0 80px 16px'
         }
     }
 })(MuiGrid);
@@ -86,6 +86,12 @@ export const TableTopContent = withStyles({
 export const TotalsContainer = withStyles({
     root: {
         width: '100%',
+        backgroundColor: 'rgba(54, 79, 107, 0.15)',
+        padding: '32px',
+
+        '@media (min-width: 960px)': {
+            margin: '0 0 16px'
+        }
     }
 })(MuiGrid);
 
