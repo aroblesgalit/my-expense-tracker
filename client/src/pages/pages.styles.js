@@ -41,6 +41,18 @@ export const ExpensesContainer = withStyles({
     }
 })(MuiGrid);
 
+export const PageHeader = withStyles({
+    root: {
+        backgroundColor: '#364F6B',
+        padding: '16px 32px',
+
+        '@media (min-width: 960px)': {
+            backgroundColor: 'transparent',
+            padding: '0'
+        }
+    }
+})(MuiGrid);
+
 export const PageTitle = withStyles({
     root: {
         fontSize: '42px',
@@ -67,6 +79,7 @@ export const WelcomeMessage = withStyles({
         }
     }
 })(MuiTypography);
+
 
 export const RightContainer = withStyles({
     root: {

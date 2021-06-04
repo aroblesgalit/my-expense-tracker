@@ -4,7 +4,7 @@ import Input, { SelectInput } from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { useStyles, ExpensesContainer, PageTitle, WelcomeMessage } from './pages.styles';
+import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage } from './pages.styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
 function Expenses() {
@@ -20,14 +20,14 @@ function Expenses() {
                     const { filterRef, expenses, deleteExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
-                            <Grid container item xs={12} direction={desktopWidth ? 'column' : 'row-reverse'} alignItems='baseline' className={classes.pageHeader}>
+                            <PageHeader container item xs={12} direction={desktopWidth ? 'column' : 'row-reverse'} alignItems='baseline'>
                                 <Grid item md={12} xs={5}>
                                     <WelcomeMessage variant='body1'>Hi, Alvin!</WelcomeMessage>
                                 </Grid>
                                 <Grid item md={12} xs={7}>
                                     <PageTitle variant='h1'>Expenses</PageTitle>
                                 </Grid>
-                            </Grid>
+                            </PageHeader>
                             <Grid container item xs={12} justify='space-between' alignItems='flex-end' className={classes.mobilePadding}>
                                 {/* <SelectInput 
                                     label='Filter'
