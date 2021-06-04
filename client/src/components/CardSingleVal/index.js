@@ -1,11 +1,14 @@
 import React from 'react';
 import { Paper, Typography } from '@material-ui/core';
+import { CardTitle } from './cardSingleVal.styles';
 
-function CardSingleVal({name, value}) {
+function CardSingleVal({ name, value }) {
     return (
         <Paper elevation={3}>
-            <Typography variant={'h4'}>{name}</Typography>
+            <CardTitle variant={'subtitle'}>{name}</CardTitle>
             <Typography variant={'body1'} component={'p'}>{value}</Typography>
         </Paper>
     )
 }
+
+export default CardSingleVal;

@@ -3,6 +3,7 @@ import React from 'react';
 import Input, { SelectInput } from '../components/Input';
 import Table from '../components/Table';
 import Button from '../components/Button';
+import CardSingleVal from '../components/CardSingleVal';
 import { ExpenseConsumer } from '../utils/ExpenseContext';
 import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading } from './pages.styles';
 import { Grid, useMediaQuery } from '@material-ui/core';
@@ -101,7 +102,7 @@ function Expenses() {
                                     <SectionHeading variant={'h3'}>Totals</SectionHeading>
                                 </Grid>
                                 <Grid container item xs={12}>
-                                    
+                                    <CardSingleVal name='Today' value='$48.92' />
                                 </Grid>
                             </TotalsContainer>
                         </ExpensesContainer>
