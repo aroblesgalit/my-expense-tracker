@@ -1,11 +1,11 @@
 import React from 'react';
-// import './pages.css';
-import Input, { SelectInput } from '../components/Input';
-import Table from '../components/Table';
-import Button from '../components/Button';
-import CardSingleVal from '../components/CardSingleVal';
-import { ExpenseConsumer } from '../utils/ExpenseContext';
-import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './pages.styles';
+import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './expenses.styles';
+import Input, { SelectInput } from '../../components/Input';
+import Table from '../../components/Table';
+import Button from '../../components/Button';
+import CardSingleVal from '../../components/CardSingleVal';
+import { ExpenseConsumer } from '../../utils/ExpenseContext';
+
 import { Grid, useMediaQuery } from '@material-ui/core';
 
 function Expenses() {

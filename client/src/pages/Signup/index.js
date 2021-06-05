@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStyles, RightContainer, RightWrapper, H1Typography, SmallTypography, ExtraDiv } from './signup.styles';
-import SignupForm from '../components/SignupForm';
-import Features from '../components/Features';
+import SignupForm from '../../components/SignupForm';
+import Features from '../../components/Features';
 import { Link } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 
