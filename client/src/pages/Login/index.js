@@ -1,7 +1,7 @@
 import React from 'react';
-import { useStyles, ExtraDiv, H1Typography, RightContainer, RightWrapper, SmallTypography } from './pages.styles';
-import LoginForm from '../components/LoginForm';
-import Features from '../components/Features';
+import { useStyles, ExtraDiv, H1Typography, RightContainer, RightWrapper, SmallTypography } from './login.styles';
+import LoginForm from '../../components/LoginForm';
+import Features from '../../components/Features';
 import { Link } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 
