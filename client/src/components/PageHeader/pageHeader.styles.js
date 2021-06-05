@@ -2,7 +2,7 @@ import { withStyles } from '@material-ui/core';
 import MuiGrid from '@material-ui/core/Grid';
 import MuiTypography from '@material-ui/core/Typography';
 
-export const PageHeader = withStyles({
+export const PageHeaderContainer = withStyles({
     root: {
         backgroundColor: '#364F6B',
         padding: '16px 32px',

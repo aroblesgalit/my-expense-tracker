@@ -1,18 +1,18 @@
 import React from 'react';
-import { useStyles, ExpensesContainer, PageHeader, PageTitle, WelcomeMessage, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './expenses.styles';
-import Input, { SelectInput } from '../../components/Input';
+import { useStyles, ExpensesContainer, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './expenses.styles';
+import Input from '../../components/Input';
 import Table from '../../components/Table';
 import Button from '../../components/Button';
 import CardSingleVal from '../../components/CardSingleVal';
 import { ExpenseConsumer } from '../../utils/ExpenseContext';
-
-import { Grid, useMediaQuery } from '@material-ui/core';
+import PageHeader from '../../components/PageHeader';
+import { Grid } from '@material-ui/core';
 
 function Expenses() {
 
     const classes = useStyles();
 
-    const desktopWidth = useMediaQuery('(min-width:960px)');
+    // const desktopWidth = useMediaQuery('(min-width:960px)');
 
     return (
         <ExpenseConsumer>
@@ -21,14 +21,7 @@ function Expenses() {
                     const { filterRef, expenses, deleteExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
-                            <PageHeader container item xs={12} direction={desktopWidth ? 'column' : 'row-reverse'} alignItems='baseline'>
-                                <Grid item md={12} xs={5}>
-                                    <WelcomeMessage variant='body1'>Hi, Alvin!</WelcomeMessage>
-                                </Grid>
-                                <Grid item md={12} xs={7}>
-                                    <PageTitle variant='h1'>Expenses</PageTitle>
-                                </Grid>
-                            </PageHeader>
+                            <PageHeader title='Expenses' />
                             <TableTopContent container item xs={12} justify='space-between' alignItems='flex-end'>
                                 {/* <SelectInput 
                                     label='Filter'
