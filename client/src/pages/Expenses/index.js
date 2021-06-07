@@ -57,7 +57,7 @@ function Expenses() {
                             </TableTopContent>
                             <Grid item xs={12} className={classes.mobilePadding}>
                                 <Table
-                                    headings={['Date', 'Category', 'Description', 'Amount']}
+                                    headings={['Date', 'Category', 'Description', 'Amount', '']}
                                     rows={expenses}
                                     handleDelete={deleteExpense}
                                 />
