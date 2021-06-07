@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TableContainer, Table, TableHead, TableBody, TableFooter, TableRow, TableCell, Paper, TablePagination } from '@material-ui/core';
+import { TableContainer } from './table.styles';
+import { Table, TableHead, TableBody, TableFooter, TableRow, TableCell, Paper, TablePagination } from '@material-ui/core';
 import { EditOutlined, DeleteOutlined } from '@material-ui/icons';
 
 function TableComponent({ headings, rows, handleDelete }) {
