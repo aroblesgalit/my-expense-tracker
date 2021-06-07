@@ -16,7 +16,20 @@ function TableComponent({ headings, rows, handleDelete }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    
+                    {
+                        rows && rows.map((row, i) => (
+                            <TableRow key={`${i}-${row.date}-${row.category}-${row.description}`}>
+                                <TableCell>{row.date}</TableCell>
+                                <TableCell>{row.category}</TableCell>
+                                <TableCell>{row.description}</TableCell>
+                                <TableCell>{row.amount}</TableCell>
+                                <TableCell>
+                                    <button>Edit</button>&nbsp;
+                                    <button onClick={() => handleDelete(row._id)}>Delete</button>
+                                </TableCell>
+                            </TableRow>
+                        ))
+                    }
                 </TableBody>
             </Table>
         </TableContainer>
