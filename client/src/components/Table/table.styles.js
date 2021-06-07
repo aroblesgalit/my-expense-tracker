@@ -1,6 +1,7 @@
 import { withStyles } from '@material-ui/core';
 import MuiTableContainer from '@material-ui/core/TableContainer';
 import MuiTableCell from '@material-ui/core/TableCell';
+import MuiTablePagination from '@material-ui/core/TablePagination';
 
 export const TableContainer = withStyles({
     root: {
@@ -17,3 +18,15 @@ export const TableHeadCell = withStyles({
         color: '#8A9BAE'
     }
 })(MuiTableCell);
+
+export const TablePagination = withStyles({
+    root: {
+        fontSize: '12px'
+    },
+    caption: {
+        fontSize: '12px'
+    },
+    menuItem: {
+        fontSize: '12px'
+    }
+})(MuiTablePagination);
