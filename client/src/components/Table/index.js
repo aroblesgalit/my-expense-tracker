@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import './table.css';
-import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper } from '@material-ui/core';
+import { TableContainer, Table, TableHead, TableBody, TableFooter, TableRow, TableCell, Paper, TablePagination } from '@material-ui/core';
 
 function TableComponent({ headings, rows, handleDelete }) {
+
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+
+    const handleChangePage = (e, newPage) => {
+        setPage(newPage);
+    }
+
+    const handleChangeRowsPerPage = e => {
+        setRowsPerPage(+e.target.value);
+        setPage(0);
+    }
+
     return (
         <TableContainer component={Paper}>
             <Table>
@@ -31,6 +44,19 @@ function TableComponent({ headings, rows, handleDelete }) {
                         ))
                     }
                 </TableBody>
+                <TableFooter>
+                    <TableRow>
+                        <TablePagination
+                            rowsPerPageOptions={[10, 25, 50]}
+                            count={rows.length}
+                            rowsPerPage={rowsPerPage}
+                            page={page}
+                            onChangePage={handleChangePage}
+                            onChangeRowsPerPage={handleChangeRowsPerPage}
+                        // ActionsComponent={TablePaginationActions}
+                        />
+                    </TableRow>
+                </TableFooter>
             </Table>
         </TableContainer>
         // <table>
