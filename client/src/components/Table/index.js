@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TableContainer } from './table.styles';
+import { TableContainer, TableHeadCell } from './table.styles';
 import { Table, TableHead, TableBody, TableFooter, TableRow, TableCell, Paper, TablePagination } from '@material-ui/core';
 import { EditOutlined, DeleteOutlined } from '@material-ui/icons';
 
@@ -24,7 +24,7 @@ function TableComponent({ headings, rows, handleDelete }) {
                     <TableRow>
                         {
                             headings.map((heading, i) => (
-                                <TableCell key={`${i}-${heading}`}>{heading}</TableCell>
+                                <TableHeadCell key={`${i}-${heading}`}>{heading}</TableHeadCell>
                             ))
                         }
                     </TableRow>
@@ -37,7 +37,7 @@ function TableComponent({ headings, rows, handleDelete }) {
                                 <TableCell>{row.category}</TableCell>
                                 <TableCell>{row.description}</TableCell>
                                 <TableCell>{row.amount}</TableCell>
-                                <TableCell>
+                                <TableCell align='right'>
                                     <EditOutlined fontSize='small' />
                                     <DeleteOutlined fontSize='small' onClick={() => handleDelete(row._id)} />
                                 </TableCell>
