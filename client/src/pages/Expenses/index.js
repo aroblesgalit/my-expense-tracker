@@ -18,7 +18,7 @@ function Expenses() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { filterRef, expenses, deleteExpense, setNewExpense } = value;
+                    const { expenses, deleteExpense, setNewExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <PageHeader title='Expenses' />
