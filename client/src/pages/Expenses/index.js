@@ -20,16 +20,17 @@ function Expenses() {
                 value => {
                     const { expenses, deleteExpense, setNewExpense } = value;
                     return (
-                        <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
-                            <PageHeader title='Expenses' />
-                            <TableTopContent container item xs={12} justify='space-between' alignItems='flex-end'>
-                                {/* <SelectInput 
+                        <ExpensesContainer component='section' container item md={10} xs={12} alignContent='space-between'>
+                            <Grid container item xs={12}>
+                                <PageHeader title='Expenses' />
+                                <TableTopContent container item xs={12} justify='space-between' alignItems='flex-end'>
+                                    {/* <SelectInput 
                                     label='Filter'
                                     name='filter'
                                     options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
                                     ref={filterRef}
                                 /> */}
-                                {/* <>
+                                    {/* <>
                                     <InputLabel htmlFor='filter'>Filter</InputLabel>
                                     <TextField
                                         id='filter'
@@ -41,26 +42,27 @@ function Expenses() {
                                         }
                                     </TextField>
                                 </> */}
-                                <Input
-                                    type='dropdown'
-                                    label='Filter'
-                                    name='filter'
-                                    options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
-                                />
-                                <Button
-                                    type='button'
-                                    text='New'
-                                    action='primary'
-                                    color='magenta'
-                                    onClick={() => setNewExpense(true)}
-                                />
-                            </TableTopContent>
-                            <Grid item xs={12} className={classes.mobilePadding}>
-                                <Table
-                                    headings={['Date', 'Category', 'Description', 'Amount', '']}
-                                    rows={expenses}
-                                    handleDelete={deleteExpense}
-                                />
+                                    <Input
+                                        type='dropdown'
+                                        label='Filter'
+                                        name='filter'
+                                        options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
+                                    />
+                                    <Button
+                                        type='button'
+                                        text='New'
+                                        action='primary'
+                                        color='magenta'
+                                        onClick={() => setNewExpense(true)}
+                                    />
+                                </TableTopContent>
+                                <Grid item xs={12} className={classes.mobilePadding}>
+                                    <Table
+                                        headings={['Date', 'Category', 'Description', 'Amount', '']}
+                                        rows={expenses}
+                                        handleDelete={deleteExpense}
+                                    />
+                                </Grid>
                             </Grid>
                             <TotalsContainer container item xs={12}>
                                 <Grid item xs={12}>
