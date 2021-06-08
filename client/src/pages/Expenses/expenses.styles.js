@@ -16,7 +16,6 @@ export const ExpensesContainer = withStyles({
     root: {
         backgroundColor: '#F7F7F7',
         minHeight: 'calc(100vh - 68px)',
-        position: 'relative',
 
         '@media (min-width: 960px)': {
             minHeight: '100vh',
@@ -80,8 +79,7 @@ export const TotalsContainer = withStyles({
         width: '100%',
         backgroundColor: 'rgba(54, 79, 107, 0.15)',
         padding: '32px',
-        position: 'absolute',
-        bottom: '0',
+        marginTop: '32px',
         overflowX: 'scroll',
 
         '@media (min-width: 960px)': {

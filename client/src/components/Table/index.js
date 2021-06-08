@@ -31,18 +31,20 @@ function TableComponent({ headings, rows, handleDelete }) {
                 </TableHead>
                 <TableBody>
                     {
-                        rows && rows.map((row, i) => (
-                            <TableRow key={`${i}-${row.date}-${row.category}-${row.description}`}>
-                                <TableCell>{row.date}</TableCell>
-                                <TableCell>{row.category}</TableCell>
-                                <TableCell>{row.description}</TableCell>
-                                <TableCell>{row.amount}</TableCell>
-                                <TableCell align='right'>
-                                    <EditOutlined fontSize='small' />
-                                    <DeleteOutlined fontSize='small' onClick={() => handleDelete(row._id)} />
-                                </TableCell>
-                            </TableRow>
-                        ))
+                        rows && rows
+                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            .map((row, i) => (
+                                <TableRow key={`${i}-${row.date}-${row.category}-${row.description}`}>
+                                    <TableCell>{row.date}</TableCell>
+                                    <TableCell>{row.category}</TableCell>
+                                    <TableCell>{row.description}</TableCell>
+                                    <TableCell>{row.amount}</TableCell>
+                                    <TableCell align='right'>
+                                        <EditOutlined fontSize='small' />
+                                        <DeleteOutlined fontSize='small' onClick={() => handleDelete(row._id)} />
+                                    </TableCell>
+                                </TableRow>
+                            ))
                     }
                 </TableBody>
                 <TableFooter>

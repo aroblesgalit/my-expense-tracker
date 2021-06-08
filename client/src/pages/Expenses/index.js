@@ -62,34 +62,6 @@ function Expenses() {
                                     handleDelete={deleteExpense}
                                 />
                             </Grid>
-                            {/* <div className='expense-form mt-1 d-flex jc-space-between ai-flex-end'>
-                                <Input
-                                    type='date'
-                                    label='Date'
-                                    name='date'
-                                    ref={expDateRef}
-                                />
-                                <Input
-                                    type='dropdown'
-                                    label='Category'
-                                    name='category'
-                                    options={['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other']}
-                                    ref={expCategoryRef}
-                                />
-                                <Input
-                                    type='text'
-                                    label='Description'
-                                    name='description'
-                                    ref={expDescRef}
-                                />
-                                <Input
-                                    type='number'
-                                    label='Amount'
-                                    name='amount'
-                                    ref={expAmountRef}
-                                />
-                                
-                            </div> */}
                             <TotalsContainer container item xs={12}>
                                 <Grid item xs={12}>
                                     <SectionHeading variant={'h3'}>Totals</SectionHeading>
