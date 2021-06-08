@@ -39,6 +39,7 @@ function ExpenseProvider(props) {
 
 
     /*********** Expense Add Form ***********/
+    const [newExpense, setNewExpense] = useState(false);
     const expDateRef = createRef();
     const expCategoryRef = createRef();
     const expDescRef = createRef();
@@ -109,7 +110,8 @@ function ExpenseProvider(props) {
                 addExpense,
                 expenses,
                 deleteExpense,
-                filterRef
+                filterRef,
+                newExpense
             }}
         >
             {props.children}
