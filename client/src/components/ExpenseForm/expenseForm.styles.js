@@ -1,7 +1,14 @@
-import { withStyles } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/core';
 import MuiBackdrop from '@material-ui/core/Backdrop';
 import MuiPaper from '@material-ui/core/Paper';
 import MuiTypography from '@material-ui/core/Typography';
+
+export const useStyles = makeStyles(() => ({
+    closeIconWrapper: {
+        display: 'flex',
+        justifyContent: 'flex-end'
+    }
+}));
 
 export const Backdrop = withStyles({
     root: {
@@ -13,7 +20,7 @@ export const ExpenseFormWrapper = withStyles({
     root: {
         width: '100%',
         maxWidth: '400px',
-        padding: '60px 38px',
+        padding: '20px 20px 30px',
         borderRadius: '10px'
     }
 })(MuiPaper);
