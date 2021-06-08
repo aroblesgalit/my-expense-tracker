@@ -1,5 +1,5 @@
 import React from 'react';
-import { Backdrop } from './expenseForm.styles';
+import { Backdrop, ExpenseFormWrapper, FormHeading } from './expenseForm.styles';
 // import { Backdrop } from '@material-ui/core';
 import { ExpenseConsumer } from '../../utils/ExpenseContext';
 
@@ -11,7 +11,9 @@ function ExpenseForm() {
                     const { newExpense, setNewExpense } = value;
                     return (
                         <Backdrop open={newExpense} onClick={() => setNewExpense(false)}>
-                            <p>Expense Form</p>
+                            <ExpenseFormWrapper>
+                                <FormHeading variant='h2' align='center'>New Expense</FormHeading>
+                            </ExpenseFormWrapper>
                         </Backdrop>
                     )
                 }
