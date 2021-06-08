@@ -1,11 +1,22 @@
 import React from 'react';
-import { Backdrop } from '@material-ui/core';
+import { Backdrop } from './expenseForm.styles';
+// import { Backdrop } from '@material-ui/core';
+import { ExpenseConsumer } from '../../utils/ExpenseContext';
 
-function ExpenseForm({ newExpense }) {
+function ExpenseForm() {
     return (
-        <Backdrop open={newExpense}>
-            <p>Expense Form</p>
-        </Backdrop>
+        <ExpenseConsumer>
+            {
+                value => {
+                    const { newExpense, setNewExpense } = value;
+                    return (
+                        <Backdrop open={newExpense} onClick={() => setNewExpense(false)}>
+                            <p>Expense Form</p>
+                        </Backdrop>
+                    )
+                }
+            }
+        </ExpenseConsumer>
     )
 }
 

@@ -111,7 +111,8 @@ function ExpenseProvider(props) {
                 expenses,
                 deleteExpense,
                 filterRef,
-                newExpense
+                newExpense,
+                setNewExpense
             }}
         >
             {props.children}

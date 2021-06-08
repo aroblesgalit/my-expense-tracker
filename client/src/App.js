@@ -4,6 +4,7 @@ import Expenses from './pages/Expenses';
 import Header from './components/Header';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import ExpenseForm from './components/ExpenseForm';
 import { UserProvider } from './utils/UserContext';
 import { ExpenseProvider } from './utils/ExpenseContext';
 import { HeaderProvider } from './utils/HeaderContext';
@@ -27,6 +28,7 @@ function App() {
                   <PublicRoute component={Login} />
                 </Route>
                 <Route path='/expenses'>
+                  <ExpenseForm />
                   <ProtectedRoute component={Expenses} />
                 </Route>
                 <Route exact path='/'>

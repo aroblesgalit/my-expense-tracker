@@ -18,7 +18,7 @@ function Expenses() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { filterRef, expenses, deleteExpense } = value;
+                    const { filterRef, expenses, deleteExpense, setNewExpense } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <PageHeader title='Expenses' />
@@ -52,7 +52,7 @@ function Expenses() {
                                     text='New'
                                     action='primary'
                                     color='magenta'
-                                // onClick={(e) => addExpense(e)}
+                                    onClick={() => setNewExpense(true)}
                                 />
                             </TableTopContent>
                             <Grid item xs={12} className={classes.mobilePadding}>
