@@ -100,6 +100,13 @@ function ExpenseProvider(props) {
     const filterRef = createRef();
     /*********** END Filter ***********/
 
+    /*********** Expense Totals ***********/
+    const [totalToday, setTotalToday] = useState(0);
+    function updateTotals() {
+
+    }
+    /*********** END Expense Totals ***********/
+
     return (
         <ExpenseContext.Provider
             value={{
@@ -112,7 +119,8 @@ function ExpenseProvider(props) {
                 deleteExpense,
                 filterRef,
                 newExpense,
-                setNewExpense
+                setNewExpense,
+                totalToday
             }}
         >
             {props.children}

@@ -18,7 +18,7 @@ function Expenses() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { expenses, deleteExpense, setNewExpense } = value;
+                    const { expenses, deleteExpense, setNewExpense, totalToday } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='space-between'>
                             <Grid container item xs={12}>
