@@ -21,16 +21,15 @@ function ExpenseProvider(props) {
     function getAllExpenses() {
         API.getAllExpenses(userData.id)
             .then(res => {
-                let tempExpenses = res.data;
+                let tempExpenses = [...res.data];
                 tempExpenses.forEach((expense, i) => {
                     let currentDate = new Date(expense.date);
                     // let week = currentDate.getDay();
                     let month = currentDate.getMonth();
-                    let day = currentDate.getDate();
+                    let day = currentDate.getUTCDate();
                     let year = currentDate.getFullYear();
-                    tempExpenses[i].date = `${month + 1}/${day + 1}/${year}`
+                    tempExpenses[i].date = `${month + 1}/${day}/${year}`
                 })
-
                 return tempExpenses;
             })
             .then(res => {
