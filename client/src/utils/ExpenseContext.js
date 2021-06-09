@@ -30,6 +30,7 @@ function ExpenseProvider(props) {
                     let year = currentDate.getFullYear();
                     tempExpenses[i].date = `${month + 1}/${day + 1}/${year}`
                 })
+                updateTotals(tempExpenses);
                 return tempExpenses;
             })
             .then(res => setExpenses(res))
@@ -102,8 +103,18 @@ function ExpenseProvider(props) {
 
     /*********** Expense Totals ***********/
     const [totalToday, setTotalToday] = useState(0);
-    function updateTotals() {
-
+    function updateTotals(expenses) {
+        // Get today's date
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentDay = currentDate.getDate();
+        let currentYear = currentDate.getFullYear();
+        let currentDateString = `${currentMonth + 1}/${currentDay}/${currentYear}`;
+        console.log(currentDateString);
+        // Get all expenses with today's date
+        const currentExpenses = expenses.filter(expense => expense.date === currentDateString);
+        console.log(currentExpenses);
+        // Add up expenses and set totalToday
     }
     /*********** END Expense Totals ***********/
 
