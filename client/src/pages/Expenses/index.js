@@ -69,7 +69,7 @@ function Expenses() {
                                     <SectionHeading variant={'h3'}>Totals</SectionHeading>
                                 </Grid>
                                 <CardsWrapper container item xs={12}>
-                                    <CardSingleVal name='Today' value='$48.92' />
+                                    <CardSingleVal name='Today' value={`$${totalToday.toFixed(2)}`} />
                                     <CardSingleVal name='This week' value='$90.12' />
                                     <CardSingleVal name='This month' value='$2975.40' />
                                     <CardSingleVal name='This year' value='$13506.20' />
