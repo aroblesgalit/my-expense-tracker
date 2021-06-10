@@ -109,19 +109,38 @@ function ExpenseProvider(props) {
 
     /*********** Expense Totals ***********/
     const [totalToday, setTotalToday] = useState(0);
+    const [totalWeek, setTotalWeek] = useState(0);
     function updateTotals(expenses) {
         // Get today's date
         let currentDate = new Date();
         let currentMonth = currentDate.getMonth();
         let currentDay = currentDate.getDate();
         let currentYear = currentDate.getFullYear();
+        let currentWeek = currentDate.getDay();
+        // Get today's total
         // Get all expenses with today's date
-        const currentExpenses = expenses
+        const todayExpenses = expenses
             .filter(expense => expense.month === currentMonth && expense.day === currentDay && expense.year === currentYear)
             .map(expense => expense.amount);
         // Add up expenses and set totalToday
-        const temptotalToday = currentExpenses.reduce((total, val) => total + val, 0);
-        setTotalToday(temptotalToday);
+        const tempTotalToday = todayExpenses.reduce((total, val) => total + val, 0);
+        setTotalToday(tempTotalToday);
+        // Get this week's total
+        // Get all expenses up to today until day of week 0 (sunday)
+        const weekExpenses = [];
+        for (let i = currentWeek; i >= 0; i--) {
+            const tempDate = new Date();
+            tempDate.setDate(tempDate.getDate() - i);
+            const tempDateMonth = tempDate.getMonth();
+            const tempDateDay = tempDate.getDate();
+            const tempDateYear = tempDate.getFullYear();
+            const tempExpenses = expenses
+                .filter(expense => expense.month === tempDateMonth && expense.day === tempDateDay && expense.year === tempDateYear)
+                .map(expense => expense.amount);
+            weekExpenses.push(...tempExpenses)
+        }
+        const tempTotalWeek = weekExpenses.reduce((total, val) => total + val, 0);
+        setTotalWeek(tempTotalWeek);
     }
     /*********** END Expense Totals ***********/
 
@@ -138,7 +157,8 @@ function ExpenseProvider(props) {
                 filterRef,
                 newExpense,
                 setNewExpense,
-                totalToday
+                totalToday,
+                totalWeek
             }}
         >
             {props.children}
