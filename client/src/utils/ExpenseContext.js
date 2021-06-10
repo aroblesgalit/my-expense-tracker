@@ -110,6 +110,7 @@ function ExpenseProvider(props) {
     /*********** Expense Totals ***********/
     const [totalToday, setTotalToday] = useState(0);
     const [totalWeek, setTotalWeek] = useState(0);
+    const [totalMonth, setTotalMonth] = useState(0);
     function updateTotals(expenses) {
         // Get today's date
         let currentDate = new Date();
@@ -158,7 +159,8 @@ function ExpenseProvider(props) {
                 newExpense,
                 setNewExpense,
                 totalToday,
-                totalWeek
+                totalWeek,
+                totalMonth
             }}
         >
             {props.children}

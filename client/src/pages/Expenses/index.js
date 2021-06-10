@@ -18,7 +18,7 @@ function Expenses() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { expenses, deleteExpense, setNewExpense, totalToday, totalWeek } = value;
+                    const { expenses, deleteExpense, setNewExpense, totalToday, totalWeek, totalMonth } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='space-between'>
                             <Grid container item xs={12}>
@@ -71,7 +71,7 @@ function Expenses() {
                                 <CardsWrapper container item xs={12}>
                                     <CardSingleVal name='Today' value={`$${totalToday.toFixed(2)}`} />
                                     <CardSingleVal name='This week' value={`$${totalWeek.toFixed(2)}`} />
-                                    <CardSingleVal name='This month' value='$2975.40' />
+                                    <CardSingleVal name='This month' value={`$${totalMonth.toFixed(2)}`} />
                                     <CardSingleVal name='This year' value='$13506.20' />
                                 </CardsWrapper>
                             </TotalsContainer>
