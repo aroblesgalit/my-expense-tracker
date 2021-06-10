@@ -142,6 +142,12 @@ function ExpenseProvider(props) {
         }
         const tempTotalWeek = weekExpenses.reduce((total, val) => total + val, 0);
         setTotalWeek(tempTotalWeek);
+        // Get this month's total
+        const monthExpenses = expenses
+            .filter(expense => expense.month === currentMonth && expense.year === currentYear)
+            .map(expense => expense.amount);
+        const tempTotalMonth = monthExpenses.reduce((total, val) => total + val, 0);
+        setTotalMonth(tempTotalMonth);
     }
     /*********** END Expense Totals ***********/
 
