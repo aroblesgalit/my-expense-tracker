@@ -111,6 +111,7 @@ function ExpenseProvider(props) {
     const [totalToday, setTotalToday] = useState(0);
     const [totalWeek, setTotalWeek] = useState(0);
     const [totalMonth, setTotalMonth] = useState(0);
+    const [totalYear, setTotalYear] = useState(0);
     function updateTotals(expenses) {
         // Get today's date
         let currentDate = new Date();
@@ -148,6 +149,12 @@ function ExpenseProvider(props) {
             .map(expense => expense.amount);
         const tempTotalMonth = monthExpenses.reduce((total, val) => total + val, 0);
         setTotalMonth(tempTotalMonth);
+        // Get this year's total
+        const yearExpenses = expenses
+            .filter(expense => expense.year === currentYear)
+            .map(expense => expense.amount);
+        const tempTotalYear = yearExpenses.reduce((total, val) => total + val, 0);
+        setTotalYear(tempTotalYear);
     }
     /*********** END Expense Totals ***********/
 
@@ -166,7 +173,8 @@ function ExpenseProvider(props) {
                 setNewExpense,
                 totalToday,
                 totalWeek,
-                totalMonth
+                totalMonth,
+                totalYear
             }}
         >
             {props.children}
