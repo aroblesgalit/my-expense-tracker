@@ -10,7 +10,7 @@ const CustomInput = React.forwardRef(({ type, label, name, options, border, onCh
             type === 'dropdown' && (
                 <>
                     <label htmlFor={name}>{label}</label>
-                    <select name={name} ref={ref}>
+                    <select name={name} ref={ref} onChange={onChange}>
                         {
                             options.map(option => <option key={option} value={option}>{option}</option>)
                         }

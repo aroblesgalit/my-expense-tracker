@@ -105,6 +105,10 @@ function ExpenseProvider(props) {
 
     /*********** Filter ***********/
     const filterRef = createRef();
+    function onFilterChange() {
+        const filterOption = filterRef.current.value;
+        console.log(filterOption)
+    }
     /*********** END Filter ***********/
 
     /*********** Expense Totals ***********/
@@ -169,6 +173,7 @@ function ExpenseProvider(props) {
                 expenses,
                 deleteExpense,
                 filterRef,
+                onFilterChange,
                 newExpense,
                 setNewExpense,
                 totalToday,
