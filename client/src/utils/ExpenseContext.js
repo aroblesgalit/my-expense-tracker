@@ -24,11 +24,15 @@ function ExpenseProvider(props) {
                 let tempExpenses = [...res.data];
                 tempExpenses.forEach((expense, i) => {
                     let currentDate = new Date(expense.date);
-                    // let week = currentDate.getDay();
+                    let week = currentDate.getDay();
                     let month = currentDate.getMonth();
                     let day = currentDate.getUTCDate();
                     let year = currentDate.getFullYear();
-                    tempExpenses[i].date = `${month + 1}/${day}/${year}`
+                    tempExpenses[i].week = week;
+                    tempExpenses[i].month = month;
+                    tempExpenses[i].day = day;
+                    tempExpenses[i].year = year;
+                    tempExpenses[i].fullDate = `${month + 1}/${day}/${year}`
                 })
                 return tempExpenses;
             })
@@ -111,10 +115,9 @@ function ExpenseProvider(props) {
         let currentMonth = currentDate.getMonth();
         let currentDay = currentDate.getDate();
         let currentYear = currentDate.getFullYear();
-        let currentDateString = `${currentMonth + 1}/${currentDay}/${currentYear}`;
         // Get all expenses with today's date
         const currentExpenses = expenses
-            .filter(expense => expense.date === currentDateString)
+            .filter(expense => expense.month === currentMonth && expense.day === currentDay && expense.year === currentYear)
             .map(expense => expense.amount);
         // Add up expenses and set totalToday
         const temptotalToday = currentExpenses.reduce((total, val) => total + val, 0);

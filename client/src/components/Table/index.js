@@ -34,8 +34,8 @@ function TableComponent({ headings, rows, handleDelete }) {
                         rows && rows
                             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                             .map((row, i) => (
-                                <TableRow key={`${i}-${row.date}-${row.category}-${row.description}`}>
-                                    <TableCell>{row.date}</TableCell>
+                                <TableRow key={`${i}-${row.fullDate}-${row.category}-${row.description}`}>
+                                    <TableCell>{row.fullDate}</TableCell>
                                     <TableCell>{row.category}</TableCell>
                                     <TableCell>{row.description}</TableCell>
                                     <TableCell>{row.amount}</TableCell>
