@@ -11,6 +11,7 @@ function ExpenseProvider(props) {
 
     /*********** Expense Table ***********/
     const [expenses, setExpenses] = useState([]);
+    const [filteredExpenses, setFilteredExpenses] = useState([]);
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -40,6 +41,7 @@ function ExpenseProvider(props) {
                 updateTotals(res);
                 return setExpenses(res);
             })
+            .then(() => onFilterChange())
             .catch(err => console.log(err));
     }
     /*********** END Expense Table ***********/
@@ -104,10 +106,40 @@ function ExpenseProvider(props) {
 
 
     /*********** Filter ***********/
+    const [activeFilter, setActiveFilter] = useState('All');
     const filterRef = createRef();
     function onFilterChange() {
+        // Get today's date
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentDay = currentDate.getDate();
+        let currentYear = currentDate.getFullYear();
+        let currentWeek = currentDate.getDay();
+        // Get filter option
         const filterOption = filterRef.current.value;
-        console.log(filterOption)
+        setActiveFilter(filterOption);
+        // Create copy of expenses
+        // const tempExpenses = [...expenses];
+        // Filter based on selected option
+        switch(filterOption) {
+            case 'All':
+                setFilteredExpenses(expenses);
+                break;
+            case 'Daily':
+                const todayExpenses = expenses.filter(expense => expense.month === currentMonth && expense.day === currentDay && expense.year === currentYear);
+                setFilteredExpenses(todayExpenses);
+                break;
+            case 'Monthly':
+                const monthExpenses = expenses.filter(expense => expense.month === currentMonth && expense.year === currentYear);
+                setFilteredExpenses(monthExpenses);
+                break;
+            case 'Yearly':
+                const yearExpenses = expenses.filter(expense => expense.year === currentYear);
+                setFilteredExpenses(yearExpenses);
+                break;
+            default:
+                setFilteredExpenses(expenses);
+        }
     }
     /*********** END Filter ***********/
 
@@ -170,8 +202,9 @@ function ExpenseProvider(props) {
                 expDescRef,
                 expAmountRef,
                 addExpense,
-                expenses,
+                filteredExpenses,
                 deleteExpense,
+                activeFilter,
                 filterRef,
                 onFilterChange,
                 newExpense,

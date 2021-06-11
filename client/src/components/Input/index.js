@@ -3,14 +3,14 @@ import React from 'react';
 import './input.styles';
 import { Input, InputLabel } from './input.styles.js';
 
-const CustomInput = React.forwardRef(({ type, label, name, options, border, onChange }, ref) => (
+const CustomInput = React.forwardRef(({ type, label, name, options, border, onChange, value }, ref) => (
 
     <div className='wrapper input'>
         {
             type === 'dropdown' && (
                 <>
                     <label htmlFor={name}>{label}</label>
-                    <select name={name} ref={ref} onChange={onChange}>
+                    <select name={name} ref={ref} value={value} onChange={onChange}>
                         {
                             options.map(option => <option key={option} value={option}>{option}</option>)
                         }

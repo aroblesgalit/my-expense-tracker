@@ -18,7 +18,7 @@ function Expenses() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { filterRef, onFilterChange, expenses, deleteExpense, setNewExpense, totalToday, totalWeek, totalMonth, totalYear } = value;
+                    const { activeFilter, filterRef, onFilterChange, filteredExpenses, deleteExpense, setNewExpense, totalToday, totalWeek, totalMonth, totalYear } = value;
                     return (
                         <ExpensesContainer component='section' container item md={10} xs={12} alignContent='space-between'>
                             <Grid container item xs={12}>
@@ -46,6 +46,7 @@ function Expenses() {
                                         type='dropdown'
                                         label='Filter'
                                         name='filter'
+                                        value={activeFilter}
                                         ref={filterRef}
                                         onChange={onFilterChange}
                                         options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
@@ -61,7 +62,7 @@ function Expenses() {
                                 <Grid item xs={12} className={classes.mobilePadding}>
                                     <Table
                                         headings={['Date', 'Category', 'Description', 'Amount', '']}
-                                        rows={expenses}
+                                        rows={filteredExpenses}
                                         handleDelete={deleteExpense}
                                     />
                                 </Grid>
