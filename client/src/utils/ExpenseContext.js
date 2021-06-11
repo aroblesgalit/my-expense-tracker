@@ -39,9 +39,9 @@ function ExpenseProvider(props) {
             })
             .then(res => {
                 updateTotals(res);
+                if (activeFilter === 'All') setFilteredExpenses(res);
                 return setExpenses(res);
             })
-            .then(() => onFilterChange())
             .catch(err => console.log(err));
     }
     /*********** END Expense Table ***********/
@@ -60,8 +60,8 @@ function ExpenseProvider(props) {
         const user = userData.id;
         const date = new Date(expDateRef.current.value);
         const category = expCategoryRef.current.value;
-        const description = expDescRef.current.value;
-        const amount = expAmountRef.current.value;
+        let description = expDescRef.current.value;
+        let amount = expAmountRef.current.value;
 
         date && category && description && amount ? (
             API.addExpense({
@@ -74,7 +74,7 @@ function ExpenseProvider(props) {
                 .then(res => {
                     // Show alert that expense has been added
                     // Remove alert after 5 seconds
-                    console.log('Expense added...', res);
+                    // console.log('Expense added...', res);
                     // Get all expenses again to update table
                     return getAllExpenses();
                     // Clear form
