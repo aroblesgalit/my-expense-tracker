@@ -12,55 +12,55 @@ export const useStyles = makeStyles(() => ({
     },
 }));
 
-export const ExpensesContainer = withStyles({
-    root: {
-        backgroundColor: '#F7F7F7',
-        minHeight: 'calc(100vh - 68px)',
+// export const ExpensesContainer = withStyles({
+//     root: {
+//         backgroundColor: '#F7F7F7',
+//         minHeight: 'calc(100vh - 68px)',
 
-        '@media (min-width: 960px)': {
-            minHeight: '100vh',
-        }
-    }
-})(MuiGrid);
+//         '@media (min-width: 960px)': {
+//             minHeight: '100vh',
+//         }
+//     }
+// })(MuiGrid);
 
-export const PageHeader = withStyles({
-    root: {
-        backgroundColor: '#364F6B',
-        padding: '16px 32px',
+// export const PageHeader = withStyles({
+//     root: {
+//         backgroundColor: '#364F6B',
+//         padding: '16px 32px',
 
-        '@media (min-width: 960px)': {
-            backgroundColor: 'transparent',
-            padding: '50px 80px 0'
-        }
-    }
-})(MuiGrid);
+//         '@media (min-width: 960px)': {
+//             backgroundColor: 'transparent',
+//             padding: '50px 80px 0'
+//         }
+//     }
+// })(MuiGrid);
 
-export const PageTitle = withStyles({
-    root: {
-        fontSize: '42px',
-        fontWeight: '700',
-        color: '#F0F0F0',
+// export const PageTitle = withStyles({
+//     root: {
+//         fontSize: '42px',
+//         fontWeight: '700',
+//         color: '#F0F0F0',
 
-        '@media (min-width: 960px)': {
-            fontSize: '48px',
-            color: '#364F6B',
-        }
-    }
-})(MuiTypography);
+//         '@media (min-width: 960px)': {
+//             fontSize: '48px',
+//             color: '#364F6B',
+//         }
+//     }
+// })(MuiTypography);
 
-export const WelcomeMessage = withStyles({
-    root: {
-        fontSize: '14px',
-        fontWeight: '700',
-        textAlign: 'right',
-        color: '#F0F0F0',
+// export const WelcomeMessage = withStyles({
+//     root: {
+//         fontSize: '14px',
+//         fontWeight: '700',
+//         textAlign: 'right',
+//         color: '#F0F0F0',
 
-        '@media (min-width: 960px)': {
-            textAlign: 'left',
-            color: '#8A9BAE',
-        }
-    }
-})(MuiTypography);
+//         '@media (min-width: 960px)': {
+//             textAlign: 'left',
+//             color: '#8A9BAE',
+//         }
+//     }
+// })(MuiTypography);
 
 export const TableTopContent = withStyles({
     root: {

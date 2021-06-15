@@ -1,5 +1,5 @@
-// import { makeStyles, withStyles } from '@material-ui/core';
-// import MuiGrid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core';
+import MuiGrid from '@material-ui/core/Grid';
 // import MuiTypography from '@material-ui/core/Typography';
 
 // export const useStyles = makeStyles(() => ({
@@ -20,17 +20,17 @@
 //     },
 // }));
 
-// export const ExpensesContainer = withStyles({
-//     root: {
-//         backgroundColor: '#F7F7F7',
-//         minHeight: 'calc(100vh - 68px)',
-//         position: 'relative',
+export const PageContainer = withStyles({
+    root: {
+        backgroundColor: '#F7F7F7',
+        minHeight: 'calc(100vh - 68px)',
+        position: 'relative',
 
-//         '@media (min-width: 960px)': {
-//             minHeight: '100vh',
-//         }
-//     }
-// })(MuiGrid);
+        '@media (min-width: 960px)': {
+            minHeight: '100vh',
+        }
+    }
+})(MuiGrid);
 
 // export const PageHeader = withStyles({
 //     root: {

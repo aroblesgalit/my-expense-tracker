@@ -1,5 +1,6 @@
 import React from 'react';
-import { useStyles, ExpensesContainer, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './expenses.styles';
+import { PageContainer } from '../pages.styles';
+import { useStyles, TableTopContent, TotalsContainer, SectionHeading, CardsWrapper } from './expenses.styles';
 import Input from '../../components/Input';
 import Table from '../../components/Table';
 import Button from '../../components/Button';
@@ -20,7 +21,7 @@ function Expenses() {
                 value => {
                     const { activeFilter, filterRef, onFilterChange, filteredExpenses, deleteExpense, setNewExpense, totalToday, totalWeek, totalMonth, totalYear } = value;
                     return (
-                        <ExpensesContainer component='section' container item md={10} xs={12} alignContent='space-between'>
+                        <PageContainer component='section' container item md={10} xs={12} alignContent='space-between'>
                             <Grid container item xs={12}>
                                 <PageHeader title='Expenses' />
                                 <TableTopContent container item xs={12} justify='space-between' alignItems='flex-end'>
@@ -78,7 +79,7 @@ function Expenses() {
                                     <CardSingleVal name='This year' value={`$${totalYear.toFixed(2)}`} />
                                 </CardsWrapper>
                             </TotalsContainer>
-                        </ExpensesContainer>
+                        </PageContainer>
                     )
                 }
             }
