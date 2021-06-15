@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Expenses from './pages/Expenses';
+import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -30,6 +31,9 @@ function App() {
                 <Route path='/expenses'>
                   <ExpenseForm />
                   <ProtectedRoute component={Expenses} />
+                </Route>
+                <Route path='/dashboard'>
+                  <ProtectedRoute component={Dashboard} />
                 </Route>
                 <Route exact path='/'>
                   <PublicRoute component={Login} />

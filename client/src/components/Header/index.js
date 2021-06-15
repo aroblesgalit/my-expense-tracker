@@ -38,7 +38,9 @@ function Header() {
                                         <ListItemIcon>
                                             <DashboardOutlined fontSize='small' />
                                         </ListItemIcon>
-                                        <Typography variant='inherit'>dashboard</Typography>
+                                        <Typography variant='inherit'>
+                                            <Link to='/dashboard'>dashboard</Link>
+                                        </Typography>
                                     </MenuItem>
                                     <MenuItem onClick={handleMenuItemClick} className={currentPathname === '/expenses' ? classes.active : ''}>
                                         <ListItemIcon>

@@ -24,3 +24,5 @@ function Dashboard() {
         </ExpenseConsumer>
     )
 }
+
+export default Dashboard;
