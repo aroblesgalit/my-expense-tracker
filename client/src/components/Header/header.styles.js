@@ -54,7 +54,7 @@ export const HeaderContainer = withStyles({
 
         '@media (min-width: 960px)': {
             padding: '32px',
-            height: '100vh',
+            minHeight: '100vh',
         }
     }
 })(MuiGrid);
