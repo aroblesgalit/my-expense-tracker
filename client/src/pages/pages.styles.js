@@ -98,12 +98,12 @@ export const PageContainer = withStyles({
 //     }
 // })(MuiGrid);
 
-// export const CardsWrapper = withStyles({
-//     root: {
-//         gap: '20px',
-//         flexWrap: 'nowrap'
-//     }
-// })(MuiGrid);
+export const CardsWrapper = withStyles({
+    root: {
+        gap: '20px',
+        flexWrap: 'nowrap'
+    }
+})(MuiGrid);
 
 // export const RightContainer = withStyles({
 //     root: {
