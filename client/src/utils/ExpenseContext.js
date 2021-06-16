@@ -39,6 +39,7 @@ function ExpenseProvider(props) {
             })
             .then(res => {
                 updateTotals(res);
+                updateCatMonthTotals(res);
                 if (activeFilter === 'All') setFilteredExpenses(res);
                 return setExpenses(res);
             })
@@ -198,9 +199,16 @@ function ExpenseProvider(props) {
     const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
         // Get today's date
+        let currentDate = new Date();
         // Get this month
+        let currentMonth = currentDate.getMonth();
         // Filter through expenses groceries
+        const groceryExpenses = expenses
+            .filter(expense => expense.month = currentMonth && expense.category === 'Groceries')
+            .map(expense => expense.amount);
         // Get total amount for groceries
+        const tempGroceryMonthTotal = groceryExpenses.reduce((total, val) => total + val, 0);
+        setGroceryMonthTotal(tempGroceryMonthTotal);
     }
     /*********** END Categories Totals ***********/
 
@@ -222,7 +230,8 @@ function ExpenseProvider(props) {
                 totalToday,
                 totalWeek,
                 totalMonth,
-                totalYear
+                totalYear,
+                groceryMonthTotal
             }}
         >
             {props.children}
