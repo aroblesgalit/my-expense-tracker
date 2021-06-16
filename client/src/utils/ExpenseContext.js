@@ -194,6 +194,16 @@ function ExpenseProvider(props) {
     }
     /*********** END Expense Totals ***********/
 
+    /*********** Categories Totals ***********/
+    const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
+    function updateCatMonthTotals(expenses) {
+        // Get today's date
+        // Get this month
+        // Filter through expenses groceries
+        // Get total amount for groceries
+    }
+    /*********** END Categories Totals ***********/
+
     return (
         <ExpenseContext.Provider
             value={{
