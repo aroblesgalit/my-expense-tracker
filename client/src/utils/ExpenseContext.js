@@ -196,6 +196,7 @@ function ExpenseProvider(props) {
     /*********** END Expense Totals ***********/
 
     /*********** Categories Totals ***********/
+    const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([]);
     const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
         // Get today's date
@@ -208,7 +209,12 @@ function ExpenseProvider(props) {
             .map(expense => expense.amount);
         // Get total amount for groceries
         const tempGroceryMonthTotal = groceryExpenses.reduce((total, val) => total + val, 0);
-        setGroceryMonthTotal(tempGroceryMonthTotal);
+        // setGroceryMonthTotal(tempGroceryMonthTotal);
+        setCategoryMonthlyTotals(prev => [...prev, {
+            name: 'Groceries',
+            value: tempGroceryMonthTotal
+        }])
+        // Filter through expenses loans
     }
     /*********** END Categories Totals ***********/
 
@@ -231,7 +237,7 @@ function ExpenseProvider(props) {
                 totalWeek,
                 totalMonth,
                 totalYear,
-                groceryMonthTotal
+                categoryMonthlyTotals
             }}
         >
             {props.children}
