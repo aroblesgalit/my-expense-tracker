@@ -19,13 +19,10 @@ function Dashboard() {
                             <Grid container item xs={12}>
                                 <PageHeader title='Dashboard' />
                             </Grid>
-                            <CardsWrapper container item xs={12}>
+                            <CardsWrapper className={classes.px} container item xs={12}>
                                 {
                                     categoryMonthlyTotals.map(category => <CardSingleVal name={category.name} value={`$${category.value}`} />)
                                 }
-                                {/* <CardSingleVal name='Loans' value='$1420' />
-                                <CardSingleVal name='Groceries' value={`$${groceryMonthTotal}`} />
-                                <CardSingleVal name='Fun' value='$179' /> */}
                             </CardsWrapper>
                         </PageContainer>
                     )
