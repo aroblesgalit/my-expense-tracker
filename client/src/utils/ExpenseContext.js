@@ -122,7 +122,7 @@ function ExpenseProvider(props) {
         // Create copy of expenses
         // const tempExpenses = [...expenses];
         // Filter based on selected option
-        switch(filterOption) {
+        switch (filterOption) {
             case 'All':
                 setFilteredExpenses(expenses);
                 break;
@@ -197,24 +197,33 @@ function ExpenseProvider(props) {
 
     /*********** Categories Totals ***********/
     const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([]);
-    const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
+    // const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
+        const categories = ['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'];
+        // Create temporary array for all the totals
+        const tempMonthlyTotals = [];
         // Get today's date
         let currentDate = new Date();
         // Get this month
         let currentMonth = currentDate.getMonth();
-        // Filter through expenses groceries
-        const groceryExpenses = expenses
-            .filter(expense => expense.month = currentMonth && expense.category === 'Groceries')
-            .map(expense => expense.amount);
-        // Get total amount for groceries
-        const tempGroceryMonthTotal = groceryExpenses.reduce((total, val) => total + val, 0);
-        // setGroceryMonthTotal(tempGroceryMonthTotal);
-        setCategoryMonthlyTotals(prev => [...prev, {
-            name: 'Groceries',
-            value: tempGroceryMonthTotal
-        }])
-        // Filter through expenses loans
+        // Loop through the categories and add up each category total
+        for (let i = 0; i < categories.length; i++) {
+            // Filter through expenses groceries
+            const currentExpenses = expenses
+                .filter(expense => expense.month = currentMonth && expense.category === categories[i])
+                .map(expense => expense.amount);
+            // Get total amount for groceries
+            const currentExpensesMonthlyTotal = currentExpenses.reduce((total, val) => total + val, 0);
+            // Add total to array if total > 0
+            if (currentExpensesMonthlyTotal > 0) {
+                tempMonthlyTotals.push({ 
+                    name: categories[i], 
+                    value: currentExpensesMonthlyTotal 
+                });
+            }
+        }
+        const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
+        setCategoryMonthlyTotals(sortedTotals);
     }
     /*********** END Categories Totals ***********/
 
