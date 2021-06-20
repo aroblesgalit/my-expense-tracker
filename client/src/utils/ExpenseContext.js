@@ -196,7 +196,8 @@ function ExpenseProvider(props) {
     /*********** END Expense Totals ***********/
 
     /*********** Categories Totals ***********/
-    const [categoryCurMonthTotals, setCategoryCurMonthTotals] = useState([]);
+    // const [categoryCurMonthTotals, setCategoryCurMonthTotals] = useState([]);
+    const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([]);
     // const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
         const categories = ['groceries', 'bills', 'auto', 'medical', 'clothing', 'travel', 'loans', 'household', 'fun', 'gifts', 'other'];
@@ -210,8 +211,46 @@ function ExpenseProvider(props) {
         let currentMonth = currentDate.getMonth();
         // Loop through the categories and add up each category total
         for (let i = currentMonth; i >= 0; i--) {
+            let strMonth = '';
+            switch (i) {
+                case 0:
+                    strMonth = 'Jan';
+                    break;
+                case 1:
+                    strMonth = 'Feb';
+                    break;
+                case 2:
+                    strMonth = 'Mar';
+                    break;
+                case 3:
+                    strMonth = 'Apr';
+                    break;
+                case 4:
+                    strMonth = 'May';
+                    break;
+                case 5:
+                    strMonth = 'Jun';
+                    break;
+                case 6:
+                    strMonth = 'Jul';
+                    break;
+                case 7:
+                    strMonth = 'Aug';
+                    break;
+                case 8:
+                    strMonth = 'Sep';
+                    break;
+                case 9:
+                    strMonth = 'Oct';
+                    break;
+                case 10:
+                    strMonth = 'Nov';
+                    break;
+                default:
+                    strMonth = 'Dec';
+            }
             let tempCurrentMonthTotal = {
-                month: i,
+                month: strMonth,
             };
             for (let j = 0; j < categories.length; j++) {
                 // Filter through expenses groceries
@@ -222,11 +261,11 @@ function ExpenseProvider(props) {
                 const currentExpensesMonthlyTotal = currentExpenses.reduce((total, val) => total + val, 0);
                 // Add total to array if total > 0
                 // if (currentExpensesMonthlyTotal > 0) {
-                    // tempMonthlyTotals.push({ 
-                    //     name: categories[j], 
-                    //     value: currentExpensesMonthlyTotal 
-                    // });
-                    tempCurrentMonthTotal[categories[j]] = currentExpensesMonthlyTotal;
+                // tempMonthlyTotals.push({ 
+                //     name: categories[j], 
+                //     value: currentExpensesMonthlyTotal 
+                // });
+                tempCurrentMonthTotal[categories[j]] = currentExpensesMonthlyTotal;
                 // }
             }
             // const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
@@ -234,7 +273,7 @@ function ExpenseProvider(props) {
             tempMonthlyTotals.push(tempCurrentMonthTotal);
             console.log(tempMonthlyTotals)
         }
-        setCategoryCurMonthTotals(tempMonthlyTotals);
+        setCategoryMonthlyTotals(tempMonthlyTotals);
     }
     /*********** END Categories Totals ***********/
 
@@ -257,7 +296,7 @@ function ExpenseProvider(props) {
                 totalWeek,
                 totalMonth,
                 totalYear,
-                categoryCurMonthTotals
+                categoryMonthlyTotals
             }}
         >
             {props.children}

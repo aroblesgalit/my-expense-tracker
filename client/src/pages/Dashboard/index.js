@@ -14,6 +14,28 @@ import {
     Legend,
 } from '@devexpress/dx-react-chart-material-ui';
 import { Stack, Animation } from '@devexpress/dx-react-chart';
+import { withStyles } from '@material-ui/core';
+
+const legendStyles = () => ({
+    root: {
+        display: 'flex',
+        margin: 'auto',
+        flexDirection: 'row',
+    },
+});
+const legendRootBase = ({ classes, ...restProps }) => (
+    <Legend.Root {...restProps} className={classes.root} />
+);
+const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase);
+const legendLabelStyles = () => ({
+    label: {
+        whiteSpace: 'nowrap',
+    },
+});
+const legendLabelBase = ({ classes, ...restProps }) => (
+    <Legend.Label className={classes.label} {...restProps} />
+);
+const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
 
 function Dashboard() {
     const classes = useStyles();
@@ -30,7 +52,7 @@ function Dashboard() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { categoryCurMonthTotals } = value;
+                    const { categoryMonthlyTotals } = value;
                     return (
                         <PageContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <Grid container item xs={12}>
@@ -40,14 +62,14 @@ function Dashboard() {
                                 {
                                     // categoryCurMonthTotals[0].map(category => <CardSingleVal name={category.name} value={`$${category.value}`} />)
 
-                                    Object.keys(categoryCurMonthTotals[0]).map((category, i) => (
-                                        (category !== 'month' && categoryCurMonthTotals[0][category] > 0) &&
-                                        <CardSingleVal key={`${i}-${category}`} name={category} value={`$${categoryCurMonthTotals[0][category]}`} />
+                                    Object.keys(categoryMonthlyTotals[0]).map((category, i) => (
+                                        (category !== 'month' && categoryMonthlyTotals[0][category] > 0) &&
+                                        <CardSingleVal key={`${i}-${category}`} name={category} value={`$${categoryMonthlyTotals[0][category]}`} />
                                     ))
                                 }
                             </CardsWrapper>
                             <Paper>
-                                <Chart data={monthlyTotals}>
+                                <Chart data={categoryMonthlyTotals}>
                                     <ArgumentAxis />
                                     <ValueAxis
                                         max={3000}
@@ -109,7 +131,7 @@ function Dashboard() {
                                         argumentField="month"
                                     />
                                     <Animation />
-                                    <Legend position="bottom" />
+                                    <Legend position="bottom" rootComponent={Root} labelComponent={Label} />
                                     <Title text="Monthly totals" />
                                     <Stack
                                         stacks={[
