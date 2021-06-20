@@ -210,7 +210,7 @@ function ExpenseProvider(props) {
         for (let i = 0; i < categories.length; i++) {
             // Filter through expenses groceries
             const currentExpenses = expenses
-                .filter(expense => expense.month = currentMonth && expense.category === categories[i])
+                .filter(expense => expense.month === currentMonth && expense.category === categories[i])
                 .map(expense => expense.amount);
             // Get total amount for groceries
             const currentExpensesMonthlyTotal = currentExpenses.reduce((total, val) => total + val, 0);
