@@ -40,14 +40,6 @@ const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabel
 function Dashboard() {
     const classes = useStyles();
 
-    const monthlyTotals = [
-        {
-            month: 'May', groceries: 0, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 0, household: 0, fun: 0, gifts: 0, other: 0,
-        }, {
-            month: 'June', groceries: 71.16, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 383.42, household: 0, fun: 0, gifts: 0, other: 0,
-        }
-    ];
-
     return (
         <ExpenseConsumer>
             {
@@ -79,56 +71,67 @@ function Dashboard() {
                                         name="Groceries"
                                         valueField="groceries"
                                         argumentField="month"
+                                        color='#80F9DC'
                                     />
                                     <BarSeries
                                         name="Bills"
                                         valueField="bills"
                                         argumentField="month"
+                                        color='#808CF9'
                                     />
                                     <BarSeries
                                         name="Auto"
                                         valueField="auto"
                                         argumentField="month"
+                                        color='#F980C9'
                                     />
                                     <BarSeries
                                         name="Medical"
                                         valueField="medical"
                                         argumentField="month"
+                                        color='#F9BA80'
                                     />
                                     <BarSeries
                                         name="Clothing"
                                         valueField="clothing"
                                         argumentField="month"
+                                        color='#9FF980'
                                     />
                                     <BarSeries
                                         name="Travel"
                                         valueField="travel"
                                         argumentField="month"
+                                        color='#D9A778'
                                     />
                                     <BarSeries
                                         name="Loans"
                                         valueField="loans"
                                         argumentField="month"
+                                        color='#80DCF9'
                                     />
                                     <BarSeries
                                         name="Household"
                                         valueField="household"
                                         argumentField="month"
+                                        color='#C480F9'
                                     />
                                     <BarSeries
                                         name="Fun"
                                         valueField="fun"
                                         argumentField="month"
+                                        color='#F98080'
                                     />
                                     <BarSeries
                                         name="Gifts"
                                         valueField="gifts"
                                         argumentField="month"
+                                        color='#EFF980'
                                     />
                                     <BarSeries
                                         name="Other"
                                         valueField="other"
                                         argumentField="month"
+                                        color='#78B0D9'
                                     />
                                     <Animation />
                                     <Legend position="bottom" rootComponent={Root} labelComponent={Label} />

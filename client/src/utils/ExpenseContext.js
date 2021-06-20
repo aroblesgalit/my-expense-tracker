@@ -210,7 +210,7 @@ function ExpenseProvider(props) {
         // Get this month
         let currentMonth = currentDate.getMonth();
         // Loop through the categories and add up each category total
-        for (let i = currentMonth; i >= 0; i--) {
+        for (let i = 0; i <= currentMonth; i++) {
             let strMonth = '';
             switch (i) {
                 case 0:
@@ -271,7 +271,6 @@ function ExpenseProvider(props) {
             // const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
             // setCategoryCurMonthTotals(sortedTotals);
             tempMonthlyTotals.push(tempCurrentMonthTotal);
-            console.log(tempMonthlyTotals)
         }
         setCategoryMonthlyTotals(tempMonthlyTotals);
     }
