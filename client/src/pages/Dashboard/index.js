@@ -9,6 +9,14 @@ import { Grid } from '@material-ui/core';
 function Dashboard() {
     const classes = useStyles();
 
+    const monthlyTotals = [
+        {
+          month: 'May', groceries: 0, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 0, house: 0, fun: 0, gifts: 0, other: 0,
+        }, {
+          month: 'June', groceries: 71.16, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 383.42, house: 0, fun: 0, gifts: 0, other: 0,
+        }
+    ];
+
     return (
         <ExpenseConsumer>
             {
