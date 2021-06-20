@@ -13,7 +13,7 @@ function Dashboard() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { categoryMonthlyTotals } = value;
+                    const { categoryCurMonthTotals } = value;
                     return (
                         <PageContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <Grid container item xs={12}>
@@ -21,7 +21,7 @@ function Dashboard() {
                             </Grid>
                             <CardsWrapper className={classes.px} container item xs={12}>
                                 {
-                                    categoryMonthlyTotals.map(category => <CardSingleVal name={category.name} value={`$${category.value}`} />)
+                                    categoryCurMonthTotals.map(category => <CardSingleVal name={category.name} value={`$${category.value}`} />)
                                 }
                             </CardsWrapper>
                         </PageContainer>

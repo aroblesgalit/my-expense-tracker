@@ -196,7 +196,7 @@ function ExpenseProvider(props) {
     /*********** END Expense Totals ***********/
 
     /*********** Categories Totals ***********/
-    const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([]);
+    const [categoryCurMonthTotals, setCategoryCurMonthTotals] = useState([]);
     // const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
         const categories = ['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'];
@@ -223,7 +223,7 @@ function ExpenseProvider(props) {
             }
         }
         const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
-        setCategoryMonthlyTotals(sortedTotals);
+        setCategoryCurMonthTotals(sortedTotals);
     }
     /*********** END Categories Totals ***********/
 
@@ -246,7 +246,7 @@ function ExpenseProvider(props) {
                 totalWeek,
                 totalMonth,
                 totalYear,
-                categoryMonthlyTotals
+                categoryCurMonthTotals
             }}
         >
             {props.children}
