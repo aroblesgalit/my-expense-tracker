@@ -20,9 +20,9 @@ function Dashboard() {
 
     const monthlyTotals = [
         {
-            month: 'May', groceries: 0, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 0, house: 0, fun: 0, gifts: 0, other: 0,
+            month: 'May', groceries: 0, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 0, household: 0, fun: 0, gifts: 0, other: 0,
         }, {
-            month: 'June', groceries: 71.16, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 383.42, house: 0, fun: 0, gifts: 0, other: 0,
+            month: 'June', groceries: 71.16, bills: 86, auto: 0, medical: 0, clothing: 0, travel: 0, loans: 383.42, household: 0, fun: 0, gifts: 0, other: 0,
         }
     ];
 
@@ -55,16 +55,16 @@ function Dashboard() {
 
                                     <BarSeries
                                         name="Groceries"
-                                        valueField="Groceries"
+                                        valueField="groceries"
                                         argumentField="month"
                                     />
                                     <BarSeries
-                                        name="Bills-Utilities"
-                                        valueField="Bills & Utilities"
+                                        name="Bills"
+                                        valueField="bills"
                                         argumentField="month"
                                     />
                                     <BarSeries
-                                        name="Auto - Transport"
+                                        name="Auto"
                                         valueField="auto"
                                         argumentField="month"
                                     />
@@ -90,7 +90,7 @@ function Dashboard() {
                                     />
                                     <BarSeries
                                         name="Household"
-                                        valueField="house"
+                                        valueField="household"
                                         argumentField="month"
                                     />
                                     <BarSeries
@@ -113,7 +113,7 @@ function Dashboard() {
                                     <Title text="Monthly totals" />
                                     <Stack
                                         stacks={[
-                                            { series: ['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'] },
+                                            { series: ['Groceries', 'Bills', 'Auto', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'] },
                                         ]}
                                     />
                                 </Chart>

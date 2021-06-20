@@ -199,7 +199,7 @@ function ExpenseProvider(props) {
     const [categoryCurMonthTotals, setCategoryCurMonthTotals] = useState([]);
     // const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
-        const categories = ['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'];
+        const categories = ['groceries', 'bills', 'auto', 'medical', 'clothing', 'travel', 'loans', 'household', 'fun', 'gifts', 'other'];
         // Create temporary array for all the totals
         const tempMonthlyTotals = [];
         // Get today's date

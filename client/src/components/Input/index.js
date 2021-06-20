@@ -12,7 +12,7 @@ const CustomInput = React.forwardRef(({ type, label, name, options, border, onCh
                     <label htmlFor={name}>{label}</label>
                     <select name={name} ref={ref} value={value} onChange={onChange}>
                         {
-                            options.map(option => <option key={option} value={option}>{option}</option>)
+                            options.map(option => <option key={option} value={option}>{`${option.charAt(0).toUpperCase()}${option.slice(1)}`}</option>)
                         }
                     </select>
                 </>

@@ -15,7 +15,7 @@ const expenseSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        enum: ['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other']
+        enum: ['groceries', 'bills', 'auto', 'medical', 'clothing', 'travel', 'loans', 'household', 'fun', 'gifts', 'other']
     },
     description: {
         type: String,

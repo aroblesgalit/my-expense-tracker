@@ -37,7 +37,7 @@ function ExpenseForm() {
                                                 type='dropdown'
                                                 label='Category'
                                                 name='category'
-                                                options={['Groceries', 'Bills & Utilities', 'Auto & Transport', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other']}
+                                                options={['groceries', 'bills', 'auto', 'medical', 'clothing', 'travel', 'loans', 'household', 'fun', 'gifts', 'other']}
                                                 ref={expCategoryRef}
                                             />
                                         </Grid>
