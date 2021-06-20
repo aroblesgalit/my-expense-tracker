@@ -45,6 +45,7 @@ function Dashboard() {
             {
                 value => {
                     const { categoryMonthlyTotals } = value;
+                    const currentMonth = categoryMonthlyTotals.length - 1;
                     return (
                         <PageContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
                             <Grid container item xs={12}>
@@ -52,97 +53,97 @@ function Dashboard() {
                             </Grid>
                             <CardsWrapper className={classes.px} container item xs={12}>
                                 {
-                                    // categoryCurMonthTotals[0].map(category => <CardSingleVal name={category.name} value={`$${category.value}`} />)
-
-                                    Object.keys(categoryMonthlyTotals[0]).map((category, i) => (
-                                        (category !== 'month' && categoryMonthlyTotals[0][category] > 0) &&
-                                        <CardSingleVal key={`${i}-${category}`} name={category} value={`$${categoryMonthlyTotals[0][category]}`} />
+                                    Object.keys(categoryMonthlyTotals[currentMonth]).map((category, i) => (
+                                        (category !== 'month' && categoryMonthlyTotals[currentMonth][category] > 0) &&
+                                        <CardSingleVal key={`${i}-${category}`} name={category} value={`$${categoryMonthlyTotals[currentMonth][category]}`} />
                                     ))
                                 }
                             </CardsWrapper>
-                            <Paper>
-                                <Chart data={categoryMonthlyTotals}>
-                                    <ArgumentAxis />
-                                    <ValueAxis
-                                        max={3000}
-                                    />
+                            <Grid container item xs={12}>
+                                <Paper>
+                                    <Chart data={categoryMonthlyTotals} width='100%'>
+                                        <ArgumentAxis />
+                                        <ValueAxis
+                                            max={3000}
+                                        />
 
-                                    <BarSeries
-                                        name="Groceries"
-                                        valueField="groceries"
-                                        argumentField="month"
-                                        color='#80F9DC'
-                                    />
-                                    <BarSeries
-                                        name="Bills"
-                                        valueField="bills"
-                                        argumentField="month"
-                                        color='#808CF9'
-                                    />
-                                    <BarSeries
-                                        name="Auto"
-                                        valueField="auto"
-                                        argumentField="month"
-                                        color='#F980C9'
-                                    />
-                                    <BarSeries
-                                        name="Medical"
-                                        valueField="medical"
-                                        argumentField="month"
-                                        color='#F9BA80'
-                                    />
-                                    <BarSeries
-                                        name="Clothing"
-                                        valueField="clothing"
-                                        argumentField="month"
-                                        color='#9FF980'
-                                    />
-                                    <BarSeries
-                                        name="Travel"
-                                        valueField="travel"
-                                        argumentField="month"
-                                        color='#D9A778'
-                                    />
-                                    <BarSeries
-                                        name="Loans"
-                                        valueField="loans"
-                                        argumentField="month"
-                                        color='#80DCF9'
-                                    />
-                                    <BarSeries
-                                        name="Household"
-                                        valueField="household"
-                                        argumentField="month"
-                                        color='#C480F9'
-                                    />
-                                    <BarSeries
-                                        name="Fun"
-                                        valueField="fun"
-                                        argumentField="month"
-                                        color='#F98080'
-                                    />
-                                    <BarSeries
-                                        name="Gifts"
-                                        valueField="gifts"
-                                        argumentField="month"
-                                        color='#EFF980'
-                                    />
-                                    <BarSeries
-                                        name="Other"
-                                        valueField="other"
-                                        argumentField="month"
-                                        color='#78B0D9'
-                                    />
-                                    <Animation />
-                                    <Legend position="bottom" rootComponent={Root} labelComponent={Label} />
-                                    <Title text="Monthly totals" />
-                                    <Stack
-                                        stacks={[
-                                            { series: ['Groceries', 'Bills', 'Auto', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'] },
-                                        ]}
-                                    />
-                                </Chart>
-                            </Paper>
+                                        <BarSeries
+                                            name="Groceries"
+                                            valueField="groceries"
+                                            argumentField="month"
+                                            color='#80F9DC'
+                                        />
+                                        <BarSeries
+                                            name="Bills"
+                                            valueField="bills"
+                                            argumentField="month"
+                                            color='#808CF9'
+                                        />
+                                        <BarSeries
+                                            name="Auto"
+                                            valueField="auto"
+                                            argumentField="month"
+                                            color='#F980C9'
+                                        />
+                                        <BarSeries
+                                            name="Medical"
+                                            valueField="medical"
+                                            argumentField="month"
+                                            color='#F9BA80'
+                                        />
+                                        <BarSeries
+                                            name="Clothing"
+                                            valueField="clothing"
+                                            argumentField="month"
+                                            color='#9FF980'
+                                        />
+                                        <BarSeries
+                                            name="Travel"
+                                            valueField="travel"
+                                            argumentField="month"
+                                            color='#D9A778'
+                                        />
+                                        <BarSeries
+                                            name="Loans"
+                                            valueField="loans"
+                                            argumentField="month"
+                                            color='#80DCF9'
+                                        />
+                                        <BarSeries
+                                            name="Household"
+                                            valueField="household"
+                                            argumentField="month"
+                                            color='#C480F9'
+                                        />
+                                        <BarSeries
+                                            name="Fun"
+                                            valueField="fun"
+                                            argumentField="month"
+                                            color='#F98080'
+                                        />
+                                        <BarSeries
+                                            name="Gifts"
+                                            valueField="gifts"
+                                            argumentField="month"
+                                            color='#EFF980'
+                                        />
+                                        <BarSeries
+                                            name="Other"
+                                            valueField="other"
+                                            argumentField="month"
+                                            color='#78B0D9'
+                                        />
+                                        <Animation />
+                                        <Legend position="bottom" rootComponent={Root} labelComponent={Label} />
+                                        <Title text="Monthly totals" />
+                                        <Stack
+                                            stacks={[
+                                                { series: ['Groceries', 'Bills', 'Auto', 'Medical', 'Clothing', 'Travel', 'Loans', 'Household', 'Fun', 'Gifts', 'Other'] },
+                                            ]}
+                                        />
+                                    </Chart>
+                                </Paper>
+                            </Grid>
                         </PageContainer>
                     )
                 }

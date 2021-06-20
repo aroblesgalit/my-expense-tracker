@@ -272,6 +272,7 @@ function ExpenseProvider(props) {
             // setCategoryCurMonthTotals(sortedTotals);
             tempMonthlyTotals.push(tempCurrentMonthTotal);
         }
+        console.log(tempMonthlyTotals);
         setCategoryMonthlyTotals(tempMonthlyTotals);
     }
     /*********** END Categories Totals ***********/
