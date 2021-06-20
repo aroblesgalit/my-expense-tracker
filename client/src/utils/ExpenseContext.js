@@ -204,26 +204,37 @@ function ExpenseProvider(props) {
         const tempMonthlyTotals = [];
         // Get today's date
         let currentDate = new Date();
+        // Get this year
+        // let currentYear = currentDate.getFullYear();
         // Get this month
         let currentMonth = currentDate.getMonth();
         // Loop through the categories and add up each category total
-        for (let i = 0; i < categories.length; i++) {
-            // Filter through expenses groceries
-            const currentExpenses = expenses
-                .filter(expense => expense.month === currentMonth && expense.category === categories[i])
-                .map(expense => expense.amount);
-            // Get total amount for groceries
-            const currentExpensesMonthlyTotal = currentExpenses.reduce((total, val) => total + val, 0);
-            // Add total to array if total > 0
-            if (currentExpensesMonthlyTotal > 0) {
-                tempMonthlyTotals.push({ 
-                    name: categories[i], 
-                    value: currentExpensesMonthlyTotal 
-                });
+        for (let i = currentMonth; i >= 0; i--) {
+            let tempCurrentMonthTotal = {
+                month: i,
+            };
+            for (let j = 0; j < categories.length; j++) {
+                // Filter through expenses groceries
+                const currentExpenses = expenses
+                    .filter(expense => expense.month === i && expense.category === categories[j])
+                    .map(expense => expense.amount);
+                // Get total amount for groceries
+                const currentExpensesMonthlyTotal = currentExpenses.reduce((total, val) => total + val, 0);
+                // Add total to array if total > 0
+                // if (currentExpensesMonthlyTotal > 0) {
+                    // tempMonthlyTotals.push({ 
+                    //     name: categories[j], 
+                    //     value: currentExpensesMonthlyTotal 
+                    // });
+                    tempCurrentMonthTotal[categories[j]] = currentExpensesMonthlyTotal;
+                // }
             }
+            // const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
+            // setCategoryCurMonthTotals(sortedTotals);
+            tempMonthlyTotals.push(tempCurrentMonthTotal);
+            console.log(tempMonthlyTotals)
         }
-        const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
-        setCategoryCurMonthTotals(sortedTotals);
+        setCategoryCurMonthTotals(tempMonthlyTotals);
     }
     /*********** END Categories Totals ***********/
 
