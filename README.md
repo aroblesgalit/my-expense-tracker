@@ -24,4 +24,5 @@ AND I am able to add a new expense
 ![Signup Page - Tablet](./client/src/images/mockup_signupPage_tablet.png)  
 ![Expenses Page - Desktop](./client/src/images/mockup_expensesPage_desktop.png)  
 ![Expenses Page - Tablet](./client/src/images/mockup_expensesPage_tablet.png)  
-
+![Add Expense - Desktop](./client/src/images/mockup_expensesPage_addForm_desktop.png)  
+![Dashboard Page - Desktop](./client/src/images/mockup_dashboardPage_desktop.png)
