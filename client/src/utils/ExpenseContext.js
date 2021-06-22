@@ -316,7 +316,8 @@ function ExpenseProvider(props) {
                 totalWeek,
                 totalMonth,
                 totalYear,
-                categoryMonthlyTotals
+                categoryMonthlyTotals,
+                monthlyTotals
             }}
         >
             {props.children}

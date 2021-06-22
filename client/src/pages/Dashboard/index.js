@@ -5,6 +5,7 @@ import { ExpenseConsumer } from '../../utils/ExpenseContext';
 import PageHeader from '../../components/PageHeader';
 import CardSingleVal from '../../components/CardSingleVal';
 import { Grid, Paper } from '@material-ui/core';
+import { InsertChartOutlinedSharp, TableChartOutlined } from '@material-ui/icons';
 import {
     Chart,
     ArgumentAxis,
@@ -59,8 +60,13 @@ function Dashboard() {
                                     ))
                                 }
                             </CardsWrapper>
+
                             <Grid container item xs={12}>
                                 <Paper>
+                                    <Grid container item xs={12} justify='flex-end'>
+                                        <InsertChartOutlinedSharp fontSize='large' />
+                                        <TableChartOutlined fontSize='large' />
+                                    </Grid>
                                     <Chart data={categoryMonthlyTotals} width='100%'>
                                         <ArgumentAxis />
                                         <ValueAxis
