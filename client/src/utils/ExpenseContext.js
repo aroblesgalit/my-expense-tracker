@@ -40,6 +40,7 @@ function ExpenseProvider(props) {
             .then(res => {
                 updateTotals(res);
                 updateCatMonthTotals(res);
+                updateMonthlyTotals(res);
                 if (activeFilter === 'All') setFilteredExpenses(res);
                 return setExpenses(res);
             })
@@ -196,13 +197,11 @@ function ExpenseProvider(props) {
     /*********** END Expense Totals ***********/
 
     /*********** Categories Totals ***********/
-    // const [categoryCurMonthTotals, setCategoryCurMonthTotals] = useState([]);
     const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([]);
-    // const [groceryMonthTotal, setGroceryMonthTotal] = useState(0);
     function updateCatMonthTotals(expenses) {
         const categories = ['groceries', 'bills', 'auto', 'medical', 'clothing', 'travel', 'loans', 'household', 'fun', 'gifts', 'other'];
         // Create temporary array for all the totals
-        const tempMonthlyTotals = [];
+        const tempCategoryMonthlyTotals = [];
         // Get today's date
         let currentDate = new Date();
         // Get this year
@@ -252,30 +251,51 @@ function ExpenseProvider(props) {
             let tempCurrentMonthTotal = {
                 month: strMonth,
             };
+            // Iterate through categories to get each totals for the current month
             for (let j = 0; j < categories.length; j++) {
-                // Filter through expenses groceries
+                // Filter through current category expenses
                 const currentExpenses = expenses
                     .filter(expense => expense.month === i && expense.category === categories[j])
                     .map(expense => expense.amount);
-                // Get total amount for groceries
+                // Get total amount for current category
                 const currentExpensesMonthlyTotal = currentExpenses.reduce((total, val) => total + val, 0);
-                // Add total to array if total > 0
-                // if (currentExpensesMonthlyTotal > 0) {
-                // tempMonthlyTotals.push({ 
-                //     name: categories[j], 
-                //     value: currentExpensesMonthlyTotal 
-                // });
+                // Add category total to current month
                 tempCurrentMonthTotal[categories[j]] = currentExpensesMonthlyTotal;
-                // }
             }
-            // const sortedTotals = tempMonthlyTotals.sort((a, b) => b.value - a.value);
-            // setCategoryCurMonthTotals(sortedTotals);
-            tempMonthlyTotals.push(tempCurrentMonthTotal);
+            // Add current month's category totals to temp category monthly totals
+            tempCategoryMonthlyTotals.push(tempCurrentMonthTotal);
         }
-        console.log(tempMonthlyTotals);
-        setCategoryMonthlyTotals(tempMonthlyTotals);
+        setCategoryMonthlyTotals(tempCategoryMonthlyTotals);
     }
     /*********** END Categories Totals ***********/
+
+    /*********** Monthly Totals ***********/
+    const [monthlyTotals, setMonthlyTotals] = useState([]);
+    function updateMonthlyTotals(expenses) {
+        // Create temporary array for storing monthly totals
+        const tempMonthlyTotals = [];
+        // Get today's date, month and year
+        const currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth();
+        // Iterate through expenses and add up ones for similar month and year
+        for (let i = 0; i <= currentMonth; i++) {
+            const currentMonthExpenses = expenses
+                .filter(expense => expense.month === i && expense.year === currentYear)
+                .map(expense => expense.amount);
+            const currentMonthTotal = currentMonthExpenses.reduce((total, val) => total + val, 0);
+            // Push each into temporary array
+            tempMonthlyTotals.push({
+                month: i,
+                year: currentYear,
+                total: currentMonthTotal
+            })
+        }
+        // Store in the state
+        setMonthlyTotals(tempMonthlyTotals);
+        console.log(tempMonthlyTotals)
+    }
+    /*********** END Monthly Totals ***********/
 
     return (
         <ExpenseContext.Provider
