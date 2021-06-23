@@ -65,7 +65,7 @@ function Dashboard() {
                                 <Paper>
                                     <Grid container item xs={12} justify='flex-end'>
                                         <InsertChartOutlinedSharp fontSize='large' />
-                                        <TableChartOutlined fontSize='large' />
+                                        <TableChartOutlined fontSize='large' /> 
                                     </Grid>
                                     <Chart data={categoryMonthlyTotals} width='100%'>
                                         <ArgumentAxis />
