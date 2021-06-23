@@ -4,6 +4,7 @@ import { useStyles } from './dashboard.styles';
 import { ExpenseConsumer } from '../../utils/ExpenseContext';
 import PageHeader from '../../components/PageHeader';
 import CardSingleVal from '../../components/CardSingleVal';
+import CollapsibleTable from '../../components/CollapsibleTable';
 import { Grid, Paper } from '@material-ui/core';
 import { InsertChartOutlinedSharp, TableChartOutlined } from '@material-ui/icons';
 import {
@@ -45,7 +46,7 @@ function Dashboard() {
         <ExpenseConsumer>
             {
                 value => {
-                    const { categoryMonthlyTotals } = value;
+                    const { categoryMonthlyTotals, monthlyTotals } = value;
                     const currentMonth = categoryMonthlyTotals.length - 1;
                     return (
                         <PageContainer component='section' container item md={10} xs={12} alignContent='flex-start'>
@@ -148,6 +149,7 @@ function Dashboard() {
                                             ]}
                                         />
                                     </Chart>
+                                    <CollapsibleTable rows={monthlyTotals} />
                                 </Paper>
                             </Grid>
                         </PageContainer>
