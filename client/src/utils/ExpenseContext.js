@@ -281,19 +281,20 @@ function ExpenseProvider(props) {
         // Iterate through expenses and add up ones for similar month and year
         for (let i = 0; i <= currentMonth; i++) {
             const currentMonthExpenses = expenses
-                .filter(expense => expense.month === i && expense.year === currentYear)
+                .filter(expense => expense.month === i && expense.year === currentYear);
+            const currentMonthAmounts = currentMonthExpenses
                 .map(expense => expense.amount);
-            const currentMonthTotal = currentMonthExpenses.reduce((total, val) => total + val, 0);
+            const currentMonthTotal = currentMonthAmounts.reduce((total, val) => total + val, 0);
             // Push each into temporary array
             tempMonthlyTotals.push({
                 month: i,
                 year: currentYear,
-                total: currentMonthTotal
+                total: currentMonthTotal,
+                expenses: currentMonthExpenses
             })
         }
         // Store in the state
         setMonthlyTotals(tempMonthlyTotals);
-        console.log(tempMonthlyTotals)
     }
     /*********** END Monthly Totals ***********/
 
