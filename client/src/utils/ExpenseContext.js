@@ -295,6 +295,7 @@ function ExpenseProvider(props) {
         }
         // Store in the state
         setMonthlyTotals(tempMonthlyTotals);
+        console.log(tempMonthlyTotals)
     }
     /*********** END Monthly Totals ***********/
 

@@ -28,9 +28,20 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {row.month}
+          { row.month === 0 && 'January' }
+          { row.month === 1 && 'February' }
+          { row.month === 2 && 'March' }
+          { row.month === 3 && 'April' }
+          { row.month === 4 && 'May' }
+          { row.month === 5 && 'June' }
+          { row.month === 6 && 'July' }
+          { row.month === 7 && 'August' }
+          { row.month === 8 && 'September' }
+          { row.month === 9 && 'October' }
+          { row.month === 10 && 'November' }
+          { row.month === 11 && 'December' }
         </TableCell>
-        <TableCell align="right">{row.total}</TableCell>
+        <TableCell align="right">${row.total}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -49,12 +60,12 @@ function Row(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.breakdown.map((breakdownRow) => (
-                    <TableRow key={breakdownRow.id}>
-                      <TableCell component="th" scope="row">{breakdownRow.date}</TableCell>
-                      <TableCell>{breakdownRow.category}</TableCell>
-                      <TableCell align="right">{breakdownRow.description}</TableCell>
-                      <TableCell align="right">{breakdownRow.amount}</TableCell>
+                  {row.expenses.map((expense) => (
+                    <TableRow key={expense.id}>
+                      <TableCell component="th" scope="row">{expense.date}</TableCell>
+                      <TableCell>{expense.category}</TableCell>
+                      <TableCell align="right">{expense.description}</TableCell>
+                      <TableCell align="right">${expense.amount}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -80,7 +91,7 @@ export default function CollapsibleTable(rows) {
         </TableHead>
         <TableBody>
           {rows.map((row, i) => (
-            <Row key={`${i}-${row.mounth}`} row={row} />
+            <Row key={`${i}-${row.month}/${row.year}`} row={row} />
           ))}
         </TableBody>
       </Table>
