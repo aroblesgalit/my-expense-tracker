@@ -1,25 +1,29 @@
 import React from 'react'
-import './input.styles'
-import { FormControl, Input, InputLabel } from './input.styles.js'
+// import './input.styles'
+import { useStyles, FormControl, Input, InputLabel } from './input.styles.js'
 
 const CustomInput = React.forwardRef(
-  ({ type, label, name, options, border, onChange, value }, ref) => (
-    <div className='wrapper input'>
-      {type === 'dropdown' && (
-        <>
-          <label htmlFor={name}>{label}</label>
-          <select name={name} ref={ref} value={value} onChange={onChange}>
-            {options.map(option => (
-              <option key={option} value={option}>{`${option
-                .charAt(0)
-                .toUpperCase()}${option.slice(1)}`}</option>
-            ))}
-          </select>
-        </>
-      )}
-      {(type === 'date' || type === 'text') && (
-        <FormControl>
-          {/* <label htmlFor={name}>{label}</label>
+  ({ type, label, name, options, border, onChange, value }, ref) => {
+    const classes = useStyles()
+    return (
+      <div className='wrapper input'>
+        {type === 'dropdown' && (
+          <React.Fragment>
+            <label className={classes.inputLabel} htmlFor={name}>
+              {label}
+            </label>
+            <select name={name} ref={ref} value={value} onChange={onChange}>
+              {options.map(option => (
+                <option key={option} value={option}>{`${option
+                  .charAt(0)
+                  .toUpperCase()}${option.slice(1)}`}</option>
+              ))}
+            </select>
+          </React.Fragment>
+        )}
+        {(type === 'date' || type === 'text') && (
+          <FormControl>
+            {/* <label htmlFor={name}>{label}</label>
                     <input
                         name={name}
                         type={type}
@@ -27,33 +31,38 @@ const CustomInput = React.forwardRef(
                         onChange={onChange}
                         ref={ref}
                     /> */}
-          {/* <InputLabel htmlFor={name}>{label}</InputLabel> */}
-          <label htmlFor={name}>{label}</label>
-          <Input
-            id={name}
-            name={name}
-            type={type}
-            onChange={onChange}
-            inputRef={ref}
-          />
-        </FormControl>
-      )}
-      {type === 'number' && (
-        <>
-          <label htmlFor={name}>{label}</label>
-          <div className='dollar-input'>
-            <input name={name} type={type} min='0.01' ref={ref} />
-          </div>
-        </>
-      )}
-    </div>
-  )
+            {/* <InputLabel htmlFor={name}>{label}</InputLabel> */}
+            <label className={classes.inputLabel} htmlFor={name}>
+              {label}
+            </label>
+            <Input
+              id={name}
+              name={name}
+              type={type}
+              onChange={onChange}
+              inputRef={ref}
+            />
+          </FormControl>
+        )}
+        {type === 'number' && (
+          <React.Fragment>
+            <label className={classes.inputLabel} htmlFor={name}>
+              {label}
+            </label>
+            <div className='dollar-input'>
+              <input name={name} type={type} min='0.01' ref={ref} />
+            </div>
+          </React.Fragment>
+        )}
+      </div>
+    )
+  }
 )
 
 export const TextInput = React.forwardRef(
   ({ type, label, name, onChange }, ref) => {
     return (
-      <>
+      <React.Fragment>
         <InputLabel htmlFor={name}>{label}</InputLabel>
         <Input
           id={name}
@@ -64,22 +73,24 @@ export const TextInput = React.forwardRef(
           fullWidth
           disableUnderline
         />
-      </>
+      </React.Fragment>
     )
   }
 )
 
 export const SelectInput = React.forwardRef(({ name, label, options }, ref) => {
-  ;<>
-    <InputLabel htmlFor={name}>{label}</InputLabel>
-    <select name={name} ref={ref}>
-      {options.map((option, i) => (
-        <option key={`${i}-${option}`} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
-  </>
+  return (
+    <React.Fragment>
+      <InputLabel htmlFor={name}>{label}</InputLabel>
+      <select name={name} ref={ref}>
+        {options.map((option, i) => (
+          <option key={`${i}-${option}`} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </React.Fragment>
+  )
 })
 
 export default CustomInput

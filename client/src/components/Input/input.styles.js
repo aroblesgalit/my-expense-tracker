@@ -1,7 +1,16 @@
-import { withStyles } from '@material-ui/core'
+import { makeStyles, withStyles } from '@material-ui/core'
 import MuiInput from '@material-ui/core/Input'
 import MuiInputLabel from '@material-ui/core/InputLabel'
 import MuiFormControl from '@material-ui/core/FormControl'
+
+export const useStyles = makeStyles(() => ({
+  inputLabel: {
+    display: 'block',
+    fontSize: '12px',
+    color: '#8A9BAE',
+    marginBottom: '8px'
+  }
+}))
 
 export const FormControl = withStyles({
   root: {
