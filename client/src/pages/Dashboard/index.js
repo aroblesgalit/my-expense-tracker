@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { PageContainer, CardsWrapper } from '../pages.styles'
-import { useStyles } from './dashboard.styles'
+import { useStyles, MonthlyTotalsWrapper } from './dashboard.styles'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import CardSingleVal from '../../components/CardSingleVal'
@@ -81,7 +81,7 @@ function Dashboard () {
             </CardsWrapper>
 
             <Grid container item xs={12} className={classes.px}>
-              <Paper className={`${classes.w100} ${classes.overflow}`}>
+              <MonthlyTotalsWrapper>
                 <Grid container item xs={12} justify='flex-end'>
                   <InsertChartOutlinedSharp
                     fontSize='large'
@@ -193,7 +193,7 @@ function Dashboard () {
                 ) : (
                   <CollapsibleTable rows={monthlyTotals} />
                 )}
-              </Paper>
+              </MonthlyTotalsWrapper>
             </Grid>
           </PageContainer>
         )

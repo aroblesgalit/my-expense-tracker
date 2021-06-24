@@ -1,4 +1,5 @@
 import { makeStyles, withStyles } from '@material-ui/core'
+import MuiPaper from '@material-ui/core/Paper'
 
 export const useStyles = makeStyles(() => ({
   px: {
@@ -7,11 +8,13 @@ export const useStyles = makeStyles(() => ({
     '@media (min-width: 960px)': {
       padding: '0 80px'
     }
-  },
-  w100: {
-    maxWidth: '100%'
-  },
-  overflow: {
-    overflowY: 'scroll'
   }
 }))
+
+export const MonthlyTotalsWrapper = withStyles({
+  root: {
+    width: '100%',
+    overflow: 'scroll',
+    padding: '16px'
+  }
+})(MuiPaper)
