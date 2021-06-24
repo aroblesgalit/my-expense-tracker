@@ -1,6 +1,6 @@
-import { withStyles } from '@material-ui/core';
-import MuiGrid from '@material-ui/core/Grid';
-// import MuiTypography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core'
+import MuiGrid from '@material-ui/core/Grid'
+import MuiTypography from '@material-ui/core/Typography'
 
 // export const useStyles = makeStyles(() => ({
 //     link: {
@@ -21,16 +21,16 @@ import MuiGrid from '@material-ui/core/Grid';
 // }));
 
 export const PageContainer = withStyles({
-    root: {
-        backgroundColor: '#F7F7F7',
-        minHeight: 'calc(100vh - 68px)',
-        position: 'relative',
+  root: {
+    backgroundColor: '#F7F7F7',
+    minHeight: 'calc(100vh - 68px)',
+    position: 'relative',
 
-        '@media (min-width: 960px)': {
-            minHeight: '100vh',
-        }
+    '@media (min-width: 960px)': {
+      minHeight: '100vh'
     }
-})(MuiGrid);
+  }
+})(MuiGrid)
 
 // export const PageHeader = withStyles({
 //     root: {
@@ -99,11 +99,11 @@ export const PageContainer = withStyles({
 // })(MuiGrid);
 
 export const CardsWrapper = withStyles({
-    root: {
-        gap: '20px',
-        flexWrap: 'nowrap'
-    }
-})(MuiGrid);
+  root: {
+    gap: '20px',
+    flexWrap: 'nowrap'
+  }
+})(MuiGrid)
 
 // export const RightContainer = withStyles({
 //     root: {
@@ -155,14 +155,14 @@ export const CardsWrapper = withStyles({
 //     }
 // })(MuiTypography);
 
-// export const SectionHeading = withStyles({
-//     root: {
-//         fontSize: '24px',
-//         fontWeight: '700',
-//         color: 'rgba(54, 79, 107, 0.72)',
-//         paddingBottom: '20px'
-//     }
-// })(MuiTypography);
+export const SectionHeading = withStyles({
+  root: {
+    fontSize: '24px',
+    fontWeight: '700',
+    color: 'rgba(54, 79, 107, 0.72)',
+    paddingBottom: '20px'
+  }
+})(MuiTypography)
 
 // export const ExtraDiv = withStyles({
 //     root: {

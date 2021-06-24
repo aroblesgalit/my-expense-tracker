@@ -8,6 +8,9 @@ export const useStyles = makeStyles(() => ({
     '@media (min-width: 960px)': {
       padding: '0 80px'
     }
+  },
+  pTop: {
+    paddingTop: '24px'
   }
 }))
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { PageContainer, CardsWrapper } from '../pages.styles'
+import { PageContainer, CardsWrapper, SectionHeading } from '../pages.styles'
 import { useStyles, MonthlyTotalsWrapper } from './dashboard.styles'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
@@ -66,21 +66,33 @@ function Dashboard () {
             <Grid container item xs={12}>
               <PageHeader title='Dashboard' />
             </Grid>
-            <CardsWrapper className={classes.px} container item xs={12}>
-              {Object.keys(categoryMonthlyTotals[currentMonth]).map(
-                (category, i) =>
-                  category !== 'month' &&
-                  categoryMonthlyTotals[currentMonth][category] > 0 && (
-                    <CardSingleVal
-                      key={`${i}-${category}`}
-                      name={category}
-                      value={`$${categoryMonthlyTotals[currentMonth][category]}`}
-                    />
-                  )
-              )}
-            </CardsWrapper>
+            <Grid className={classes.pTop} container item xs={12}>
+              <Grid className={classes.px} item xs={12}>
+                <SectionHeading variant={'h3'}>
+                  Highest expenses this month
+                </SectionHeading>
+              </Grid>
+              <CardsWrapper className={classes.px} container item xs={12}>
+                {Object.keys(categoryMonthlyTotals[currentMonth]).map(
+                  (category, i) =>
+                    category !== 'month' &&
+                    categoryMonthlyTotals[currentMonth][category] > 0 && (
+                      <CardSingleVal
+                        key={`${i}-${category}`}
+                        name={category}
+                        value={`$${categoryMonthlyTotals[currentMonth][category]}`}
+                      />
+                    )
+                )}
+              </CardsWrapper>
+            </Grid>
 
-            <Grid container item xs={12} className={classes.px}>
+            <Grid
+              container
+              item
+              xs={12}
+              className={`${classes.px} ${classes.pTop}`}
+            >
               <MonthlyTotalsWrapper>
                 <Grid container item xs={12} justify='flex-end'>
                   <InsertChartOutlinedSharp
