@@ -98,10 +98,18 @@ function Dashboard () {
                   <InsertChartOutlinedSharp
                     fontSize='large'
                     onClick={() => setViewMode('Chart')}
+                    style={{
+                      color: viewMode === 'Chart' ? '#43DDE6' : '#8A9BAE',
+                      cursor: 'pointer'
+                    }}
                   />
                   <TableChartOutlined
                     fontSize='large'
                     onClick={() => setViewMode('Table')}
+                    style={{
+                      color: viewMode === 'Table' ? '#43DDE6' : '#8A9BAE',
+                      cursor: 'pointer'
+                    }}
                   />
                 </Grid>
                 {viewMode === 'Chart' ? (
