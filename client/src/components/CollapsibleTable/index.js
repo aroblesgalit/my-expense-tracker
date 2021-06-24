@@ -1,18 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Box from '@material-ui/core/Box'
 import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
-import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Typography from '@material-ui/core/Typography'
-import Paper from '@material-ui/core/Paper'
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
+import { BreakdownRow } from './collapsibleTable.styles'
 
 function Row (props) {
   const { row } = props
@@ -50,7 +48,7 @@ function Row (props) {
         <TableCell align='right'>${row.total.toFixed(2)}</TableCell>
       </TableRow>
       {row.expenses.length > 0 && (
-        <TableRow>
+        <BreakdownRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
             <Collapse in={open} timeout='auto' unmountOnExit>
               <Box margin={1}>
@@ -87,7 +85,7 @@ function Row (props) {
               </Box>
             </Collapse>
           </TableCell>
-        </TableRow>
+        </BreakdownRow>
       )}
     </React.Fragment>
   )
@@ -95,7 +93,7 @@ function Row (props) {
 
 export default function CollapsibleTable ({ rows }) {
   return (
-    <TableContainer component={Paper}>
+    <React.Fragment>
       <Table aria-label='collapsible table'>
         <TableHead>
           <TableRow>
@@ -110,6 +108,6 @@ export default function CollapsibleTable ({ rows }) {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </React.Fragment>
   )
 }
