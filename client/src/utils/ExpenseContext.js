@@ -314,9 +314,9 @@ function ExpenseProvider (props) {
     let currentMonth = currentDate.getMonth()
     // Iterate through expenses and add up ones for similar month and year
     for (let i = 0; i <= currentMonth; i++) {
-      const currentMonthExpenses = expenses.filter(
-        expense => expense.month === i && expense.year === currentYear
-      )
+      const currentMonthExpenses = expenses
+        .filter(expense => expense.month === i && expense.year === currentYear)
+        .sort((a, b) => a.day - b.day)
       const currentMonthAmounts = currentMonthExpenses.map(
         expense => expense.amount
       )

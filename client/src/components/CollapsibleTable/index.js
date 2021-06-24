@@ -47,7 +47,7 @@ function Row (props) {
           {row.month === 10 && 'November'}
           {row.month === 11 && 'December'}
         </TableCell>
-        <TableCell align='right'>${row.total}</TableCell>
+        <TableCell align='right'>${row.total.toFixed(2)}</TableCell>
       </TableRow>
       {row.expenses.length > 0 && (
         <TableRow>
@@ -71,13 +71,15 @@ function Row (props) {
                       row.expenses.map(expense => (
                         <TableRow key={`${expense._id}-${expense.date}`}>
                           <TableCell component='th' scope='row'>
-                            {expense.date}
+                            {expense.fullDate}
                           </TableCell>
                           <TableCell>{expense.category}</TableCell>
                           <TableCell align='right'>
                             {expense.description}
                           </TableCell>
-                          <TableCell align='right'>${expense.amount}</TableCell>
+                          <TableCell align='right'>
+                            ${expense.amount.toFixed(2)}
+                          </TableCell>
                         </TableRow>
                       ))}
                   </TableBody>
