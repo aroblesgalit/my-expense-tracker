@@ -38,7 +38,13 @@ function ExpenseForm () {
               <form>
                 <Grid container>
                   <Grid item xs={12}>
-                    <Input
+                    {/* <Input
+                      type='date'
+                      label='Date'
+                      name='date'
+                      ref={expDateRef}
+                    /> */}
+                    <TextInput
                       type='date'
                       label='Date'
                       name='date'
