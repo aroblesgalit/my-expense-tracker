@@ -1,6 +1,6 @@
 import { makeStyles, withStyles } from '@material-ui/core'
 import MuiGrid from '@material-ui/core/Grid'
-import MuiTypography from '@material-ui/core/Typography'
+// import MuiTypography from '@material-ui/core/Typography'
 
 export const useStyles = makeStyles(() => ({
   mobilePadding: {

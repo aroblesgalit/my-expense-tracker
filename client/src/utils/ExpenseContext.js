@@ -110,7 +110,7 @@ function ExpenseProvider (props) {
     let currentMonth = currentDate.getMonth()
     let currentDay = currentDate.getDate()
     let currentYear = currentDate.getFullYear()
-    let currentWeek = currentDate.getDay()
+    // let currentWeek = currentDate.getDay()
     // Get filter option
     const filterOption = filterRef.current.value
     setActiveFilter(filterOption)

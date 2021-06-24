@@ -5,7 +5,7 @@ import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import CardSingleVal from '../../components/CardSingleVal'
 import CollapsibleTable from '../../components/CollapsibleTable'
-import { Grid, Paper } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import {
   InsertChartOutlinedSharp,
   TableChartOutlined
