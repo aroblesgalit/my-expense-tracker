@@ -80,8 +80,8 @@ function Dashboard () {
               )}
             </CardsWrapper>
 
-            <Grid container item xs={12}>
-              <Paper>
+            <Grid container item xs={12} className={classes.px}>
+              <Paper className={`${classes.w100} ${classes.overflow}`}>
                 <Grid container item xs={12} justify='flex-end'>
                   <InsertChartOutlinedSharp
                     fontSize='large'

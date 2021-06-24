@@ -1,11 +1,17 @@
-import { makeStyles, withStyles } from "@material-ui/core";
+import { makeStyles, withStyles } from '@material-ui/core'
 
 export const useStyles = makeStyles(() => ({
-    px: {
-        padding: '0 32px',
+  px: {
+    padding: '0 32px',
 
-        '@media (min-width: 960px)': {
-            padding: '0 80px'
-        }
+    '@media (min-width: 960px)': {
+      padding: '0 80px'
     }
-}));
+  },
+  w100: {
+    maxWidth: '100%'
+  },
+  overflow: {
+    overflowY: 'scroll'
+  }
+}))
