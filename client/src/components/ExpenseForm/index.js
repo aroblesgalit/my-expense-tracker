@@ -8,7 +8,7 @@ import {
 import { Grid } from '@material-ui/core'
 import { Close } from '@material-ui/icons'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
-import Input, { TextInput } from '../Input'
+import Input, { TextInput, SelectInput } from '../Input'
 import Button from '../Button'
 
 function ExpenseForm () {
@@ -24,7 +24,9 @@ function ExpenseForm () {
           expCategoryRef,
           expDescRef,
           expAmountRef,
-          addExpense
+          addExpense,
+          category,
+          onCategoryChange
         } = value
         return (
           <Backdrop open={newExpense}>
@@ -52,7 +54,7 @@ function ExpenseForm () {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <Input
+                    {/* <Input
                       type='dropdown'
                       label='Category'
                       name='category'
@@ -70,6 +72,27 @@ function ExpenseForm () {
                         'other'
                       ]}
                       ref={expCategoryRef}
+                    /> */}
+                    <SelectInput
+                      label='Category'
+                      name='category'
+                      options={[
+                        'groceries',
+                        'bills',
+                        'auto',
+                        'medical',
+                        'clothing',
+                        'travel',
+                        'loans',
+                        'household',
+                        'fun',
+                        'gifts',
+                        'other'
+                      ]}
+                      ref={expCategoryRef}
+                      value={category}
+                      onChange={onCategoryChange}
+                      //   value={expCategoryRef.current.value}
                     />
                   </Grid>
                   <Grid item xs={12}>

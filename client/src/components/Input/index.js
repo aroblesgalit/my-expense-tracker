@@ -1,6 +1,7 @@
 import React from 'react'
 // import './input.styles'
 import { useStyles, FormControl, Input, InputLabel } from './input.styles.js'
+import { Select, MenuItem } from '@material-ui/core'
 
 const CustomInput = React.forwardRef(
   ({ type, label, name, options, border, onChange, value }, ref) => {
@@ -78,19 +79,19 @@ export const TextInput = React.forwardRef(
   }
 )
 
-export const SelectInput = React.forwardRef(({ name, label, options }, ref) => {
+export const SelectInput = ({ name, label, options, value, onChange }) => {
   return (
     <React.Fragment>
       <InputLabel htmlFor={name}>{label}</InputLabel>
-      <select name={name} ref={ref}>
+      <Select id={name} name={name} value={value} onChange={e => onChange(e)}>
         {options.map((option, i) => (
-          <option key={`${i}-${option}`} value={option}>
+          <MenuItem key={`${i}-${option}`} value={option}>
             {option}
-          </option>
+          </MenuItem>
         ))}
-      </select>
+      </Select>
     </React.Fragment>
   )
-})
+}
 
 export default CustomInput
