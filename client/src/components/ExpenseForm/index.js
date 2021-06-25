@@ -8,7 +8,7 @@ import {
 import { Grid } from '@material-ui/core'
 import { Close } from '@material-ui/icons'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
-import Input, { TextInput, SelectInput } from '../Input'
+import { TextInput, SelectInput } from '../Input'
 import Button from '../Button'
 
 function ExpenseForm () {
@@ -78,7 +78,7 @@ function ExpenseForm () {
                     />
                   </Grid>
                   <Grid item xs={12} className={classes.padTop16}>
-                    <Input
+                    <TextInput
                       type='number'
                       label='Amount'
                       name='amount'
