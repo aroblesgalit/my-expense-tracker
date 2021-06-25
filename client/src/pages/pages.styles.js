@@ -1,24 +1,39 @@
-import { withStyles } from '@material-ui/core'
+import { makeStyles, withStyles } from '@material-ui/core'
 import MuiGrid from '@material-ui/core/Grid'
 import MuiTypography from '@material-ui/core/Typography'
 
-// export const useStyles = makeStyles(() => ({
-//     link: {
-//         fontWeight: '700',
-//         color: '#43DDE6',
+export const useStyles = makeStyles(() => ({
+  // link: {
+  //     fontWeight: '700',
+  //     color: '#43DDE6',
 
-//         '&:hover': {
-//             color: '#0DC4CE'
-//         }
-//     },
-//     mobilePadding: {
-//         padding: '0 32px',
+  //     '&:hover': {
+  //         color: '#0DC4CE'
+  //     }
+  // },
+  // mobilePadding: {
+  //     padding: '0 32px',
 
-//         '@media (min-width: 960px)': {
-//             padding: '0 80px'
-//         }
-//     },
-// }));
+  //     '@media (min-width: 960px)': {
+  //         padding: '0 80px'
+  //     }
+  // },
+  padX32: {
+    paddingLeft: '32px',
+    paddingRight: '32px',
+
+    '@media (min-width: 960px)': {
+      paddingLeft: '80px',
+      paddingRight: '80px'
+    }
+  },
+  padTop16: {
+    paddingTop: '16px'
+  },
+  padTop32: {
+    paddingTop: '32px'
+  }
+}))
 
 export const PageContainer = withStyles({
   root: {

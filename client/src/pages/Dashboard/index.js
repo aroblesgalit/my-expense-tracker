@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
-import { PageContainer, CardsWrapper, SectionHeading } from '../pages.styles'
-import { useStyles, MonthlyTotalsWrapper } from './dashboard.styles'
+import {
+  useStyles,
+  PageContainer,
+  CardsWrapper,
+  SectionHeading
+} from '../pages.styles'
+import { MonthlyTotalsWrapper } from './dashboard.styles'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import CardSingleVal from '../../components/CardSingleVal'
@@ -66,13 +71,13 @@ function Dashboard () {
             <Grid container item xs={12}>
               <PageHeader title='Dashboard' />
             </Grid>
-            <Grid className={classes.pTop} container item xs={12}>
-              <Grid className={classes.px} item xs={12}>
+            <Grid className={classes.padTop32} container item xs={12}>
+              <Grid className={classes.padX32} item xs={12}>
                 <SectionHeading variant={'h3'}>
                   Highest expenses this month
                 </SectionHeading>
               </Grid>
-              <CardsWrapper className={classes.px} container item xs={12}>
+              <CardsWrapper className={classes.padX32} container item xs={12}>
                 {Object.keys(categoryMonthlyTotals[currentMonth]).map(
                   (category, i) =>
                     category !== 'month' &&
@@ -91,7 +96,7 @@ function Dashboard () {
               container
               item
               xs={12}
-              className={`${classes.px} ${classes.pTop}`}
+              className={`${classes.padX32} ${classes.padTop32}`}
             >
               <MonthlyTotalsWrapper>
                 <Grid container item xs={12} justify='flex-end'>
