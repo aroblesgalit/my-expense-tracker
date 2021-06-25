@@ -39,13 +39,7 @@ function ExpenseForm () {
               </FormHeading>
               <form>
                 <Grid container>
-                  <Grid item xs={12}>
-                    {/* <Input
-                      type='date'
-                      label='Date'
-                      name='date'
-                      ref={expDateRef}
-                    /> */}
+                  <Grid item xs={12} className={classes.padTop32}>
                     <TextInput
                       type='date'
                       label='Date'
@@ -53,26 +47,7 @@ function ExpenseForm () {
                       ref={expDateRef}
                     />
                   </Grid>
-                  <Grid item xs={12}>
-                    {/* <Input
-                      type='dropdown'
-                      label='Category'
-                      name='category'
-                      options={[
-                        'groceries',
-                        'bills',
-                        'auto',
-                        'medical',
-                        'clothing',
-                        'travel',
-                        'loans',
-                        'household',
-                        'fun',
-                        'gifts',
-                        'other'
-                      ]}
-                      ref={expCategoryRef}
-                    /> */}
+                  <Grid item xs={12} className={classes.padTop16}>
                     <SelectInput
                       label='Category'
                       name='category'
@@ -92,16 +67,9 @@ function ExpenseForm () {
                       ref={expCategoryRef}
                       value={category}
                       onChange={onCategoryChange}
-                      //   value={expCategoryRef.current.value}
                     />
                   </Grid>
-                  <Grid item xs={12}>
-                    {/* <Input
-                      type='text'
-                      label='Description'
-                      name='description'
-                      ref={expDescRef}
-                    /> */}
+                  <Grid item xs={12} className={classes.padTop16}>
                     <TextInput
                       type='text'
                       label='Description'
@@ -109,7 +77,7 @@ function ExpenseForm () {
                       ref={expDescRef}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} className={classes.padTop16}>
                     <Input
                       type='number'
                       label='Amount'
@@ -117,7 +85,13 @@ function ExpenseForm () {
                       ref={expAmountRef}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    justify='flex-end'
+                    className={classes.padTop32}
+                  >
                     <Button
                       type='button'
                       text='Add'
