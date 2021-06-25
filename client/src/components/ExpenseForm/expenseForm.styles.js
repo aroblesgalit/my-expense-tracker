@@ -16,6 +16,9 @@ export const useStyles = makeStyles(() => ({
   },
   pointer: {
     cursor: 'pointer'
+  },
+  w100: {
+    width: '100%'
   }
 }))
 

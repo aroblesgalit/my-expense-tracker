@@ -69,7 +69,7 @@ const CustomInput = React.forwardRef(
 export const TextInput = React.forwardRef(
   ({ type, label, name, onChange }, ref) => {
     return (
-      <React.Fragment>
+      <div>
         <InputLabel htmlFor={name}>{label}</InputLabel>
         <Input
           id={name}
@@ -80,14 +80,21 @@ export const TextInput = React.forwardRef(
           fullWidth
           disableUnderline
         />
-      </React.Fragment>
+      </div>
     )
   }
 )
 
-export const SelectInput = ({ name, label, options, value, onChange }) => {
+export const SelectInput = ({
+  name,
+  label,
+  options,
+  value,
+  onChange,
+  classes
+}) => {
   return (
-    <React.Fragment>
+    <div>
       <InputLabel htmlFor={name}>{label}</InputLabel>
       <Select
         id={name}
@@ -95,6 +102,7 @@ export const SelectInput = ({ name, label, options, value, onChange }) => {
         value={value}
         onChange={e => onChange(e)}
         disableUnderline
+        fullWidth
       >
         {options.map((option, i) => (
           <MenuItem key={`${i}-${option}`} value={option}>
@@ -102,7 +110,7 @@ export const SelectInput = ({ name, label, options, value, onChange }) => {
           </MenuItem>
         ))}
       </Select>
-    </React.Fragment>
+    </div>
   )
 }
 

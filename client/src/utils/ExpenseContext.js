@@ -347,7 +347,6 @@ function ExpenseProvider (props) {
     <ExpenseContext.Provider
       value={{
         expDateRef,
-        // expCategoryRef,
         expDescRef,
         expAmountRef,
         addExpense,
@@ -356,7 +355,6 @@ function ExpenseProvider (props) {
         filteredExpenses,
         deleteExpense,
         activeFilter,
-        // filterRef,
         onFilterChange,
         newExpense,
         setNewExpense,

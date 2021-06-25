@@ -44,27 +44,25 @@ function Expenses () {
           >
             <Grid container item xs={12}>
               <PageHeader title='Expenses' />
-              <TableTopContent
-                container
-                item
-                xs={12}
-                justify='space-between'
-                alignItems='flex-end'
-              >
-                <SelectInput
-                  label='Filter'
-                  name='filter'
-                  options={['All', 'Daily', 'Monthly', 'Yearly']}
-                  value={activeFilter}
-                  onChange={onFilterChange}
-                />
-                <Button
-                  type='button'
-                  text='New'
-                  action='primary'
-                  color='magenta'
-                  onClick={() => setNewExpense(true)}
-                />
+              <TableTopContent container item xs={12} alignItems='flex-end'>
+                <Grid item xs={4}>
+                  <SelectInput
+                    label='Filter'
+                    name='filter'
+                    options={['All', 'Daily', 'Monthly', 'Yearly']}
+                    value={activeFilter}
+                    onChange={onFilterChange}
+                  />
+                </Grid>
+                <Grid container item xs={8} justify='flex-end'>
+                  <Button
+                    type='button'
+                    text='New'
+                    action='primary'
+                    color='magenta'
+                    onClick={() => setNewExpense(true)}
+                  />
+                </Grid>
               </TableTopContent>
               <Grid item xs={12} className={classes.mobilePadding}>
                 <Table
