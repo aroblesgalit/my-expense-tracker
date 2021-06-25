@@ -48,12 +48,12 @@ export const Select = withStyles({
     borderRadius: '6px',
     border: '1px solid #CDCDCD',
     cursor: 'pointer',
-    width: '100%'
+    backgroundColor: '#fff'
   },
   select: {
     '&:focus': {
       borderRadius: '6px',
-      backgroundColor: 'transparent'
+      backgroundColor: '#fff'
     }
   }
 })(MuiSelect)

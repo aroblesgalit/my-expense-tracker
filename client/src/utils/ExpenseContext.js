@@ -109,7 +109,8 @@ function ExpenseProvider (props) {
   /*********** Filter ***********/
   const [activeFilter, setActiveFilter] = useState('All')
   const filterRef = createRef()
-  function onFilterChange () {
+  function onFilterChange (e) {
+    e.preventDefault()
     // Get today's date
     let currentDate = new Date()
     let currentMonth = currentDate.getMonth()
@@ -117,7 +118,7 @@ function ExpenseProvider (props) {
     let currentYear = currentDate.getFullYear()
     // let currentWeek = currentDate.getDay()
     // Get filter option
-    const filterOption = filterRef.current.value
+    const filterOption = e.target.value
     setActiveFilter(filterOption)
     // Create copy of expenses
     // const tempExpenses = [...expenses];
@@ -355,7 +356,7 @@ function ExpenseProvider (props) {
         filteredExpenses,
         deleteExpense,
         activeFilter,
-        filterRef,
+        // filterRef,
         onFilterChange,
         newExpense,
         setNewExpense,

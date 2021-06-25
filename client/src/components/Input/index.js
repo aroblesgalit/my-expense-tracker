@@ -94,7 +94,6 @@ export const SelectInput = ({ name, label, options, value, onChange }) => {
         name={name}
         value={value}
         onChange={e => onChange(e)}
-        fullWidth
         disableUnderline
       >
         {options.map((option, i) => (

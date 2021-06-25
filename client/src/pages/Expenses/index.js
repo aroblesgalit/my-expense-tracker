@@ -6,7 +6,7 @@ import {
   TotalsContainer,
   CardsWrapper
 } from './expenses.styles'
-import Input from '../../components/Input'
+import Input, { SelectInput } from '../../components/Input'
 import Table from '../../components/Table'
 import Button from '../../components/Button'
 import CardSingleVal from '../../components/CardSingleVal'
@@ -24,7 +24,6 @@ function Expenses () {
       {value => {
         const {
           activeFilter,
-          filterRef,
           onFilterChange,
           filteredExpenses,
           deleteExpense,
@@ -52,32 +51,12 @@ function Expenses () {
                 justify='space-between'
                 alignItems='flex-end'
               >
-                {/* <SelectInput 
-                                    label='Filter'
-                                    name='filter'
-                                    options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
-                                    ref={filterRef}
-                                /> */}
-                {/* <>
-                                    <InputLabel htmlFor='filter'>Filter</InputLabel>
-                                    <TextField
-                                        id='filter'
-                                        inputRef={expAmountRef}
-                                        select
-                                    >
-                                        {
-                                            ['All', 'Daily', 'Weekly', 'Monthly', 'Yearly'].map((option, i) => <MenuItem key={`${i}-${option}`} value={option}>{option}</MenuItem>)
-                                        }
-                                    </TextField>
-                                </> */}
-                <Input
-                  type='dropdown'
+                <SelectInput
                   label='Filter'
                   name='filter'
+                  options={['All', 'Daily', 'Monthly', 'Yearly']}
                   value={activeFilter}
-                  ref={filterRef}
                   onChange={onFilterChange}
-                  options={['All', 'Daily', 'Weekly', 'Monthly', 'Yearly']}
                 />
                 <Button
                   type='button'

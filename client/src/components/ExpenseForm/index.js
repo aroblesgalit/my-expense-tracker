@@ -21,7 +21,6 @@ function ExpenseForm () {
           newExpense,
           setNewExpense,
           expDateRef,
-          expCategoryRef,
           expDescRef,
           expAmountRef,
           addExpense,
@@ -68,7 +67,6 @@ function ExpenseForm () {
                         'gifts',
                         'other'
                       ]}
-                      ref={expCategoryRef}
                       value={category}
                       onChange={onCategoryChange}
                     />
