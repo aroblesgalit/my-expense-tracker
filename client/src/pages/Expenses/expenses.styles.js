@@ -1,16 +1,16 @@
-import { makeStyles, withStyles } from '@material-ui/core'
+import { withStyles } from '@material-ui/core'
 import MuiGrid from '@material-ui/core/Grid'
 // import MuiTypography from '@material-ui/core/Typography'
 
-export const useStyles = makeStyles(() => ({
-  mobilePadding: {
-    padding: '0 32px',
+// export const useStyles = makeStyles(() => ({
+//   mobilePadding: {
+//     padding: '0 32px',
 
-    '@media (min-width: 960px)': {
-      padding: '0 80px'
-    }
-  }
-}))
+//     '@media (min-width: 960px)': {
+//       padding: '0 80px'
+//     }
+//   }
+// }))
 
 // export const ExpensesContainer = withStyles({
 //     root: {

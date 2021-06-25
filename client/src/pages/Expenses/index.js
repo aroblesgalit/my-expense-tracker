@@ -1,12 +1,11 @@
 import React from 'react'
-import { PageContainer, SectionHeading } from '../pages.styles'
+import { useStyles, PageContainer, SectionHeading } from '../pages.styles'
 import {
-  useStyles,
   TableTopContent,
   TotalsContainer,
   CardsWrapper
 } from './expenses.styles'
-import Input, { SelectInput } from '../../components/Input'
+import { SelectInput } from '../../components/Input'
 import Table from '../../components/Table'
 import Button from '../../components/Button'
 import CardSingleVal from '../../components/CardSingleVal'
@@ -44,7 +43,13 @@ function Expenses () {
           >
             <Grid container item xs={12}>
               <PageHeader title='Expenses' />
-              <TableTopContent container item xs={12} alignItems='flex-end'>
+              <TableTopContent
+                container
+                item
+                xs={12}
+                alignItems='flex-end'
+                className={classes.padTop32}
+              >
                 <Grid item xs={4}>
                   <SelectInput
                     label='Filter'
@@ -64,7 +69,7 @@ function Expenses () {
                   />
                 </Grid>
               </TableTopContent>
-              <Grid item xs={12} className={classes.mobilePadding}>
+              <Grid item xs={12} className={classes.padX32}>
                 <Table
                   headings={['Date', 'Category', 'Description', 'Amount', '']}
                   rows={filteredExpenses}
