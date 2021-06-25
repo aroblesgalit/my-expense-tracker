@@ -32,7 +32,11 @@ function ExpenseForm () {
           <Backdrop open={newExpense}>
             <ExpenseFormWrapper>
               <div className={classes.closeIconWrapper}>
-                <Close fontSize='small' onClick={() => setNewExpense(false)} />
+                <Close
+                  fontSize='small'
+                  onClick={() => setNewExpense(false)}
+                  className={classes.pointer}
+                />
               </div>
               <FormHeading variant='h2' align='center'>
                 New Expense

@@ -13,6 +13,9 @@ export const useStyles = makeStyles(() => ({
   },
   padTop32: {
     paddingTop: '32px'
+  },
+  pointer: {
+    cursor: 'pointer'
   }
 }))
 
