@@ -173,7 +173,7 @@ export const CardsWrapper = withStyles({
 export const SectionHeading = withStyles({
   root: {
     fontSize: '24px',
-    fontWeight: '700',
+    fontWeight: '900',
     color: 'rgba(54, 79, 107, 0.72)',
     paddingBottom: '20px'
   }
