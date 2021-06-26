@@ -96,7 +96,7 @@ function Dashboard () {
               container
               item
               xs={12}
-              className={`${classes.padX32} ${classes.padTop32}`}
+              className={`${classes.padX32} ${classes.padTop32} ${classes.padBot32}`}
             >
               <MonthlyTotalsWrapper>
                 <Grid container item xs={12} justify='flex-end'>

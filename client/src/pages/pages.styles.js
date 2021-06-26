@@ -32,6 +32,9 @@ export const useStyles = makeStyles(() => ({
   },
   padTop32: {
     paddingTop: '32px'
+  },
+  padBot32: {
+    paddingBottom: '32px'
   }
 }))
 
