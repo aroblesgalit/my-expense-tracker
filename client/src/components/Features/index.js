@@ -26,13 +26,8 @@ function Features () {
       xs={12}
       alignContent='flex-start'
     >
-      <LogoWrapper
-        container
-        item
-        xs={12}
-        justify={desktop ? 'flex-start' : 'center'}
-      >
-        <img src={mainLogo} alt='x-pense logo' />
+      <LogoWrapper container item xs={12} justify='center'>
+        <img src={mainLogo} alt='x-pense logo' className={classes.logo} />
       </LogoWrapper>
       <Grid container item xs={12} justify='center' alignContent='flex-start'>
         <Grid container item xs={12}>
