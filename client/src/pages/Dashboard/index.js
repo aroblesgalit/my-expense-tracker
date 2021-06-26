@@ -119,7 +119,7 @@ function Dashboard () {
                 </Grid>
                 {viewMode === 'Chart' ? (
                   <Chart data={categoryMonthlyTotals} width='100%'>
-                    <ArgumentAxis />
+                    <ArgumentAxis showTicks={false} />
                     <ValueAxis max={3000} />
 
                     <BarSeries
