@@ -1,21 +1,6 @@
 import { makeStyles, withStyles } from '@material-ui/core'
 import MuiPaper from '@material-ui/core/Paper'
-
-export const useStyles = makeStyles(() => ({
-  viewIcon: {
-    width: '32px',
-    cursor: 'pointer',
-    padding: '10px',
-    border: '1px solid #8A9BAE',
-    borderRadius: '4px'
-  },
-  active: {
-    border: '1px solid #43DDE6',
-    backgroundColor: '#43DDE6',
-    filter:
-      'invert(100%) sepia(3%) saturate(0%) hue-rotate(359deg) brightness(116%) contrast(100%)'
-  }
-}))
+import MuiBox from '@material-ui/core/Box'
 
 export const MonthlyTotalsWrapper = withStyles({
   root: {
@@ -23,3 +8,44 @@ export const MonthlyTotalsWrapper = withStyles({
     padding: '16px'
   }
 })(MuiPaper)
+
+export const ViewIconWrapper = withStyles({
+  root: {
+    width: '32px',
+    height: '32px',
+    cursor: 'pointer',
+    border: '1px solid #8A9BAE',
+    borderRadius: '4px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    '& > img': {
+      width: '16px',
+      filter:
+        'invert(72%) sepia(37%) saturate(188%) hue-rotate(171deg) brightness(80%) contrast(81%)'
+    },
+
+    '&:hover': {
+      border: '1px solid #43DDE6',
+      backgroundColor: '#43DDE6',
+
+      '& > img': {
+        filter:
+          'invert(100%) sepia(3%) saturate(0%) hue-rotate(359deg) brightness(116%) contrast(100%)'
+      }
+    }
+  }
+})(MuiBox)
+
+export const useStyles = makeStyles(() => ({
+  active: {
+    border: '1px solid #43DDE6',
+    backgroundColor: '#43DDE6',
+
+    '& > img': {
+      filter:
+        'invert(100%) sepia(3%) saturate(0%) hue-rotate(359deg) brightness(116%) contrast(100%)'
+    }
+  }
+}))

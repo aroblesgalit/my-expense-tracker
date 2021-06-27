@@ -35,6 +35,9 @@ export const useStyles = makeStyles(() => ({
   },
   padBot32: {
     paddingBottom: '32px'
+  },
+  marRight16: {
+    marginRight: '16px'
   }
 }))
 

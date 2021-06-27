@@ -7,7 +7,8 @@ import {
 } from '../pages.styles'
 import {
   useStyles as dashboardStyles,
-  MonthlyTotalsWrapper
+  MonthlyTotalsWrapper,
+  ViewIconWrapper
 } from './dashboard.styles'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
@@ -128,20 +129,20 @@ function Dashboard () {
             >
               <MonthlyTotalsWrapper>
                 <Grid container item xs={12} justify='flex-end'>
-                  <img
-                    className={`${classesDashboard.viewIcon} ${viewMode ===
-                      'Chart' && classesDashboard.active}`}
-                    src={GraphViewIcon}
-                    alt='Graph View Icon'
+                  <ViewIconWrapper
                     onClick={() => setViewMode('Chart')}
-                  />
-                  <img
-                    className={`${classesDashboard.viewIcon} ${viewMode ===
-                      'Table' && classesDashboard.active}`}
-                    src={TableViewIcon}
-                    alt='Table View Icon'
+                    className={`${classes.marRight16} ${viewMode === 'Chart' &&
+                      classesDashboard.active}`}
+                  >
+                    <img src={GraphViewIcon} alt='Graph View Icon' />
+                  </ViewIconWrapper>
+                  <ViewIconWrapper
                     onClick={() => setViewMode('Table')}
-                  />
+                    className={`${viewMode === 'Table' &&
+                      classesDashboard.active}`}
+                  >
+                    <img src={TableViewIcon} alt='Table View Icon' />
+                  </ViewIconWrapper>
                 </Grid>
                 {viewMode === 'Chart' ? (
                   <Chart data={categoryMonthlyTotals} width='100%'>
