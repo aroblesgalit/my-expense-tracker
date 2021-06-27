@@ -14,7 +14,6 @@ import {
   TableCell,
   Paper
 } from '@material-ui/core'
-import { DeleteOutlined } from '@material-ui/icons'
 import deleteIcon from '../../images/icon_expense_delete.svg'
 
 function TableComponent ({ headings, rows, handleDelete }) {

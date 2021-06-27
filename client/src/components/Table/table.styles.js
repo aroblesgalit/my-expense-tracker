@@ -9,7 +9,8 @@ export const useStyles = makeStyles(() => ({
       opacity: '0',
 
       '& > img': {
-        width: '16px'
+        width: '16px',
+        cursor: 'pointer'
         // filter:
         //   'invert(72%) sepia(37%) saturate(188%) hue-rotate(171deg) brightness(80%) contrast(81%)'
       }
@@ -18,8 +19,7 @@ export const useStyles = makeStyles(() => ({
       backgroundColor: 'rgba(67,221,230,.2)',
 
       '& :last-child': {
-        opacity: '1',
-        cursor: 'pointer'
+        opacity: '1'
       }
     }
   }
