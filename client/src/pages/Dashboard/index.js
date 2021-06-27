@@ -5,16 +5,15 @@ import {
   CardsWrapper,
   SectionHeading
 } from '../pages.styles'
-import { MonthlyTotalsWrapper } from './dashboard.styles'
+import {
+  useStyles as dashboardStyles,
+  MonthlyTotalsWrapper
+} from './dashboard.styles'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import CardSingleVal from '../../components/CardSingleVal'
 import CollapsibleTable from '../../components/CollapsibleTable'
 import { Grid } from '@material-ui/core'
-import {
-  InsertChartOutlinedSharp,
-  TableChartOutlined
-} from '@material-ui/icons'
 import {
   Chart,
   ArgumentAxis,
@@ -25,6 +24,8 @@ import {
 } from '@devexpress/dx-react-chart-material-ui'
 import { Stack, Animation } from '@devexpress/dx-react-chart'
 import { withStyles } from '@material-ui/core'
+import GraphViewIcon from '../../images/icon_view_graph.svg'
+import TableViewIcon from '../../images/icon_view_table.svg'
 
 const legendStyles = () => ({
   root: {
@@ -59,6 +60,7 @@ const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(
 
 function Dashboard () {
   const classes = useStyles()
+  const classesDashboard = dashboardStyles()
 
   const [viewMode, setViewMode] = useState('Chart')
 
@@ -66,7 +68,6 @@ function Dashboard () {
     <ExpenseConsumer>
       {value => {
         const { categories, categoryMonthlyTotals, monthlyTotals } = value
-        console.log(categories)
         const categoryNames = categories.map(
           category => category[0].toUpperCase() + category.slice(1)
         )
@@ -127,21 +128,19 @@ function Dashboard () {
             >
               <MonthlyTotalsWrapper>
                 <Grid container item xs={12} justify='flex-end'>
-                  <InsertChartOutlinedSharp
-                    fontSize='large'
+                  <img
+                    className={`${classesDashboard.viewIcon} ${viewMode ===
+                      'Chart' && classesDashboard.active}`}
+                    src={GraphViewIcon}
+                    alt='Graph View Icon'
                     onClick={() => setViewMode('Chart')}
-                    style={{
-                      color: viewMode === 'Chart' ? '#43DDE6' : '#8A9BAE',
-                      cursor: 'pointer'
-                    }}
                   />
-                  <TableChartOutlined
-                    fontSize='large'
+                  <img
+                    className={`${classesDashboard.viewIcon} ${viewMode ===
+                      'Table' && classesDashboard.active}`}
+                    src={TableViewIcon}
+                    alt='Table View Icon'
                     onClick={() => setViewMode('Table')}
-                    style={{
-                      color: viewMode === 'Table' ? '#43DDE6' : '#8A9BAE',
-                      cursor: 'pointer'
-                    }}
                   />
                 </Grid>
                 {viewMode === 'Chart' ? (

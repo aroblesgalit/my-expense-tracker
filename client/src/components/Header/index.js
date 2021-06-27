@@ -11,13 +11,13 @@ import {
 } from './header.styles'
 import { Link, useLocation } from 'react-router-dom'
 import { UserConsumer } from '../../utils/UserContext'
-import Button from '../Button'
+// import Button from '../Button'
 import mainLogo from '../../images/x-pense_logo_main.svg'
 import mobileLogo from '../../images/x-pense_logo_mobile.svg'
 import { Grid, Typography, useMediaQuery } from '@material-ui/core'
 import {
-  AccountBalanceOutlined,
-  BarChartOutlined,
+  // AccountBalanceOutlined,
+  // BarChartOutlined,
   DashboardOutlined,
   MonetizationOnOutlined,
   Menu as MenuIcon,
