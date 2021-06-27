@@ -64,7 +64,12 @@ export const CaptionTypography = withStyles({
     color: '#F0F0F0',
     fontSize: '18px',
     width: '100%',
-    marginTop: '20px'
+    marginTop: '20px',
+
+    '& > a': {
+      color: '#43DDE6',
+      textDecoration: 'none'
+    }
   }
 })(MuiTypography)
 
