@@ -6,7 +6,6 @@ import MuiPaper from '@material-ui/core/Paper'
 export const MonthlyTotalsWrapper = withStyles({
   root: {
     width: '100%',
-    overflowX: 'scroll',
     padding: '16px'
   }
 })(MuiPaper)

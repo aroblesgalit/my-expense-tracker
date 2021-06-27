@@ -30,7 +30,12 @@ const legendStyles = () => ({
   root: {
     display: 'flex',
     margin: 'auto',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+
+    '& li': {
+      width: 'auto'
+    }
   }
 })
 const legendRootBase = ({ classes, ...restProps }) => (
