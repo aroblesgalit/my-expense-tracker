@@ -15,14 +15,15 @@ import { UserConsumer } from '../../utils/UserContext'
 import mainLogo from '../../images/x-pense_logo_main.svg'
 import mobileLogo from '../../images/x-pense_logo_mobile.svg'
 import dashboardIcon from '../../images/icon_nav_dashboard.svg'
+import expensesIcon from '../../images/icon_nav_expenses.svg'
+import logoutIcon from '../../images/icon_nav_logout.svg'
 import { Grid, Typography, useMediaQuery } from '@material-ui/core'
 import {
   // AccountBalanceOutlined,
   // BarChartOutlined,
-  DashboardOutlined,
-  MonetizationOnOutlined,
-  Menu as MenuIcon,
-  ExitToAppOutlined
+  // MonetizationOnOutlined,
+  Menu as MenuIcon
+  // ExitToAppOutlined
 } from '@material-ui/icons'
 import HeaderContext from '../../utils/HeaderContext'
 
@@ -82,7 +83,6 @@ function Header () {
                         alt='Dashboard icon'
                         className={classes.navIcon}
                       />
-                      {/* <DashboardOutlined fontSize='small' /> */}
                     </ListItemIcon>
                     <Typography variant='inherit'>
                       <Link to='/dashboard'>dashboard</Link>
@@ -95,7 +95,11 @@ function Header () {
                     }
                   >
                     <ListItemIcon>
-                      <MonetizationOnOutlined fontSize='small' />
+                      <img
+                        src={expensesIcon}
+                        alt='Expenses icon'
+                        className={classes.navIcon}
+                      />
                     </ListItemIcon>
                     <Typography variant='inherit'>
                       <Link to='/expenses'>expenses</Link>
@@ -121,7 +125,11 @@ function Header () {
                     }}
                   >
                     <ListItemIcon>
-                      <ExitToAppOutlined fontSize='small' />
+                      <img
+                        src={logoutIcon}
+                        alt='Logout icon'
+                        className={classes.navIcon}
+                      />
                     </ListItemIcon>
                     <Typography variant='inherit'>Log out</Typography>
                   </MenuItem>
@@ -135,7 +143,11 @@ function Header () {
                     }
                   >
                     <ListItemIcon>
-                      <DashboardOutlined fontSize='small' />
+                      <img
+                        src={dashboardIcon}
+                        alt='Dashboard icon'
+                        className={classes.navIcon}
+                      />
                     </ListItemIcon>
                     <Typography variant='inherit'>
                       <Link to='/dashboard'>dashboard</Link>
@@ -147,7 +159,11 @@ function Header () {
                     }
                   >
                     <ListItemIcon>
-                      <MonetizationOnOutlined fontSize='small' />
+                      <img
+                        src={expensesIcon}
+                        alt='Expenses icon'
+                        className={classes.navIcon}
+                      />
                     </ListItemIcon>
                     <Typography variant='inherit'>
                       <Link to='/expenses'>expenses</Link>
@@ -173,7 +189,11 @@ function Header () {
                     }}
                   >
                     <ListItemIcon>
-                      <ExitToAppOutlined fontSize='small' />
+                      <img
+                        src={logoutIcon}
+                        alt='Logout icon'
+                        className={classes.navIcon}
+                      />
                     </ListItemIcon>
                     <Typography variant='inherit'>Log out</Typography>
                   </MenuItem>
