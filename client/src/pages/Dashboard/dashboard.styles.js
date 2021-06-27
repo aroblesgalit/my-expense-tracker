@@ -1,6 +1,7 @@
 import { makeStyles, withStyles } from '@material-ui/core'
 import MuiPaper from '@material-ui/core/Paper'
 import MuiBox from '@material-ui/core/Box'
+import MuiGrid from '@material-ui/core/Grid'
 
 export const MonthlyTotalsWrapper = withStyles({
   root: {
@@ -37,6 +38,20 @@ export const ViewIconWrapper = withStyles({
     }
   }
 })(MuiBox)
+
+export const TotalsContainer = withStyles({
+  root: {
+    width: '100%',
+    backgroundColor: 'rgba(54, 79, 107, 0.15)',
+    padding: '32px',
+    marginTop: '32px',
+    overflowX: 'scroll',
+
+    '@media (min-width: 960px)': {
+      padding: '32px 80px'
+    }
+  }
+})(MuiGrid)
 
 export const useStyles = makeStyles(() => ({
   active: {

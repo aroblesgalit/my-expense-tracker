@@ -1,14 +1,9 @@
 import React from 'react'
-import { useStyles, PageContainer, SectionHeading } from '../pages.styles'
-import {
-  TableTopContent,
-  TotalsContainer,
-  CardsWrapper
-} from './expenses.styles'
+import { useStyles, PageContainer } from '../pages.styles'
+import { TableTopContent } from './expenses.styles'
 import { SelectInput } from '../../components/Input'
 import Table from '../../components/Table'
 import Button from '../../components/Button'
-import CardSingleVal from '../../components/CardSingleVal'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import { Grid } from '@material-ui/core'
@@ -26,11 +21,7 @@ function Expenses () {
           onFilterChange,
           filteredExpenses,
           deleteExpense,
-          setNewExpense,
-          totalToday,
-          totalWeek,
-          totalMonth,
-          totalYear
+          setNewExpense
         } = value
         return (
           <PageContainer
@@ -77,29 +68,6 @@ function Expenses () {
                 />
               </Grid>
             </Grid>
-            <TotalsContainer container item xs={12}>
-              <Grid item xs={12}>
-                <SectionHeading variant={'h3'}>Totals</SectionHeading>
-              </Grid>
-              <CardsWrapper container item xs={12}>
-                <CardSingleVal
-                  name='Today'
-                  value={`$${totalToday.toFixed(2)}`}
-                />
-                <CardSingleVal
-                  name='This week'
-                  value={`$${totalWeek.toFixed(2)}`}
-                />
-                <CardSingleVal
-                  name='This month'
-                  value={`$${totalMonth.toFixed(2)}`}
-                />
-                <CardSingleVal
-                  name='This year'
-                  value={`$${totalYear.toFixed(2)}`}
-                />
-              </CardsWrapper>
-            </TotalsContainer>
           </PageContainer>
         )
       }}

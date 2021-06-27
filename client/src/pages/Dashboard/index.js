@@ -8,7 +8,8 @@ import {
 import {
   useStyles as dashboardStyles,
   MonthlyTotalsWrapper,
-  ViewIconWrapper
+  ViewIconWrapper,
+  TotalsContainer
 } from './dashboard.styles'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
@@ -68,7 +69,15 @@ function Dashboard () {
   return (
     <ExpenseConsumer>
       {value => {
-        const { categories, categoryMonthlyTotals, monthlyTotals } = value
+        const {
+          categories,
+          categoryMonthlyTotals,
+          monthlyTotals,
+          totalToday,
+          totalWeek,
+          totalMonth,
+          totalYear
+        } = value
         const categoryNames = categories.map(
           category => category[0].toUpperCase() + category.slice(1)
         )
@@ -177,6 +186,29 @@ function Dashboard () {
                 )}
               </MonthlyTotalsWrapper>
             </Grid>
+            <TotalsContainer container item xs={12}>
+              <Grid item xs={12}>
+                <SectionHeading variant={'h3'}>Totals</SectionHeading>
+              </Grid>
+              <CardsWrapper container item xs={12}>
+                <CardSingleVal
+                  name='Today'
+                  value={`$${totalToday.toFixed(2)}`}
+                />
+                <CardSingleVal
+                  name='This week'
+                  value={`$${totalWeek.toFixed(2)}`}
+                />
+                <CardSingleVal
+                  name='This month'
+                  value={`$${totalMonth.toFixed(2)}`}
+                />
+                <CardSingleVal
+                  name='This year'
+                  value={`$${totalYear.toFixed(2)}`}
+                />
+              </CardsWrapper>
+            </TotalsContainer>
           </PageContainer>
         )
       }}
