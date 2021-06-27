@@ -25,7 +25,7 @@ function ExpenseProvider (props) {
         tempExpenses.forEach((expense, i) => {
           let currentDate = new Date(expense.date)
           let week = currentDate.getDay()
-          let month = currentDate.getMonth()
+          let month = currentDate.getUTCMonth()
           let day = currentDate.getUTCDate()
           let year = currentDate.getFullYear()
           tempExpenses[i].week = week
@@ -108,7 +108,6 @@ function ExpenseProvider (props) {
 
   /*********** Filter ***********/
   const [activeFilter, setActiveFilter] = useState('All')
-  const filterRef = createRef()
   function onFilterChange (e) {
     e.preventDefault()
     // Get today's date
