@@ -1,132 +1,130 @@
-import { makeStyles, withStyles } from '@material-ui/core';
-import MuiGrid from '@material-ui/core/Grid';
-import MuiMenuList from '@material-ui/core/MenuList';
-import MuiMenuItem from '@material-ui/core/MenuItem';
-import MuiListItemIcon from '@material-ui/core/ListItemIcon';
-import MuiDivider from '@material-ui/core/Divider';
-import MuiMenu from '@material-ui/core/Menu';
+import { makeStyles, withStyles } from '@material-ui/core'
+import MuiGrid from '@material-ui/core/Grid'
+import MuiMenuList from '@material-ui/core/MenuList'
+import MuiMenuItem from '@material-ui/core/MenuItem'
+import MuiListItemIcon from '@material-ui/core/ListItemIcon'
+import MuiDivider from '@material-ui/core/Divider'
+import MuiMenu from '@material-ui/core/Menu'
 
 export const useStyles = makeStyles(() => ({
-    headerLogo: {
-        maxWidth: '300px',
+  headerLogo: {
+    maxWidth: '300px',
 
-        '@media (min-width: 960px)': {
-            maxWidth: '100%'
-        }
-    },
-    active: {
-        '&>div': {
-            color: '#43DDE6'
-        },
-
-        '& a': {
-            color: '#43DDE6!important'
-        },
-
-        '&>span:first-child': {
-            color: '#43DDE6'
-        }
-    },
-    mobileHeader: {
-        display: 'flex',
-        justifyContent: 'space-between'
-
-        // '@media (min-width: 960px)': {
-        //     maxWidth: '100%'
-        // }
-    },
-    mobileMenuIcon: {
-        color: '#43DDE6',
-        cursor: 'pointer',
-
-        '@media (min-width: 960px)': {
-            display: 'none'
-        }
+    '@media (min-width: 960px)': {
+      maxWidth: '100%'
     }
-}));
+  },
+  active: {
+    '&>div': {
+      color: '#43DDE6'
+    },
+
+    '& a': {
+      color: '#43DDE6!important'
+    },
+
+    '&>span:first-child': {
+      color: '#43DDE6'
+    }
+  },
+  mobileHeader: {
+    display: 'flex',
+    justifyContent: 'space-between'
+
+    // '@media (min-width: 960px)': {
+    //     maxWidth: '100%'
+    // }
+  },
+  mobileMenuIcon: {
+    color: '#43DDE6',
+    cursor: 'pointer',
+
+    '@media (min-width: 960px)': {
+      display: 'none'
+    }
+  }
+}))
 
 export const HeaderContainer = withStyles({
-    root: {
-        backgroundColor: '#364F6B',
-        fontFamily: 'Roboto, sans-serif',
-        padding: '16px 32px',
-        height: 'auto',
+  root: {
+    backgroundColor: '#364F6B',
+    fontFamily: 'Roboto, sans-serif',
+    padding: '16px 32px',
+    height: 'auto',
 
-        '@media (min-width: 960px)': {
-            padding: '32px',
-            minHeight: '100vh',
-        }
+    '@media (min-width: 960px)': {
+      padding: '32px',
+      minHeight: '100vh'
     }
-})(MuiGrid);
+  }
+})(MuiGrid)
 
 export const NavWrapper = withStyles({
-    root: {
-
-    }
-})(MuiGrid);
+  root: {}
+})(MuiGrid)
 
 export const Menu = withStyles({
-    paper: {
-        padding: '20px'
-    }
-})(MuiMenu);
+  paper: {
+    padding: '20px'
+  }
+})(MuiMenu)
 
 export const MenuList = withStyles({
-    root: {
-        padding: '40px 0 0',
-        display: 'none',
+  root: {
+    padding: '40px 0 0',
+    display: 'none',
 
-        '@media (min-width: 960px)': {
-            display: 'block'
-        }
+    '@media (min-width: 960px)': {
+      display: 'block'
     }
-})(MuiMenuList);
+  }
+})(MuiMenuList)
 
 export const MenuItem = withStyles({
-    root: {
-        padding: '0',
-        color: '#8A9BAE',
+  root: {
+    padding: '0',
+    color: '#8A9BAE',
 
-        '&:not(:last-child)': {
-            padding: '0 0 16px'
-        },
+    '&:not(:last-child)': {
+      padding: '0 0 16px'
+    },
 
-        '& a': {
-            textDecoration: 'none',
-            color: '#8A9BAE',
-        },
+    '& a': {
+      textDecoration: 'none',
+      color: '#8A9BAE'
+    },
 
-        '&:hover': {
-            backgroundColor: 'transparent',
-            color: '#43DDE6'
-        },
+    '&:hover': {
+      backgroundColor: 'transparent',
+      color: '#43DDE6'
+    },
 
-        '&:hover > div': {
-            color: '#43DDE6'
-        },
+    '&:hover > div': {
+      color: '#43DDE6'
+    },
 
-        '&:hover a': {
-            color: '#43DDE6'
-        }
+    '&:hover a': {
+      color: '#43DDE6'
     }
-})(MuiMenuItem);
+  }
+})(MuiMenuItem)
 
 export const ListItemIcon = withStyles({
-    root: {
-        color: '#8A9BAE',
-        minWidth: '38px'
-    }
-})(MuiListItemIcon);
+  root: {
+    color: '#8A9BAE',
+    minWidth: '38px'
+  }
+})(MuiListItemIcon)
 
 export const Divider = withStyles({
-    root: {
-        width: '100%',
-        margin: '4px 0 20px',
-        backgroundColor: '#DEE4EB',
+  root: {
+    width: '100%',
+    margin: '4px 0 20px',
+    backgroundColor: '#DEE4EB',
 
-        '@media (min-width: 960px)': {
-            margin: '40px 0',
-            backgroundColor: '#8A9BAE',
-        }
+    '@media (min-width: 960px)': {
+      margin: '16px 0 32px',
+      backgroundColor: '#8A9BAE'
     }
-})(MuiDivider);
+  }
+})(MuiDivider)

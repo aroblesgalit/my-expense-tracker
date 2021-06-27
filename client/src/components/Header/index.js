@@ -159,9 +159,21 @@ function Header () {
                     </ListItemIcon>
                     <Typography variant='inherit'>analytics</Typography>
                   </MenuItem> */}
+                  <Divider />
+                  <MenuItem
+                    onClick={() => {
+                      handleMenuItemClick()
+                      handleLogout()
+                    }}
+                  >
+                    <ListItemIcon>
+                      <ExitToAppOutlined fontSize='small' />
+                    </ListItemIcon>
+                    <Typography variant='inherit'>Log out</Typography>
+                  </MenuItem>
                 </MenuList>
               </NavWrapper>
-              {desktopWidth && (
+              {/* {desktopWidth && (
                 <>
                   <Divider />
                   <Button
@@ -172,7 +184,7 @@ function Header () {
                     onClick={handleLogout}
                   />
                 </>
-              )}
+              )} */}
             </HeaderContainer>
           )
         )
