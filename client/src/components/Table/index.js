@@ -14,7 +14,7 @@ import {
   TableCell,
   Paper
 } from '@material-ui/core'
-import { EditOutlined, DeleteOutlined } from '@material-ui/icons'
+import { DeleteOutlined } from '@material-ui/icons'
 
 function TableComponent ({ headings, rows, handleDelete }) {
   const [page, setPage] = useState(0)

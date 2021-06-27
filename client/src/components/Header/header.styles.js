@@ -6,45 +6,6 @@ import MuiListItemIcon from '@material-ui/core/ListItemIcon'
 import MuiDivider from '@material-ui/core/Divider'
 import MuiMenu from '@material-ui/core/Menu'
 
-export const useStyles = makeStyles(() => ({
-  headerLogo: {
-    maxWidth: '300px',
-
-    '@media (min-width: 960px)': {
-      maxWidth: '100%'
-    }
-  },
-  active: {
-    '&>div': {
-      color: '#43DDE6'
-    },
-
-    '& a': {
-      color: '#43DDE6!important'
-    },
-
-    '&>span:first-child': {
-      color: '#43DDE6'
-    }
-  },
-  mobileHeader: {
-    display: 'flex',
-    justifyContent: 'space-between'
-
-    // '@media (min-width: 960px)': {
-    //     maxWidth: '100%'
-    // }
-  },
-  mobileMenuIcon: {
-    color: '#43DDE6',
-    cursor: 'pointer',
-
-    '@media (min-width: 960px)': {
-      display: 'none'
-    }
-  }
-}))
-
 export const HeaderContainer = withStyles({
   root: {
     backgroundColor: '#364F6B',
@@ -105,6 +66,11 @@ export const MenuItem = withStyles({
 
     '&:hover a': {
       color: '#43DDE6'
+    },
+
+    '&:hover img': {
+      filter:
+        'invert(72%) sepia(83%) saturate(1197%) hue-rotate(152deg) brightness(110%) contrast(80%)'
     }
   }
 })(MuiMenuItem)
@@ -112,7 +78,12 @@ export const MenuItem = withStyles({
 export const ListItemIcon = withStyles({
   root: {
     color: '#8A9BAE',
-    minWidth: '38px'
+    minWidth: '38px',
+
+    '& > img': {
+      filter:
+        'invert(72%) sepia(37%) saturate(188%) hue-rotate(171deg) brightness(80%) contrast(81%)'
+    }
   }
 })(MuiListItemIcon)
 
@@ -128,3 +99,50 @@ export const Divider = withStyles({
     }
   }
 })(MuiDivider)
+
+export const useStyles = makeStyles(() => ({
+  headerLogo: {
+    maxWidth: '300px',
+
+    '@media (min-width: 960px)': {
+      maxWidth: '100%'
+    }
+  },
+  active: {
+    '&>div': {
+      color: '#43DDE6'
+    },
+
+    '& a': {
+      color: '#43DDE6!important'
+    },
+
+    '&>span:first-child': {
+      color: '#43DDE6'
+    },
+
+    '& img': {
+      filter:
+        'invert(72%) sepia(83%) saturate(1197%) hue-rotate(152deg) brightness(110%) contrast(80%)'
+    }
+  },
+  mobileHeader: {
+    display: 'flex',
+    justifyContent: 'space-between'
+
+    // '@media (min-width: 960px)': {
+    //     maxWidth: '100%'
+    // }
+  },
+  mobileMenuIcon: {
+    color: '#43DDE6',
+    cursor: 'pointer',
+
+    '@media (min-width: 960px)': {
+      display: 'none'
+    }
+  },
+  navIcon: {
+    width: '16px'
+  }
+}))

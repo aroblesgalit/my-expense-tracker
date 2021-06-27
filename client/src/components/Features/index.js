@@ -8,14 +8,14 @@ import {
   ArrowBackIos,
   ArrowForwardIos
 } from './features.styles'
-import { Grid, useMediaQuery, useTheme } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import mainLogo from '../../images/x-pense_logo_main.svg'
 
 function Features () {
   const classes = useStyles()
 
-  const theme = useTheme()
-  const desktop = useMediaQuery(theme.breakpoints.up('md'))
+  // const theme = useTheme()
+  // const desktop = useMediaQuery(theme.breakpoints.up('md'))
 
   return (
     <FeaturesContainer

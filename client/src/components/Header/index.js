@@ -14,6 +14,7 @@ import { UserConsumer } from '../../utils/UserContext'
 // import Button from '../Button'
 import mainLogo from '../../images/x-pense_logo_main.svg'
 import mobileLogo from '../../images/x-pense_logo_mobile.svg'
+import dashboardIcon from '../../images/icon_nav_dashboard.svg'
 import { Grid, Typography, useMediaQuery } from '@material-ui/core'
 import {
   // AccountBalanceOutlined,
@@ -76,7 +77,12 @@ function Header () {
                     }
                   >
                     <ListItemIcon>
-                      <DashboardOutlined fontSize='small' />
+                      <img
+                        src={dashboardIcon}
+                        alt='Dashboard icon'
+                        className={classes.navIcon}
+                      />
+                      {/* <DashboardOutlined fontSize='small' /> */}
                     </ListItemIcon>
                     <Typography variant='inherit'>
                       <Link to='/dashboard'>dashboard</Link>
