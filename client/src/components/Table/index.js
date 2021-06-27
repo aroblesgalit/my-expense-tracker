@@ -15,6 +15,7 @@ import {
   Paper
 } from '@material-ui/core'
 import { DeleteOutlined } from '@material-ui/icons'
+import deleteIcon from '../../images/icon_expense_delete.svg'
 
 function TableComponent ({ headings, rows, handleDelete }) {
   const [page, setPage] = useState(0)
@@ -56,8 +57,13 @@ function TableComponent ({ headings, rows, handleDelete }) {
                   <TableCell>${row.amount.toFixed(2)}</TableCell>
                   <TableCell align='right'>
                     {/* <EditOutlined fontSize='small' /> */}
-                    <DeleteOutlined
+                    {/* <DeleteOutlined
                       fontSize='small'
+                      onClick={() => handleDelete(row._id)}
+                    /> */}
+                    <img
+                      src={deleteIcon}
+                      alt='Delete icon'
                       onClick={() => handleDelete(row._id)}
                     />
                   </TableCell>
