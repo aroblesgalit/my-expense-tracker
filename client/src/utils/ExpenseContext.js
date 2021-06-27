@@ -221,20 +221,18 @@ function ExpenseProvider (props) {
 
   /*********** Categories Totals ***********/
   const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([])
+  const categories = [
+    'housing',
+    'transportation',
+    'food',
+    'utilities',
+    'medical',
+    'savings',
+    'debt',
+    'personal',
+    'miscellaneous'
+  ]
   function updateCatMonthTotals (expenses) {
-    const categories = [
-      'groceries',
-      'bills',
-      'auto',
-      'medical',
-      'clothing',
-      'travel',
-      'loans',
-      'household',
-      'fun',
-      'gifts',
-      'other'
-    ]
     // Create temporary array for all the totals
     const tempCategoryMonthlyTotals = []
     // Get today's date
@@ -350,6 +348,7 @@ function ExpenseProvider (props) {
         expDescRef,
         expAmountRef,
         addExpense,
+        categories,
         category,
         onCategoryChange,
         filteredExpenses,

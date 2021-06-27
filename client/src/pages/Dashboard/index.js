@@ -57,7 +57,24 @@ function Dashboard () {
   return (
     <ExpenseConsumer>
       {value => {
-        const { categoryMonthlyTotals, monthlyTotals } = value
+        const { categories, categoryMonthlyTotals, monthlyTotals } = value
+        console.log(categories)
+        const categoryNames = categories.map(
+          category => category[0].toUpperCase() + category.slice(1)
+        )
+        const colors = [
+          '#80F9DC',
+          '#808CF9',
+          '#F980C9',
+          '#F9BA80',
+          '#9FF980',
+          '#D9A778',
+          '#80DCF9',
+          '#C480F9',
+          '#F98080',
+          '#EFF980',
+          '#78B0D9'
+        ]
         const currentMonth = categoryMonthlyTotals.length - 1
         return (
           <PageContainer
@@ -121,8 +138,16 @@ function Dashboard () {
                   <Chart data={categoryMonthlyTotals} width='100%'>
                     <ArgumentAxis showTicks={false} />
                     <ValueAxis max={3000} />
-
-                    <BarSeries
+                    {categories.map((category, i) => (
+                      <BarSeries
+                        key={`${i}-${category}`}
+                        name={categoryNames[i]}
+                        valueField={category}
+                        argumentField='month'
+                        color={colors[i]}
+                      />
+                    ))}
+                    {/* <BarSeries
                       name='Groceries'
                       valueField='groceries'
                       argumentField='month'
@@ -187,7 +212,7 @@ function Dashboard () {
                       valueField='other'
                       argumentField='month'
                       color='#78B0D9'
-                    />
+                    /> */}
                     <Animation />
                     <Legend
                       position='bottom'
@@ -198,19 +223,7 @@ function Dashboard () {
                     <Stack
                       stacks={[
                         {
-                          series: [
-                            'Groceries',
-                            'Bills',
-                            'Auto',
-                            'Medical',
-                            'Clothing',
-                            'Travel',
-                            'Loans',
-                            'Household',
-                            'Fun',
-                            'Gifts',
-                            'Other'
-                          ]
+                          series: categoryNames
                         }
                       ]}
                     />

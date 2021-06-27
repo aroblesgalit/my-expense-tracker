@@ -24,6 +24,7 @@ function ExpenseForm () {
           expDescRef,
           expAmountRef,
           addExpense,
+          categories,
           category,
           onCategoryChange
         } = value
@@ -54,19 +55,7 @@ function ExpenseForm () {
                     <SelectInput
                       label='Category'
                       name='category'
-                      options={[
-                        'groceries',
-                        'bills',
-                        'auto',
-                        'medical',
-                        'clothing',
-                        'travel',
-                        'loans',
-                        'household',
-                        'fun',
-                        'gifts',
-                        'other'
-                      ]}
+                      options={categories}
                       value={category}
                       onChange={onCategoryChange}
                     />
