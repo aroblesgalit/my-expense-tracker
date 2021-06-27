@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { TableContainer, TableHeadCell, TablePagination } from './table.styles'
+import {
+  useStyles,
+  TableContainer,
+  TableHeadCell,
+  TablePagination
+} from './table.styles'
 import {
   Table,
   TableHead,
@@ -24,6 +29,8 @@ function TableComponent ({ headings, rows, handleDelete }) {
     setPage(0)
   }
 
+  const classes = useStyles()
+
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -40,6 +47,7 @@ function TableComponent ({ headings, rows, handleDelete }) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, i) => (
                 <TableRow
+                  className={classes.row}
                   key={`${i}-${row.fullDate}-${row.category}-${row.description}`}
                 >
                   <TableCell>{row.fullDate}</TableCell>
