@@ -95,7 +95,7 @@ function Header () {
                       <Link to='/expenses'>expenses</Link>
                     </Typography>
                   </MenuItem>
-                  <MenuItem onClick={handleMenuItemClick}>
+                  {/* <MenuItem onClick={handleMenuItemClick}>
                     <ListItemIcon>
                       <AccountBalanceOutlined fontSize='small' />
                     </ListItemIcon>
@@ -106,7 +106,7 @@ function Header () {
                       <BarChartOutlined fontSize='small' />
                     </ListItemIcon>
                     <Typography variant='inherit'>analytics</Typography>
-                  </MenuItem>
+                  </MenuItem> */}
                   <Divider />
                   <MenuItem
                     onClick={() => {
@@ -147,7 +147,7 @@ function Header () {
                       <Link to='/expenses'>expenses</Link>
                     </Typography>
                   </MenuItem>
-                  <MenuItem>
+                  {/* <MenuItem>
                     <ListItemIcon>
                       <AccountBalanceOutlined fontSize='small' />
                     </ListItemIcon>
@@ -158,7 +158,7 @@ function Header () {
                       <BarChartOutlined fontSize='small' />
                     </ListItemIcon>
                     <Typography variant='inherit'>analytics</Typography>
-                  </MenuItem>
+                  </MenuItem> */}
                 </MenuList>
               </NavWrapper>
               {desktopWidth && (

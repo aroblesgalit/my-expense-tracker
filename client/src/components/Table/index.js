@@ -55,7 +55,7 @@ function TableComponent ({ headings, rows, handleDelete }) {
                   <TableCell>{row.description}</TableCell>
                   <TableCell>{row.amount.toFixed(2)}</TableCell>
                   <TableCell align='right'>
-                    <EditOutlined fontSize='small' />
+                    {/* <EditOutlined fontSize='small' /> */}
                     <DeleteOutlined
                       fontSize='small'
                       onClick={() => handleDelete(row._id)}
