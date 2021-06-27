@@ -39,7 +39,10 @@ const legendRootBase = ({ classes, ...restProps }) => (
 const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase)
 const legendLabelStyles = () => ({
   label: {
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    '& span': {
+      fontSize: '12px'
+    }
   }
 })
 const legendLabelBase = ({ classes, ...restProps }) => (
