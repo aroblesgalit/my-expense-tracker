@@ -110,7 +110,9 @@ function Dashboard () {
                       <CardSingleVal
                         key={`${i}-${category}`}
                         name={category}
-                        value={`$${categoryMonthlyTotals[currentMonth][category]}`}
+                        value={`$${categoryMonthlyTotals[currentMonth][
+                          category
+                        ].toFixed(2)}`}
                       />
                     )
                 )}

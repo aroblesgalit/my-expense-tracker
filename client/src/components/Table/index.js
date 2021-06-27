@@ -53,7 +53,7 @@ function TableComponent ({ headings, rows, handleDelete }) {
                   <TableCell>{row.fullDate}</TableCell>
                   <TableCell>{row.category}</TableCell>
                   <TableCell>{row.description}</TableCell>
-                  <TableCell>{row.amount.toFixed(2)}</TableCell>
+                  <TableCell>${row.amount.toFixed(2)}</TableCell>
                   <TableCell align='right'>
                     {/* <EditOutlined fontSize='small' /> */}
                     <DeleteOutlined
