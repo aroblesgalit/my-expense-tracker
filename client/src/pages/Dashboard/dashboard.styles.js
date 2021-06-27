@@ -45,7 +45,6 @@ export const TotalsContainer = withStyles({
     backgroundColor: 'rgba(54, 79, 107, 0.15)',
     padding: '32px',
     marginTop: '32px',
-    overflowX: 'scroll',
 
     '@media (min-width: 960px)': {
       padding: '32px 80px'

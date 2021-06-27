@@ -122,7 +122,7 @@ export const PageContainer = withStyles({
 export const CardsWrapper = withStyles({
   root: {
     gap: '20px',
-    flexWrap: 'nowrap'
+    flexWrap: 'wrap'
   }
 })(MuiGrid)
 

@@ -239,7 +239,7 @@ function ExpenseProvider (props) {
     // Get this year
     // let currentYear = currentDate.getFullYear();
     // Get this month
-    let currentMonth = currentDate.getMonth()
+    let currentMonth = currentDate.getUTCMonth()
     // Loop through the categories and add up each category total
     for (let i = 0; i <= currentMonth; i++) {
       let strMonth = ''
