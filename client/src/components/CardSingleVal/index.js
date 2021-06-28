@@ -3,7 +3,7 @@ import { CardContainer, CardTitle, CardValue } from './cardSingleVal.styles'
 
 function CardSingleVal ({ name, value }) {
   return (
-    <CardContainer elevation={3}>
+    <CardContainer elevation={1}>
       <CardTitle variant={'subtitle1'}>{name}</CardTitle>
       <CardValue variant={'body1'} component={'p'}>
         {value}

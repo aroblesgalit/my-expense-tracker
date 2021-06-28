@@ -6,7 +6,8 @@ import MuiGrid from '@material-ui/core/Grid'
 export const MonthlyTotalsWrapper = withStyles({
   root: {
     width: '100%',
-    padding: '16px'
+    padding: '16px',
+    borderRadius: '10px'
   }
 })(MuiPaper)
 
