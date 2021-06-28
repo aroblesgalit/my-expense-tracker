@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useCallback } from 'react'
 import {
   HeaderContainer,
   NavWrapper,
@@ -9,7 +9,7 @@ import {
   Divider,
   Menu
 } from './header.styles'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import { UserConsumer } from '../../utils/UserContext'
 // import Button from '../Button'
 import mainLogo from '../../images/x-pense_logo_main.svg'
@@ -29,8 +29,8 @@ import HeaderContext from '../../utils/HeaderContext'
 
 function Header () {
   // Use path endpoint to determine active page
-  const location = useLocation()
-  const currentPathname = location.pathname
+  let location = useLocation()
+  let currentPathname = location.pathname
 
   const classes = useStyles()
 
@@ -39,6 +39,10 @@ function Header () {
   const { anchorEl, handleMenuClick, handleMenuItemClick } = useContext(
     HeaderContext
   )
+
+  // Routing
+  let history = useHistory()
+  const handleOnClick = useCallback(path => history.push(path), [history])
 
   return (
     <UserConsumer>
@@ -139,8 +143,9 @@ function Header () {
                 <MenuList>
                   <MenuItem
                     className={
-                      currentPathname === '/dashboard' ? classes.active : ''
+                      currentPathname === '/dashboard' && classes.active
                     }
+                    onClick={() => handleOnClick('/dashboard')}
                   >
                     <ListItemIcon>
                       <img
@@ -149,14 +154,13 @@ function Header () {
                         className={classes.navIcon}
                       />
                     </ListItemIcon>
-                    <Typography variant='inherit'>
-                      <Link to='/dashboard'>dashboard</Link>
-                    </Typography>
+                    <Typography variant='inherit'>dashboard</Typography>
                   </MenuItem>
                   <MenuItem
                     className={
-                      currentPathname === '/expenses' ? classes.active : ''
+                      currentPathname === '/expenses' && classes.active
                     }
+                    onClick={() => handleOnClick('/expenses')}
                   >
                     <ListItemIcon>
                       <img
@@ -165,9 +169,7 @@ function Header () {
                         className={classes.navIcon}
                       />
                     </ListItemIcon>
-                    <Typography variant='inherit'>
-                      <Link to='/expenses'>expenses</Link>
-                    </Typography>
+                    <Typography variant='inherit'>expenses</Typography>
                   </MenuItem>
                   {/* <MenuItem>
                     <ListItemIcon>

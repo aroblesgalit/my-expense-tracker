@@ -109,6 +109,8 @@ export const useStyles = makeStyles(() => ({
     }
   },
   active: {
+    color: '#43DDE6!important',
+
     '&>div': {
       color: '#43DDE6'
     },
@@ -128,11 +130,11 @@ export const useStyles = makeStyles(() => ({
   },
   mobileHeader: {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 
-    // '@media (min-width: 960px)': {
-    //     maxWidth: '100%'
-    // }
+    '@media (min-width: 960px)': {
+      marginBottom: '32px'
+    }
   },
   mobileMenuIcon: {
     color: '#43DDE6',
