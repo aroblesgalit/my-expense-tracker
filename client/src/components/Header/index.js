@@ -143,7 +143,7 @@ function Header () {
                 <MenuList>
                   <MenuItem
                     className={
-                      currentPathname === '/dashboard' && classes.active
+                      currentPathname === '/dashboard' ? classes.active : ''
                     }
                     onClick={() => handleOnClick('/dashboard')}
                   >
@@ -158,7 +158,7 @@ function Header () {
                   </MenuItem>
                   <MenuItem
                     className={
-                      currentPathname === '/expenses' && classes.active
+                      currentPathname === '/expenses' ? classes.active : ''
                     }
                     onClick={() => handleOnClick('/expenses')}
                   >
