@@ -154,6 +154,8 @@ function ExpenseProvider (props) {
   }
   /*********** END Filter ***********/
 
+  const [displayDate, setDisplayDate] = useState({})
+
   /*********** Expense Totals ***********/
   const [totalToday, setTotalToday] = useState(0)
   const [totalWeek, setTotalWeek] = useState(0)
@@ -166,6 +168,13 @@ function ExpenseProvider (props) {
     let currentDay = currentDate.getDate()
     let currentYear = currentDate.getFullYear()
     let currentWeek = currentDate.getDay()
+    // For displayDate
+    setDisplayDate({
+      dayOfWeek: currentWeek,
+      month: currentMonth,
+      day: currentDay,
+      year: currentYear
+    })
     // Get today's total
     // Get all expenses with today's date
     const todayExpenses = expenses
@@ -361,7 +370,8 @@ function ExpenseProvider (props) {
         totalMonth,
         totalYear,
         categoryMonthlyTotals,
-        monthlyTotals
+        monthlyTotals,
+        displayDate
       }}
     >
       {props.children}

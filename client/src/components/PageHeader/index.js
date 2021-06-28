@@ -5,7 +5,7 @@ import {
   WelcomeMessage,
   CurrentDate
 } from './pageHeader.styles'
-import { Grid, useMediaQuery } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import UserContext from '../../utils/UserContext'
 
 function PageHeader ({ title }) {
