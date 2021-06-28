@@ -33,12 +33,22 @@ export const PageTitle = withStyles({
 export const WelcomeMessage = withStyles({
   root: {
     fontSize: '14px',
-    fontWeight: '700',
-    textAlign: 'right',
+    fontWeight: '900',
     color: '#F0F0F0',
 
     '@media (min-width: 960px)': {
-      textAlign: 'left',
+      color: '#8A9BAE'
+    }
+  }
+})(MuiTypography)
+
+export const CurrentDate = withStyles({
+  root: {
+    fontSize: '12px',
+    fontWeight: '300',
+    color: '#F0F0F0',
+
+    '@media (min-width: 960px)': {
       color: '#8A9BAE'
     }
   }

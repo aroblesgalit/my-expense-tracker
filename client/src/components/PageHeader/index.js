@@ -1,24 +1,36 @@
-import React, { useContext } from 'react';
-import { PageHeaderContainer, PageTitle, WelcomeMessage } from './pageHeader.styles';
-import { Grid, useMediaQuery } from '@material-ui/core';
-import UserContext from '../../utils/UserContext';
+import React, { useContext } from 'react'
+import {
+  PageHeaderContainer,
+  PageTitle,
+  WelcomeMessage,
+  CurrentDate
+} from './pageHeader.styles'
+import { Grid, useMediaQuery } from '@material-ui/core'
+import UserContext from '../../utils/UserContext'
 
-function PageHeader({ title }) {
+function PageHeader ({ title }) {
+  const { userData } = useContext(UserContext)
 
-    const { userData } = useContext(UserContext);
+  //   const desktopWidth = useMediaQuery('(min-width:960px)')
 
-    const desktopWidth = useMediaQuery('(min-width:960px)');
-
-    return (
-        <PageHeaderContainer container item xs={12} direction={desktopWidth ? 'column' : 'row-reverse'} alignItems='baseline'>
-            <Grid item md={12} xs={5}>
-                <WelcomeMessage variant='body1'>Hi, {userData.username}</WelcomeMessage>
-            </Grid>
-            <Grid item md={12} xs={7}>
-                <PageTitle variant='h1'>{title}</PageTitle>
-            </Grid>
-        </PageHeaderContainer>
-    )
+  return (
+    <PageHeaderContainer container item xs={12}>
+      <Grid container item xs={7} alignItems='flex-end'>
+        <PageTitle variant='h1'>{title}</PageTitle>
+      </Grid>
+      <Grid
+        container
+        item
+        xs={5}
+        direction='column'
+        alignItems='flex-end'
+        justify='flex-end'
+      >
+        <CurrentDate variant='body2'>DayofWeek mm/dd/yyyy</CurrentDate>
+        <WelcomeMessage variant='body1'>Hi, {userData.username}</WelcomeMessage>
+      </Grid>
+    </PageHeaderContainer>
+  )
 }
 
-export default PageHeader;
+export default PageHeader
