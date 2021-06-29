@@ -10,12 +10,12 @@ import TableRow from '@material-ui/core/TableRow'
 import Typography from '@material-ui/core/Typography'
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
-import { BreakdownRow } from './collapsibleTable.styles'
+import { useStyles, BreakdownRow } from './collapsibleTable.styles'
 
 function Row (props) {
   const { row } = props
   const [open, setOpen] = React.useState(false)
-  //   const classes = useRowStyles();
+  const classes = useStyles()
 
   return (
     <React.Fragment>
@@ -58,24 +58,50 @@ function Row (props) {
                 <Table size='small' aria-label='purchases'>
                   <TableHead>
                     <TableRow>
-                      <TableCell>Date</TableCell>
-                      <TableCell>Category</TableCell>
-                      <TableCell align='right'>Description</TableCell>
-                      <TableCell align='right'>Amount</TableCell>
+                      <TableCell className={classes.breakdownLabel}>
+                        Date
+                      </TableCell>
+                      <TableCell className={classes.breakdownLabel}>
+                        Category
+                      </TableCell>
+                      <TableCell
+                        className={classes.breakdownLabel}
+                        align='right'
+                      >
+                        Description
+                      </TableCell>
+                      <TableCell
+                        className={classes.breakdownLabel}
+                        align='right'
+                      >
+                        Amount
+                      </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {row.expenses.length > 0 &&
                       row.expenses.map(expense => (
                         <TableRow key={`${expense._id}-${expense.date}`}>
-                          <TableCell component='th' scope='row'>
+                          <TableCell
+                            className={classes.breakdownValue}
+                            component='th'
+                            scope='row'
+                          >
                             {expense.fullDate}
                           </TableCell>
-                          <TableCell>{expense.category}</TableCell>
-                          <TableCell align='right'>
+                          <TableCell className={classes.breakdownValue}>
+                            {expense.category}
+                          </TableCell>
+                          <TableCell
+                            className={classes.breakdownValue}
+                            align='right'
+                          >
                             {expense.description}
                           </TableCell>
-                          <TableCell align='right'>
+                          <TableCell
+                            className={classes.breakdownValue}
+                            align='right'
+                          >
                             ${expense.amount.toFixed(2)}
                           </TableCell>
                         </TableRow>
