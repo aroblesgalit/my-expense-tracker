@@ -5,7 +5,7 @@ import MuiTypography from '@material-ui/core/Typography'
 export const PageHeaderContainer = withStyles({
   root: {
     backgroundColor: '#364F6B',
-    padding: '16px 32px',
+    padding: '0 16px 16px',
 
     '@media (min-width: 960px)': {
       backgroundColor: 'transparent',
@@ -16,7 +16,7 @@ export const PageHeaderContainer = withStyles({
 
 export const PageTitle = withStyles({
   root: {
-    fontSize: '42px',
+    fontSize: '32px',
     fontWeight: '900',
     color: '#F0F0F0',
 

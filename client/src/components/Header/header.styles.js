@@ -10,7 +10,7 @@ export const HeaderContainer = withStyles({
   root: {
     backgroundColor: '#364F6B',
     fontFamily: 'Roboto, sans-serif',
-    padding: '16px 32px',
+    padding: '16px',
     height: 'auto',
 
     '@media (min-width: 960px)': {

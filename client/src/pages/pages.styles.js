@@ -19,8 +19,13 @@ export const useStyles = makeStyles(() => ({
   //     }
   // },
   padX32: {
-    paddingLeft: '32px',
-    paddingRight: '32px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+
+    '@media (min-width: 680px)': {
+      paddingLeft: '32px',
+      paddingRight: '32px'
+    },
 
     '@media (min-width: 960px)': {
       paddingLeft: '80px',
@@ -31,7 +36,11 @@ export const useStyles = makeStyles(() => ({
     paddingTop: '16px'
   },
   padTop32: {
-    paddingTop: '32px'
+    paddingTop: '16px',
+
+    '@media (min-width: 960px)': {
+      paddingTop: '32px'
+    }
   },
   padBot32: {
     paddingBottom: '32px'

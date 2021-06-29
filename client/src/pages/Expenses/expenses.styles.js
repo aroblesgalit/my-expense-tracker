@@ -64,9 +64,13 @@ import MuiGrid from '@material-ui/core/Grid'
 
 export const TableTopContent = withStyles({
   root: {
-    margin: '32px 32px 16px',
+    margin: '16px',
     width: '100%',
     maxWidth: '900px',
+
+    '@media (min-width: 680px)': {
+      margin: '32px 32px 16px'
+    },
 
     '@media (min-width: 960px)': {
       margin: '0 80px 16px'

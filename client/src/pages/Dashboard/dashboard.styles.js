@@ -44,8 +44,12 @@ export const TotalsContainer = withStyles({
   root: {
     width: '100%',
     backgroundColor: 'rgba(54, 79, 107, 0.15)',
-    padding: '32px',
+    padding: '16px',
     marginTop: '32px',
+
+    '@media (min-width: 680px)': {
+      padding: '32px'
+    },
 
     '@media (min-width: 960px)': {
       padding: '32px 80px'
