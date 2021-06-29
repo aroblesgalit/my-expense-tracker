@@ -18,6 +18,10 @@ export const useStyles = makeStyles(() => ({
   },
   breakdownValue: {
     fontSize: '12px',
-    padding: '6px'
+    padding: '6px',
+
+    '@media (min-width: 960px)': {
+      fontSize: '14px'
+    }
   }
 }))
