@@ -9,7 +9,7 @@ import {
   Divider,
   Menu
 } from './header.styles'
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { UserConsumer } from '../../utils/UserContext'
 // import Button from '../Button'
 import mainLogo from '../../images/x-pense_logo_main.svg'
@@ -76,7 +76,10 @@ function Header () {
                   onClose={handleMenuItemClick}
                 >
                   <MenuItem
-                    onClick={handleMenuItemClick}
+                    onClick={() => {
+                      handleMenuItemClick()
+                      handleOnClick('/dashboard')
+                    }}
                     className={
                       currentPathname === '/dashboard' ? classes.active : ''
                     }
@@ -88,12 +91,13 @@ function Header () {
                         className={classes.navIcon}
                       />
                     </ListItemIcon>
-                    <Typography variant='inherit'>
-                      <Link to='/dashboard'>dashboard</Link>
-                    </Typography>
+                    <Typography variant='inherit'>dashboard</Typography>
                   </MenuItem>
                   <MenuItem
-                    onClick={handleMenuItemClick}
+                    onClick={() => {
+                      handleMenuItemClick()
+                      handleOnClick('/expenses')
+                    }}
                     className={
                       currentPathname === '/expenses' ? classes.active : ''
                     }
@@ -105,9 +109,7 @@ function Header () {
                         className={classes.navIcon}
                       />
                     </ListItemIcon>
-                    <Typography variant='inherit'>
-                      <Link to='/expenses'>expenses</Link>
-                    </Typography>
+                    <Typography variant='inherit'>expenses</Typography>
                   </MenuItem>
                   {/* <MenuItem onClick={handleMenuItemClick}>
                     <ListItemIcon>

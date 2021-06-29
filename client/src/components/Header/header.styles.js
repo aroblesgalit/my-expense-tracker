@@ -36,7 +36,8 @@ export const MenuList = withStyles({
     display: 'none',
 
     '@media (min-width: 960px)': {
-      display: 'block'
+      display: 'block',
+      width: '100%'
     }
   }
 })(MuiMenuList)
