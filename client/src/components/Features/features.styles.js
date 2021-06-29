@@ -55,7 +55,18 @@ export const LogoWrapper = withStyles({
 export const FeatureImagePaper = withStyles({
   root: {
     height: '420px',
-    width: '100%'
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '32px',
+    fontWeight: '900',
+    color: '#f0f0f0',
+    textAlign: 'center',
+
+    '@media (min-width: 960px)': {
+      fontSize: '42px'
+    }
   }
 })(MuiPaper)
 

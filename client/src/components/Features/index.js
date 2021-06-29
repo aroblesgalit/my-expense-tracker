@@ -41,7 +41,9 @@ function Features () {
             <ArrowBackIos />
           </Grid>
           <Grid container item xs={10}>
-            <FeatureImagePaper elevation={1}>image</FeatureImagePaper>
+            <FeatureImagePaper elevation={1}>
+              placeholder <br /> coming soon
+            </FeatureImagePaper>
           </Grid>
           <Grid container item xs={1} alignContent='center' justify='flex-end'>
             <ArrowForwardIos />
