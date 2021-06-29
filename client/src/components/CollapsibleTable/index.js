@@ -49,7 +49,7 @@ function Row (props) {
       </TableRow>
       {row.expenses.length > 0 && (
         <BreakdownRow>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+          <TableCell style={{ padding: 0 }} colSpan={3}>
             <Collapse in={open} timeout='auto' unmountOnExit>
               <Box margin={1}>
                 <Typography variant='h6' gutterBottom component='div'>
@@ -93,21 +93,19 @@ function Row (props) {
 
 export default function CollapsibleTable ({ rows }) {
   return (
-    <React.Fragment>
-      <Table aria-label='collapsible table'>
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell>Month</TableCell>
-            <TableCell align='right'>Total</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, i) => (
-            <Row key={`${i}-${row.month}/${row.year}`} row={row} />
-          ))}
-        </TableBody>
-      </Table>
-    </React.Fragment>
+    <Table aria-label='collapsible table'>
+      <TableHead>
+        <TableRow>
+          <TableCell />
+          <TableCell>Month</TableCell>
+          <TableCell align='right'>Total</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {rows.map((row, i) => (
+          <Row key={`${i}-${row.month}/${row.year}`} row={row} />
+        ))}
+      </TableBody>
+    </Table>
   )
 }
