@@ -16,7 +16,7 @@ export const useStyles = makeStyles(() => ({
 export const RightContainer = withStyles({
   root: {
     backgroundColor: '#F0F0F0',
-    padding: '30px',
+    padding: '30px 20px',
     maxHeight: '320px',
 
     '@media (min-width: 960px)': {

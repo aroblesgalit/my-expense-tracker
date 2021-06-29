@@ -37,7 +37,7 @@ export const FeaturesContainer = withStyles({
     backgroundColor: '#364F6B',
     minHeight: 'auto',
     width: '100%',
-    padding: '50px 40px',
+    padding: '40px 20px',
 
     '@media (min-width: 960px)': {
       minHeight: '100vh'
@@ -54,7 +54,7 @@ export const LogoWrapper = withStyles({
 
 export const FeatureImagePaper = withStyles({
   root: {
-    height: '420px',
+    height: '320px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -65,6 +65,7 @@ export const FeatureImagePaper = withStyles({
     textAlign: 'center',
 
     '@media (min-width: 960px)': {
+      height: '420px',
       fontSize: '42px'
     }
   }
