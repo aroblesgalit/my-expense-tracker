@@ -33,7 +33,6 @@ function ExpenseForm () {
           displayDate.month + 1 < 10
             ? '0' + (displayDate.month + 1)
             : displayDate.month + 1
-        console.log(`${displayDate.year}-${dateMonth}-${displayDate.day}`)
         return (
           <Backdrop open={newExpense}>
             <ExpenseFormWrapper>
