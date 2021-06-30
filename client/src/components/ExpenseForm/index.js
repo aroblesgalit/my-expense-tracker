@@ -26,8 +26,14 @@ function ExpenseForm () {
           addExpense,
           categories,
           category,
-          onCategoryChange
+          onCategoryChange,
+          displayDate
         } = value
+        const dateMonth =
+          displayDate.month + 1 < 10
+            ? '0' + (displayDate.month + 1)
+            : displayDate.month + 1
+        console.log(`${displayDate.year}-${dateMonth}-${displayDate.day}`)
         return (
           <Backdrop open={newExpense}>
             <ExpenseFormWrapper>
@@ -48,6 +54,9 @@ function ExpenseForm () {
                       type='date'
                       label='Date'
                       name='date'
+                      max={{
+                        max: `${displayDate.year}-${dateMonth}-${displayDate.day}`
+                      }}
                       ref={expDateRef}
                     />
                   </Grid>
