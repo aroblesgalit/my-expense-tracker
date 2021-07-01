@@ -311,7 +311,6 @@ function ExpenseProvider (props) {
       // Add current month's category totals to temp category monthly totals
       tempCategoryMonthlyTotals.push(tempCurrentMonthTotal)
     }
-    console.log(tempCategoryMonthlyTotals)
     setCategoryMonthlyTotals(tempCategoryMonthlyTotals)
   }
   /*********** END Categories Totals ***********/
