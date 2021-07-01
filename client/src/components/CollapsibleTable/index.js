@@ -10,7 +10,12 @@ import TableRow from '@material-ui/core/TableRow'
 import Typography from '@material-ui/core/Typography'
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
-import { useStyles, BreakdownRow, TableCell } from './collapsibleTable.styles'
+import {
+  useStyles,
+  BreakdownRow,
+  TableCell,
+  TableHeadCell
+} from './collapsibleTable.styles'
 
 function Row (props) {
   const { row } = props
@@ -58,24 +63,21 @@ function Row (props) {
                 <Table size='small' aria-label='purchases'>
                   <TableHead>
                     <TableRow>
-                      <TableCell className={classes.breakdownLabel}>
+                      <TableHeadCell className={classes.breakdownLabel}>
                         Date
-                      </TableCell>
-                      <TableCell className={classes.breakdownLabel}>
+                      </TableHeadCell>
+                      <TableHeadCell className={classes.breakdownLabel}>
                         Category
-                      </TableCell>
-                      <TableCell
-                        className={classes.breakdownLabel}
-                        align='right'
-                      >
+                      </TableHeadCell>
+                      <TableHeadCell className={classes.breakdownLabel}>
                         Description
-                      </TableCell>
-                      <TableCell
+                      </TableHeadCell>
+                      <TableHeadCell
                         className={classes.breakdownLabel}
                         align='right'
                       >
                         Amount
-                      </TableCell>
+                      </TableHeadCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -92,10 +94,7 @@ function Row (props) {
                           <TableCell className={classes.breakdownValue}>
                             {expense.category}
                           </TableCell>
-                          <TableCell
-                            className={classes.breakdownValue}
-                            align='right'
-                          >
+                          <TableCell className={classes.breakdownValue}>
                             {expense.description}
                           </TableCell>
                           <TableCell
@@ -123,8 +122,8 @@ export default function CollapsibleTable ({ rows }) {
       <TableHead>
         <TableRow>
           <TableCell size='small' />
-          <TableCell>Month</TableCell>
-          <TableCell>Total</TableCell>
+          <TableHeadCell>Month</TableHeadCell>
+          <TableHeadCell>Total</TableHeadCell>
         </TableRow>
       </TableHead>
       <TableBody>

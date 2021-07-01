@@ -12,6 +12,14 @@ export const BreakdownRow = withStyles({
   }
 })(MuiTableRow)
 
+export const TableHeadCell = withStyles({
+  root: {
+    fontSize: '12px',
+    fontWeight: '400',
+    color: '#8A9BAE'
+  }
+})(MuiTableCell)
+
 export const TableCell = withStyles({
   sizeSmall: {
     width: '40px'
@@ -20,7 +28,7 @@ export const TableCell = withStyles({
 
 export const useStyles = makeStyles(() => ({
   breakdownLabel: {
-    fontSize: '12px',
+    // fontSize: '12px',
     padding: '6px'
   },
   breakdownValue: {
