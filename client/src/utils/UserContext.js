@@ -1,164 +1,157 @@
-import React, { createRef, useEffect, useState } from 'react';
-import API from './API';
+import React, { createRef, useEffect, useState } from 'react'
+import API from './API'
 
-const UserContext = React.createContext();
+const UserContext = React.createContext()
 
 // Provider
-function UserProvider(props) {
+function UserProvider (props) {
+  const [user, setUser] = useState({
+    isLoggedIn: null,
+    userData: {}
+  })
 
-    const [user, setUser] = useState({
-        isLoggedIn: null,
-        userData: {}
-    });
+  function getUserData () {
+    API.getUserData()
+      .then(res => {
+        setUser({
+          ...user,
+          isLoggedIn: true,
+          userData: res.data
+        })
+      })
+      .catch(() => {
+        setUser({
+          ...user,
+          isLoggedIn: false,
+          userData: {}
+        })
+      })
+  }
 
-    function getUserData() {
-        API.getUserData()
+  useEffect(() => {
+    getUserData()
+  }, [])
+
+  /*********** Signup ***********/
+  const signupUserRef = createRef()
+  const signupPassRef = createRef()
+  const signupConfirmdRef = createRef()
+
+  const [signupAlert, setSignupAlert] = useState({
+    type: null,
+    copy: null
+  })
+
+  const handleSignup = e => {
+    e.preventDefault()
+
+    const username = signupUserRef.current.value
+    const password = signupPassRef.current.value
+    const confirmPassword = signupConfirmdRef.current.value
+
+    username && password && confirmPassword
+      ? password === confirmPassword
+        ? API.signupUser({
+            username,
+            password
+          })
             .then(res => {
-                setUser({
-                    ...user,
-                    isLoggedIn: true,
-                    userData: res.data
-                })
+              setSignupAlert({
+                type: 'success',
+                copy: 'Signup successful!'
+              })
+              return getUserData()
             })
-            .catch(() => {
-                setUser({
-                    ...user,
-                    isLoggedIn: false,
-                    userData: {}
-                })
-            })
-    }
-
-    useEffect(() => {
-        getUserData();
-    }, [])
-
-    /*********** Signup ***********/
-    const signupUserRef = createRef();
-    const signupPassRef = createRef();
-    const signupConfirmdRef = createRef();
-
-    const [signupAlert, setSignupAlert] = useState({
-        type: null,
-        copy: null
-    });
-
-    const handleSignup = e => {
-        e.preventDefault();
-
-        const username = signupUserRef.current.value;
-        const password = signupPassRef.current.value;
-        const confirmPassword = signupConfirmdRef.current.value;
-
-        username && password && confirmPassword ? (
-            password === confirmPassword ? (
-                API.signupUser({
-                    username,
-                    password
-                })
-                    .then(res => {
-                        setSignupAlert({
-                            type: 'success',
-                            copy: 'Signup successful!'
-                        });
-                        return getUserData();
-                    })
-                    .catch(err => {
-                        setSignupAlert({
-                            type: 'fail',
-                            copy: 'Username is already taken.'
-                        });
-                    })
-            ) : (
-                setSignupAlert({
-                    type: 'fail',
-                    copy: 'Password does not match.'
-                })
-            )
-        ) : (
-            setSignupAlert({
+            .catch(err => {
+              setSignupAlert({
                 type: 'fail',
-                copy: 'Please fill in all the fields.'
+                copy: 'Username is already taken.'
+              })
             })
-        )
-    }
-    /*********** END Signup ***********/
+        : setSignupAlert({
+            type: 'fail',
+            copy: 'Password does not match.'
+          })
+      : setSignupAlert({
+          type: 'fail',
+          copy: 'Please fill in all the fields.'
+        })
+  }
+  /*********** END Signup ***********/
 
-    /*********** Login ***********/
-    const loginUserRef = createRef();
-    const loginPassRef = createRef();
+  /*********** Login ***********/
+  const loginUserRef = createRef()
+  const loginPassRef = createRef()
 
-    const [loginAlert, setLoginAlert] = useState({
-        type: null,
-        copy: null
-    });
+  const [loginAlert, setLoginAlert] = useState({
+    type: null,
+    copy: null
+  })
 
-    const handleLogin = e => {
-        e.preventDefault();
+  const handleLogin = e => {
+    e.preventDefault()
 
-        const username = loginUserRef.current.value;
-        const password = loginPassRef.current.value;
+    const username = loginUserRef.current.value
+    const password = loginPassRef.current.value
 
-        username && password ? (
-            API.loginUser({
-                username,
-                password
-            })
-                .then(res => {
-                    setLoginAlert({
-                        type: 'success',
-                        copy: 'Login successful!'
-                    });
-                    getUserData();
-                })
-                .catch(err => {
-                    setLoginAlert({
-                        type: 'fail',
-                        copy: 'Wrong username or password.'
-                    });
-                })
-        ) : (
+    username && password
+      ? API.loginUser({
+          username,
+          password
+        })
+          .then(res => {
             setLoginAlert({
-                type: 'fail',
-                copy: 'Please fill in all the fields.'
+              type: 'success',
+              copy: 'Login successful!'
             })
-        )
-    }
-    /*********** END Login ***********/
-
-    /*********** Logout ***********/
-    const handleLogout = () => {
-        API.logoutUser()
-            .then(() => {
-                getUserData();
+            getUserData()
+          })
+          .catch(err => {
+            setLoginAlert({
+              type: 'fail',
+              copy: 'Wrong username or password.'
             })
-            .catch(err => console.log(err))
-    }
-    /*********** END Logout ***********/
+          })
+      : setLoginAlert({
+          type: 'fail',
+          copy: 'Please fill in all the fields.'
+        })
+  }
+  /*********** END Login ***********/
 
-    return (
-        <UserContext.Provider
-            value={{
-                signupUserRef,
-                signupPassRef,
-                signupConfirmdRef,
-                handleSignup,
-                signupAlert,
-                ...user,
-                loginUserRef,
-                loginPassRef,
-                handleLogin,
-                handleLogout,
-                loginAlert
-            }}
-        >
-            {props.children}
-        </UserContext.Provider>
-    )
+  /*********** Logout ***********/
+  const handleLogout = () => {
+    API.logoutUser()
+      .then(() => {
+        getUserData()
+      })
+      .catch(err => console.log(err))
+  }
+  /*********** END Logout ***********/
+
+  return (
+    <UserContext.Provider
+      value={{
+        signupUserRef,
+        signupPassRef,
+        signupConfirmdRef,
+        handleSignup,
+        signupAlert,
+        ...user,
+        loginUserRef,
+        loginPassRef,
+        handleLogin,
+        handleLogout,
+        loginAlert
+      }}
+    >
+      {props.children}
+    </UserContext.Provider>
+  )
 }
 
 // Consumer
-const UserConsumer = UserContext.Consumer;
+const UserConsumer = UserContext.Consumer
 
-export default UserContext;
-export { UserProvider, UserConsumer };
+export default UserContext
+export { UserProvider, UserConsumer }

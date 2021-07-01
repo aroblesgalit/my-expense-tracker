@@ -30,8 +30,8 @@ export const Backdrop = withStyles({
 
 export const ExpenseFormWrapper = withStyles({
   root: {
-    width: '100%',
-    maxWidth: '400px',
+    width: '400px',
+    maxWidth: '90%',
     padding: '20px 20px 30px',
     borderRadius: '10px'
   }
