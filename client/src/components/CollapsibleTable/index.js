@@ -16,11 +16,13 @@ import {
   TableCell,
   TableHeadCell
 } from './collapsibleTable.styles'
+import { useStyles as mainStyles } from '../../pages/pages.styles'
 
 function Row (props) {
   const { row } = props
   const [open, setOpen] = React.useState(false)
   const classes = useStyles()
+  const mainClasses = mainStyles()
 
   return (
     <React.Fragment>
@@ -50,7 +52,12 @@ function Row (props) {
           {row.month === 10 && 'November'}
           {row.month === 11 && 'December'}
         </TableCell>
-        <TableCell>${row.total.toFixed(2)}</TableCell>
+        <TableCell
+          align='right'
+          className={`${mainClasses.textMagenta} ${mainClasses.bold}`}
+        >
+          ${row.total.toFixed(2)}
+        </TableCell>
       </TableRow>
       {row.expenses.length > 0 && (
         <BreakdownRow>
@@ -98,7 +105,7 @@ function Row (props) {
                             {expense.description}
                           </TableCell>
                           <TableCell
-                            className={classes.breakdownValue}
+                            className={`${classes.breakdownValue} ${mainClasses.textMagenta} ${mainClasses.bold}`}
                             align='right'
                           >
                             ${expense.amount.toFixed(2)}
@@ -123,7 +130,7 @@ export default function CollapsibleTable ({ rows }) {
         <TableRow>
           <TableCell size='small' />
           <TableHeadCell>Month</TableHeadCell>
-          <TableHeadCell>Total</TableHeadCell>
+          <TableHeadCell align='right'>Total</TableHeadCell>
         </TableRow>
       </TableHead>
       <TableBody>
