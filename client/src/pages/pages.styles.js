@@ -38,6 +38,9 @@ export const useStyles = makeStyles(() => ({
       paddingRight: '80px'
     }
   },
+  padRight16: {
+    paddingRight: '16px'
+  },
   padTop16: {
     paddingTop: '16px'
   },

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import {
-  useStyles,
+  useStyles as mainStyles,
   PageContainer,
   CardsWrapper,
   SectionHeading
 } from '../pages.styles'
 import {
-  useStyles as dashboardStyles,
+  useStyles,
   MonthlyTotalsWrapper,
   ViewIconWrapper,
   TotalsContainer
@@ -61,8 +61,8 @@ const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(
 )
 
 function Dashboard () {
+  const mainClasses = mainStyles()
   const classes = useStyles()
-  const classesDashboard = dashboardStyles()
 
   const [viewMode, setViewMode] = useState('Chart')
 
@@ -107,13 +107,18 @@ function Dashboard () {
             <Grid container item xs={12}>
               <PageHeader title='Dashboard' />
             </Grid>
-            <Grid className={classes.padTop32} container item xs={12}>
-              <Grid className={classes.padX32} item xs={12}>
+            <Grid className={mainClasses.padTop32} container item xs={12}>
+              <Grid className={mainClasses.padX32} item xs={12}>
                 <SectionHeading variant={'h3'}>
                   Highest expenses this month
                 </SectionHeading>
               </Grid>
-              <CardsWrapper className={classes.padX32} container item xs={12}>
+              <CardsWrapper
+                className={mainClasses.padX32}
+                container
+                item
+                xs={12}
+              >
                 {Object.keys(categoryMonthlyTotals[currentMonth]).map(
                   (category, i) =>
                     category !== 'month' &&
@@ -134,21 +139,26 @@ function Dashboard () {
               container
               item
               xs={12}
-              className={`${classes.padX32} ${classes.padTop32} ${classes.padBot32}`}
+              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
             >
               <MonthlyTotalsWrapper>
-                <Grid container item xs={12} justify='flex-end'>
+                <Grid
+                  container
+                  item
+                  xs={12}
+                  justify='flex-end'
+                  className={`${mainClasses.padTop16} ${mainClasses.padRight16}`}
+                >
                   <ViewIconWrapper
                     onClick={() => setViewMode('Chart')}
-                    className={`${classes.marRight16} ${viewMode === 'Chart' &&
-                      classesDashboard.active}`}
+                    className={`${mainClasses.marRight16} ${viewMode ===
+                      'Chart' && classes.active}`}
                   >
                     <img src={GraphViewIcon} alt='Graph View Icon' />
                   </ViewIconWrapper>
                   <ViewIconWrapper
                     onClick={() => setViewMode('Table')}
-                    className={`${viewMode === 'Table' &&
-                      classesDashboard.active}`}
+                    className={`${viewMode === 'Table' && classes.active}`}
                   >
                     <img src={TableViewIcon} alt='Table View Icon' />
                   </ViewIconWrapper>
