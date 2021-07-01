@@ -95,6 +95,7 @@ function Dashboard () {
           '#78B0D9'
         ]
         const currentMonth = categoryMonthlyTotals.length - 1
+        console.log(currentMonth)
         return (
           <PageContainer
             component='section'
