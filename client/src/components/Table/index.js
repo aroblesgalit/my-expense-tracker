@@ -5,6 +5,7 @@ import {
   TableHeadCell,
   TablePagination
 } from './table.styles'
+import { useStyles as mainStyles } from '../../pages/pages.styles'
 import {
   Table,
   TableHead,
@@ -30,6 +31,7 @@ function TableComponent ({ headings, rows, handleDelete }) {
   }
 
   const classes = useStyles()
+  const mainClasses = mainStyles()
 
   return (
     <TableContainer component={Paper}>
@@ -53,7 +55,11 @@ function TableComponent ({ headings, rows, handleDelete }) {
                   <TableCell>{row.fullDate}</TableCell>
                   <TableCell>{row.category}</TableCell>
                   <TableCell>{row.description}</TableCell>
-                  <TableCell>${row.amount.toFixed(2)}</TableCell>
+                  <TableCell
+                    className={`${mainClasses.textMagenta} ${mainClasses.bold}`}
+                  >
+                    ${row.amount.toFixed(2)}
+                  </TableCell>
                   <TableCell align='right'>
                     {/* <EditOutlined fontSize='small' /> */}
                     {/* <DeleteOutlined

@@ -18,6 +18,12 @@ export const useStyles = makeStyles(() => ({
   //         padding: '0 80px'
   //     }
   // },
+  textMagenta: {
+    color: '#FC5185'
+  },
+  bold: {
+    fontWeight: '900'
+  },
   padX32: {
     paddingLeft: '16px',
     paddingRight: '16px',
