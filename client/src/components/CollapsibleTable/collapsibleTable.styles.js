@@ -1,5 +1,6 @@
 import { makeStyles, withStyles } from '@material-ui/core'
 import MuiTableRow from '@material-ui/core/TableRow'
+import MuiTableCell from '@material-ui/core/TableCell'
 
 export const BreakdownRow = withStyles({
   root: {
@@ -10,6 +11,12 @@ export const BreakdownRow = withStyles({
     }
   }
 })(MuiTableRow)
+
+export const TableCell = withStyles({
+  sizeSmall: {
+    width: '40px'
+  }
+})(MuiTableCell)
 
 export const useStyles = makeStyles(() => ({
   breakdownLabel: {

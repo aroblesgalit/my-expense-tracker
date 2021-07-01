@@ -4,13 +4,13 @@ import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
+// import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Typography from '@material-ui/core/Typography'
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
-import { useStyles, BreakdownRow } from './collapsibleTable.styles'
+import { useStyles, BreakdownRow, TableCell } from './collapsibleTable.styles'
 
 function Row (props) {
   const { row } = props
@@ -45,7 +45,7 @@ function Row (props) {
           {row.month === 10 && 'November'}
           {row.month === 11 && 'December'}
         </TableCell>
-        <TableCell align='right'>${row.total.toFixed(2)}</TableCell>
+        <TableCell>${row.total.toFixed(2)}</TableCell>
       </TableRow>
       {row.expenses.length > 0 && (
         <BreakdownRow>
@@ -122,9 +122,9 @@ export default function CollapsibleTable ({ rows }) {
     <Table aria-label='collapsible table'>
       <TableHead>
         <TableRow>
-          <TableCell />
+          <TableCell size='small' />
           <TableCell>Month</TableCell>
-          <TableCell align='right'>Total</TableCell>
+          <TableCell>Total</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
