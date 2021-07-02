@@ -82,14 +82,12 @@ function ExpenseProvider (props) {
             setAddResultMsg(
               `Expense for ${res.data.category} in the amount of $${res.data.amount} has been added.`
             )
-            // Remove alert after 5 seconds
-
-            // console.log('Expense added...', res);
             // Get all expenses again to update table
             return getAllExpenses()
             // Clear form
           })
           .then(() =>
+            // Remove alert after 5 seconds
             setTimeout(() => {
               setAddResultMsg(null)
             }, 3000)
@@ -380,7 +378,8 @@ function ExpenseProvider (props) {
         totalYear,
         categoryMonthlyTotals,
         monthlyTotals,
-        displayDate
+        displayDate,
+        addResultMsg
       }}
     >
       {props.children}
