@@ -90,15 +90,6 @@ function ExpenseProvider (props) {
             return getAllExpenses()
             // Clear form
           })
-          .then(() =>
-            // Remove alert after 5 seconds
-            setTimeout(() => {
-              setAddResultMsg({
-                type: null,
-                message: ''
-              })
-            }, 3000)
-          )
           .catch(err => {
             // Show error message
             console.log("Oh no! Something wen't wrong!", err)
@@ -108,6 +99,14 @@ function ExpenseProvider (props) {
           type: 'error',
           message: 'Please fill in all the fields to continue.'
         })
+
+    // Remove alert after some seconds
+    setTimeout(() => {
+      setAddResultMsg({
+        type: null,
+        message: ''
+      })
+    }, 5000)
   }
   /*********** END Expense Add Form ***********/
 
