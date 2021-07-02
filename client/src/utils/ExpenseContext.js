@@ -112,7 +112,7 @@ function ExpenseProvider (props) {
         message: ''
       })
       setBtnDisabled(false)
-    }, 5000)
+    }, 3000)
   }
   /*********** END Expense Add Form ***********/
 
