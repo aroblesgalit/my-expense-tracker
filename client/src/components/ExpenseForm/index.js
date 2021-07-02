@@ -22,12 +22,14 @@ function ExpenseForm () {
           newExpense,
           setNewExpense,
           expDateRef,
-          expDescRef,
-          expAmountRef,
+          // expDescRef,
+          // expAmountRef,
           addExpense,
           categories,
           category,
-          onCategoryChange,
+          onExpenseInputChange,
+          expDesc,
+          expAmount,
           displayDate,
           addResultMsg
         } = value
@@ -67,7 +69,7 @@ function ExpenseForm () {
                       name='category'
                       options={categories}
                       value={category}
-                      onChange={onCategoryChange}
+                      onChange={e => onExpenseInputChange(e, 'category')}
                     />
                   </Grid>
                   <Grid item xs={12} className={classes.padTop16}>
@@ -75,7 +77,9 @@ function ExpenseForm () {
                       type='text'
                       label='Description'
                       name='description'
-                      ref={expDescRef}
+                      // ref={expDescRef}
+                      value={expDesc}
+                      onChange={e => onExpenseInputChange(e, 'description')}
                     />
                   </Grid>
                   <Grid item xs={12} className={classes.padTop16}>
@@ -83,7 +87,9 @@ function ExpenseForm () {
                       type='number'
                       label='Amount'
                       name='amount'
-                      ref={expAmountRef}
+                      // ref={expAmountRef}
+                      value={expAmount}
+                      onChange={e => onExpenseInputChange(e, 'amount')}
                     />
                   </Grid>
                   {addResultMsg.type && (

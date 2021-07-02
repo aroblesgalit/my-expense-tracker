@@ -50,17 +50,22 @@ function ExpenseProvider (props) {
   /*********** Expense Add Form ***********/
   const [newExpense, setNewExpense] = useState(false)
   const expDateRef = createRef()
-  const expDescRef = createRef()
-  const expAmountRef = createRef()
+  // const expDescRef = createRef()
+  // const expAmountRef = createRef()
+  // const [expDate, setExpDate] = useState('')
   const [category, setCategory] = useState('')
+  const [expDesc, setExpDesc] = useState('')
+  const [expAmount, setExpAmount] = useState(0)
   const [addResultMsg, setAddResultMsg] = useState({
     type: null,
     message: ''
   })
 
-  function onCategoryChange (e) {
+  function onExpenseInputChange (e, type) {
     e.preventDefault()
-    setCategory(e.target.value)
+    if (type === 'category') setCategory(e.target.value)
+    if (type === 'description') setExpDesc(e.target.value)
+    if (type === 'amount') setExpAmount(e.target.value)
   }
 
   function addExpense (e) {
@@ -69,8 +74,13 @@ function ExpenseProvider (props) {
     const user = userData.id
     const date = new Date(expDateRef.current.value)
     // const category = expCategoryRef.current.value
-    let description = expDescRef.current.value
-    let amount = expAmountRef.current.value
+    let description = expDesc
+    let amount = expAmount
+
+    // set state values
+    // setExpDate(date)
+    // setExpDesc(description)
+    // setExpAmount(amount)
 
     date && category && description && amount
       ? API.addExpense({
@@ -92,7 +102,10 @@ function ExpenseProvider (props) {
           })
           .catch(err => {
             // Show error message
-            console.log("Oh no! Something wen't wrong!", err)
+            setAddResultMsg({
+              type: 'error',
+              message: "Oh no! Something wen't wrong!"
+            })
           })
       : // Show alert that all fields must be filled in
         setAddResultMsg({
@@ -369,12 +382,15 @@ function ExpenseProvider (props) {
     <ExpenseContext.Provider
       value={{
         expDateRef,
-        expDescRef,
-        expAmountRef,
+        // expDescRef,
+        // expAmountRef,
         addExpense,
         categories,
         category,
-        onCategoryChange,
+        onExpenseInputChange,
+        // expDate,
+        expDesc,
+        expAmount,
         filteredExpenses,
         deleteExpense,
         activeFilter,
