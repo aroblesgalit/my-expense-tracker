@@ -10,6 +10,7 @@ import { Close } from '@material-ui/icons'
 import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import { TextInput, SelectInput } from '../Input'
 import Button from '../Button'
+import AlertMessage from '../AlertMessage'
 
 function ExpenseForm () {
   const classes = useStyles()
@@ -27,7 +28,8 @@ function ExpenseForm () {
           categories,
           category,
           onCategoryChange,
-          displayDate
+          displayDate,
+          addResultMsg
         } = value
         const dateMonth =
           displayDate.month + 1 < 10
@@ -84,6 +86,14 @@ function ExpenseForm () {
                       ref={expAmountRef}
                     />
                   </Grid>
+                  {addResultMsg.type && (
+                    <Grid item xs={12} className={classes.padTop16}>
+                      <AlertMessage
+                        type={addResultMsg.type}
+                        message={addResultMsg.message}
+                      />
+                    </Grid>
+                  )}
                   <Grid item xs={12}></Grid>
                   <Grid
                     container

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Alert } from '@material-ui/core'
+import { Alert } from './alertMessage.styles'
 
 function AlertMessage ({ type, message }) {
-  return <Alert serverity={type}>{message}</Alert>
+  return <Alert severity={type}>{message}</Alert>
 }
 
 export default AlertMessage

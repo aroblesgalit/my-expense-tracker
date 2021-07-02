@@ -104,7 +104,10 @@ function ExpenseProvider (props) {
             console.log("Oh no! Something wen't wrong!", err)
           })
       : // Show alert that all fields must be filled in
-        console.log('Please fill in all the fields to continue.')
+        setAddResultMsg({
+          type: 'error',
+          message: 'Please fill in all the fields to continue.'
+        })
   }
   /*********** END Expense Add Form ***********/
 
@@ -113,7 +116,7 @@ function ExpenseProvider (props) {
     API.deleteExpense(id)
       .then(res => {
         // Alert deleted expense
-        console.log('Deleted expense: ', res)
+        // console.log('Deleted expense: ', res)
         getAllExpenses()
       })
       .catch(err => console.log("Oh no! Something wen't wrong!", err))
