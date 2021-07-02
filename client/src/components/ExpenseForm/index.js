@@ -29,7 +29,8 @@ function ExpenseForm () {
           category,
           onExpenseInputChange,
           displayDate,
-          addResultMsg
+          addResultMsg,
+          btnDisabled
         } = value
         const dateMonth =
           displayDate.month + 1 < 10
@@ -108,6 +109,7 @@ function ExpenseForm () {
                       action='primary'
                       color='magenta'
                       onClick={e => addExpense(e)}
+                      disabled={btnDisabled}
                     />
                   </Grid>
                 </Grid>

@@ -1,15 +1,16 @@
-import React from 'react';
-import './button.css';
+import React from 'react'
+import './button.css'
 
-function Button({ type, text, action, color, onClick}) {
-    return (
-        <input
-            type={type}
-            value={text}
-            className={`${action}-btn ${color}`}
-            onClick={onClick}
-        />
-    )
+function Button ({ type, text, action, color, onClick, disabled }) {
+  return (
+    <input
+      type={type}
+      value={text}
+      className={`${action}-btn ${disabled ? '' : color}`}
+      onClick={onClick}
+      disabled={disabled}
+    />
+  )
 }
 
-export default Button;
+export default Button

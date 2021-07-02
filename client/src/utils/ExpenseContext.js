@@ -57,6 +57,7 @@ function ExpenseProvider (props) {
     type: null,
     message: ''
   })
+  const [btnDisabled, setBtnDisabled] = useState(false)
 
   function onExpenseInputChange (e, type) {
     e.preventDefault()
@@ -86,6 +87,7 @@ function ExpenseProvider (props) {
               type: 'success',
               message: `Expense for ${res.data.category} in the amount of $${res.data.amount} has been added.`
             })
+            setBtnDisabled(true)
             // Get all expenses again to update table
             return getAllExpenses()
             // Clear form
@@ -109,6 +111,7 @@ function ExpenseProvider (props) {
         type: null,
         message: ''
       })
+      setBtnDisabled(false)
     }, 5000)
   }
   /*********** END Expense Add Form ***********/
@@ -391,7 +394,8 @@ function ExpenseProvider (props) {
         categoryMonthlyTotals,
         monthlyTotals,
         displayDate,
-        addResultMsg
+        addResultMsg,
+        btnDisabled
       }}
     >
       {props.children}

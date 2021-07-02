@@ -1,51 +1,56 @@
 .primary-btn {
-    min-width: 140px;
-    color: #FFFFFF;
-    font-weight: 700;
-    border: none;
-    height: 42px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    letter-spacing: 1px;
+  min-width: 140px;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  height: 42px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .primary-btn.magenta {
-    background-color: #FC5185;
+  background-color: #fc5185;
 }
 
 .primary-btn.magenta:hover {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
-    background-color: #EB3F72;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  background-color: #eb3f72;
 }
 
 .primary-btn.blue {
-    background-color: #43DDE6;
+  background-color: #43dde6;
 }
 
 .primary-btn.blue:hover {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
-    background-color: #0DC4CE;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  background-color: #0dc4ce;
+}
+
+.primary-btn:disabled {
+  background-color: #d2d3df;
+  color: #b0b0be;
 }
 
 .secondary-btn {
-    min-width: 140px;
-    font-weight: 700;
-    height: 42px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    letter-spacing: 1px;
+  min-width: 140px;
+  font-weight: 700;
+  height: 42px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .secondary-btn.gray {
-    color: #8A9BAE;
-    background-color: transparent;
-    border: 1px solid #8A9BAE;
+  color: #8a9bae;
+  background-color: transparent;
+  border: 1px solid #8a9bae;
 }
 
 .secondary-btn.gray:hover {
-    color: #FFFFFF;
-    border: 1px solid #FC5185;
-    background-color: #FC5185;
+  color: #ffffff;
+  border: 1px solid #fc5185;
+  background-color: #fc5185;
 }
