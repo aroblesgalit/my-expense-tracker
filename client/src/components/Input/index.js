@@ -67,7 +67,7 @@ const CustomInput = React.forwardRef(
 )
 
 export const TextInput = React.forwardRef(
-  ({ type, label, name, onChange, max, value }, ref) => {
+  ({ type, label, name, onChange, max }, ref) => {
     return (
       <div>
         <InputLabel htmlFor={name}>{label}</InputLabel>
@@ -78,7 +78,6 @@ export const TextInput = React.forwardRef(
           onChange={onChange}
           inputRef={ref}
           inputProps={max}
-          value={value}
           fullWidth
           disableUnderline
         />

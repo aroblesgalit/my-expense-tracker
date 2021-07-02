@@ -50,12 +50,9 @@ function ExpenseProvider (props) {
   /*********** Expense Add Form ***********/
   const [newExpense, setNewExpense] = useState(false)
   const expDateRef = createRef()
-  // const expDescRef = createRef()
-  // const expAmountRef = createRef()
-  // const [expDate, setExpDate] = useState('')
+  const expDescRef = createRef()
+  const expAmountRef = createRef()
   const [category, setCategory] = useState('')
-  const [expDesc, setExpDesc] = useState('')
-  const [expAmount, setExpAmount] = useState(0)
   const [addResultMsg, setAddResultMsg] = useState({
     type: null,
     message: ''
@@ -64,8 +61,6 @@ function ExpenseProvider (props) {
   function onExpenseInputChange (e, type) {
     e.preventDefault()
     if (type === 'category') setCategory(e.target.value)
-    if (type === 'description') setExpDesc(e.target.value)
-    if (type === 'amount') setExpAmount(e.target.value)
   }
 
   function addExpense (e) {
@@ -73,14 +68,9 @@ function ExpenseProvider (props) {
 
     const user = userData.id
     const date = new Date(expDateRef.current.value)
-    // const category = expCategoryRef.current.value
-    let description = expDesc
-    let amount = expAmount
 
-    // set state values
-    // setExpDate(date)
-    // setExpDesc(description)
-    // setExpAmount(amount)
+    let description = expDescRef.current.value
+    let amount = expAmountRef.current.value
 
     date && category && description && amount
       ? API.addExpense({
@@ -382,15 +372,12 @@ function ExpenseProvider (props) {
     <ExpenseContext.Provider
       value={{
         expDateRef,
-        // expDescRef,
-        // expAmountRef,
+        expDescRef,
+        expAmountRef,
         addExpense,
         categories,
         category,
         onExpenseInputChange,
-        // expDate,
-        expDesc,
-        expAmount,
         filteredExpenses,
         deleteExpense,
         activeFilter,
