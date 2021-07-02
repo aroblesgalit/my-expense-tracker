@@ -53,7 +53,10 @@ function ExpenseProvider (props) {
   const expDescRef = createRef()
   const expAmountRef = createRef()
   const [category, setCategory] = useState('')
-  const [addResultMsg, setAddResultMsg] = useState(null)
+  const [addResultMsg, setAddResultMsg] = useState({
+    type: null,
+    message: ''
+  })
 
   function onCategoryChange (e) {
     e.preventDefault()
@@ -79,9 +82,10 @@ function ExpenseProvider (props) {
         })
           .then(res => {
             // Show alert that expense has been added
-            setAddResultMsg(
-              `Expense for ${res.data.category} in the amount of $${res.data.amount} has been added.`
-            )
+            setAddResultMsg({
+              type: 'success',
+              message: `Expense for ${res.data.category} in the amount of $${res.data.amount} has been added.`
+            })
             // Get all expenses again to update table
             return getAllExpenses()
             // Clear form
@@ -89,7 +93,10 @@ function ExpenseProvider (props) {
           .then(() =>
             // Remove alert after 5 seconds
             setTimeout(() => {
-              setAddResultMsg(null)
+              setAddResultMsg({
+                type: null,
+                message: ''
+              })
             }, 3000)
           )
           .catch(err => {
