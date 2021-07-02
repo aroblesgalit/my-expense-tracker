@@ -36,6 +36,8 @@ function ExpenseForm () {
           displayDate.month + 1 < 10
             ? '0' + (displayDate.month + 1)
             : displayDate.month + 1
+        const dateDay =
+          displayDate.day < 10 ? '0' + displayDate.day : displayDate.day
         return (
           <Backdrop open={newExpense}>
             <ExpenseFormWrapper>
@@ -57,7 +59,7 @@ function ExpenseForm () {
                       label='Date'
                       name='date'
                       max={{
-                        max: `${displayDate.year}-${dateMonth}-${displayDate.day}`
+                        max: `${displayDate.year}-${dateMonth}-${dateDay}`
                       }}
                       ref={expDateRef}
                     />
