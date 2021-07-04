@@ -6,13 +6,17 @@ import MuiTablePagination from '@material-ui/core/TablePagination'
 export const useStyles = makeStyles(() => ({
   row: {
     '& > :last-child': {
-      opacity: '0',
+      opacity: '1',
 
       '& > img': {
         width: '16px',
         cursor: 'pointer'
         // filter:
         //   'invert(72%) sepia(37%) saturate(188%) hue-rotate(171deg) brightness(80%) contrast(81%)'
+      },
+
+      '@media (min-width: 768px)': {
+        opacity: '0'
       }
     },
     '&:hover': {
