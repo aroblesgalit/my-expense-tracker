@@ -45,6 +45,18 @@ export const TableHeadCell = withStyles({
   }
 })(MuiTableCell)
 
+export const TableBodyCell = withStyles({
+  root: {
+    fontSize: '0.75rem',
+    padding: '8px 16px',
+
+    '@media (min-width: 768px)': {
+      fontSize: '0.875rem',
+      padding: '16px'
+    }
+  }
+})(MuiTableCell)
+
 export const TablePagination = withStyles({
   root: {
     fontSize: '12px'

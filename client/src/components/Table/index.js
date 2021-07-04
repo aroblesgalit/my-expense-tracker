@@ -3,6 +3,7 @@ import {
   useStyles,
   TableContainer,
   TableHeadCell,
+  TableBodyCell,
   TablePagination
 } from './table.styles'
 import { useStyles as mainStyles } from '../../pages/pages.styles'
@@ -52,15 +53,15 @@ function TableComponent ({ headings, rows, handleDelete }) {
                   className={classes.row}
                   key={`${i}-${row.fullDate}-${row.category}-${row.description}`}
                 >
-                  <TableCell>{row.fullDate}</TableCell>
-                  <TableCell>{row.category}</TableCell>
-                  <TableCell>{row.description}</TableCell>
-                  <TableCell
+                  <TableBodyCell>{row.fullDate}</TableBodyCell>
+                  <TableBodyCell>{row.category}</TableBodyCell>
+                  <TableBodyCell>{row.description}</TableBodyCell>
+                  <TableBodyCell
                     className={`${mainClasses.textMagenta} ${mainClasses.bold}`}
                   >
                     ${row.amount.toFixed(2)}
-                  </TableCell>
-                  <TableCell align='right'>
+                  </TableBodyCell>
+                  <TableBodyCell align='right'>
                     {/* <EditOutlined fontSize='small' /> */}
                     {/* <DeleteOutlined
                       fontSize='small'
@@ -71,7 +72,7 @@ function TableComponent ({ headings, rows, handleDelete }) {
                       alt='Delete icon'
                       onClick={() => handleDelete(row._id)}
                     />
-                  </TableCell>
+                  </TableBodyCell>
                 </TableRow>
               ))}
         </TableBody>
