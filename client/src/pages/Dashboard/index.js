@@ -121,6 +121,7 @@ function Dashboard () {
               >
                 {Object.keys(categoryMonthlyTotals[currentMonth]).map(
                   (category, i) =>
+                    i < 7 &&
                     category !== 'month' &&
                     categoryMonthlyTotals[currentMonth][category] > 0 && (
                       <CardSingleVal
