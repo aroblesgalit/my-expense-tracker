@@ -60,7 +60,11 @@ function Expenses () {
                   />
                 </Grid>
               </TableTopContent>
-              <Grid item xs={12} className={classes.padX32}>
+              <Grid
+                item
+                xs={12}
+                className={`${classes.padX32} ${classes.padBot32}`}
+              >
                 <Table
                   headings={['Date', 'Category', 'Description', 'Amount', '']}
                   rows={filteredExpenses}

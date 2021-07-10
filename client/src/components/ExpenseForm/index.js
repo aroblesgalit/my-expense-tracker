@@ -58,6 +58,7 @@ function ExpenseForm () {
                       type='date'
                       label='Date'
                       name='date'
+                      defaultValue={`${displayDate.year}-${dateMonth}-${dateDay}`}
                       max={{
                         max: `${displayDate.year}-${dateMonth}-${dateDay}`
                       }}
