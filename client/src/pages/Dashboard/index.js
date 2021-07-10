@@ -31,14 +31,7 @@ import TableViewIcon from '../../images/icon_view_table.svg'
 
 const legendStyles = () => ({
   root: {
-    display: 'flex',
-    margin: 'auto',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-
-    '& li': {
-      width: 'auto'
-    }
+    fontSize: '12px'
   }
 })
 const legendRootBase = ({ classes, ...restProps }) => (
@@ -47,7 +40,7 @@ const legendRootBase = ({ classes, ...restProps }) => (
 const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase)
 const legendLabelStyles = () => ({
   label: {
-    whiteSpace: 'nowrap',
+    whiteSpace: 'wrap',
     '& span': {
       fontSize: '12px'
     }
@@ -178,11 +171,7 @@ function Dashboard () {
                       />
                     ))}
                     <Animation />
-                    <Legend
-                      position='bottom'
-                      rootComponent={Root}
-                      labelComponent={Label}
-                    />
+                    <Legend rootComponent={Root} labelComponent={Label} />
                     <Title text='Monthly totals' />
                     <Stack
                       stacks={[
