@@ -13,7 +13,6 @@ import {
   TableBody,
   TableFooter,
   TableRow,
-  TableCell,
   Paper
 } from '@material-ui/core'
 import deleteIcon from '../../images/icon_expense_delete.svg'
