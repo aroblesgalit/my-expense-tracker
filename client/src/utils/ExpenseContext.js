@@ -314,6 +314,7 @@ function ExpenseProvider (props) {
       let tempCurrentMonthTotal = {
         month: strMonth
       }
+      let tempCurCatTotals = [] // to hold category objects
       // Iterate through categories to get each totals for the current month
       for (let j = 0; j < categories.length; j++) {
         // Filter through current category expenses
@@ -327,8 +328,18 @@ function ExpenseProvider (props) {
           (total, val) => total + val,
           0
         )
-        // Add category total to current month
-        tempCurrentMonthTotal[categories[j]] = currentExpensesMonthlyTotal
+        // Push category with totals into temp array
+        tempCurCatTotals.push({
+          name: categories[j],
+          value: currentExpensesMonthlyTotal
+        })
+      }
+      // Sort temp array of categories with totals
+      tempCurCatTotals.sort((a, b) => b.value - a.value)
+      // Add category totals to current month
+      for (let k = 0; k < tempCurCatTotals.length; k++) {
+        tempCurrentMonthTotal[tempCurCatTotals[k]['name']] =
+          tempCurCatTotals[k]['value']
       }
       // Add current month's category totals to temp category monthly totals
       tempCategoryMonthlyTotals.push(tempCurrentMonthTotal)
