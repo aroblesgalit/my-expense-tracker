@@ -22,7 +22,8 @@ import {
   ValueAxis,
   BarSeries,
   Title,
-  Legend
+  Legend,
+  PieSeries
 } from '@devexpress/dx-react-chart-material-ui'
 import { Stack, Animation } from '@devexpress/dx-react-chart'
 import { withStyles } from '@material-ui/core'
@@ -88,6 +89,23 @@ function Dashboard () {
           '#78B0D9'
         ]
         const currentMonth = categoryMonthlyTotals.length - 1
+        console.log(categoryMonthlyTotals[currentMonth])
+        const pieData = Object.keys(categoryMonthlyTotals[currentMonth]).map(
+          (category, i) => {
+            let result
+            if (
+              category !== 'month' &&
+              categoryMonthlyTotals[currentMonth][category] > 0
+            ) {
+              result = {
+                category: category,
+                total: categoryMonthlyTotals[currentMonth][category]
+              }
+            }
+            return result
+          }
+        )
+        console.log(pieData)
         return (
           <PageContainer
             component='section'
@@ -185,6 +203,11 @@ function Dashboard () {
                   <CollapsibleTable rows={monthlyTotals} />
                 )}
               </MonthlyTotalsWrapper>
+            </Grid>
+            <Grid container item xs={12}>
+              {/* <Chart data={}>
+                <PieSeries />
+              </Chart> */}
             </Grid>
             <TotalsContainer container item xs={12}>
               <Grid item xs={12}>
