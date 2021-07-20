@@ -132,8 +132,13 @@ function Dashboard () {
                 )}
               </MonthlyTotalsWrapper>
             </Grid>
-            <Grid container item xs={12}>
-              <Chart width={500} data={pieData}>
+            <Grid
+              container
+              item
+              xs={12}
+              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
+            >
+              <Chart width={600} data={pieData}>
                 <Legend
                   rootComponent={Legend.Root}
                   labelComponent={Legend.Label}
