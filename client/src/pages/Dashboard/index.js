@@ -94,7 +94,7 @@ function Dashboard () {
           categoryMonthlyTotals[currentMonth]
         )) {
           if (key !== 'month' && value > 0) {
-            pieData.push({ category: key, total: value })
+            pieData.push({ category: key, total: value.toFixed(2) })
           }
         }
         console.log(pieData)
@@ -125,7 +125,7 @@ function Dashboard () {
               >
                 {Object.keys(categoryMonthlyTotals[currentMonth]).map(
                   (category, i) =>
-                    i < 7 &&
+                    i < 6 &&
                     category !== 'month' &&
                     categoryMonthlyTotals[currentMonth][category] > 0 && (
                       <CardSingleVal
@@ -198,9 +198,9 @@ function Dashboard () {
               </MonthlyTotalsWrapper>
             </Grid>
             <Grid container item xs={12}>
-              {/* <Chart data={}>
-                <PieSeries />
-              </Chart> */}
+              <Chart data={pieData}>
+                <PieSeries valueField='total' argumentField='category' />
+              </Chart>
             </Grid>
             <TotalsContainer container item xs={12}>
               <Grid item xs={12}>
