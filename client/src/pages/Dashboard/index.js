@@ -15,44 +15,11 @@ import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import CardSingleVal from '../../components/CardSingleVal'
 import CollapsibleTable from '../../components/CollapsibleTable'
+import BarGraph from '../../components/BarGraph'
 import { Grid } from '@material-ui/core'
-import {
-  Chart,
-  ArgumentAxis,
-  ValueAxis,
-  BarSeries,
-  Title,
-  Legend,
-  PieSeries
-} from '@devexpress/dx-react-chart-material-ui'
-import { Stack, Animation } from '@devexpress/dx-react-chart'
-import { withStyles } from '@material-ui/core'
+import { Chart, PieSeries } from '@devexpress/dx-react-chart-material-ui'
 import GraphViewIcon from '../../images/icon_view_graph.svg'
 import TableViewIcon from '../../images/icon_view_table.svg'
-
-const legendStyles = () => ({
-  root: {
-    fontSize: '12px'
-  }
-})
-const legendRootBase = ({ classes, ...restProps }) => (
-  <Legend.Root {...restProps} className={classes.root} />
-)
-const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase)
-const legendLabelStyles = () => ({
-  label: {
-    whiteSpace: 'wrap',
-    '& span': {
-      fontSize: '12px'
-    }
-  }
-})
-const legendLabelBase = ({ classes, ...restProps }) => (
-  <Legend.Label className={classes.label} {...restProps} />
-)
-const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(
-  legendLabelBase
-)
 
 function Dashboard () {
   const mainClasses = mainStyles()
@@ -72,22 +39,6 @@ function Dashboard () {
           totalMonth,
           totalYear
         } = value
-        const categoryNames = categories.map(
-          category => category[0].toUpperCase() + category.slice(1)
-        )
-        const colors = [
-          '#80F9DC',
-          '#808CF9',
-          '#F980C9',
-          '#F9BA80',
-          '#9FF980',
-          '#D9A778',
-          '#80DCF9',
-          '#C480F9',
-          '#F98080',
-          '#EFF980',
-          '#78B0D9'
-        ]
         const currentMonth = categoryMonthlyTotals.length - 1
         const pieData = []
         for (const [key, value] of Object.entries(
@@ -97,7 +48,6 @@ function Dashboard () {
             pieData.push({ category: key, total: value.toFixed(2) })
           }
         }
-        console.log(pieData)
 
         return (
           <PageContainer
@@ -169,29 +119,10 @@ function Dashboard () {
                   </ViewIconWrapper>
                 </Grid>
                 {viewMode === 'Chart' ? (
-                  <Chart data={categoryMonthlyTotals} width='100%'>
-                    <ArgumentAxis showTicks={false} />
-                    <ValueAxis max={3000} />
-                    {categories.map((category, i) => (
-                      <BarSeries
-                        key={`${i}-${category}`}
-                        name={categoryNames[i]}
-                        valueField={category}
-                        argumentField='month'
-                        color={colors[i]}
-                      />
-                    ))}
-                    <Animation />
-                    <Legend rootComponent={Root} labelComponent={Label} />
-                    <Title text='Monthly totals' />
-                    <Stack
-                      stacks={[
-                        {
-                          series: categoryNames
-                        }
-                      ]}
-                    />
-                  </Chart>
+                  <BarGraph
+                    categories={categories}
+                    categoryMonthlyTotals={categoryMonthlyTotals}
+                  />
                 ) : (
                   <CollapsibleTable rows={monthlyTotals} />
                 )}
