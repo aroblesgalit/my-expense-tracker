@@ -133,7 +133,7 @@ function Dashboard () {
               </MonthlyTotalsWrapper>
             </Grid>
             <Grid container item xs={12}>
-              <Chart data={pieData}>
+              <Chart width={500} data={pieData}>
                 <Legend
                   rootComponent={Legend.Root}
                   labelComponent={Legend.Label}
