@@ -17,7 +17,11 @@ import CardSingleVal from '../../components/CardSingleVal'
 import CollapsibleTable from '../../components/CollapsibleTable'
 import BarGraph from '../../components/BarGraph'
 import { Grid } from '@material-ui/core'
-import { Chart, PieSeries } from '@devexpress/dx-react-chart-material-ui'
+import {
+  Chart,
+  PieSeries,
+  Legend
+} from '@devexpress/dx-react-chart-material-ui'
 import GraphViewIcon from '../../images/icon_view_graph.svg'
 import TableViewIcon from '../../images/icon_view_table.svg'
 
@@ -130,6 +134,10 @@ function Dashboard () {
             </Grid>
             <Grid container item xs={12}>
               <Chart data={pieData}>
+                <Legend
+                  rootComponent={Legend.Root}
+                  labelComponent={Legend.Label}
+                />
                 <PieSeries valueField='total' argumentField='category' />
               </Chart>
             </Grid>
