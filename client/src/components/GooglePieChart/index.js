@@ -10,9 +10,22 @@ function GooglePieChart ({ data }) {
       loader={<div>Loading chart...</div>}
       data={data}
       options={{
-        title: 'Totals this month'
+        title: 'Totals this month',
+        colors: [
+          '#80F9DC',
+          '#808CF9',
+          '#F980C9',
+          '#F9BA80',
+          '#9FF980',
+          '#D9A778',
+          '#80DCF9',
+          '#C480F9',
+          '#F98080',
+          '#EFF980',
+          '#78B0D9'
+        ]
       }}
-      rootProps={{ 'data-tested': '1' }}
+      rootProps={{ 'data-testid': '1' }}
     />
   )
 }
