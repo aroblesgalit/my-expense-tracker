@@ -10,7 +10,7 @@ function GooglePieChart ({ data }) {
       loader={<div>Loading chart...</div>}
       data={data}
       options={{
-        title: 'Totals this month',
+        title: 'Category totals this month',
         colors: [
           '#80F9DC',
           '#808CF9',
@@ -23,7 +23,9 @@ function GooglePieChart ({ data }) {
           '#F98080',
           '#EFF980',
           '#78B0D9'
-        ]
+        ],
+        pieSliceText: 'label',
+        legend: 'none'
       }}
       rootProps={{ 'data-testid': '1' }}
     />
