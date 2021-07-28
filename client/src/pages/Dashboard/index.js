@@ -17,13 +17,9 @@ import CardSingleVal from '../../components/CardSingleVal'
 import CollapsibleTable from '../../components/CollapsibleTable'
 import BarGraph from '../../components/BarGraph'
 import { Grid } from '@material-ui/core'
-import {
-  Chart,
-  PieSeries,
-  Legend
-} from '@devexpress/dx-react-chart-material-ui'
 import GraphViewIcon from '../../images/icon_view_graph.svg'
 import TableViewIcon from '../../images/icon_view_table.svg'
+import GooglePieChart from '../../components/GooglePieChart'
 
 function Dashboard () {
   const mainClasses = mainStyles()
@@ -44,12 +40,12 @@ function Dashboard () {
           totalYear
         } = value
         const currentMonth = categoryMonthlyTotals.length - 1
-        const pieData = []
+        const pieData = [['category', 'total']]
         for (const [key, value] of Object.entries(
           categoryMonthlyTotals[currentMonth]
         )) {
           if (key !== 'month' && value > 0) {
-            pieData.push({ category: key, total: value.toFixed(2) })
+            pieData.push([key, parseFloat(value.toFixed(2))])
           }
         }
 
@@ -138,13 +134,14 @@ function Dashboard () {
               xs={12}
               className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
             >
-              <Chart width={600} data={pieData}>
+              {/* <Chart width={600} data={pieData}>
                 <Legend
                   rootComponent={Legend.Root}
                   labelComponent={Legend.Label}
                 />
                 <PieSeries valueField='total' argumentField='category' />
-              </Chart>
+              </Chart> */}
+              <GooglePieChart data={pieData} />
             </Grid>
             <TotalsContainer container item xs={12}>
               <Grid item xs={12}>

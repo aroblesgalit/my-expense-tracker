@@ -1,20 +1,14 @@
 import React from 'react'
 import { Chart } from 'react-google-charts'
 
-function GooglePieChart () {
+function GooglePieChart ({ data }) {
   return (
     <Chart
       width={'500px'}
-      height={'300px'}
+      height={'400px'}
       chartType='PieChart'
       loader={<div>Loading chart...</div>}
-      data={[
-        ['Category', 'Total'],
-        ['Food', 18.6],
-        ['Bills', 40.02],
-        ['Travel', 204.1],
-        ['Other', 210.94]
-      ]}
+      data={data}
       options={{
         title: 'Totals this month'
       }}
