@@ -20,12 +20,29 @@ import { Grid } from '@material-ui/core'
 import GraphViewIcon from '../../images/icon_view_graph.svg'
 import TableViewIcon from '../../images/icon_view_table.svg'
 import GooglePieChart from '../../components/GooglePieChart'
+import GoogleStackedBarChart from '../../components/GoogleStackedBarChart'
 
 function Dashboard () {
   const mainClasses = mainStyles()
   const classes = useStyles()
 
   const [viewMode, setViewMode] = useState('Chart')
+
+  const stackBarData = [
+    [
+      'Genre',
+      'Fantasy & Sci Fi',
+      'Romance',
+      'Mystery/Crime',
+      'General',
+      'Western',
+      'Literature',
+      { role: 'annotation' }
+    ],
+    ['2010', 10, 24, 20, 32, 18, 5, ''],
+    ['2020', 16, 22, 23, 30, 16, 9, ''],
+    ['2030', 28, 19, 29, 30, 12, 13, '']
+  ]
 
   return (
     <ExpenseConsumer>
@@ -142,6 +159,14 @@ function Dashboard () {
                 <PieSeries valueField='total' argumentField='category' />
               </Chart> */}
               <GooglePieChart data={pieData} />
+            </Grid>
+            <Grid
+              container
+              item
+              xs={12}
+              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
+            >
+              <GoogleStackedBarChart data={stackBarData} />
             </Grid>
             <TotalsContainer container item xs={12}>
               <Grid item xs={12}>
