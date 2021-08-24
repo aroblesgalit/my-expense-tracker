@@ -28,21 +28,21 @@ function Dashboard () {
 
   const [viewMode, setViewMode] = useState('Chart')
 
-  const stackBarData = [
-    [
-      'Genre',
-      'Fantasy & Sci Fi',
-      'Romance',
-      'Mystery/Crime',
-      'General',
-      'Western',
-      'Literature',
-      { role: 'annotation' }
-    ],
-    ['2010', 10, 24, 20, 32, 18, 5, ''],
-    ['2020', 16, 22, 23, 30, 16, 9, ''],
-    ['2030', 28, 19, 29, 30, 12, 13, '']
-  ]
+  // const stackBarData = [
+  //   [
+  //     'Genre',
+  //     'Fantasy & Sci Fi',
+  //     'Romance',
+  //     'Mystery/Crime',
+  //     'General',
+  //     'Western',
+  //     'Literature',
+  //     { role: 'annotation' }
+  //   ],
+  //   ['2010', 10, 24, 20, 32, 18, 5, ''],
+  //   ['2020', 16, 22, 23, 30, 16, 9, ''],
+  //   ['2030', 28, 19, 29, 30, 12, 13, '']
+  // ]
 
   return (
     <ExpenseConsumer>
@@ -50,6 +50,7 @@ function Dashboard () {
         const {
           categories,
           categoryMonthlyTotals,
+          catMonthlyTotalsArr,
           monthlyTotals,
           totalToday,
           totalWeek,
@@ -166,7 +167,7 @@ function Dashboard () {
               xs={12}
               className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
             >
-              <GoogleStackedBarChart data={stackBarData} />
+              <GoogleStackedBarChart data={catMonthlyTotalsArr} />
             </Grid>
             <TotalsContainer container item xs={12}>
               <Grid item xs={12}>

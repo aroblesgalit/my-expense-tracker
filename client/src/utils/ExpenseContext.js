@@ -251,6 +251,7 @@ function ExpenseProvider (props) {
 
   /*********** Categories Totals ***********/
   const [categoryMonthlyTotals, setCategoryMonthlyTotals] = useState([])
+  const [catMonthlyTotalsArr, setCatMonthlyTotalsArr] = useState([])
   const categories = [
     'housing',
     'transportation',
@@ -347,16 +348,16 @@ function ExpenseProvider (props) {
     setCategoryMonthlyTotals(tempCategoryMonthlyTotals)
 
     // Convert to Array of arrays (for google stacked bar chart)
-    const catMonthlyTotalsArr = [
+    const tempCatMonthlyTotalsArr = [
       ['category', ...categories, { role: 'annotation' }]
     ]
     tempCategoryMonthlyTotals.forEach(month => {
       const newMonth = [month.month]
       categories.forEach(category => newMonth.push(month[category]))
       newMonth.push('')
-      catMonthlyTotalsArr.push(newMonth)
+      tempCatMonthlyTotalsArr.push(newMonth)
     })
-    console.log(catMonthlyTotalsArr)
+    setCatMonthlyTotalsArr(tempCatMonthlyTotalsArr)
   }
   /*********** END Categories Totals ***********/
 
@@ -415,6 +416,7 @@ function ExpenseProvider (props) {
         totalMonth,
         totalYear,
         categoryMonthlyTotals,
+        catMonthlyTotalsArr,
         monthlyTotals,
         displayDate,
         addResultMsg,
