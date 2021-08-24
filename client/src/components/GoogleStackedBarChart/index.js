@@ -28,7 +28,11 @@ function GoogleStackedBarChart ({ data }) {
           maxLines: 3
         },
         bar: { groupWidth: '75%' },
-        isStacked: true
+        isStacked: true,
+        animation: {
+          duration: 500,
+          easing: 'out'
+        }
       }}
     />
   )

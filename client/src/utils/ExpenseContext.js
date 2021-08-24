@@ -345,6 +345,18 @@ function ExpenseProvider (props) {
       tempCategoryMonthlyTotals.push(tempCurrentMonthTotal)
     }
     setCategoryMonthlyTotals(tempCategoryMonthlyTotals)
+
+    // Convert to Array of arrays (for google stacked bar chart)
+    const catMonthlyTotalsArr = [
+      ['category', ...categories, { role: 'annotation' }]
+    ]
+    tempCategoryMonthlyTotals.forEach(month => {
+      const newMonth = [month.month]
+      categories.forEach(category => newMonth.push(month[category]))
+      newMonth.push('')
+      catMonthlyTotalsArr.push(newMonth)
+    })
+    console.log(catMonthlyTotalsArr)
   }
   /*********** END Categories Totals ***********/
 
