@@ -79,6 +79,16 @@ function Dashboard () {
             <Grid container item xs={12}>
               <PageHeader title='Dashboard' />
             </Grid>
+            <Grid
+              container
+              item
+              xs={12}
+              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
+            >
+              <MonthlyTotalsWrapper>
+                <GoogleStackedBarChart data={catMonthlyTotalsArr} />
+              </MonthlyTotalsWrapper>
+            </Grid>
             <Grid className={mainClasses.padTop32} container item xs={12}>
               <Grid className={mainClasses.padX32} item xs={12}>
                 <SectionHeading variant={'h3'}>
@@ -161,14 +171,7 @@ function Dashboard () {
               </Chart> */}
               <GooglePieChart data={pieData} />
             </Grid>
-            <Grid
-              container
-              item
-              xs={12}
-              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
-            >
-              <GoogleStackedBarChart data={catMonthlyTotalsArr} />
-            </Grid>
+
             <TotalsContainer container item xs={12}>
               <Grid item xs={12}>
                 <SectionHeading variant={'h3'}>Totals</SectionHeading>
