@@ -9,7 +9,7 @@ function GoogleStackedBarChart ({ data }) {
       options={{
         width: '100%',
         height: 300,
-        title: 'NEW BAR CHART DEMO',
+        title: 'Monthly totals',
         colors: [
           '#80F9DC',
           '#808CF9',

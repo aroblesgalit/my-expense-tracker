@@ -4,12 +4,12 @@ import { Chart } from 'react-google-charts'
 function GooglePieChart ({ data }) {
   return (
     <Chart
-      width={'500px'}
-      height={'400px'}
       chartType='PieChart'
       loader={<div>Loading chart...</div>}
       data={data}
       options={{
+        width: '100%',
+        height: '100%',
         title: 'Category totals this month',
         colors: [
           '#80F9DC',

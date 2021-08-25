@@ -15,7 +15,6 @@ import { ExpenseConsumer } from '../../utils/ExpenseContext'
 import PageHeader from '../../components/PageHeader'
 import CardSingleVal from '../../components/CardSingleVal'
 import CollapsibleTable from '../../components/CollapsibleTable'
-import BarGraph from '../../components/BarGraph'
 import { Grid } from '@material-ui/core'
 import GraphViewIcon from '../../images/icon_view_graph.svg'
 import TableViewIcon from '../../images/icon_view_table.svg'
@@ -28,27 +27,10 @@ function Dashboard () {
 
   const [viewMode, setViewMode] = useState('Chart')
 
-  // const stackBarData = [
-  //   [
-  //     'Genre',
-  //     'Fantasy & Sci Fi',
-  //     'Romance',
-  //     'Mystery/Crime',
-  //     'General',
-  //     'Western',
-  //     'Literature',
-  //     { role: 'annotation' }
-  //   ],
-  //   ['2010', 10, 24, 20, 32, 18, 5, ''],
-  //   ['2020', 16, 22, 23, 30, 16, 9, ''],
-  //   ['2030', 28, 19, 29, 30, 12, 13, '']
-  // ]
-
   return (
     <ExpenseConsumer>
       {value => {
         const {
-          categories,
           categoryMonthlyTotals,
           catMonthlyTotalsArr,
           monthlyTotals,
