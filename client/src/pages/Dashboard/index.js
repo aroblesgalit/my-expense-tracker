@@ -83,12 +83,46 @@ function Dashboard () {
               container
               item
               xs={12}
+              spacing={2}
               className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
             >
-              <MonthlyTotalsWrapper>
-                <GoogleStackedBarChart data={catMonthlyTotalsArr} />
-              </MonthlyTotalsWrapper>
+              <Grid container item xs={12} lg={8}>
+                <MonthlyTotalsWrapper>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    justify='flex-end'
+                    className={`${mainClasses.padTop16} ${mainClasses.padRight16}`}
+                  >
+                    <ViewIconWrapper
+                      onClick={() => setViewMode('Chart')}
+                      className={`${mainClasses.marRight16} ${viewMode ===
+                        'Chart' && classes.active}`}
+                    >
+                      <img src={GraphViewIcon} alt='Graph View Icon' />
+                    </ViewIconWrapper>
+                    <ViewIconWrapper
+                      onClick={() => setViewMode('Table')}
+                      className={`${viewMode === 'Table' && classes.active}`}
+                    >
+                      <img src={TableViewIcon} alt='Table View Icon' />
+                    </ViewIconWrapper>
+                  </Grid>
+                  {viewMode === 'Chart' ? (
+                    <GoogleStackedBarChart data={catMonthlyTotalsArr} />
+                  ) : (
+                    <CollapsibleTable rows={monthlyTotals} />
+                  )}
+                </MonthlyTotalsWrapper>
+              </Grid>
+              <Grid container item xs={12} lg={4}>
+                <MonthlyTotalsWrapper>
+                  <GooglePieChart data={pieData} />
+                </MonthlyTotalsWrapper>
+              </Grid>
             </Grid>
+
             <Grid className={mainClasses.padTop32} container item xs={12}>
               <Grid className={mainClasses.padX32} item xs={12}>
                 <SectionHeading variant={'h3'}>
@@ -116,60 +150,6 @@ function Dashboard () {
                     )
                 )}
               </CardsWrapper>
-            </Grid>
-
-            <Grid
-              container
-              item
-              xs={12}
-              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
-            >
-              <MonthlyTotalsWrapper>
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  justify='flex-end'
-                  className={`${mainClasses.padTop16} ${mainClasses.padRight16}`}
-                >
-                  <ViewIconWrapper
-                    onClick={() => setViewMode('Chart')}
-                    className={`${mainClasses.marRight16} ${viewMode ===
-                      'Chart' && classes.active}`}
-                  >
-                    <img src={GraphViewIcon} alt='Graph View Icon' />
-                  </ViewIconWrapper>
-                  <ViewIconWrapper
-                    onClick={() => setViewMode('Table')}
-                    className={`${viewMode === 'Table' && classes.active}`}
-                  >
-                    <img src={TableViewIcon} alt='Table View Icon' />
-                  </ViewIconWrapper>
-                </Grid>
-                {viewMode === 'Chart' ? (
-                  <BarGraph
-                    categories={categories}
-                    categoryMonthlyTotals={categoryMonthlyTotals}
-                  />
-                ) : (
-                  <CollapsibleTable rows={monthlyTotals} />
-                )}
-              </MonthlyTotalsWrapper>
-            </Grid>
-            <Grid
-              container
-              item
-              xs={12}
-              className={`${mainClasses.padX32} ${mainClasses.padTop32} ${mainClasses.padBot32}`}
-            >
-              {/* <Chart width={600} data={pieData}>
-                <Legend
-                  rootComponent={Legend.Root}
-                  labelComponent={Legend.Label}
-                />
-                <PieSeries valueField='total' argumentField='category' />
-              </Chart> */}
-              <GooglePieChart data={pieData} />
             </Grid>
 
             <TotalsContainer container item xs={12}>
