@@ -63,6 +63,8 @@ export const FeatureImagePaper = withStyles({
     fontWeight: '900',
     color: '#f0f0f0',
     textAlign: 'center',
+    borderRadius: '10px',
+    overflow: 'hidden',
 
     '&>img': {
       height: '100%'

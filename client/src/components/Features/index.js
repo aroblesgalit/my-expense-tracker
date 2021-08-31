@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   useStyles,
   FeaturesContainer,
@@ -17,8 +17,28 @@ import ssDashboard2 from '../../images/ss_xpense_dashboard_2.PNG'
 function Features () {
   const classes = useStyles()
 
-  // const theme = useTheme()
-  // const desktop = useMediaQuery(theme.breakpoints.up('md'))
+  // Carousel
+  const [index, setIndex] = useState(0)
+  const screenshots = [
+    { src: ssDashboard1, alt: 'Dashboard' },
+    { src: ssDashboard2, alt: 'Dashboard' },
+    { src: ssExpenses, alt: 'Expenses' }
+  ]
+  function handleClick (direction) {
+    if (direction === 'right') {
+      if (index >= 0 && index < screenshots.length - 1) {
+        setIndex(index + 1)
+      } else {
+        setIndex(0)
+      }
+    } else {
+      if (index >= 1) {
+        setIndex(index - 1)
+      } else {
+        setIndex(screenshots.length - 1)
+      }
+    }
+  }
 
   return (
     <FeaturesContainer
@@ -45,7 +65,9 @@ function Features () {
           </Grid>
           <Grid container item xs={10}>
             <FeatureImagePaper elevation={1}>
-              <img src={ssDashboard1} alt='Dashboard charts' />
+              <img src={ssDashboard2} alt='Dashboard charts' />
+              <img src={ssDashboard1} alt='Dashboard table' />
+              <img src={ssExpenses} alt='Expenses table' />
             </FeatureImagePaper>
           </Grid>
           <Grid container item xs={1} alignContent='center' justify='flex-end'>
