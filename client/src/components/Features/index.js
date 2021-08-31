@@ -91,7 +91,10 @@ function Features () {
         </Grid>
         <Grid container item xs={12} className={classes.slickDots}>
           {screenshots.map((ss, i) => (
-            <span className={i === index && classes.activeSlickDot}></span>
+            <span
+              className={i === index && classes.activeSlickDot}
+              onClick={() => setIndex(i)}
+            ></span>
           ))}
         </Grid>
       </Grid>
