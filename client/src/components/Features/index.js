@@ -10,6 +10,9 @@ import {
 } from './features.styles'
 import { Grid } from '@material-ui/core'
 import mainLogo from '../../images/x-pense_logo_main.svg'
+import ssExpenses from '../../images/ss_xpense_expenses.PNG'
+import ssDashboard1 from '../../images/ss_xpense_dashboard_1.PNG'
+import ssDashboard2 from '../../images/ss_xpense_dashboard_2.PNG'
 
 function Features () {
   const classes = useStyles()
@@ -42,7 +45,7 @@ function Features () {
           </Grid>
           <Grid container item xs={10}>
             <FeatureImagePaper elevation={1}>
-              placeholder <br /> coming soon
+              <img src={ssDashboard1} alt='Dashboard charts' />
             </FeatureImagePaper>
           </Grid>
           <Grid container item xs={1} alignContent='center' justify='flex-end'>

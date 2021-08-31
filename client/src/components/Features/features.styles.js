@@ -64,6 +64,10 @@ export const FeatureImagePaper = withStyles({
     color: '#f0f0f0',
     textAlign: 'center',
 
+    '&>img': {
+      height: '100%'
+    },
+
     '@media (min-width: 960px)': {
       height: '420px',
       fontSize: '42px'
