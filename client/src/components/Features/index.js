@@ -90,11 +90,9 @@ function Features () {
           </CaptionTypography>
         </Grid>
         <Grid container item xs={12} className={classes.slickDots}>
-          <span className={classes.activeSlickDot}></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          {screenshots.map((ss, i) => (
+            <span className={i === index && classes.activeSlickDot}></span>
+          ))}
         </Grid>
       </Grid>
     </FeaturesContainer>
