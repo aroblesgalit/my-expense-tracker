@@ -61,17 +61,20 @@ function Features () {
             alignContent='center'
             justify='flex-start'
           >
-            <ArrowBackIos />
+            <ArrowBackIos onClick={() => handleClick('left')} />
           </Grid>
           <Grid container item xs={10}>
             <FeatureImagePaper elevation={1}>
-              <img src={ssDashboard2} alt='Dashboard charts' />
-              <img src={ssDashboard1} alt='Dashboard table' />
-              <img src={ssExpenses} alt='Expenses table' />
+              {
+                <img
+                  src={screenshots[index].src}
+                  alt={screenshots[index].alt}
+                />
+              }
             </FeatureImagePaper>
           </Grid>
           <Grid container item xs={1} alignContent='center' justify='flex-end'>
-            <ArrowForwardIos />
+            <ArrowForwardIos onClick={() => handleClick('right')} />
           </Grid>
         </Grid>
         <Grid container item xs={12}>
