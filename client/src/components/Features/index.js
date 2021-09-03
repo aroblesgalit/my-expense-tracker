@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   useStyles,
   FeaturesContainer,
@@ -103,7 +103,7 @@ function Features () {
           {screenshots.map((ss, i) => (
             <span
               key={`${i}-${ss.alt}`}
-              className={i === index && classes.activeSlickDot}
+              className={i === index ? classes.activeSlickDot : undefined}
               onClick={() => setIndex(i)}
             ></span>
           ))}
