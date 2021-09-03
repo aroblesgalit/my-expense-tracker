@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   useStyles,
   FeaturesContainer,
@@ -19,24 +19,34 @@ function Features () {
 
   // Carousel
   const [index, setIndex] = useState(0)
+
   const screenshots = [
     { src: ssDashboard1, alt: 'Dashboard' },
     { src: ssDashboard2, alt: 'Dashboard' },
     { src: ssExpenses, alt: 'Expenses' }
   ]
+
   function handleClick (direction) {
     if (direction === 'right') {
-      if (index >= 0 && index < screenshots.length - 1) {
-        setIndex(index + 1)
-      } else {
-        setIndex(0)
-      }
+      incrementIndex()
     } else {
-      if (index >= 1) {
-        setIndex(index - 1)
-      } else {
-        setIndex(screenshots.length - 1)
-      }
+      decrementIndex()
+    }
+  }
+
+  function incrementIndex () {
+    if (index < screenshots.length - 1) {
+      setIndex(index + 1)
+    } else {
+      setIndex(0)
+    }
+  }
+
+  function decrementIndex () {
+    if (index >= 1) {
+      setIndex(index - 1)
+    } else {
+      setIndex(screenshots.length - 1)
     }
   }
 
@@ -92,6 +102,7 @@ function Features () {
         <Grid container item xs={12} className={classes.slickDots}>
           {screenshots.map((ss, i) => (
             <span
+              key={`${i}-${ss.alt}`}
               className={i === index && classes.activeSlickDot}
               onClick={() => setIndex(i)}
             ></span>
