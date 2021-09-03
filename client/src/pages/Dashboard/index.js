@@ -79,14 +79,17 @@ function Dashboard () {
                   >
                     <ViewIconWrapper
                       onClick={() => setViewMode('Chart')}
-                      className={`${mainClasses.marRight16} ${viewMode ===
-                        'Chart' && classes.active}`}
+                      className={`${mainClasses.marRight16} ${
+                        viewMode === 'Chart' ? classes.active : undefined
+                      }`}
                     >
                       <img src={GraphViewIcon} alt='Graph View Icon' />
                     </ViewIconWrapper>
                     <ViewIconWrapper
                       onClick={() => setViewMode('Table')}
-                      className={`${viewMode === 'Table' && classes.active}`}
+                      className={`${
+                        viewMode === 'Table' ? classes.active : undefined
+                      }`}
                     >
                       <img src={TableViewIcon} alt='Table View Icon' />
                     </ViewIconWrapper>
