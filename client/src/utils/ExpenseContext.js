@@ -123,6 +123,7 @@ function ExpenseProvider (props) {
         // Alert deleted expense
         // console.log('Deleted expense: ', res)
         getAllExpenses()
+        setOpenAlertDialog(false)
       })
       .catch(err => console.log("Oh no! Something wen't wrong!", err))
   }
@@ -395,6 +396,13 @@ function ExpenseProvider (props) {
   }
   /*********** END Monthly Totals ***********/
 
+  /*********** Alert Dialog ***********/
+  const [openAlertDialog, setOpenAlertDialog] = useState({
+    id: null,
+    isOpen: false
+  })
+  /*********** END Alert Dialog ***********/
+
   return (
     <ExpenseContext.Provider
       value={{
@@ -420,7 +428,9 @@ function ExpenseProvider (props) {
         monthlyTotals,
         displayDate,
         addResultMsg,
-        btnDisabled
+        btnDisabled,
+        openAlertDialog,
+        setOpenAlertDialog
       }}
     >
       {props.children}

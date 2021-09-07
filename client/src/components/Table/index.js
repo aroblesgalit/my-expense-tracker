@@ -16,8 +16,9 @@ import {
   Paper
 } from '@material-ui/core'
 import deleteIcon from '../../images/icon_expense_delete.svg'
+import AlertDialog from '../AlertDialog'
 
-function TableComponent ({ headings, rows, handleDelete }) {
+function TableComponent ({ headings, rows, setOpenAlertDialog }) {
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(10)
 
@@ -69,8 +70,15 @@ function TableComponent ({ headings, rows, handleDelete }) {
                     <img
                       src={deleteIcon}
                       alt='Delete icon'
-                      onClick={() => handleDelete(row._id)}
+                      onClick={() => {
+                        setOpenAlertDialog({
+                          id: row._id,
+                          isOpen: true
+                        })
+                        // handleDelete(row._id)
+                      }}
                     />
+                    <AlertDialog />
                   </TableBodyCell>
                 </TableRow>
               ))}

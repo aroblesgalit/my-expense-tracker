@@ -20,8 +20,8 @@ function Expenses () {
           activeFilter,
           onFilterChange,
           filteredExpenses,
-          deleteExpense,
-          setNewExpense
+          setNewExpense,
+          setOpenAlertDialog
         } = value
         return (
           <PageContainer
@@ -68,7 +68,7 @@ function Expenses () {
                 <Table
                   headings={['Date', 'Category', 'Description', 'Amount', '']}
                   rows={filteredExpenses}
-                  handleDelete={deleteExpense}
+                  setOpenAlertDialog={setOpenAlertDialog}
                 />
               </Grid>
             </Grid>
