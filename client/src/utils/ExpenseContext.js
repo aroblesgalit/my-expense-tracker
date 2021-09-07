@@ -123,7 +123,6 @@ function ExpenseProvider (props) {
         // Alert deleted expense
         // console.log('Deleted expense: ', res)
         getAllExpenses()
-        setOpenAlertDialog(false)
       })
       .catch(err => console.log("Oh no! Something wen't wrong!", err))
   }
