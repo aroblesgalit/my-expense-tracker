@@ -111,10 +111,18 @@ function Header () {
                     </ListItemIcon>
                     <Typography variant='inherit'>expenses</Typography>
                   </MenuItem>
-                  <MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleMenuItemClick()
+                      handleOnClick('/income')
+                    }}
+                    className={
+                      currentPathname === '/income' ? classes.active : ''
+                    }
+                  >
                     <ListItemIcon>
                       <img
-                        src=''
+                        src={expensesIcon}
                         alt='Income icon'
                         className={classes.navIcon}
                       />
@@ -182,6 +190,21 @@ function Header () {
                       />
                     </ListItemIcon>
                     <Typography variant='inherit'>expenses</Typography>
+                  </MenuItem>
+                  <MenuItem
+                    className={
+                      currentPathname === '/income' ? classes.active : ''
+                    }
+                    onClick={() => handleOnClick('/income')}
+                  >
+                    <ListItemIcon>
+                      <img
+                        src={expensesIcon}
+                        alt='Income icon'
+                        className={classes.navIcon}
+                      />
+                    </ListItemIcon>
+                    <Typography variant='inherit'>income</Typography>
                   </MenuItem>
                   {/* <MenuItem>
                     <ListItemIcon>
