@@ -111,6 +111,16 @@ function Header () {
                     </ListItemIcon>
                     <Typography variant='inherit'>expenses</Typography>
                   </MenuItem>
+                  <MenuItem>
+                    <ListItemIcon>
+                      <img
+                        src=''
+                        alt='Income icon'
+                        className={classes.navIcon}
+                      />
+                    </ListItemIcon>
+                    <Typography variant='inherit'>income</Typography>
+                  </MenuItem>
                   {/* <MenuItem onClick={handleMenuItemClick}>
                     <ListItemIcon>
                       <AccountBalanceOutlined fontSize='small' />
