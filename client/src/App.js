@@ -1,19 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Expenses from './pages/Expenses';
-import Dashboard from './pages/Dashboard';
-import Header from './components/Header';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import ExpenseForm from './components/ExpenseForm';
-import { UserProvider } from './utils/UserContext';
-import { ExpenseProvider } from './utils/ExpenseContext';
-import { HeaderProvider } from './utils/HeaderContext';
-import PublicRoute from './components/PublicRoute';
-import ProtectedRoute from './components/ProtectedRoute';
-import { Grid } from '@material-ui/core';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Expenses from './pages/Expenses'
+import Dashboard from './pages/Dashboard'
+import Income from './pages/Income'
+import Header from './components/Header'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
+import ExpenseForm from './components/ExpenseForm'
+import { UserProvider } from './utils/UserContext'
+import { ExpenseProvider } from './utils/ExpenseContext'
+import { HeaderProvider } from './utils/HeaderContext'
+import PublicRoute from './components/PublicRoute'
+import ProtectedRoute from './components/ProtectedRoute'
+import { Grid } from '@material-ui/core'
 
-function App() {
+function App () {
   return (
     <UserProvider>
       <HeaderProvider>
@@ -35,6 +36,9 @@ function App() {
                 <Route path='/dashboard'>
                   <ProtectedRoute component={Dashboard} />
                 </Route>
+                <Route path='/income'>
+                  <ProtectedRoute component={Income} />
+                </Route>
                 <Route exact path='/'>
                   <PublicRoute component={Login} />
                 </Route>
@@ -44,7 +48,7 @@ function App() {
         </ExpenseProvider>
       </HeaderProvider>
     </UserProvider>
-  );
+  )
 }
 
-export default App;
+export default App
