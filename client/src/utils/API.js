@@ -26,8 +26,17 @@ const API = {
   },
   deleteExpense: function (id) {
     return axios.delete('/api/expenses/' + id)
-  }
+  },
   // Income
+  addIncome: function (data) {
+    return axios.post('/api/income', data)
+  },
+  getAllIncome: function (user) {
+    return axios.get('/api/income/' + user)
+  },
+  deleteIncome: function (id) {
+    return axios.get('/api/income/' + id)
+  }
 }
 
 export default API
