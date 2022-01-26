@@ -27,6 +27,7 @@ const API = {
   deleteExpense: function (id) {
     return axios.delete('/api/expenses/' + id)
   }
+  // Income
 }
 
 export default API
