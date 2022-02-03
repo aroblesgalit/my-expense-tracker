@@ -1,4 +1,4 @@
-const router = require('income').Router()
+const router = require('express').Router()
 const incomeController = require('../../controllers/incomeController')
 
 // Matches with '/api/income'
